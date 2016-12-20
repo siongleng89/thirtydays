@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerItems">
+        <item>CM</item>
+        <item>INCH</item>
+    </string-array>
+
+    <string-array name="spinnerItems2">
+        <item>KG</item>
+        <item>POUND</item>
+    </string-array>
+</resources>
