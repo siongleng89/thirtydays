@@ -8,163 +8,6 @@
     tools:layout_editor_absoluteY="8dp"
     tools:layout_editor_absoluteX="8dp">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/layoutButton">
-
-
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/activity_personal_detail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.challenge.bennho.a30days.PersonalDetailActivity">
-
-
-
-
-
-
-
-
-    <TextView
-        android:text="Height"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:textSize="24sp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtHeight" />
-
-    <EditText
-        android:layout_height="50dp"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/txtHeight"
-        android:textSize="24sp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/textView2"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintRight_toLeftOf="@+id/spinHeight"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBaseline_toBaselineOf="@+id/spinHeight"
-        android:layout_width="0dp" />
-
-    <Spinner
-        android:id="@+id/spinHeight"
-        android:entries="@array/spinnerItems"
-        android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="150dp" />
-
-
-
-    <TextView
-        android:text="Weight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:textSize="24sp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:layout_marginStart="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtWeight" />
-
-    <EditText
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/txtWeight"
-        android:textSize="24sp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/textView3"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintRight_toLeftOf="@+id/spinWeight"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintTop_toBottomOf="@+id/txtHeight"
-        app:layout_constraintBaseline_toBaselineOf="@+id/spinWeight"
-        android:layout_width="0dp" />
-
-    <Spinner
-        android:id="@+id/spinWeight"
-        android:layout_height="50dp"
-        android:entries="@array/spinnerItems2"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintTop_toBottomOf="@+id/spinHeight"
-        android:layout_width="150dp" />
-
-    <TextView
-        android:text="Age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:textSize="24sp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        android:layout_marginStart="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintVertical_bias="0.32999998"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtAge" />
-
-    <EditText
-        android:layout_height="50dp"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/txtAge"
-        android:textSize="24sp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/textView4"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="32dp"
-        app:layout_constraintHorizontal_bias="0.21"
-        android:layout_marginTop="80dp"
-        app:layout_constraintTop_toBottomOf="@+id/txtWeight"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="24dp"
-        android:layout_width="100dp" />
-
-
-
-
-
-
-
-
-    </android.support.constraint.ConstraintLayout>
-
-
-    </ScrollView>
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
@@ -175,17 +18,160 @@
         android:id="@+id/layoutButton">
 
         <Button
-            android:text="DONE"
-            android:id="@+id/button2"
+            android:text="@string/btn_done"
+            android:id="@+id/btnDone"
             android:layout_width="384dp"
             android:layout_height="50dp"
             android:textSize="18sp"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:background="@android:color/background_dark"
-            android:textColor="@android:color/background_light"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/colorBtnWord"
             tools:layout_editor_absoluteX="0dp"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+
+    <LinearLayout
+        android:id="@+id/activity_personal_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:weightSum="1">
+
+
+            <TextView
+                android:text="@string/txt_gender"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteY="160dp"
+                tools:layout_editor_absoluteX="71dp"
+                android:layout_width="90dp"
+                android:height="50dp"
+                android:elevation="1dp"
+                android:textColor="@color/colorWord" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:layout_height="50dp"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/txtHeight"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteY="90dp"
+                tools:layout_editor_absoluteX="60dp"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/txt_weight"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteY="37dp"
+            tools:layout_editor_absoluteX="66dp"
+            android:layout_width="90dp"
+            android:height="50dp"
+            android:textColor="@color/colorWord" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/txtWeight"
+                android:textSize="24sp"
+                android:layout_height="50dp"
+                android:layout_width="111dp"
+                tools:layout_editor_absoluteY="213dp"
+                tools:layout_editor_absoluteX="65dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/txt_age"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteY="271dp"
+            tools:layout_editor_absoluteX="88dp"
+            android:layout_width="90dp"
+            android:height="50dp"
+            android:textColor="@color/colorWord" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+
+
+        <EditText
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/txtAge"
+            android:textSize="24sp"
+            android:layout_width="111dp"
+            tools:layout_editor_absoluteY="307dp"
+            tools:layout_editor_absoluteX="65dp"
+            android:layout_height="50dp"
+            android:layout_weight="1" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="372dp"
+            android:layout_height="100dp"
+            android:layout_weight="1.95"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:text="@string/txt_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="11dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="30dp"
+                android:id="@+id/textView5"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    </ScrollView>
 
 </RelativeLayout>

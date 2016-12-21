@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">30days</string>
+    <string name="app_name">30 Days Running Weight Loss</string>
+    <string name="btn_begin">Challenge Begin</string>
+    <string name="txt_weight">Weight</string>
+    <string name="txt_gender">Gender</string>
+    <string name="txt_age">Age</string>
+    <string name="btn_done">DONE</string>
+    <string name="txt_detail">Input your data will affect your training plan</string>
+    <string name="title_activity_result">Result</string>
+    <string name="txt_time">Time</string>
+    <string name="txt_run">Run</string>
+    <string name="txt_kcal">Kcal</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_stop">Stop</string>
 </resources>
