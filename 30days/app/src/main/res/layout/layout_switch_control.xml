@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/corner_radius_bg"
+    android:backgroundTint="@color/colorPrimaryDark">
+
+    <RelativeLayout
+        android:background="@drawable/corner_radius_bg"
+        android:id="@+id/layoutBackground"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="#ffffff">
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/layoutOption1">
+
+            <TextView
+                android:text="Option 1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txtOption1"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="@color/colorBtnWord" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/layoutOption2"
+            android:gravity="center">
+
+            <TextView
+                android:text="Option2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/txtOption2"
+                android:padding="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorBtnWord" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

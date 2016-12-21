@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LayoutSwitchControl">
+        <attr name="option1" format="string" />
+        <attr name="option2" format="string" />
+    </declare-styleable>
+</resources>
