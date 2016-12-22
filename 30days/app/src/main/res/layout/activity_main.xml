@@ -1,36 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.challenge.bennho.a30days.MainActivity">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/rb1"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp"
-        android:id="@+id/imageView6"
-        android:scaleType="centerCrop" />
-
-    <Button
-        android:text="@string/btn_begin"
-        android:id="@+id/btnBegin"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorBtnWord"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="18sp"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintVertical_bias="1.0"
-        android:layout_width="0dp"
-        android:layout_height="50dp" />
+    tools:context="com.challenge.bennho.a30days.MainActivity"
+    android:orientation="vertical">
 
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
+
+            <com.challenge.bennho.a30days.controls.LayoutDayCounter
+                android:id="@+id/dayCounterControl"
+                android:layout_width="300dp"
+                android:layout_height="300dp"></com.challenge.bennho.a30days.controls.LayoutDayCounter>
+
+            <Button
+                android:text="Start Day 2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button3"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorBtnWord"
+                android:textSize="20sp"
+                android:layout_marginTop="25dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </RelativeLayout>
+
+
+</LinearLayout>

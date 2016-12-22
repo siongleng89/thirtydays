@@ -1,31 +1,23 @@
 package com.challenge.bennho.a30days;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+
+import com.challenge.bennho.a30days.controls.LayoutDayCounter;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnBegin;
-
+    private LayoutDayCounter dayCounterControl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnBegin = (Button) findViewById(R.id.btnBegin);
 
-        btnBegin.setOnClickListener(new View.OnClickListener() {
-                @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(MainActivity.this, PersonalDetailActivity.class);
-                startActivity(intent);
-            }
-        });
+        this.setTitle("Main Page");
 
 
+        dayCounterControl = (LayoutDayCounter) findViewById(R.id.dayCounterControl);
+        dayCounterControl.updateDayNumber(0);
     }
 }

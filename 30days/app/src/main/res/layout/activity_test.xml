@@ -12,12 +12,12 @@
     tools:context="com.challenge.bennho.a30days.Test">
 
 
-    <!--<com.challenge.bennho.a30days.controls.LayoutSwitchControl
+    <com.challenge.bennho.a30days.controls.LayoutSwitchControl
         android:layout_width="200dp"
         android:layout_height="50dp"
         app:option1="test1"
         app:option2="test2">
 
 
-    </com.challenge.bennho.a30days.controls.LayoutSwitchControl>-->
+    </com.challenge.bennho.a30days.controls.LayoutSwitchControl>
 </RelativeLayout>

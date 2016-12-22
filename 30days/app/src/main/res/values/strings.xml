@@ -12,4 +12,8 @@
     <string name="txt_kcal">Kcal</string>
     <string name="btn_start">Start</string>
     <string name="btn_stop">Stop</string>
+
+
+    <string name="day_X">DAY %s</string>
+    <string name="X_completed">%s%% completed</string>
 </resources>
