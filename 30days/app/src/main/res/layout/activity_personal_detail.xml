@@ -84,10 +84,10 @@
                 tools:layout_editor_absoluteY="213dp"
                 tools:layout_editor_absoluteX="65dp"
                 android:layout_weight="1"
-                android:layout_width="250dp" />
+                android:layout_width="0dp" />
 
             <Spinner
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/spinner"
                 android:layout_weight="1"
@@ -119,33 +119,27 @@
             android:ems="10"
             android:id="@+id/txtAge"
             android:textSize="24sp"
-            android:layout_width="111dp"
             tools:layout_editor_absoluteY="307dp"
             tools:layout_editor_absoluteX="65dp"
             android:layout_height="50dp"
-            android:layout_weight="1" />
+            android:layout_width="170dp" />
 
 
         </LinearLayout>
 
         <RelativeLayout
-            android:layout_width="372dp"
-            android:layout_height="100dp"
-            android:layout_weight="1.95"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp">
 
             <TextView
                 android:text="@string/txt_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="11dp"
-                android:layout_marginStart="11dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="30dp"
-                android:id="@+id/textView5"
-                android:textSize="18sp" />
+                android:id="@+id/txtDetail"
+                android:textSize="18sp"
+                android:singleLine="false" />
         </RelativeLayout>
 
 
