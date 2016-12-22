@@ -12,8 +12,17 @@
     <string name="txt_kcal">Kcal</string>
     <string name="btn_start">Start</string>
     <string name="btn_stop">Stop</string>
+    <string name="btn_main">Main</string>
+    <string name="btn_history">History</string>
+    <string name="btn_setting">Setting</string>
+    <string name="txt_congrat">Congrats! You have complete Day 1 Challenge!</string>
 
 
     <string name="day_X">DAY %s</string>
     <string name="X_completed">%s%% completed</string>
+    <string name="total_time">Total Time</string>
+    <string name="total_minute">15 Minute</string>
+    <string name="calories_burn">Calories Burn</string>
+    <string name="k_cal">1.5 Kcal</string>
+    <string name="btn_end">End</string>
 </resources>

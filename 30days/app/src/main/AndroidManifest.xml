@@ -10,30 +10,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LandingActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".Test">
-        </activity>
+        <activity android:name=".Test"></activity>
         <activity
             android:name=".PersonalDetailActivity"
-            android:label="Personal Detail" />
+            android:label="Personal Detail"></activity>
         <activity
             android:name=".ResultActivity"
             android:label="Result"></activity>
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-
-
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".activity_end"></activity>
     </application>
 
 </manifest>

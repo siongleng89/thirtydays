@@ -152,7 +152,7 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -162,14 +162,15 @@
         <Button
             android:text="@string/btn_done"
             android:id="@+id/btnDone"
-            android:layout_width="384dp"
             android:layout_height="50dp"
             android:textSize="18sp"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:background="@color/colorPrimaryDark"
             android:textColor="@color/colorBtnWord"
             tools:layout_editor_absoluteX="0dp"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
 
     </LinearLayout>
 

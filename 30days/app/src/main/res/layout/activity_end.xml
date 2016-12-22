@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context="com.challenge.bennho.a30days.activity_end">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                app:srcCompat="@color/colorBtnWord"
+                android:id="@+id/imageView"
+                android:layout_height="150dp" />
+
+
+            <TextView
+                android:text="@string/txt_congrat"
+                android:layout_width="match_parent"
+                android:id="@+id/txtCongrat"
+                android:textAlignment="gravity"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:textColor="@color/colorWord"
+                android:layout_height="50dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/total_time"
+                        android:layout_width="match_parent"
+                        android:id="@+id/txtTotal"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorWord" />
+
+                    <TextView
+                        android:text="@string/total_minute"
+                        android:layout_width="match_parent"
+                        android:id="@+id/txtTime"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorWord" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="@string/calories_burn"
+                        android:layout_width="match_parent"
+                        android:id="@+id/txtCalories"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorWord" />
+
+                    <TextView
+                        android:text="@string/k_cal"
+                        android:layout_width="match_parent"
+                        android:id="@+id/txtKcal"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="@color/colorWord" />
+
+                </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:srcCompat="@color/colorBtnWord"
+                android:id="@+id/imageView3" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:text="@string/btn_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEnd"
+        android:textColor="@color/colorBtnWord"
+        android:background="@color/colorPrimary"
+        android:textSize="24sp" />
+
+</LinearLayout>

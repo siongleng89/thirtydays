@@ -1,95 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_result"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.challenge.bennho.a30days.ResultActivity">
 
-    <LinearLayout
-        android:orientation="horizontal"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/LinearFirst">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <TextView
-            android:text="@string/txt_time"
-            android:layout_width="wrap_content"
-            android:id="@+id/txtTime"
-            android:layout_weight="1"
-            android:layout_height="100dp"
-            android:textSize="100sp"
-            android:textAlignment="center" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_below="@+id/LinearFirst"
-        android:layout_height="60dp"
-        android:id="@+id/LinearSecond">
-
-        <TextView
-            android:text="@string/txt_run"
-            android:layout_width="match_parent"
-            android:id="@+id/txtRun"
-            android:layout_weight="1"
-            android:textSize="30dp"
-            android:textAlignment="center"
-            android:layout_marginTop="10dp"
-            android:layout_height="150dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:id="@+id/LinearThrid"
-        android:layout_marginTop="103dp"
-        android:layout_below="@+id/LinearSecond"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_height="150dp">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_height="match_parent"
-                app:srcCompat="@android:drawable/btn_star_big_on"
-                android:id="@+id/imageView2"
-                android:layout_width="100dp" />
-        </LinearLayout>
-
-        <TextView
             android:layout_width="match_parent"
+            android:orientation="vertical"
             android:layout_height="match_parent"
-            android:id="@+id/txtKcal"
-            android:text="@string/txt_kcal"
-            android:textSize="80sp"
-            android:textAlignment="gravity"
-            android:freezesText="true"
-            tools:gravity="center" />
+            android:layout_alignParentTop="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false">
 
+            <TextView
+                android:text="@string/txt_time"
+                android:layout_width="match_parent"
+                android:id="@+id/txtTime"
+                android:textSize="80sp"
+                android:textAlignment="center"
+                android:layout_height="130dp" />
 
-    </LinearLayout>
+            <TextView
+                android:text="@string/txt_run"
+                android:layout_width="match_parent"
+                android:id="@+id/txtRun"
+                android:textSize="30dp"
+                android:textAlignment="center"
+                android:layout_height="150dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@android:drawable/btn_star_big_on"
+                    android:id="@+id/imageView2"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text="@string/txt_kcal"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:id="@+id/textView6"
+                    android:layout_weight="1"
+                    android:textSize="60sp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:baselineAligned="false">
 
 
         <Button
             android:text="@string/btn_start"
             android:textSize="30dp"
-            android:id="@+id/button"
+            android:id="@+id/btnStart"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -105,7 +91,7 @@
             android:text="@string/btn_stop"
             android:layout_width="0dp"
             android:textSize="30dp"
-            android:id="@+id/button2"
+            android:id="@+id/btnStop"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:background="@color/colorPrimary"
@@ -114,5 +100,4 @@
 
     </LinearLayout>
 
-
-</RelativeLayout>
+</LinearLayout>
