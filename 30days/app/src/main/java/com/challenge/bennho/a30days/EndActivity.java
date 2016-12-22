@@ -3,7 +3,7 @@ package com.challenge.bennho.a30days;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class activity_end extends AppCompatActivity {
+public class EndActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
