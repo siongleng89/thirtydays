@@ -48,7 +48,7 @@ public class LayoutSwitchControl extends RelativeLayout {
     }
 
     private void extractAttrs(AttributeSet attrs){
-        TypedArray a=getContext().obtainStyledAttributes(
+        TypedArray a = getContext().obtainStyledAttributes(
                 attrs,
                 R.styleable.LayoutSwitchControl);
 
@@ -109,9 +109,12 @@ public class LayoutSwitchControl extends RelativeLayout {
 
     private void moveLayoutBackground(int choice, boolean animate){
 
-        int moveToX = movingWidth;
+        int moveToX = 0;
         if(choice == 0){
             moveToX = pad;
+        }
+        else{
+            moveToX = movingWidth;
         }
 
         if(animate){
