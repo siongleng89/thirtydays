@@ -18,21 +18,39 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".Test"></activity>
+        <activity android:name=".Test">
+
+        </activity>
         <activity
             android:name=".PersonalDetailActivity"
-            android:label="Personal Detail"></activity>
+            android:label="Personal Detail">
+
+        </activity>
         <activity
             android:name=".ResultActivity"
-            android:label="Result"></activity>
-        <activity android:name=".MainActivity">
+            android:label="Result">
+
+        </activity>
+
+        
+        <activity android:name=".MainActivity" />
+        <activity android:name=".HistoryActivity">
+
+        </activity>
+        <activity android:name=".GraphActivity">
+
+        </activity>
+        <activity android:name=".SettingsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".activity_end"></activity>
+        <activity android:name=".activity_end">
+
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Notifications Settings" >
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="notificationEnabled"
+            android:summary="Remind me to run!"
+            android:title="Enable Notifications" >
+        </CheckBoxPreference>
+
+        <ListPreference
+            android:key="prefUpdateFrequency"
+            android:title="Time"
+            android:summary="1pm"
+            android:entries="@array/reminderTime"
+            android:entryValues="@array/reminderTimeValues"
+            />
+
+        <com.challenge.bennho.a30days.controls.MultipleCheckboxPreference
+            android:key="button_voicemail_category_key"
+            android:title="Days"
+            android:summary="Monday"
+            android:persistent="false"
+            android:entries="@array/reminderDay">
+        </com.challenge.bennho.a30days.controls.MultipleCheckboxPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Cue Settings" >
+        <com.challenge.bennho.a30days.controls.MultipleCheckboxPreference
+            android:key="button_voicemail_category_key"
+            android:title="Cue at"
+            android:summary="Sometimes"
+            android:persistent="false"
+            android:entries="@array/cueAt">
+        </com.challenge.bennho.a30days.controls.MultipleCheckboxPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Personal Details" >
+
+        <ListPreference
+            android:key="prefUpdateFrequency"
+            android:title="Gender"
+            android:summary="Male"
+            android:entries="@array/gender"/>
+
+        <ListPreference
+            android:key="prefUpdateFrequency"
+            android:title="Unit"
+            android:summary="kg"
+            android:entries="@array/unit"
+            />
+
+        <EditTextPreference
+            android:key="weight"
+            android:title="Weight"
+            android:summary="70 kg"
+            android:persistent="true"
+            android:defaultValue="" />
+
+        <EditTextPreference
+            android:key="age"
+            android:title="Age"
+            android:summary="27"
+            android:persistent="true"
+            android:defaultValue="" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="About" >
+        <com.challenge.bennho.a30days.controls.UrlPreference
+            android:key="button_voicemail_category_key"
+            android:title="Version "
+            android:summary="Version: 1.00"
+            android:persistent="false">
+        </com.challenge.bennho.a30days.controls.UrlPreference>
+    </PreferenceCategory>
+
+</PreferenceScreen>
+
+
+
+<!--<EditTextPreference-->
+<!--android:title="Password"-->
+<!--android:summary="Set Your Password"-->
+<!--android:key="prefUserPassword"/>-->
