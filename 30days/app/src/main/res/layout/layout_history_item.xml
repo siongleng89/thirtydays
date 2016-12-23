@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray">
+
+        <TextView
+            android:text="Day 2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView14"
+            android:layout_weight="1"
+            android:autoText="true"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:text="21-12-2016"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView13"
+            android:layout_weight="1"
+            android:textSize="14sp" />
+
+        <TextView
+            android:text="6pm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:background="?attr/colorButtonNormal">
+
+        <TextView
+            android:text="Complete Plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView10"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="Time Elapse: 23Mins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView10"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView11"
+            android:textSize="18sp" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/btnShare"
+            android:background="@android:drawable/ic_menu_share"
+            android:backgroundTint="@color/colorWord" />
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_below="@+id/btnShare"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp">
+
+            <TextView
+                android:text="Calories Burnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/relativeLayout"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/textView12"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                android:background="@color/colorBtnWord"
+                android:layout_below="@+id/textView12"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/btnDel"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/btnShare"
+            android:layout_toStartOf="@+id/btnShare"
+            android:background="@android:drawable/ic_menu_delete"
+            android:backgroundTint="@color/colorWord" />
+
+    </RelativeLayout>
+</LinearLayout>

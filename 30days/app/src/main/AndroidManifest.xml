@@ -11,12 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".LandingActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".Test">
 
@@ -33,19 +28,24 @@
         </activity>
 
         
-        <activity android:name=".MainActivity" />
-        <activity android:name=".HistoryActivity">
+        <activity android:name=".MainActivity">
 
+
+       </activity>
+
+        <activity android:name=".HistoryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".GraphActivity">
 
         </activity>
         <activity android:name=".SettingsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
 
