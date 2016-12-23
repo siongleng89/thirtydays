@@ -5,4 +5,101 @@
         <item>POUND</item>
 
     </string-array>
+
+
+    <string-array name="reminderTime">
+        <item name="0">12 AM</item>
+        <item name="1">1 AM</item>
+        <item name="2">2 AM</item>
+        <item name="3">3 AM</item>
+        <item name="4">4 AM</item>
+        <item name="5">5 AM</item>
+        <item name="6">6 AM</item>
+        <item name="7">7 AM</item>
+        <item name="8">8 AM</item>
+        <item name="9">9 AM</item>
+        <item name="10">10 AM</item>
+        <item name="11">11 AM</item>
+        <item name="12">12 PM</item>
+        <item name="13">1 PM</item>
+        <item name="14">2 PM</item>
+        <item name="15">3 PM</item>
+        <item name="16">4 PM</item>
+        <item name="17">5 PM</item>
+        <item name="18">6 PM</item>
+        <item name="19">7 PM</item>
+        <item name="20">8 PM</item>
+        <item name="21">9 PM</item>
+        <item name="22">10 PM</item>
+        <item name="23">11 PM</item>
+    </string-array>
+    <string-array name="reminderTimeValues">
+        <item name="0">0</item>
+        <item name="1">1</item>
+        <item name="2">2</item>
+        <item name="3">3</item>
+        <item name="4">4</item>
+        <item name="5">5</item>
+        <item name="6">6</item>
+        <item name="7">7</item>
+        <item name="8">8</item>
+        <item name="9">9</item>
+        <item name="10">10</item>
+        <item name="11">11</item>
+        <item name="12">12</item>
+        <item name="13">13</item>
+        <item name="14">14</item>
+        <item name="15">15</item>
+        <item name="16">16</item>
+        <item name="17">17</item>
+        <item name="18">18</item>
+        <item name="19">19</item>
+        <item name="20">20</item>
+        <item name="21">21</item>
+        <item name="22">22</item>
+        <item name="23">23</item>
+    </string-array>
+
+    <string-array name="reminderDay">
+        <item name="0">Monday</item>
+        <item name="1">Tuesday</item>
+        <item name="2">Wednesday</item>
+        <item name="3">Thursday</item>
+        <item name="4">Friday</item>
+        <item name="5">Saturday</item>
+        <item name="6">Sunday</item>
+    </string-array>
+
+    <string-array name="reminderDayValues">
+        <item name="0">1</item>
+        <item name="1">2</item>
+        <item name="2">3</item>
+        <item name="3">4</item>
+        <item name="4">5</item>
+        <item name="5">6</item>
+        <item name="6">7</item>
+    </string-array>
+
+
+    <string-array name="cueAt">
+        <item name="0">25% complete</item>
+        <item name="1">50% complete</item>
+        <item name="2">70% complete</item>
+        <item name="3">90% complete</item>
+        <item name="4">To run</item>
+        <item name="5">To walk</item>
+        <item name="6">To warm up</item>
+        <item name="7">To cool down</item>
+    </string-array>
+
+    <string-array name="unit">
+        <item name="0">kg</item>
+        <item name="1">pounds</item>
+    </string-array>
+
+
+    <string-array name="gender">
+        <item name="0">Male</item>
+        <item name="1">Female</item>
+    </string-array>
 </resources>
