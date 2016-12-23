@@ -1,69 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory android:title="Notifications Settings" >
 
         <CheckBoxPreference
             android:defaultValue="true"
-            android:key="notificationEnabled"
+            android:key="EnableNotification"
             android:summary="Remind me to run!"
             android:title="Enable Notifications" >
         </CheckBoxPreference>
 
         <ListPreference
-            android:key="prefUpdateFrequency"
+            android:key="ReminderTime"
             android:title="Time"
-            android:summary="1pm"
+            android:summary="%s"
+            android:defaultValue="10"
             android:entries="@array/reminderTime"
             android:entryValues="@array/reminderTimeValues"
             />
 
         <com.challenge.bennho.a30days.controls.MultipleCheckboxPreference
-            android:key="button_voicemail_category_key"
+            android:key="ReminderDay"
             android:title="Days"
-            android:summary="Monday"
-            android:persistent="false"
-            android:entries="@array/reminderDay">
+            android:summary="%s"
+            android:entries="@array/reminderDay"
+            android:entryValues="@array/reminderDayValues"
+            app:emptySelectedText="None"
+            app:allSelectedText="Everyday">
         </com.challenge.bennho.a30days.controls.MultipleCheckboxPreference>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Cue Settings" >
         <com.challenge.bennho.a30days.controls.MultipleCheckboxPreference
-            android:key="button_voicemail_category_key"
+            android:key="CueAt"
             android:title="Cue at"
-            android:summary="Sometimes"
-            android:persistent="false"
-            android:entries="@array/cueAt">
+            android:summary="%s"
+            android:entries="@array/cueAt"
+            android:entryValues="@array/cueAtValues"
+            app:emptySelectedText="Never Cue"
+            app:allSelectedText="Always Cue">
         </com.challenge.bennho.a30days.controls.MultipleCheckboxPreference>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Personal Details" >
 
         <ListPreference
-            android:key="prefUpdateFrequency"
+            android:key="Gender"
             android:title="Gender"
-            android:summary="Male"
-            android:entries="@array/gender"/>
+            android:summary="%s"
+            android:entries="@array/gender"
+            android:entryValues="@array/genderValues"
+            />
 
         <ListPreference
-            android:key="prefUpdateFrequency"
+            android:key="Unit"
             android:title="Unit"
-            android:summary="kg"
+            android:summary="%s"
             android:entries="@array/unit"
+            android:entryValues="@array/unitValues"
             />
 
         <EditTextPreference
-            android:key="weight"
+            android:key="Weight"
             android:title="Weight"
-            android:summary="70 kg"
-            android:persistent="true"
-            android:defaultValue="" />
+            android:summary="%s"/>
 
         <EditTextPreference
-            android:key="age"
+            android:key="Age"
             android:title="Age"
-            android:summary="27"
-            android:persistent="true"
-            android:defaultValue="" />
+            android:summary="%s"/>
 
 
     </PreferenceCategory>

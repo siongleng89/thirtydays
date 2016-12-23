@@ -61,45 +61,64 @@
     </string-array>
 
     <string-array name="reminderDay">
-        <item name="0">Monday</item>
-        <item name="1">Tuesday</item>
-        <item name="2">Wednesday</item>
-        <item name="3">Thursday</item>
-        <item name="4">Friday</item>
-        <item name="5">Saturday</item>
-        <item name="6">Sunday</item>
+        <item name="1">Monday</item>
+        <item name="2">Tuesday</item>
+        <item name="3">Wednesday</item>
+        <item name="4">Thursday</item>
+        <item name="5">Friday</item>
+        <item name="6">Saturday</item>
+        <item name="7">Sunday</item>
     </string-array>
 
     <string-array name="reminderDayValues">
-        <item name="0">1</item>
-        <item name="1">2</item>
-        <item name="2">3</item>
-        <item name="3">4</item>
-        <item name="4">5</item>
-        <item name="5">6</item>
-        <item name="6">7</item>
+        <item name="1">1</item>
+        <item name="2">2</item>
+        <item name="3">3</item>
+        <item name="4">4</item>
+        <item name="5">5</item>
+        <item name="6">6</item>
+        <item name="7">7</item>
     </string-array>
 
 
     <string-array name="cueAt">
-        <item name="0">25% complete</item>
-        <item name="1">50% complete</item>
-        <item name="2">70% complete</item>
-        <item name="3">90% complete</item>
-        <item name="4">To run</item>
-        <item name="5">To walk</item>
-        <item name="6">To warm up</item>
-        <item name="7">To cool down</item>
+        <item name="Remain75">25% complete</item>
+        <item name="Remain50">50% complete</item>
+        <item name="Remain25">75% complete</item>
+        <item name="Remain10">90% complete</item>
+        <item name="ToRun">To run</item>
+        <item name="ToWalk">To walk</item>
+        <item name="ToCoolDown">To cool down</item>
     </string-array>
+
+    <string-array name="cueAtValues">
+        <item name="Remain75">Remain75</item>
+        <item name="Remain50">Remain50</item>
+        <item name="Remain25">Remain25</item>
+        <item name="Remain10">Remain10</item>
+        <item name="ToRun">ToRun</item>
+        <item name="ToWalk">ToWalk</item>
+        <item name="ToCoolDown">ToCoolDown</item>
+    </string-array>
+
 
     <string-array name="unit">
-        <item name="0">kg</item>
-        <item name="1">pounds</item>
+        <item name="kg">kg</item>
+        <item name="pounds">pounds</item>
     </string-array>
 
+    <string-array name="unitValues">
+        <item name="kg">kg</item>
+        <item name="pounds">pounds</item>
+    </string-array>
 
     <string-array name="gender">
-        <item name="0">Male</item>
-        <item name="1">Female</item>
+        <item name="male">Male</item>
+        <item name="female">Female</item>
+    </string-array>
+
+    <string-array name="genderValues">
+        <item name="male">male</item>
+        <item name="female">female</item>
     </string-array>
 </resources>

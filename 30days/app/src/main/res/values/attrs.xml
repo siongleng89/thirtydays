@@ -4,4 +4,11 @@
         <attr name="option1" format="string" />
         <attr name="option2" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="MultipleCheckboxPreference">
+        <attr name="emptySelectedText" format="string" />
+        <attr name="allSelectedText" format="string" />
+    </declare-styleable>
+
+
 </resources>
