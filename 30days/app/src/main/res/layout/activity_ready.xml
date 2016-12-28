@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ready"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.challenge.bennho.a30days.activities.ReadyActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txtCountdown"
+        android:textSize="130sp"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_weight="1"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:layout_height="150dp">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:fabSize="normal"
+            android:id="@+id/fabMusic"
+            app:elevation="6dp"
+            android:layout_alignParentBottom="true"
+            app:backgroundTint="@color/colorPrimary"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toLeftOf="@+id/fabPlusSecs"
+            app:srcCompat="@drawable/music_icon"
+            android:layout_weight="1" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:fabSize="normal"
+            android:id="@+id/fabPlusSecs"
+            app:elevation="6dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            app:backgroundTint="@color/colorPrimary"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>

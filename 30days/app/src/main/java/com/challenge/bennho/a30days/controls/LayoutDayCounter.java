@@ -70,6 +70,7 @@ public class LayoutDayCounter extends RelativeLayout {
                 ContextCompat.getColor(context, R.color.colorBtnWord), 360
         ));
 
+
     }
 
 

@@ -1,13 +1,15 @@
-package com.challenge.bennho.a30days;
+package com.challenge.bennho.a30days.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Test extends AppCompatActivity {
+import com.challenge.bennho.a30days.R;
+
+public class EndActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_end);
     }
 }

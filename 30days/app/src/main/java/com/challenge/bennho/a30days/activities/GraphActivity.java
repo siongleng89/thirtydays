@@ -1,16 +1,15 @@
-package com.challenge.bennho.a30days;
+package com.challenge.bennho.a30days.activities;
 
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.challenge.bennho.a30days.R;
 import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.GridLabelRenderer;
 import com.jjoe64.graphview.ValueDependentColor;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
 
 public class GraphActivity extends AppCompatActivity {
 
