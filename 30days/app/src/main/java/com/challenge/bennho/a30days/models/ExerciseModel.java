@@ -17,6 +17,7 @@ public class ExerciseModel {
 
     public void addExercisePartModel(ExercisePartModel exercisePartModel){
         this.totalDurationSecs = 0;
+        exercisePartModel.setIndex(exercisePartModels.size());
         exercisePartModels.add(exercisePartModel);
     }
 

@@ -367,12 +367,12 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
 
     private void mockExerciseModels(){
         exerciseModel = new ExerciseModel();
-        exerciseModel.addExercisePartModel(new ExercisePartModel(0, ExercisePartModel.ExerciseState.WarmUp, 2));
-        exerciseModel.addExercisePartModel(new ExercisePartModel(1, ExercisePartModel.ExerciseState.Walk, 2));
-        exerciseModel.addExercisePartModel(new ExercisePartModel(2, ExercisePartModel.ExerciseState.Run, 2));
-        exerciseModel.addExercisePartModel(new ExercisePartModel(3, ExercisePartModel.ExerciseState.Walk, 2));
-        exerciseModel.addExercisePartModel(new ExercisePartModel(4, ExercisePartModel.ExerciseState.Sprint, 5));
-        exerciseModel.addExercisePartModel(new ExercisePartModel(5, ExercisePartModel.ExerciseState.CoolDown, 2));
+        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 2));
+        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Walk, 2));
+        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Run, 2));
+        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Walk, 2));
+        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 5));
+        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 2));
     }
 
 

@@ -17,10 +17,13 @@ public class ExercisePartModel {
     private float durationSecs;
     private int index;
 
-    public ExercisePartModel(int index, ExerciseState exerciseState, float durationSecs) {
-        this.index = index;
+    public ExercisePartModel(ExerciseState exerciseState, float durationSecs) {
         this.exerciseState = exerciseState;
         this.durationSecs = durationSecs;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     public int getIndex() {
