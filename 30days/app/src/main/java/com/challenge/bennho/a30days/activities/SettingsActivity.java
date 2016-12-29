@@ -1,4 +1,4 @@
-package com.challenge.bennho.a30days;
+package com.challenge.bennho.a30days.activities;
 
 import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
@@ -10,6 +10,7 @@ import android.renderscript.Double2;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.CalculationHelper;
 import com.challenge.bennho.a30days.helpers.Logs;

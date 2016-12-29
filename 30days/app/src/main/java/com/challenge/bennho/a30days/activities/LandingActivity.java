@@ -1,10 +1,12 @@
-package com.challenge.bennho.a30days;
+package com.challenge.bennho.a30days.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.challenge.bennho.a30days.R;
 
 public class LandingActivity extends AppCompatActivity {
 

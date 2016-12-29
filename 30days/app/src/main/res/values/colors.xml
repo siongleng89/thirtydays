@@ -2,10 +2,18 @@
 <resources>
     <color name="colorPrimary">#ef8c73</color>
     <color name="colorPrimaryDark">#ef6c00</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#ff4081</color>
     <color name="colorWord">#000000</color>
     <color name="colorBtnWord">#ffffff</color>
     <color name="colorAction">#37474f</color>
     <color name="colorStatus">#263238</color>
+
+
+    <color name="colorWarmUp">#ecb35d</color>
+    <color name="colorRun">#ce1956</color>
+    <color name="colorWalk">#354fe4</color>
+    <color name="colorSprint">#76080f</color>
+    <color name="colorCoolDown">#70edf4</color>
+    <color name="colorBackground">#ffffff</color>
 
 </resources>

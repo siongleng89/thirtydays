@@ -5,16 +5,13 @@ import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.challenge.bennho.a30days.HistoryActivity;
-import com.challenge.bennho.a30days.LandingActivity;
-import com.challenge.bennho.a30days.MainActivity;
-import com.challenge.bennho.a30days.PersonalDetailActivity;
+import com.challenge.bennho.a30days.activities.HistoryActivity;
+import com.challenge.bennho.a30days.activities.MainActivity;
 import com.challenge.bennho.a30days.R;
-import com.challenge.bennho.a30days.SettingsActivity;
+import com.challenge.bennho.a30days.activities.SettingsActivity;
 
 /**
  * Created by Dell-PC on 22/12/2016.

@@ -1,7 +1,9 @@
-package com.challenge.bennho.a30days;
+package com.challenge.bennho.a30days.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.challenge.bennho.a30days.R;
 
 public class HistoryActivity extends AppCompatActivity {
 

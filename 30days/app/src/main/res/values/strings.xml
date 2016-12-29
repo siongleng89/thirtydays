@@ -25,4 +25,5 @@
     <string name="calories_burn">Calories Burn</string>
     <string name="k_cal">1.5 Kcal</string>
     <string name="btn_end">End</string>
+    <string name="title_activity_ready">ReadyActivity</string>
 </resources>

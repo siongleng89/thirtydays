@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.challenge.bennho.a30days.LandingActivity">
+    tools:context="com.challenge.bennho.a30days.activities.LandingActivity">
 
     <ImageView
         android:layout_width="wrap_content"

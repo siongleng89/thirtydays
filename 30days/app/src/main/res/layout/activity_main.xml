@@ -4,7 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.challenge.bennho.a30days.MainActivity"
+    tools:context="com.challenge.bennho.a30days.activities.MainActivity"
     android:orientation="vertical">
 
 

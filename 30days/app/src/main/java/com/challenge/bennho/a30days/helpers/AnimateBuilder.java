@@ -44,6 +44,11 @@ public class AnimateBuilder {
         return this;
     }
 
+    public AnimateBuilder setValuePx(int value){
+        this.value = AndroidUtils.pxToDp(context, value);
+        return this;
+    }
+
     public AnimateBuilder setDurationMs(int durationMs) {
         this.durationMs = durationMs;
         return this;
@@ -157,6 +162,10 @@ public class AnimateBuilder {
 
                     }
 
+                    if(viewPropertyAnimator != null){
+                        viewPropertyAnimator.setListener(null);
+                    }
+
                     if (finishCallback != null && viewPropertyAnimator != null){
                         viewPropertyAnimator.setListener(new Animator.AnimatorListener() {
                             @Override
@@ -179,8 +188,8 @@ public class AnimateBuilder {
 
                             }
                         });
-
                     }
+
 
 
                     viewPropertyAnimator.start();
