@@ -22,12 +22,12 @@ public class MainActivity extends MyActivity {
 
         bottomBar = (BottomBar) findViewById(R.id.bottomBar) ;
         dayCounterControl = (LayoutDayCounter) findViewById(R.id.dayCounterControl);
-        btnStart = (Button) findViewById(R.id.btnStart);
+        /*btnStart = (Button) findViewById(R.id.btnStart);*/
 
-        dayCounterControl.updateDayNumber(1);
+        dayCounterControl.updateDayNumber(18);
         bottomBar.setCurrentSelectedPageIndex(0);
 
-        setListeners();
+        /*setListeners();*/
     }
 
     @Override
@@ -42,14 +42,14 @@ public class MainActivity extends MyActivity {
     }
 
 
-    private void setListeners(){
+    /*private void setListeners(){
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startExercise();
             }
-        });
-    }
+        });*//*
+    }*/
 
 
 

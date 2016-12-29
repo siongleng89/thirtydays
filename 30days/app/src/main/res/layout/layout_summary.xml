@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorAccent">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -31,7 +31,7 @@
             android:background="@color/colorBtnWord"
             android:max="100"
             android:progress="30"
-            android:progressTint="@color/colorPrimaryDark"
+            android:progressTint="@color/colorAccent"
             android:scrollbarSize="20dp"
             android:maxHeight="20dp"
             android:progressDrawable="@drawable/custom_progress_bar_horizontal"

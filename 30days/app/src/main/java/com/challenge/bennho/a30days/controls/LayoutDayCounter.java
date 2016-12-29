@@ -20,7 +20,7 @@ import com.challenge.bennho.a30days.drawables.SemiCircleDrawable;
 public class LayoutDayCounter extends RelativeLayout {
 
     private Context context;
-    private RelativeLayout layoutOuterCircle, layoutCircle, layoutInnerCircle;
+    private RelativeLayout layoutOuterCircle, layoutCircle, layoutDummyCircle, layoutInnerCircle;
     private LinearLayout layoutContentCircle;
     private TextView txtDay, txtCompleted;
 
@@ -55,28 +55,32 @@ public class LayoutDayCounter extends RelativeLayout {
         layoutCircle = (RelativeLayout) findViewById(R.id.layoutCircle);
         layoutInnerCircle = (RelativeLayout) findViewById(R.id.layoutInnerCircle);
         layoutContentCircle = (LinearLayout) findViewById(R.id.layoutContentCircle);
+        layoutDummyCircle = (RelativeLayout) findViewById(R.id.layoutDummyCircle);
 
         txtDay = (TextView) findViewById(R.id.txtDay);
         txtCompleted = (TextView) findViewById(R.id.txtCompleted);
 
         ViewCompat.setBackground(layoutOuterCircle, new SemiCircleDrawable(
-                ContextCompat.getColor(context, R.color.colorPrimaryDark), 360
+                ContextCompat.getColor(context, R.color.colorAccent), 360
         ));
 
         ViewCompat.setBackground(layoutInnerCircle, new SemiCircleDrawable(
-                ContextCompat.getColor(context, R.color.colorPrimaryDark), 360
+                ContextCompat.getColor(context, R.color.colorAccent), 360
         ));
         ViewCompat.setBackground(layoutContentCircle, new SemiCircleDrawable(
                 ContextCompat.getColor(context, R.color.colorBtnWord), 360
         ));
 
+        ViewCompat.setBackground(layoutDummyCircle, new SemiCircleDrawable(
+                ContextCompat.getColor(context, R.color.colorBtnWord), 360
+        ));
 
     }
 
 
     public void updateDayNumber(int day){
         ViewCompat.setBackground(layoutCircle, new SemiCircleDrawable(
-                ContextCompat.getColor(context, R.color.colorPrimary), 12 * day
+                ContextCompat.getColor(context, R.color.colorAccent), 12 * day
         ));
 
         double completedPercent = (day / 30d) * 100d;

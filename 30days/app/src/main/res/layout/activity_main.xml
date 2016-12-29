@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -19,23 +20,49 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp">
+            android:paddingTop="15dp">
 
             <com.challenge.bennho.a30days.controls.LayoutDayCounter
                 android:id="@+id/dayCounterControl"
                 android:layout_width="300dp"
                 android:layout_height="300dp"></com.challenge.bennho.a30days.controls.LayoutDayCounter>
 
-            <Button
-                android:text="Start Day 2"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnStart"
-                android:background="@color/colorPrimary"
-                android:textColor="@color/colorBtnWord"
-                android:textSize="20sp"
-                android:layout_marginTop="25dp" />
+                android:orientation="horizontal"
+                android:layout_marginTop="50dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/arrowleft"
+                    android:id="@+id/imageView12"
+                    android:layout_weight="1"
+                    android:tint="@color/colorAction" />
+
+                <TextView
+                    android:text="@string/btn_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView16"
+                    android:layout_weight="1"
+                    android:textSize="36sp"
+                    android:gravity="center"
+                    android:textStyle="normal|bold"
+                    android:textColor="@color/colorAction" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/arrowleft"
+                    android:id="@+id/imageView13"
+                    android:layout_weight="1"
+                    android:rotation="180"
+                    android:tint="@color/colorStatus"
+                    android:alpha="0.3" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

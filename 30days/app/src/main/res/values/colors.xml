@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff8254</color>
+    <color name="colorPrimary">#263238</color>
     <color name="colorPrimaryDark">#ef6c00</color>
-    <color name="colorAccent">#ef8c73</color>
+    <color name="colorAccent">#ff8254</color>
     <color name="colorWord">#000000</color>
     <color name="colorBtnWord">#ffffff</color>
     <color name="colorAction">#37474f</color>
     <color name="colorStatus">#263238</color>
-
+    <color name="colorDay">#616161</color>
 
     <color name="colorWarmUp">#ecb35d</color>
     <color name="colorRun">#ce1956</color>
