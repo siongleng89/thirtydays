@@ -15,6 +15,7 @@ public class LayoutHistoryItem extends RelativeLayout {
 
     private Context context;
 
+
     public LayoutHistoryItem(Context context) {
 
         super(context);
@@ -34,12 +35,14 @@ public class LayoutHistoryItem extends RelativeLayout {
 
     }
 
-    private void init(Context context) {
-        this.context = context;
-
+    private void init(Context context1) {
+        this.context = context1;
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.layout_history_item, this, true);
+        insertPicture();
+    }
+    private void insertPicture(){
 
     }
 }

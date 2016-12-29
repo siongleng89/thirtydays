@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAction"
         android:id="@+id/linearChallenge">
 
         <ImageView
@@ -49,7 +49,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAction"
         android:id="@+id/linearHistory">
 
         <ImageView
@@ -83,7 +83,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAction"
         android:gravity="center"
         android:id="@+id/linearMore">
 

@@ -96,6 +96,7 @@
                 android:background="@color/colorBtnWord"
                 android:layout_below="@+id/textView12"
                 android:layout_centerHorizontal="true" />
+
         </RelativeLayout>
 
         <Button
