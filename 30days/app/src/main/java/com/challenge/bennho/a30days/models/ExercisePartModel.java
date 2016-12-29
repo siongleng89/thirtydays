@@ -49,6 +49,8 @@ public class ExercisePartModel {
                 return ContextCompat.getColor(context, R.color.colorSprint);
             case Walk:
                 return ContextCompat.getColor(context, R.color.colorWalk);
+            case FastWalk:
+                return ContextCompat.getColor(context, R.color.colorFastWalk);
             case CoolDown:
                 return ContextCompat.getColor(context, R.color.colorCoolDown);
         }
@@ -60,6 +62,8 @@ public class ExercisePartModel {
         switch (exerciseState){
             case WarmUp:
                 return "Warm Up";
+            case FastWalk:
+                return "Fast Walk";
             case Run:
                 return "Run";
             case Sprint:
@@ -76,6 +80,8 @@ public class ExercisePartModel {
         switch (exerciseState){
             case WarmUp:
                 return ContextCompat.getDrawable(context, R.drawable.warmup_icon);
+            case FastWalk:
+                return ContextCompat.getDrawable(context, R.drawable.walking_icon);
             case Run:
                 return ContextCompat.getDrawable(context, R.drawable.jogging_icon);
             case Sprint:
@@ -92,6 +98,8 @@ public class ExercisePartModel {
         switch (exerciseState){
             case WarmUp:
                 return 1.1f;
+            case FastWalk:
+                return 1.2f;
             case Run:
                 return 1.3f;
             case Sprint:
@@ -100,13 +108,14 @@ public class ExercisePartModel {
                 return 1.1f;
             case CoolDown:
                 return 1.2f;
+
         }
 
         return 0;
     }
 
     public enum ExerciseState{
-        WarmUp, Run, Walk, Sprint, CoolDown
+        WarmUp, FastWalk, Run, Walk, Sprint, CoolDown
     }
 
 
