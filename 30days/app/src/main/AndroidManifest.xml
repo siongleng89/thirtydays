@@ -36,7 +36,6 @@
             android:launchMode="singleInstance"/>
         <activity android:name=".activities.ExerciseResultActivity">
 
-
         </activity>
         <activity android:name=".activities.ReadyActivity"
             android:screenOrientation="portrait"

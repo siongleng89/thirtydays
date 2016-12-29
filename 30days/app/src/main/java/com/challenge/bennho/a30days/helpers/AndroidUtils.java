@@ -5,8 +5,12 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.view.Display;
+
+import java.util.ArrayList;
 
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 
@@ -73,5 +77,17 @@ public class AndroidUtils {
         return image;
     }
 
+
+    public static ArrayList<Drawable> getAnimationDrawables(Context context, String name, int totalFrames){
+        ArrayList<Drawable> arr = new ArrayList();
+        for (int i = 0; i < totalFrames; i++) {
+            String id = name + String.format("%02d", i);
+            int resID = context.getResources().getIdentifier(id, "drawable", context.getPackageName());
+            arr.add(ContextCompat.getDrawable(context, resID));
+        }
+
+        return arr;
+
+    }
 
 }

@@ -141,6 +141,12 @@ public class OverlayBuilder {
 
             case OkOnly:
 
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        runRunnableIfNotNull(0);
+                    }
+                });
 
 
 
@@ -170,6 +176,11 @@ public class OverlayBuilder {
         if(!Strings.isEmpty(title)) {
             builder.setTitle(title);
         }
+
+        if(!Strings.isEmpty(content)) {
+            builder.setMessage(content);
+        }
+
 
 //        if(!Strings.isEmpty(content)) {
 //            TextView txtContent = (TextView) viewInflated.findViewById(R.id.txtContent);

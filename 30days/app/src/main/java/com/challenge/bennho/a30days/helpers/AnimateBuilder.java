@@ -160,6 +160,14 @@ public class AnimateBuilder {
                                     .setDuration(durationMs)
                                     .scaleY(value);
 
+                        case scaleX:
+                            viewPropertyAnimator = ViewPropertyAnimator.animate(view)
+                                    .setDuration(durationMs)
+                                    .scaleX(value);
+                        case scale:
+                            viewPropertyAnimator = ViewPropertyAnimator.animate(view)
+                                    .setDuration(durationMs)
+                                    .scaleX(value).scaleY(value);
                     }
 
                     if(viewPropertyAnimator != null){
@@ -211,7 +219,7 @@ public class AnimateBuilder {
 
     public enum AnimateType {
 
-        alpha, moveByY, moveToX, moveByX, moveToY, rotate, scaleY
+        alpha, moveByY, moveToX, moveByX, moveToY, rotate, scaleY, scaleX, scale
 
     }
 

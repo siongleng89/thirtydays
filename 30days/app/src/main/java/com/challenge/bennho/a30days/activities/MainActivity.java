@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.BottomBar;
@@ -13,7 +14,7 @@ public class MainActivity extends MyActivity {
 
     private LayoutDayCounter dayCounterControl;
     private BottomBar bottomBar;
-    private Button btnStart;
+    private TextView txtStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +23,12 @@ public class MainActivity extends MyActivity {
 
         bottomBar = (BottomBar) findViewById(R.id.bottomBar) ;
         dayCounterControl = (LayoutDayCounter) findViewById(R.id.dayCounterControl);
-        /*btnStart = (Button) findViewById(R.id.btnStart);*/
+        txtStart = (TextView) findViewById(R.id.txtStart);
 
         dayCounterControl.updateDayNumber(18);
         bottomBar.setCurrentSelectedPageIndex(0);
 
-        /*setListeners();*/
+        setListeners();
     }
 
     @Override
@@ -42,14 +43,14 @@ public class MainActivity extends MyActivity {
     }
 
 
-    /*private void setListeners(){
-        btnStart.setOnClickListener(new View.OnClickListener() {
+    private void setListeners(){
+        txtStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startExercise();
             }
-        });*//*
-    }*/
+        });
+    }
 
 
 
