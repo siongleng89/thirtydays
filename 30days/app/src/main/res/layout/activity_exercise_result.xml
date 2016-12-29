@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            tools:context="com.challenge.bennho.a30days.activities.EndActivity">
+            tools:context="com.challenge.bennho.a30days.activities.ExerciseResultActivity">
 
 
             <ImageView

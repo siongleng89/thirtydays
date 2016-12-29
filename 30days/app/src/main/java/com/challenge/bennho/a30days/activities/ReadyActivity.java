@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.Threadings;
+import com.challenge.bennho.a30days.services.ExerciseService;
 
 public class ReadyActivity extends AppCompatActivity {
 
@@ -32,7 +33,7 @@ public class ReadyActivity extends AppCompatActivity {
         fabPlusSecs.setImageBitmap(AndroidUtils.textAsBitmap("+10", 70,
                 ContextCompat.getColor(this, R.color.colorBtnWord)));
 
-        setCountDownSecs(3);
+        setCountDownSecs(5);
 
         setListeners();
     }
@@ -78,7 +79,14 @@ public class ReadyActivity extends AppCompatActivity {
     }
 
     private void countDownComplete(){
-        //complete
+        //Stop previously running exercise service if available
+        Intent serviceIntent = new Intent(this, ExerciseService.class);
+        stopService(serviceIntent);
+
+        Intent intent = new Intent(this, RunningActivity.class);
+        startActivity(intent);
+
+        finish();
     }
 
     private void openMusic(){

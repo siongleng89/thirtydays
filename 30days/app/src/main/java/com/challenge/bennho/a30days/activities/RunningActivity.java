@@ -67,6 +67,11 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
         setListeners();
     }
 
+    @Override
+    public void onBackPressed() {
+        giveUp();
+    }
+
     private ServiceConnection exerciseServiceConnection = new ServiceConnection() {
 
         @Override
@@ -115,8 +120,14 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
 
     @Override
     public void onExerciseEnded(float totalElapsedMs, float caloriesBurnt, boolean isCompleted) {
-        //todo dispose service on next activity
-        //  exerciseService.disposeExercise();
+        Intent intent = new Intent(this, ExerciseResultActivity.class);
+        intent.putExtra("totalElapsedMs", totalElapsedMs);
+        intent.putExtra("caloriesBurnt", caloriesBurnt);
+        intent.putExtra("isCompleted", isCompleted);
+        startActivity(intent);
+
+        exerciseService.disposeExercise();
+        finish();
     }
 
     @Override

@@ -1,7 +1,9 @@
 package com.challenge.bennho.a30days.activities;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.BottomBar;
@@ -10,21 +12,45 @@ import com.challenge.bennho.a30days.controls.LayoutDayCounter;
 public class MainActivity extends MyActivity {
 
     private LayoutDayCounter dayCounterControl;
-    private BottomBar bar;
+    private BottomBar bottomBar;
+    private Button btnStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.setTitle("Main Page");
-
-        bar = (BottomBar) findViewById(R.id.bottomBar) ;
+        bottomBar = (BottomBar) findViewById(R.id.bottomBar) ;
         dayCounterControl = (LayoutDayCounter) findViewById(R.id.dayCounterControl);
+        btnStart = (Button) findViewById(R.id.btnStart);
 
-        dayCounterControl.updateDayNumber(0);
+        dayCounterControl.updateDayNumber(1);
+        bottomBar.setCurrentSelectedPageIndex(0);
 
-        bar.setIsMainActivity(true);
-
+        setListeners();
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
+    }
+
+    private void startExercise(){
+        Intent intent = new Intent(this, ReadyActivity.class);
+        startActivity(intent);
+    }
+
+
+    private void setListeners(){
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startExercise();
+            }
+        });
+    }
+
+
+
 }

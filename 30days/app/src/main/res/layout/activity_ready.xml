@@ -35,7 +35,7 @@
             android:id="@+id/fabMusic"
             app:elevation="6dp"
             android:layout_alignParentBottom="true"
-            app:backgroundTint="@color/colorPrimary"
+            app:backgroundTint="@color/colorAction"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:layout_toLeftOf="@+id/fabPlusSecs"
@@ -51,7 +51,7 @@
             app:elevation="6dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            app:backgroundTint="@color/colorPrimary"
+            app:backgroundTint="@color/colorAction"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:layout_weight="1" />

@@ -1,5 +1,6 @@
 package com.challenge.bennho.a30days.controls;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.AttributeSet;
@@ -23,7 +24,7 @@ public class BottomBar extends RelativeLayout{
     private LinearLayout layoutLinearChallenge;
     private LinearLayout layoutLinearHistory;
     private LinearLayout layoutLinearMore;
-    private boolean isMainActivity;
+    private int currentSelectedPageIndex;
 
 
     public BottomBar(Context context) {
@@ -44,6 +45,8 @@ public class BottomBar extends RelativeLayout{
     private void init (Context context){
         this.context = context;
 
+        currentSelectedPageIndex = -1;
+
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.layout_bottom_button, this, true);
@@ -52,41 +55,60 @@ public class BottomBar extends RelativeLayout{
         layoutLinearMore = (LinearLayout) findViewById(R.id.linearMore);
         layoutLinearHistory = (LinearLayout) findViewById(R.id.linearHistory);
 
-        setMyOnClickListener(layoutLinearChallenge,0);
-        setMyOnClickListener(layoutLinearHistory,1);
-        setMyOnClickListener(layoutLinearMore,2);
+        setListeners();
     }
 
+    public void setCurrentSelectedPageIndex(int index){
+        currentSelectedPageIndex = index;
+    }
+
+    private void changeSelectedPage(int index){
+        if(currentSelectedPageIndex == index){
+            return;
+        }
+        else{
+            Intent intent = null;
+            if(index == 0){
+                intent = new Intent(BottomBar.this.context, MainActivity.class);
+            }
+            else if(index == 1){
+                intent = new Intent(BottomBar.this.context, HistoryActivity.class);
+            }
+            else if(index == 2){
+                intent = new Intent(BottomBar.this.context, SettingsActivity.class);
+            }
+
+            BottomBar.this.context.startActivity(intent);
+            if(BottomBar.this.context instanceof Activity){
+                ((Activity) BottomBar.this.context).overridePendingTransition(0, 0);
+            }
 
 
-    private void setMyOnClickListener(LinearLayout lay, final int goToPage){
-        lay.setOnClickListener(new View.OnClickListener() {
+        }
+    }
+
+    private void setListeners(){
+        layoutLinearChallenge.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = null;
-
-                if(goToPage==0){
-                    if(isMainActivity==true){
-                        return;
-                    }
-
-                    intent = new Intent(BottomBar.this.context, MainActivity.class);
-                }
-                else if(goToPage==1){
-                    intent = new Intent(BottomBar.this.context, HistoryActivity.class);
-                }
-                else if(goToPage==2){
-                    intent = new Intent(BottomBar.this.context, SettingsActivity.class);
-                }
-                BottomBar.this.context.startActivity(intent);
+                changeSelectedPage(0);
             }
         });
 
+        layoutLinearHistory.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeSelectedPage(1);
+            }
+        });
+
+        layoutLinearMore.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeSelectedPage(2);
+            }
+        });
     }
 
-    public void setIsMainActivity(boolean isTrue){
-        isMainActivity=isTrue;
-
-    }
 }
 

@@ -118,20 +118,13 @@
 
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimary">
-
-        </RelativeLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:layout_alignParentBottom="true"
             android:baselineAligned="false"
             android:layout_height="70dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAction"
             android:id="@+id/layoutBottom">
 
             <RelativeLayout
@@ -236,7 +229,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_centerVertical="true"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAction"
         android:id="@+id/layoutUnlockCountdown"
         android:visibility="gone">
 

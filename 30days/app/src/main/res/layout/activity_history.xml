@@ -53,7 +53,8 @@
 
         <com.challenge.bennho.a30days.controls.BottomBar
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></com.challenge.bennho.a30days.controls.BottomBar>
+            android:layout_height="match_parent"
+            android:id="@+id/bottomBar"></com.challenge.bennho.a30days.controls.BottomBar>
 
 
     </RelativeLayout>
