@@ -31,11 +31,7 @@ public class MainActivity extends MyActivity {
         setListeners();
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        overridePendingTransition(0, 0);
-    }
+
 
     private void startExercise(){
         Intent intent = new Intent(this, ReadyActivity.class);

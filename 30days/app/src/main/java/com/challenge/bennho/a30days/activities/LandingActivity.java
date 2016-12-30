@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.challenge.bennho.a30days.R;
 
-public class LandingActivity extends AppCompatActivity {
+public class LandingActivity extends MyActivity {
 
     private Button btnBegin;
 

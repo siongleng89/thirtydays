@@ -9,7 +9,7 @@
     android:orientation="vertical">
 
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
         android:layout_weight="1">
@@ -21,35 +21,31 @@
             android:orientation="vertical">
 
 
-    <com.challenge.bennho.a30days.controls.LayoutSummary
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:id="@+id/layoutSummary">
+            <com.challenge.bennho.a30days.controls.LayoutSummary
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:id="@+id/layoutSummary"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
 
-    </com.challenge.bennho.a30days.controls.LayoutSummary>
+            </com.challenge.bennho.a30days.controls.LayoutSummary>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_below="@+id/layoutSummary"
-            android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/recycleViewItems"
+                android:scrollbars="none">
 
-        <com.challenge.bennho.a30days.controls.LayoutHistoryItem
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/txtHistoryItem">
+            </android.support.v7.widget.RecyclerView>
 
-        </com.challenge.bennho.a30days.controls.LayoutHistoryItem>
-        </RelativeLayout>
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp">
+        android:layout_height="55dp"
+        android:visibility="gone">
 
         <com.challenge.bennho.a30days.controls.BottomBar
             android:layout_width="match_parent"

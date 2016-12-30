@@ -79,9 +79,9 @@ public class BottomBar extends RelativeLayout{
             }
 
             BottomBar.this.context.startActivity(intent);
-            if(BottomBar.this.context instanceof Activity){
-                ((Activity) BottomBar.this.context).overridePendingTransition(0, 0);
-            }
+//            if(BottomBar.this.context instanceof Activity){
+//                ((Activity) BottomBar.this.context).overridePendingTransition(0, 0);
+//            }
 
 
         }

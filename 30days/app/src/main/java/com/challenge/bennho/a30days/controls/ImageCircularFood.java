@@ -61,6 +61,9 @@ public class ImageCircularFood extends RelativeLayout {
     }
 
     public void setFood(final FoodModel food){
+        if(food == null){
+            return;
+        }
         setImage(food.getDrawable(context));
         imgView.setOnClickListener(new OnClickListener() {
             @Override

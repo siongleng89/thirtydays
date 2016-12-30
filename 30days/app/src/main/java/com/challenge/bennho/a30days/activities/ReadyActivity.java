@@ -13,7 +13,7 @@ import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.services.ExerciseService;
 
-public class ReadyActivity extends AppCompatActivity {
+public class ReadyActivity extends MyActivity {
 
     private FloatingActionButton fabPlusSecs, fabMusic;
     private TextView txtCountdown;
@@ -25,6 +25,8 @@ public class ReadyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ready);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         fabPlusSecs = (FloatingActionButton) findViewById(R.id.fabPlusSecs);
         fabMusic = (FloatingActionButton) findViewById(R.id.fabMusic);

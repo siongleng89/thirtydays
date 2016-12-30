@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txtGraphTitle"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorAction"
                     android:textSize="20sp"
                     android:textStyle="normal|bold" />
 
@@ -56,12 +56,6 @@
         </LinearLayout>
 
     </ScrollView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-    </RelativeLayout>
 
 
 </LinearLayout>
