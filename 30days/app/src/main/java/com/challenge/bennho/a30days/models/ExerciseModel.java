@@ -21,6 +21,10 @@ public class ExerciseModel {
         exercisePartModels.add(exercisePartModel);
     }
 
+    public void addExercisePartModel(ExercisePartModel.ExerciseState state, int durationSecs){
+        addExercisePartModel(new ExercisePartModel(state, durationSecs));
+    }
+
     public float getTotalDurationSecs(){
         if(totalDurationSecs == 0){
             for(ExercisePartModel exercisePartModel : exercisePartModels){
