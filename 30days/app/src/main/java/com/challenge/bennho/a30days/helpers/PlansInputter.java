@@ -26,6 +26,20 @@ public class PlansInputter {
     }
 
 
+
+    /*ageFactor
+    10-29(run=1, sprint=1)
+            30-39(run=1/1.2, sprint=1/1.2)
+            40-49(run=1/1.5, sprint=1/1.5)
+            >50=(run=1/2, sprint=0)
+
+    bmiFactor
+    0-24.9(run=1, sprint=1)
+            25-29.9=(run=1/1.5, sprint=1/1.5)
+            >30=(run=1/2, sprint=1/2)
+
+    BMI = weight in kilograms / height in meters²*/
+
     public void input(){
         //Day 1
         ExerciseModel day1 = new ExerciseModel();
