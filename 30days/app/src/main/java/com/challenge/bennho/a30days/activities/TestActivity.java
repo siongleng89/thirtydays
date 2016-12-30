@@ -20,7 +20,7 @@ public class TestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        PlansInputter plansInputter = new PlansInputter();
+        PlansInputter plansInputter = new PlansInputter(this);
         plansInputter.print();
     }
 

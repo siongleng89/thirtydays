@@ -22,7 +22,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="5dp"
             android:layout_height="25dp"
-            android:layout_width="match_parent" />
+            android:layout_width="match_parent"
+            android:tint="@color/colorAccent" />
 
         <TextView
             android:text="@string/btn_challenge"
@@ -30,7 +31,7 @@
             android:layout_height="match_parent"
             android:id="@+id/txtChallenge"
             android:layout_weight="1"
-            android:textColor="@color/colorBtnWord"
+            android:textColor="@color/colorAccent"
             android:visibility="visible"
             android:gravity="top|center"
             android:textSize="8sp" />

@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.challenge.bennho.a30days.R;
 
-public class PersonalDetailActivity extends AppCompatActivity {
+public class PersonalDetailActivity extends MyActivity {
 
     private Button btnDone;
 
