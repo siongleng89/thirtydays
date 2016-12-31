@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.challenge.bennho.a30days.activities.LandingActivity">
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/rb1"
-        tools:layout_editor_absoluteY="0dp"
+        app:srcCompat="@drawable/abslady"
+        tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="0dp"
         android:id="@+id/imageView6"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
     <Button
         android:text="@string/btn_begin"
@@ -23,14 +26,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorAction"
         android:textColor="@color/colorBtnWord"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="18sp"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintVertical_bias="1.0"
-        android:layout_width="0dp"
-        android:layout_height="50dp" />
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="100dp" />
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

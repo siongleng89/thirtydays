@@ -165,7 +165,7 @@
             android:layout_height="50dp"
             android:textSize="18sp"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/colorAction"
             android:textColor="@color/colorBtnWord"
             tools:layout_editor_absoluteX="0dp"
             app:layout_constraintBottom_toBottomOf="parent"

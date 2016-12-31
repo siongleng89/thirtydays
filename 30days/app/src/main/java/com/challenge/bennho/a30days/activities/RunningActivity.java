@@ -367,12 +367,27 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
 
     private void mockExerciseModels(){
         exerciseModel = new ExerciseModel();
+        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);
+        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 300);
+        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
+        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 30);
+        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
+        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 30);
+        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
+        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 30);
+        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 60);
+        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
+
+
+     /*   exerciseModel = new ExerciseModel();
         exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 2));
         exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Walk, 2));
         exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Run, 2));
-        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Walk, 2));
+        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 2));
         exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 5));
-        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 2));
+        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 2));*/
     }
 
 
