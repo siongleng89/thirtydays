@@ -9,16 +9,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity
-            android:name=".activities.LandingActivity">
-
+        
+        <activity android:name=".activities.LaunchActivity">
 
         </activity>
 
+        <activity android:name=".activities.LandingActivity">
+
+        </activity>
         <activity
             android:name=".activities.PersonalDetailActivity"
-            android:label="Personal Detail" />
+            android:label="Personal Detail">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".activities.MainActivity"
@@ -34,8 +41,8 @@
         <activity
             android:name=".activities.ReadyActivity"
             android:label="Starting in"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".activities.MainActivity">
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
@@ -54,40 +61,38 @@
 
         <activity
             android:name=".activities.HistoryActivity"
-            android:launchMode="singleInstance"
             android:label="Exercise History"
+            android:launchMode="singleInstance"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
         </activity>
-
         <activity
             android:name=".activities.GraphActivity"
-            android:launchMode="singleInstance"
             android:label="Exercise History"
+            android:launchMode="singleInstance"
             android:parentActivityName=".activities.HistoryActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.HistoryActivity" />
         </activity>
-
         <activity
             android:name=".activities.SettingsActivity"
-            android:launchMode="singleInstance"
             android:label="Settings"
+            android:launchMode="singleInstance"
             android:parentActivityName=".activities.MainActivity">
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
         </activity>
 
-        <service android:name=".services.ExerciseService"/>
+        <service android:name=".services.ExerciseService" />
 
         <activity android:name=".activities.TestActivity">
 
         </activity>
+
     </application>
 
 </manifest>

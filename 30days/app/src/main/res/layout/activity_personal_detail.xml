@@ -14,10 +14,10 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/layoutButton">
 
 
 
@@ -26,123 +26,148 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp"
-        android:weightSum="1">
-
-
-            <TextView
-                android:text="@string/txt_gender"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView2"
-                android:textSize="24sp"
-                tools:layout_editor_absoluteY="160dp"
-                tools:layout_editor_absoluteX="71dp"
-                android:layout_width="90dp"
-                android:elevation="1dp"
-                android:textColor="@color/colorWord"
-                android:layout_marginBottom="10dp" />
+        android:weightSum="1"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="30dp">
 
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-         <com.challenge.bennho.a30days.controls.LayoutSwitchControl
-             android:layout_width="300dp"
-             android:layout_height="50dp"
-             app:option1="Male"
-             app:option2="Female">
-         </com.challenge.bennho.a30days.controls.LayoutSwitchControl>
-
-        </LinearLayout>
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="0px"
+            android:layout_height="0px"/>
 
         <TextView
-            android:text="@string/txt_weight"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView3"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteY="37dp"
-            tools:layout_editor_absoluteX="66dp"
-            android:layout_width="90dp"
+            android:text="@string/txt_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/txtDetail"
+            android:textSize="18sp"
+            android:singleLine="false"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/colorWord"
-            android:layout_marginTop="30dp" />
+            android:textStyle="normal|bold"
+            android:textAlignment="center" />
+
+        <com.challenge.bennho.a30days.controls.LayoutSwitchControl
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            app:option1="kg/km"
+            app:option2="pounds/miles">
+        </com.challenge.bennho.a30days.controls.LayoutSwitchControl>
+
+
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <EditText
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/txtWeight"
-                android:textSize="24sp"
-                android:layout_height="50dp"
-                tools:layout_editor_absoluteY="213dp"
-                tools:layout_editor_absoluteX="65dp"
-                android:layout_weight="1"
-                android:layout_width="0dp" />
-
-            <Spinner
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:id="@+id/spinner"
-                android:layout_weight="1"
-                android:entries="@array/spinnerWeight">
-            </Spinner>
-
-        </LinearLayout>
-
-        <TextView
-            android:text="@string/txt_age"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView4"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteY="271dp"
-            tools:layout_editor_absoluteX="88dp"
-            android:layout_width="90dp"
-            android:textColor="@color/colorWord"
-            android:layout_marginTop="30dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-
-
-        <EditText
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/txtAge"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteY="307dp"
-            tools:layout_editor_absoluteX="65dp"
-            android:layout_height="50dp"
-            android:layout_width="170dp" />
-
-
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="10dp">
 
             <TextView
-                android:text="@string/txt_detail"
+                android:text="Weight (kg)"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteY="37dp"
+                tools:layout_editor_absoluteX="66dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:id="@+id/txtDetail"
-                android:textSize="18sp"
-                android:singleLine="false" />
-        </RelativeLayout>
+                android:textColor="@color/colorWord"
+                android:textStyle="normal|bold" />
 
+            <EditText
+                android:id="@+id/txtWeight"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteY="213dp"
+                tools:layout_editor_absoluteX="65dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:text="Height (cm)"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteY="37dp"
+                tools:layout_editor_absoluteX="66dp"
+                android:layout_width="match_parent"
+                android:textColor="@color/colorWord"
+                android:textStyle="normal|bold" />
+
+            <EditText
+                android:inputType="textPersonName"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteY="213dp"
+                tools:layout_editor_absoluteX="65dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:text="@string/txt_age"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteY="271dp"
+                tools:layout_editor_absoluteX="88dp"
+                android:layout_width="match_parent"
+                android:textColor="@color/colorWord"
+                android:textStyle="normal|bold" />
+
+            <EditText
+                android:inputType="textPersonName"
+                android:id="@+id/txtAge"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteY="307dp"
+                tools:layout_editor_absoluteX="65dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                    android:text="@string/txt_gender"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteY="160dp"
+                    tools:layout_editor_absoluteX="71dp"
+                    android:layout_width="match_parent"
+                    android:elevation="1dp"
+                    android:textColor="@color/colorWord"
+                    android:layout_marginBottom="10dp"
+                android:textStyle="normal|bold" />
+
+            <com.challenge.bennho.a30days.controls.LayoutSwitchControl
+                app:option1="Male"
+                app:option2="Female"
+                android:layout_height="30dp"
+                android:layout_width="300dp">
+            </com.challenge.bennho.a30days.controls.LayoutSwitchControl>
+        </LinearLayout>
 
 
     </LinearLayout>
@@ -154,10 +179,10 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/layoutButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/layoutButton">
+        android:layout_alignParentStart="true">
 
         <Button
             android:text="@string/btn_done"

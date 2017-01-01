@@ -30,18 +30,6 @@
         </com.challenge.bennho.a30days.controls.MultipleCheckboxPreference>
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Cue Settings" >
-        <com.challenge.bennho.a30days.controls.MultipleCheckboxPreference
-            android:key="CueAt"
-            android:title="Cue at"
-            android:summary="%s"
-            android:entries="@array/cueAt"
-            android:entryValues="@array/cueAtValues"
-            app:emptySelectedText="Never Cue"
-            app:allSelectedText="Always Cue">
-        </com.challenge.bennho.a30days.controls.MultipleCheckboxPreference>
-    </PreferenceCategory>
-
     <PreferenceCategory android:title="Personal Details" >
 
         <ListPreference
@@ -63,6 +51,11 @@
         <EditTextPreference
             android:key="Weight"
             android:title="Weight"
+            android:summary="%s"/>
+
+        <EditTextPreference
+            android:key="Height"
+            android:title="Height"
             android:summary="%s"/>
 
         <EditTextPreference
