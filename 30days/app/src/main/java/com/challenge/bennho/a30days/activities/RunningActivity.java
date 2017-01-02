@@ -370,7 +370,6 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
 
     private void mockExerciseModels(){
         exerciseModel = new ExerciseModel();
-        textSpeak.speak(exerciseModel);
         exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);
         exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 300);
         exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);

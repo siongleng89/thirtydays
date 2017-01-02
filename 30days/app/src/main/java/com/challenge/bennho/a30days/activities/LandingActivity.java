@@ -19,15 +19,22 @@ public class LandingActivity extends MyActivity {
         setContentView(R.layout.activity_landing);
         btnBegin = (Button) findViewById(R.id.btnBegin);
 
-        btnBegin.setOnClickListener(new View.OnClickListener() {
-                @Override
-            public void onClick(View v) {
+        setListeners();
+    }
 
-                Intent intent = new Intent(LandingActivity.this, PersonalDetailActivity.class);
-                startActivity(intent);
+    private void begin(){
+        Intent intent = new Intent(LandingActivity.this, PersonalDetailActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void setListeners(){
+        btnBegin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                begin();
             }
         });
-
-
     }
+
 }

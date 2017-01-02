@@ -6,7 +6,7 @@ package com.challenge.bennho.a30days.enums;
 
 public enum PreferenceType {
 
-    EnableNotification, ReminderTime, ReminderDay, CueAt,
-    Gender, Unit, Weight, Age
+    EnableNotification, ReminderTime, ReminderDay,
+    Gender, Unit, Weight, Height, Age, CurrentExerciseDay;
 
 }

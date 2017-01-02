@@ -33,8 +33,15 @@ public class FoodModel {
     }
 
     public enum FoodType{
-        french_fries, nil, almond, water, apple, banana, bean, biscuit, bread, broccolli, bubble_milk_tea, candy, carrot, cheese, cheese_burger, cheese_tart, chicken, chicken_nugget, chocolate, chocolate_cake, coca_cola, corn, cupcake, donut, egg, fried_chicken, ham, ice_cream, instant_noodle, milkshake, oat, pancake, peanut_butter, pineapple, pizza, popcorn, pork, potato_chip, prawn, rice, salmon, sandwich, sausage, speghetti, spinach, steak, strawberry, sushi, sweet_potato, tea, tomato, waffle;
-
+        french_fries, nil, almond, water, apple,
+        banana, bean, biscuit, bread, broccolli,
+        bubble_milk_tea, candy, carrot, cheese,
+        cheese_burger, cheese_tart, chicken, chicken_nugget,
+        chocolate, chocolate_cake, coca_cola, corn, cupcake, donut,
+        egg, fried_chicken, ham, ice_cream, instant_noodle, milkshake,
+        oat, pancake, peanut_butter, pineapple, pizza, popcorn, pork,
+        potato_chip, prawn, rice, salmon, sandwich, sausage, speghetti,
+        spinach, steak, strawberry, sushi, sweet_potato, tea, tomato, waffle;
 
         public static FoodType convertStringToFoodType(String input){
             if(Strings.isEmpty(input)) return nil;

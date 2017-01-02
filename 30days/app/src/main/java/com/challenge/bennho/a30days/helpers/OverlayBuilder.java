@@ -244,7 +244,7 @@ public class OverlayBuilder {
 //        for(int i = 0; i < btnTexts.size(); i++){
 //            int resId = activity.getResources().getIdentifier("btn" + i, "id", activity.getPackageName());
 //            FFTextButton ffTextButton = (FFTextButton) viewInflated.findViewById(resId);
-//            ffTextButton.setText(btnTexts.get(i));
+//            ffTextButton.setText(btnTexts.getString(i));
 //
 //            ffTextButton.setVisibility(View.VISIBLE);
 //
@@ -264,7 +264,7 @@ public class OverlayBuilder {
 //            ffTextButton.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View view) {
-//                    runnables.get(finalI).run();
+//                    runnables.getString(finalI).run();
 //                    dialog.dismiss();
 //                }
 //            });

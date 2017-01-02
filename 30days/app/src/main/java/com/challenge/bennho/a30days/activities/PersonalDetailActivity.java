@@ -17,11 +17,24 @@ public class PersonalDetailActivity extends MyActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_detail);
         btnDone = (Button) findViewById(R.id.btnDone);
+
+        setListeners();
+    }
+
+    private void complete(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+
+    private void setListeners(){
         btnDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                complete();
             }
         });
     }
+
 }

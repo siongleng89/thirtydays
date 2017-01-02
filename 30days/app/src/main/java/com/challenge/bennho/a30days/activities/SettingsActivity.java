@@ -4,16 +4,12 @@ import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
-import android.renderscript.Double2;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.CalculationHelper;
-import com.challenge.bennho.a30days.helpers.Logs;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.Strings;
 
@@ -125,7 +121,7 @@ public class SettingsActivity extends MyActivity {
                                 converted = CalculationHelper.kgToPounds(weight);
                             }
 
-                            PreferenceUtils.put(SettingsFragment.this.getActivity(),
+                            PreferenceUtils.putString(SettingsFragment.this.getActivity(),
                                                     PreferenceType.Weight, String.valueOf(converted));
                             weightPref.setText(converted.toString());
 

@@ -64,15 +64,15 @@ public class LayoutSwitchControl extends RelativeLayout {
         this.context = context;
 
         //define padding for tabs inner button
-        pad = AndroidUtils.dpToPx(context, 4);
+        pad = AndroidUtils.dpToPx(context, 0);
 
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.layout_switch_control, this, true);
 
         //text color for various state
-        colorSelected = ContextCompat.getColor(context, R.color.colorPrimary);
-        colorUnSelected = ContextCompat.getColor(context, R.color.colorBtnWord);
+        colorSelected = ContextCompat.getColor(context, R.color.colorBtnWord);
+        colorUnSelected = ContextCompat.getColor(context, R.color.colorWord);
 
         layoutOption1 = (RelativeLayout) findViewById(R.id.layoutOption1);
         layoutOption2 = (RelativeLayout) findViewById(R.id.layoutOption2);
