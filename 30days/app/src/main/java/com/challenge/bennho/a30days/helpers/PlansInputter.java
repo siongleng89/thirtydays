@@ -16,13 +16,18 @@ import java.util.Map;
 
 public class PlansInputter {
 
-    ArrayList<ExerciseModel> exerciseModels;
     private Context context;
+
+
+
+    ArrayList<ExerciseModel> exerciseModels;
 
     public PlansInputter(Context context) {
         this.context = context;
         exerciseModels = new ArrayList();
         input();
+
+
     }
 
 
@@ -41,6 +46,7 @@ public class PlansInputter {
     BMI = weight in kilograms / height in meters²*/
 
     public void input(){
+
         //Day 1
         ExerciseModel day1 = new ExerciseModel();
         day1.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);

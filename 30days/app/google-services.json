@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "222206411511",
+    "project_id": "day-running-weight-loss"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222206411511:android:bfd3045c69e26b6f",
+        "android_client_info": {
+          "package_name": "com.challenge.bennho.a30days"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuC8Z1q0qeEm6V-2m-BJbWxfHLsaOjgrM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-89649555-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
