@@ -32,37 +32,12 @@
 
     <PreferenceCategory android:title="Personal Details" >
 
-        <ListPreference
-            android:key="Gender"
-            android:title="Gender"
-            android:summary="%s"
-            android:entries="@array/gender"
-            android:entryValues="@array/genderValues"
-            />
+        <Preference
+            android:key="Parameter"
+            android:title="Your Parameter"
+            android:summary="Tap to edit">
 
-        <ListPreference
-            android:key="Unit"
-            android:title="Unit"
-            android:summary="%s"
-            android:entries="@array/unit"
-            android:entryValues="@array/unitValues"
-            />
-
-        <EditTextPreference
-            android:key="Weight"
-            android:title="Weight"
-            android:summary="%s"/>
-
-        <EditTextPreference
-            android:key="Height"
-            android:title="Height"
-            android:summary="%s"/>
-
-        <EditTextPreference
-            android:key="Age"
-            android:title="Age"
-            android:summary="%s"/>
-
+        </Preference>
 
     </PreferenceCategory>
 

@@ -6,11 +6,13 @@ import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.drawables.SemiCircleDrawable;
+import com.challenge.bennho.a30days.models.User;
 
 /**
  * Created by sionglengho on 22/12/16.
@@ -19,6 +21,8 @@ import com.challenge.bennho.a30days.drawables.SemiCircleDrawable;
 public class LayoutSummary extends RelativeLayout {
 
     private Context context;
+    private ProgressBar progressDay;
+    private TextView txtTotalDuration, txtTotalCalories;
 
     public LayoutSummary(Context context) {
         super(context);
@@ -48,7 +52,21 @@ public class LayoutSummary extends RelativeLayout {
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.layout_summary, this, true);
 
+        progressDay = (ProgressBar) findViewById(R.id.progressDay);
+        txtTotalCalories = (TextView) findViewById(R.id.txtTotalCalories);
+        txtTotalDuration = (TextView) findViewById(R.id.txtTotalDuration);
 
+        User user = new User(context);
+        user.reload();
+
+        update(user);
+    }
+
+    public void update(User user){
+
+        progressDay.setProgress(user.getCurrentDay() - 1);
+        txtTotalDuration.setText(String.valueOf((int) Math.ceil((double) user.getTotalRunningSecs() / 60d)));
+        txtTotalCalories.setText(String.valueOf(user.getTotalCaloriesBurnt()));
     }
 
 }

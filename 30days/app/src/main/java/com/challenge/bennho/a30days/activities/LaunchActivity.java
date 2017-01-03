@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.challenge.bennho.a30days.R;
+import com.challenge.bennho.a30days.enums.PreferenceType;
+import com.challenge.bennho.a30days.helpers.PreferenceUtils;
+import com.challenge.bennho.a30days.helpers.Strings;
 import com.challenge.bennho.a30days.models.User;
 
 public class LaunchActivity extends MyActivity {
@@ -16,13 +19,22 @@ public class LaunchActivity extends MyActivity {
 
         this.setActionBarVisibility(false);
 
-
         User user = new User(this);
-        user.initUser();
+        user.reload();
 
+        Intent intent;
 
-        Intent intent = new Intent(this, LandingActivity.class);
-        //Intent intent = new Intent(this, MainActivity.class);
+//        PreferenceUtils.delete(this, PreferenceType.TotalCaloriesBurnt);
+//        PreferenceUtils.delete(this, PreferenceType.TotalRunningSecs);
+
+        //new user
+        if(user.getHeightInCm() == 0){
+            user.initUser();
+            intent = new Intent(this, LandingActivity.class);
+        }
+        else{
+            intent = new Intent(this, MainActivity.class);
+        }
         startActivity(intent);
         this.overridePendingTransition(0, 0);
         finish();

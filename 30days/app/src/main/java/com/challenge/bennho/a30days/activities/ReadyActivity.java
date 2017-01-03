@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
+import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
+import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.services.ExerciseService;
 
@@ -19,6 +21,7 @@ public class ReadyActivity extends MyActivity {
     private TextView txtCountdown;
     private int countDownSecs;
     private boolean pauseCountDown;
+    private int dayPlan;
 
 
     @Override
@@ -34,6 +37,14 @@ public class ReadyActivity extends MyActivity {
 
         fabPlusSecs.setImageBitmap(AndroidUtils.textAsBitmap("+10", 70,
                 ContextCompat.getColor(this, R.color.colorBtnWord)));
+
+        if(getIntent() != null){
+            dayPlan = getIntent().getIntExtra("dayPlan", 1);
+        }
+        else{
+            dayPlan = 1;
+        }
+
 
         setCountDownSecs(5);
 
@@ -84,8 +95,10 @@ public class ReadyActivity extends MyActivity {
         //Stop previously running exercise service if available
         Intent serviceIntent = new Intent(this, ExerciseService.class);
         stopService(serviceIntent);
+        PreferenceUtils.delete(this, PreferenceType.ExerciseRecordSaved);
 
         Intent intent = new Intent(this, RunningActivity.class);
+        intent.putExtra("dayPlan", dayPlan);
         startActivity(intent);
 
         finish();

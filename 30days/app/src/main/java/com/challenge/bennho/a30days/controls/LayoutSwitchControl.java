@@ -29,6 +29,7 @@ public class LayoutSwitchControl extends RelativeLayout {
     private int pad;
     private String optionText1, optionText2;
     private int selectedOption;
+    private SwitchControlListener switchControlListener;
 
     public LayoutSwitchControl(Context context) {
         super(context);
@@ -105,6 +106,10 @@ public class LayoutSwitchControl extends RelativeLayout {
         }
 
         moveLayoutBackground(choice, animate);
+
+        if(switchControlListener != null){
+            switchControlListener.onChanged(selectedOption);
+        }
     }
 
     private void moveLayoutBackground(int choice, boolean animate){
@@ -151,6 +156,10 @@ public class LayoutSwitchControl extends RelativeLayout {
                                     .removeOnGlobalLayoutListener(this);
                         }
 
+                        if(selectedOption != 0){
+                            changeSelected(selectedOption, false);
+                        }
+
                     }
                 });
 
@@ -170,6 +179,18 @@ public class LayoutSwitchControl extends RelativeLayout {
         });
     }
 
+    public void setSwitchControlListener(SwitchControlListener switchControlListener) {
+        this.switchControlListener = switchControlListener;
+    }
+
+    public void setSelectedOptionIndex(int index){
+        changeSelected(index, false);
+    }
+
+    public int getSelectedOptionIndex(){
+        return selectedOption;
+    }
+
     public String getSelectedOption(){
         if (selectedOption == 0){
             return optionText1;
@@ -179,5 +200,8 @@ public class LayoutSwitchControl extends RelativeLayout {
         }
     }
 
+    public interface SwitchControlListener{
+        void onChanged(int index);
+    }
 
 }

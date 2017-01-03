@@ -1,6 +1,7 @@
 package com.challenge.bennho.a30days.helpers;
 
 import java.security.SecureRandom;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -61,7 +62,15 @@ public class Strings {
         }
     }
 
+    public static String formatToXDec(int decimalCount, double f){
+        return String.format("%."+decimalCount+"f", f);
+    }
+
     public static String formatToTwoDec(float f){
+        return String.format("%.2f", f);
+    }
+
+    public static String formatToTwoDec(double f){
         return String.format("%.2f", f);
     }
 
@@ -126,6 +135,21 @@ public class Strings {
             }
         }
         return "";
+    }
+
+    public static String setEmptyIfZero(double input){
+        if(input == 0){
+            return "";
+        }
+        else{
+            DecimalFormat format = new DecimalFormat("0.#");
+            return String.valueOf(format.format(input));
+        }
+    }
+
+    public static String removeRedundantZero(double input){
+        DecimalFormat format = new DecimalFormat("0.#");
+        return String.valueOf(format.format(input));
     }
 
 }

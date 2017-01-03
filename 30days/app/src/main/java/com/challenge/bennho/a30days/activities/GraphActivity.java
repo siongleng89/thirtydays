@@ -8,15 +8,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.challenge.bennho.a30days.R;
+import com.challenge.bennho.a30days.helpers.RealmHelper;
+import com.challenge.bennho.a30days.models.HistoryRecord;
 import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.ValueDependentColor;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 
+import java.util.HashMap;
+
+import io.realm.RealmChangeListener;
+import io.realm.RealmResults;
+
 public class GraphActivity extends MyActivity {
 
     private GraphView graphView;
+    private RealmHelper realmHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,55 +33,24 @@ public class GraphActivity extends MyActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        GraphView graph = (GraphView) findViewById(R.id.graph);
+        realmHelper = new RealmHelper(this);
 
-        graph.getGridLabelRenderer().setGridColor(ContextCompat.getColor(GraphActivity.this,
+        graphView = (GraphView) findViewById(R.id.graph);
+
+        graphView.getGridLabelRenderer().setGridColor(ContextCompat.getColor(GraphActivity.this,
                 R.color.colorAction));
-        graph.getViewport().setXAxisBoundsManual(true);
-        graph.getViewport().setMinX(0);
-        graph.getViewport().setMaxX(31);
+        graphView.getViewport().setXAxisBoundsManual(true);
+        graphView.getViewport().setMinX(0);
+        graphView.getViewport().setMaxX(31);
 
-        graph.getGridLabelRenderer().setHorizontalLabelsColor(ContextCompat.getColor(GraphActivity.this,
+        graphView.getGridLabelRenderer().setHorizontalLabelsColor(ContextCompat.getColor(GraphActivity.this,
                 R.color.colorAction));
-        graph.getGridLabelRenderer().setVerticalLabelsColor(ContextCompat.getColor(GraphActivity.this,
+        graphView.getGridLabelRenderer().setVerticalLabelsColor(ContextCompat.getColor(GraphActivity.this,
                 R.color.colorAction));
 
-        graph.getGridLabelRenderer().setHighlightZeroLines(true);
+        graphView.getGridLabelRenderer().setHighlightZeroLines(true);
 
-        DataPoint points[] = new DataPoint[30];
-        for (int i = 0; i < 30; i++){
-            points[i] = new DataPoint(i, i * 1000);
-        }
-
-        BarGraphSeries<DataPoint> series = new BarGraphSeries<>(points);
-        graph.addSeries(series);
-
-        series.setSpacing(30);
-
-        series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
-            @Override
-            public int get(DataPoint data) {
-                return ContextCompat.getColor(GraphActivity.this, R.color.colorAccent);
-            }
-        });
-
-        graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
-            @Override
-            public String formatLabel(double value, boolean isValueX) {
-                if (isValueX) {
-                    // show normal x values
-                    return super.formatLabel(value, isValueX);
-                } else {
-
-                    if(value > 1000){
-                        return super.formatLabel(value/1000, isValueX) + "k";
-                    }
-                    else {
-                        return super.formatLabel(value, isValueX);
-                    }
-                }
-            }
-        });
+        getHistoryRecords();
 
     }
 
@@ -102,6 +79,70 @@ public class GraphActivity extends MyActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        realmHelper.dispose();
+    }
+
+
+    private void getHistoryRecords(){
+        realmHelper.getAllHistoryRecordsByDateDesc(new RealmChangeListener<RealmResults<HistoryRecord>>() {
+            @Override
+            public void onChange(RealmResults<HistoryRecord> element) {
+                HashMap<Integer, Integer> dailyBurntMap = new HashMap<Integer, Integer>();
+
+                for(int i = 0; i < 30; i++){
+                    dailyBurntMap.put(i, 0);
+                }
+
+                for(HistoryRecord historyRecord : element){
+                    int currentBurnt = dailyBurntMap.get(historyRecord.getDayNumber() - 1);
+                    currentBurnt += historyRecord.getCaloriesBurnt();
+                    dailyBurntMap.put(historyRecord.getDayNumber() - 1, currentBurnt);
+                }
+
+
+                DataPoint points[] = new DataPoint[30];
+                for (int i = 0; i < 30; i++){
+                    points[i] = new DataPoint(i, dailyBurntMap.get(i));
+                }
+
+                BarGraphSeries<DataPoint> series = new BarGraphSeries<>(points);
+                graphView.addSeries(series);
+
+                series.setSpacing(30);
+
+                series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
+                    @Override
+                    public int get(DataPoint data) {
+                        return ContextCompat.getColor(GraphActivity.this, R.color.colorAccent);
+                    }
+                });
+
+                graphView.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
+                    @Override
+                    public String formatLabel(double value, boolean isValueX) {
+                        if (isValueX) {
+                            // show normal x values
+                            return super.formatLabel(value, isValueX);
+                        } else {
+
+                            if(value > 1000){
+                                return super.formatLabel(value/1000, isValueX) + "k";
+                            }
+                            else {
+                                return super.formatLabel(value, isValueX);
+                            }
+                        }
+                    }
+                });
+
+
+            }
+        });
     }
 
 }

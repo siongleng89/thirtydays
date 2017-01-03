@@ -24,20 +24,111 @@ public class PlansInputter {
         input();
     }
 
+    /**
+     * ageFactor
+     * 10-29(run=1, sprint=1)
+     * 30-39(run=1/1.2, sprint=1/1.2)
+     * 40-49(run=1/1.5, sprint=1/1.5)
+     * >50=(run=1/2, sprint=0)
+     *
+     * bmiFactor
+     * 0-24.9(run=1, sprint=1)
+     * 25-29.9=(run=1/1.5, sprint=1/1.5)
+     * >30=(run=1/2, sprint=1/2)
+     * BMI = weight in kilograms / height in meters²
+     * @param day
+     * @param age
+     * @param heightCm
+     * @param weightKg
+     * @return
+     */
+    public ExerciseModel getExerciseModelByDay(int day, int age, double heightCm, double weightKg){
 
+        double bmi = weightKg / Math.pow(heightCm / 100, 2);
 
-    /*ageFactor
-    10-29(run=1, sprint=1)
-            30-39(run=1/1.2, sprint=1/1.2)
-            40-49(run=1/1.5, sprint=1/1.5)
-            >50=(run=1/2, sprint=0)
+        ExerciseModel exerciseModel = exerciseModels.get(day - 1);
+        double runFactor = 1d;
+        double sprintFactor = 1d;
+        if(age >= 30){
+            runFactor = 1d / 1.2d;
+            sprintFactor = 1d / 1.2d;
+        }
+        else if(age >= 40){
+            runFactor = 1d / 1.5d;
+            sprintFactor = 1d / 1.5d;
+        }
+        if(age >= 50){
+            runFactor = 1d / 2d;
+            sprintFactor = 0d;
+        }
 
-    bmiFactor
-    0-24.9(run=1, sprint=1)
-            25-29.9=(run=1/1.5, sprint=1/1.5)
-            >30=(run=1/2, sprint=1/2)
+        decreaseIntensity(exerciseModel, runFactor, sprintFactor);
 
-    BMI = weight in kilograms / height in meters²*/
+        runFactor = 1d;
+        sprintFactor = 1d;
+        if(bmi >= 25){
+            runFactor = 1d / 1.5d;
+            sprintFactor = 1d / 1.5d;
+        }
+        else if(bmi >= 30){
+            runFactor = 1d / 2d;
+            sprintFactor = 0d;
+        }
+        decreaseIntensity(exerciseModel, runFactor, sprintFactor);
+
+        return exerciseModel;
+    }
+
+    private void decreaseIntensity(ExerciseModel exerciseModel, double runFactor,
+                                                double sprintFactor){
+
+        //processing run factor
+        for(int i = 0; i < exerciseModel.getExercisePartModels().size(); i++){
+            if(exerciseModel.getExercisePartModels().get(i).getExerciseState()
+                                                            == ExercisePartModel.ExerciseState.Run){
+                ExercisePartModel toMinusModel = exerciseModel.getExercisePartModels().get(i);
+                int minusSecs = (int) toMinusModel.getDurationSecs() -
+                                        (int) (toMinusModel.getDurationSecs() * sprintFactor);
+
+                for(int q = i; q < exerciseModel.getExercisePartModels().size(); q++){
+                    if(exerciseModel.getExercisePartModels().get(q).getExerciseState() !=
+                            ExercisePartModel.ExerciseState.Run &&
+                            exerciseModel.getExercisePartModels().get(q).getExerciseState() !=
+                                    ExercisePartModel.ExerciseState.Sprint){
+
+                        ExercisePartModel toAddModel = exerciseModel.getExercisePartModels().get(q);
+                        toMinusModel.setDurationSecs(toMinusModel.getDurationSecs() - minusSecs);
+                        toAddModel.setDurationSecs(toAddModel.getDurationSecs() + minusSecs);
+                        break;
+                    }
+                }
+            }
+        }
+
+        //processing sprint factor
+        for(int i = 0; i < exerciseModel.getExercisePartModels().size(); i++){
+            if(exerciseModel.getExercisePartModels().get(i).getExerciseState()
+                    == ExercisePartModel.ExerciseState.Sprint){
+                ExercisePartModel toMinusModel = exerciseModel.getExercisePartModels().get(i);
+                int minusSecs = (int) (toMinusModel.getDurationSecs() * runFactor);
+
+                for(int q = i; q < exerciseModel.getExercisePartModels().size(); q++){
+                    if(exerciseModel.getExercisePartModels().get(q).getExerciseState() !=
+                            ExercisePartModel.ExerciseState.Run &&
+                            exerciseModel.getExercisePartModels().get(q).getExerciseState() !=
+                                    ExercisePartModel.ExerciseState.Sprint){
+
+                        ExercisePartModel toAddModel = exerciseModel.getExercisePartModels().get(q);
+                        toMinusModel.setDurationSecs(toMinusModel.getDurationSecs() - minusSecs);
+                        toAddModel.setDurationSecs(toAddModel.getDurationSecs() + minusSecs);
+                        break;
+                    }
+                }
+            }
+        }
+
+    }
+
 
     public void input(){
         //Day 1

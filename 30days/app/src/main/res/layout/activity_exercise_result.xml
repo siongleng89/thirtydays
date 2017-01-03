@@ -45,7 +45,7 @@
                 android:text="DAY 1 EXERCISE"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView9"
+                android:id="@+id/txtTitle"
                 android:layout_weight="1"
                 android:textAlignment="center"
                 android:textSize="35sp"

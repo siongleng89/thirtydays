@@ -19,14 +19,17 @@ import com.challenge.bennho.a30days.controls.LayoutExerciseStates;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.AnimateBuilder;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
+import com.challenge.bennho.a30days.helpers.PlansInputter;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.ExerciseModel;
 import com.challenge.bennho.a30days.models.ExercisePartModel;
+import com.challenge.bennho.a30days.models.User;
 import com.challenge.bennho.a30days.services.ExerciseService;
 
 public class RunningActivity extends MyActivity implements ExerciseService.ExerciseListener,
                             LayoutExerciseStates.ExerciseActionListener {
 
+    private int dayPlan;
     private ExerciseModel exerciseModel;
     private TextView txtUnlockCountdown;
     private TextView txtTime, txtCalories;
@@ -40,6 +43,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
     private boolean cancelUnlock;
     private ExerciseService exerciseService;
     private boolean boundService;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +52,17 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
 
         this.setActionBarVisibility(false);
 
-        mockExerciseModels();
+        user = new User(this);
+        user.reload();
+
+        if(getIntent() != null){
+            dayPlan = getIntent().getIntExtra("dayPlan", 1);
+        }
+        else{
+            dayPlan = 1;
+        }
+
+        getExerciseModels();
 
         txtTime = (TextView) findViewById(R.id.txtTime);
         txtCalories = (TextView) findViewById(R.id.txtCalories);
@@ -124,6 +138,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
         intent.putExtra("totalElapsedMs", totalElapsedMs);
         intent.putExtra("caloriesBurnt", caloriesBurnt);
         intent.putExtra("isCompleted", isCompleted);
+        intent.putExtra("dayPlan", dayPlan);
         startActivity(intent);
 
         exerciseService.disposeExercise();
@@ -365,20 +380,25 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
         screenWidthDp = AndroidUtils.getScreenDpWidth(this);
     }
 
-    private void mockExerciseModels(){
-        exerciseModel = new ExerciseModel();
-        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);
-        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 300);
-        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
-        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 30);
-        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
-        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
-        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 30);
-        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
-        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
-        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 30);
-        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 60);
-        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
+    private void getExerciseModels(){
+
+        PlansInputter plansInputter = new PlansInputter(this);
+        exerciseModel = plansInputter.getExerciseModelByDay(dayPlan,
+                    user.getAge(), user.getHeightInCm(), user.getWeightKg());
+
+//        exerciseModel = new ExerciseModel();
+//        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);
+//        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 300);
+//        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
+//        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 30);
+//        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+//        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
+//        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 30);
+//        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+//        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
+//        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 30);
+//        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 60);
+//        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
 
 
      /*   exerciseModel = new ExerciseModel();
