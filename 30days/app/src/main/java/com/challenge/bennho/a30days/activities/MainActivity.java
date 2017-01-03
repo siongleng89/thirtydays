@@ -54,45 +54,31 @@ public class MainActivity extends MyActivity {
 
 
     private void startExercise(){
-        /*Intent intent = new Intent(this, ReadyActivity.class);
-        startActivity(intent);*/
+        Intent intent = new Intent(this, ReadyActivity.class);
+        startActivity(intent);
 
         Appodeal.setInterstitialCallbacks(new InterstitialCallbacks() {
-            private Toast mToast;
 
             @Override
             public void onInterstitialLoaded(boolean isPrecache) {
-                showToast("onInterstitialLoaded");
             }
 
             @Override
             public void onInterstitialFailedToLoad() {
-                showToast("onInterstitialFailedToLoad");
             }
 
             @Override
             public void onInterstitialShown() {
-                showToast("onInterstitialShown");
             }
 
             @Override
             public void onInterstitialClicked() {
-                showToast("onInterstitialClicked");
             }
 
             @Override
             public void onInterstitialClosed() {
-                showToast("onInterstitialClosed");
             }
 
-            void showToast(final String text) {
-                if (mToast == null) {
-                    mToast = Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT);
-                }
-                mToast.setText(text);
-                mToast.setDuration(Toast.LENGTH_SHORT);
-                mToast.show();
-            }
         });
         Appodeal.show(this, Appodeal.INTERSTITIAL);
     }
@@ -102,7 +88,7 @@ public class MainActivity extends MyActivity {
         txtStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startExercise();
+                startExercise();
 
             }
         });

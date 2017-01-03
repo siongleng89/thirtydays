@@ -71,7 +71,7 @@ public class ExerciseResultActivity extends AppCompatActivity {
             txtTime.setText(String.valueOf(minutes));
             txtCalories.setText(String.valueOf(calories));
 
-            CaloriesToImagesConverter converter = new CaloriesToImagesConverter(0);
+            CaloriesToImagesConverter converter = new CaloriesToImagesConverter(calories);
             ArrayList<FoodModel> foodModels = converter.getFoods();
 
             for(int i = 0; i < foodModels.size(); i++){

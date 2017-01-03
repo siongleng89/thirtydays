@@ -41,6 +41,7 @@ public class PlansInputter {
     0-24.9(run=1, sprint=1)
             25-29.9=(run=1/1.5, sprint=1/1.5)
             >30=(run=1/2, sprint=1/2)
+            >40=(run=1/6, sprint=0)
 
     BMI = weight in kilograms / height in meters²*/
 
