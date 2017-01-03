@@ -6,6 +6,8 @@ import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.appodeal.ads.Appodeal;
+
 /**
  * Created by sionglengho on 26/12/16.
  */
@@ -33,6 +35,8 @@ public abstract class MyActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         paused = false;
+        Appodeal.onResume(this, Appodeal.BANNER);
+
     }
 
     @Override

@@ -20,6 +20,7 @@ import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.AnimateBuilder;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.PlansInputter;
+import com.challenge.bennho.a30days.helpers.TextSpeak;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.ExerciseModel;
 import com.challenge.bennho.a30days.models.ExercisePartModel;
@@ -44,6 +45,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
     private ExerciseService exerciseService;
     private boolean boundService;
     private User user;
+    private TextSpeak textSpeak;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -378,6 +380,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
         });
 
         screenWidthDp = AndroidUtils.getScreenDpWidth(this);
+        textSpeak = new TextSpeak(this);
     }
 
     private void getExerciseModels(){
