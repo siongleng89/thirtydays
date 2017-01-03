@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="Daily Calories Burn"
+                    android:text="Each Day Plan Calories Burn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtGraphTitle"

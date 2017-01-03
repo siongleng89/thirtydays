@@ -21,7 +21,8 @@
             android:textColor="@color/colorWord"
             android:textStyle="normal|bold"
             android:layout_width="80dp"
-            android:text="#1" />
+            android:text="#1"
+            android:id="@+id/txtIndex" />
 
         <TextView
             android:layout_width="1dp"
@@ -36,17 +37,29 @@
             android:background="#fc7f5a"
             android:layout_marginLeft="3dp" />
 
+        <TextView
+            android:text="No records found...."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtNoRecords"
+            android:layout_weight="0"
+            android:textColor="@color/colorWord"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone" />
+
         <ImageView
             android:layout_width="wrap_content"
             app:srcCompat="@drawable/delete_icon"
             android:tint="@color/colorWord"
-            android:layout_height="20dp" />
+            android:layout_height="20dp"
+            android:id="@+id/imgViewDelete" />
 
         <ImageView
             android:layout_width="wrap_content"
             app:srcCompat="@drawable/share_icon"
             android:tint="@color/colorWord"
-            android:layout_height="20dp" />
+            android:layout_height="20dp"
+            android:id="@+id/imgViewShare" />
 
     </LinearLayout>
 
@@ -67,7 +80,8 @@
             android:layout_margin="10dp"
             android:textColor="@color/colorWord"
             android:textStyle="normal|bold"
-            android:layout_width="80dp" />
+            android:layout_width="80dp"
+            android:id="@+id/txtDateTitle" />
 
         <TextView
             android:layout_width="1dp"
@@ -111,7 +125,8 @@
             android:layout_margin="10dp"
             android:textColor="@color/colorWord"
             android:textStyle="normal|bold"
-            android:layout_width="80dp" />
+            android:layout_width="80dp"
+            android:id="@+id/txtPlanTitle" />
 
         <TextView
             android:layout_width="1dp"
@@ -156,7 +171,8 @@
             android:layout_margin="10dp"
             android:textColor="@color/colorWord"
             android:textStyle="normal|bold"
-            android:layout_width="80dp" />
+            android:layout_width="80dp"
+            android:id="@+id/txtCompletedTitle" />
 
         <TextView
             android:layout_width="1dp"
@@ -214,7 +230,8 @@
             android:layout_margin="10dp"
             android:textColor="@color/colorWord"
             android:textStyle="normal|bold"
-            android:layout_width="80dp" />
+            android:layout_width="80dp"
+            android:id="@+id/txtDurationTitle" />
 
         <TextView
             android:layout_width="1dp"
@@ -258,7 +275,8 @@
             android:layout_margin="10dp"
             android:textColor="@color/colorWord"
             android:textStyle="normal|bold"
-            android:layout_width="80dp" />
+            android:layout_width="80dp"
+            android:id="@+id/txtCaloriesTitle" />
 
         <TextView
             android:layout_width="1dp"
@@ -273,14 +291,6 @@
             android:background="#fc7f5a"
             android:layout_marginLeft="3dp" />
 
-        <TextView
-            android:text="280 k/cal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="10dp"
-            android:textColor="@color/colorWord"
-            android:id="@+id/txtCalories" />
     </LinearLayout>
 
 
@@ -380,17 +390,53 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:text="280"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWord"
+                android:id="@+id/txtCalories"
+                android:textSize="25sp" />
+
+            <TextView
+                android:text="k/cal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtKcalTitle"
+                android:textColor="@color/colorWord"
+                android:textSize="12sp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_marginLeft="110dp"
             android:padding="10dp"
-            android:layout_height="75dp">
+            android:layout_height="75dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:text="="
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtEqual"
+                android:textColor="@color/colorWord"
+                android:textSize="30sp" />
 
             <com.challenge.bennho.a30days.controls.ImageCircularFood
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:id="@+id/imgViewFood1"
-                android:visibility="gone" >
+                android:visibility="gone"
+                android:layout_marginLeft="10dp">
             </com.challenge.bennho.a30days.controls.ImageCircularFood>
 
             <com.challenge.bennho.a30days.controls.ImageCircularFood

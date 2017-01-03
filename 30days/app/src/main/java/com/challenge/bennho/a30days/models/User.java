@@ -18,9 +18,11 @@ public class User {
     private int currentDay;
     private double height;
     private double weight;
-    private String unit;
+    private int unitIndex;      //0: kg/cm 1:pounds/miles
     private int age;
-    private String gender;
+    private int genderIndex;        //0: male 1:female
+    private int totalCaloriesBurnt;
+    private int totalRunningSecs;
     private Context context;
 
 
@@ -33,16 +35,24 @@ public class User {
         PreferenceUtils.putBoolean(context, PreferenceType.EnableNotification, true);
         PreferenceUtils.putString(context, PreferenceType.ReminderTime, "5");
         PreferenceUtils.putString(context, PreferenceType.ReminderDay, "1,2,3,4,5,6,7");
-        PreferenceUtils.putString(context, PreferenceType.Gender, GenderEnum.male.name());
+        PreferenceUtils.putString(context, PreferenceType.CurrentExerciseDay, "1");
     }
 
     public void reload(){
         this.weight = PreferenceUtils.getDouble(context, PreferenceType.Weight);
         this.height = PreferenceUtils.getDouble(context, PreferenceType.Height);
         this.age = PreferenceUtils.getDouble(context, PreferenceType.Age).intValue();
-        this.unit = PreferenceUtils.getString(context, PreferenceType.Unit);
-        this.gender = PreferenceUtils.getString(context, PreferenceType.Gender);
+        this.unitIndex = PreferenceUtils.getDouble(context, PreferenceType.Unit).intValue();
+        this.genderIndex = PreferenceUtils.getDouble(context, PreferenceType.Gender).intValue();
         this.currentDay = PreferenceUtils.getDouble(context, PreferenceType.CurrentExerciseDay).intValue();
+        this.totalCaloriesBurnt = PreferenceUtils.getDouble(context, PreferenceType.TotalCaloriesBurnt).intValue();
+        this.totalRunningSecs = PreferenceUtils.getDouble(context, PreferenceType.TotalRunningSecs).intValue();
+    }
+
+    public void delete(){
+        PreferenceUtils.delete(context, PreferenceType.Unit);
+        PreferenceUtils.delete(context, PreferenceType.Gender);
+        PreferenceUtils.delete(context, PreferenceType.CurrentExerciseDay);
     }
 
     public int getCurrentDay() {
@@ -54,31 +64,40 @@ public class User {
         PreferenceUtils.putString(context, PreferenceType.CurrentExerciseDay, String.valueOf(currentDay));
     }
 
-    public double getHeight() {
+    public double getHeightInCm() {
         return height;
     }
 
-    public void setHeight(double height) {
+    public void setHeightInCm(double height) {
         this.height = height;
         PreferenceUtils.putString(context, PreferenceType.Height, String.valueOf(height));
     }
 
-    public double getWeight() {
+    public double getWeightKg() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeightKg(double weight) {
         this.weight = weight;
-        PreferenceUtils.putString(context, PreferenceType.Weight, String.valueOf(height));
+        PreferenceUtils.putString(context, PreferenceType.Weight, String.valueOf(weight));
     }
 
-    public String getUnit() {
-        return unit;
+    public int getUnitIndex() {
+        return unitIndex;
     }
 
-    public void setUnit(String unit) {
-        this.unit = unit;
-        PreferenceUtils.putString(context, PreferenceType.Unit, unit);
+    public void setUnitIndex(int unitIndex) {
+        this.unitIndex = unitIndex;
+        PreferenceUtils.putString(context, PreferenceType.Unit, String.valueOf(unitIndex));
+    }
+
+    public int getGenderIndex() {
+        return genderIndex;
+    }
+
+    public void setGenderIndex(int genderIndex) {
+        this.genderIndex = genderIndex;
+        PreferenceUtils.putString(context, PreferenceType.Gender, String.valueOf(genderIndex));
     }
 
     public int getAge() {
@@ -90,16 +109,45 @@ public class User {
         PreferenceUtils.putString(context, PreferenceType.Age, String.valueOf(age));
     }
 
-    public String getGender() {
-        return gender;
+    public int getTotalCaloriesBurnt() {
+        return totalCaloriesBurnt;
     }
 
-    public GenderEnum getGenderEnum() {
-        return GenderEnum.valueOf(gender);
+    public void addCaloriesBurnt(float calories){
+        totalCaloriesBurnt += calories;
+        PreferenceUtils.putString(context, PreferenceType.TotalCaloriesBurnt, String.valueOf(totalCaloriesBurnt));
     }
 
-    public void setGender(GenderEnum gender) {
-        this.gender = gender.name();
-        PreferenceUtils.putString(context, PreferenceType.Gender, gender.name());
+    public void minusCaloriesBurnt(float calories){
+        totalCaloriesBurnt -= calories;
+        if(totalCaloriesBurnt < 0){
+            totalCaloriesBurnt = 0;
+        }
+        PreferenceUtils.putString(context, PreferenceType.TotalCaloriesBurnt, String.valueOf(totalCaloriesBurnt));
     }
+
+    public int getTotalRunningSecs() {
+        return totalRunningSecs;
+    }
+
+
+    public void addRunningSecs(float secs){
+        float currentRunningSecs = totalRunningSecs;
+        currentRunningSecs += secs;
+        totalRunningSecs = (int) Math.ceil(currentRunningSecs);
+
+        PreferenceUtils.putString(context, PreferenceType.TotalRunningSecs, String.valueOf(totalRunningSecs));
+    }
+
+    public void minusRunningSecs(float secs){
+        float currentRunningSecs = totalRunningSecs;
+        currentRunningSecs -= secs;
+        if(currentRunningSecs < 0){
+            currentRunningSecs = 0;
+        }
+        totalRunningSecs = (int) Math.ceil(currentRunningSecs);
+
+        PreferenceUtils.putString(context, PreferenceType.TotalRunningSecs, String.valueOf(totalRunningSecs));
+    }
+
 }

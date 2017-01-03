@@ -24,6 +24,7 @@ public class LandingActivity extends MyActivity {
 
     private void begin(){
         Intent intent = new Intent(LandingActivity.this, PersonalDetailActivity.class);
+        intent.putExtra("initial", "1");
         startActivity(intent);
         finish();
     }

@@ -37,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/arrowleft"
-                    android:id="@+id/imageView12"
+                    android:id="@+id/imgViewPrevious"
                     android:layout_weight="1"
                     android:tint="@color/colorAction" />
 
@@ -56,11 +56,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/arrowleft"
-                    android:id="@+id/imageView13"
+                    android:id="@+id/imgViewNext"
                     android:layout_weight="1"
                     android:rotation="180"
-                    android:tint="@color/colorStatus"
-                    android:alpha="0.3" />
+                    android:tint="@color/colorAction"
+                    android:alpha="1" />
 
             </LinearLayout>
 

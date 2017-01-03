@@ -28,7 +28,7 @@ public class ExerciseService extends Service {
     private Binder binder;
     private ExerciseModel exerciseModel;
     private boolean skippingExercisePart;
-    private float previousStatesElapsedMs, currentTotalElapsedMs, currentCaloriesBurnt;
+    private float previousStatesElapsedMs, currentTotalElapsedMs, realElapsedMs, currentCaloriesBurnt;
     private long accSleepMs;
     private ExercisePartModel currentExercisePartModel;
     private ExerciseListener exerciseListener;
@@ -72,6 +72,7 @@ public class ExerciseService extends Service {
         this.previousStatesElapsedMs = 0;
         this.currentTotalElapsedMs = 0;
         this.currentCaloriesBurnt = 0;
+        this.realElapsedMs = 0;
         this.lastNotificationText = "";
         exercising(0);
         running = true;
@@ -126,6 +127,7 @@ public class ExerciseService extends Service {
 
                     accSleepMs += sleepMs;
                     currentTotalElapsedMs += sleepMs;
+                    realElapsedMs += sleepMs;
 
                     updateNotification(accSleepMs, currentExercisePartModel);
                     updateCaloriesBurnt(sleepMs, currentExercisePartModel);
@@ -167,12 +169,12 @@ public class ExerciseService extends Service {
                 getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(SERVICE_ID, getNotification("Good Job!",
                                 "Completed exercise, click for result."));
-        exerciseListener.onExerciseEnded(currentTotalElapsedMs, currentCaloriesBurnt, completed);
+        exerciseListener.onExerciseEnded(realElapsedMs, currentCaloriesBurnt, completed);
     }
 
     public void exerciseGaveUp(){
         stopped = true;
-        exerciseListener.onExerciseEnded(currentTotalElapsedMs, currentCaloriesBurnt, false);
+        exerciseListener.onExerciseEnded(realElapsedMs, currentCaloriesBurnt, false);
     }
 
     public void disposeExercise(){

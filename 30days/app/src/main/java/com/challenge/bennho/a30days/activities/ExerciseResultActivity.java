@@ -13,29 +13,35 @@ import android.widget.TextView;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.ImageCircularFood;
 import com.challenge.bennho.a30days.drawables.CustomAnimationDrawable;
+import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.AnimateBuilder;
 import com.challenge.bennho.a30days.helpers.CaloriesToImagesConverter;
+import com.challenge.bennho.a30days.helpers.PreferenceUtils;
+import com.challenge.bennho.a30days.helpers.RealmHelper;
+import com.challenge.bennho.a30days.helpers.Strings;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.FoodModel;
+import com.challenge.bennho.a30days.models.HistoryRecord;
+import com.challenge.bennho.a30days.models.User;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
 
-public class ExerciseResultActivity extends AppCompatActivity {
+public class ExerciseResultActivity extends MyActivity {
 
     private Button btnEnd;
     private LinearLayout layoutIncompleteCircle, layoutCompletedCircle, linearDuration, linearCalories;
     private ImageView imgViewStickman;
     private ImageCircularFood imageFood1, imageFood2, imageFood3;
-    private TextView txtCalories, txtTime;
+    private TextView txtCalories, txtTime, txtTitle;
+    private User user;
+    private RealmHelper realmHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_result);
-
-        setTitle("Day 1 exercise result");
 
         btnEnd = (Button) findViewById(R.id.btnEnd);
         layoutIncompleteCircle = (LinearLayout) findViewById(R.id.layoutIncompleteCircle);
@@ -48,15 +54,28 @@ public class ExerciseResultActivity extends AppCompatActivity {
         imageFood3 = (ImageCircularFood) findViewById(R.id.imageFood3);
         txtTime = (TextView) findViewById(R.id.txtTime);
         txtCalories = (TextView) findViewById(R.id.txtCalories);
+        txtTitle = (TextView) findViewById(R.id.txtTitle);
 
         layoutIncompleteCircle.setVisibility(View.GONE);
         layoutCompletedCircle.setVisibility(View.GONE);
         linearDuration.setAlpha(0);
         linearCalories.setAlpha(0);
 
+        user = new User(this);
+        user.reload();
+
+        realmHelper = new RealmHelper(this);
+
         setListeners();
 
         processResults();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        realmHelper.dispose();
     }
 
     private void processResults(){
@@ -64,6 +83,10 @@ public class ExerciseResultActivity extends AppCompatActivity {
             float totalElapsedMs = getIntent().getFloatExtra("totalElapsedMs", 0);
             float caloriesBurnt = getIntent().getFloatExtra("caloriesBurnt", 0);
             boolean isCompleted = getIntent().getBooleanExtra("isCompleted", true);
+            int dayPlan = getIntent().getIntExtra("dayPlan", 1);
+
+            setTitle(String.format("Day %s exercise result", dayPlan));
+            txtTitle.setText(String.format("DAY %s EXERCISE", dayPlan));
 
             int minutes = (int) Math.ceil((totalElapsedMs / 1000) / 60);
             int calories = (int) Math.ceil(caloriesBurnt);
@@ -74,6 +97,26 @@ public class ExerciseResultActivity extends AppCompatActivity {
             CaloriesToImagesConverter converter = new CaloriesToImagesConverter(calories);
             ArrayList<FoodModel> foodModels = converter.getFoods();
 
+            //save history record
+            String saved = PreferenceUtils.getString(this, PreferenceType.ExerciseRecordSaved);
+            if(Strings.isEmpty(saved) || !saved.equals("1")){
+                HistoryRecord historyRecord = new HistoryRecord();
+                historyRecord.setDayNumber(dayPlan);
+                historyRecord.setFoodModels(foodModels);
+                historyRecord.setCompletedExercise(isCompleted);
+                historyRecord.setRecordUnixTime(System.currentTimeMillis());
+                historyRecord.setExerciseTimeMs(totalElapsedMs);
+                historyRecord.setCaloriesBurnt(caloriesBurnt);
+                realmHelper.insertHistoryRecord(historyRecord);
+
+                user.addCaloriesBurnt(calories);
+                user.addRunningSecs(totalElapsedMs / 1000);
+
+                PreferenceUtils.putString(this, PreferenceType.ExerciseRecordSaved, "1");
+            }
+
+
+            //start animations
             for(int i = 0; i < foodModels.size(); i++){
                 ImageCircularFood imageCircularFood = imageFood1;
                 if(i == 0){

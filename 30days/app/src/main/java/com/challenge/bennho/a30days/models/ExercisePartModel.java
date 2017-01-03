@@ -42,6 +42,10 @@ public class ExercisePartModel {
         return getDurationSecs() - elapsedDurationSecs;
     }
 
+    public void setDurationSecs(float durationSecs) {
+        this.durationSecs = durationSecs;
+    }
+
     public int getExerciseColor(Context context){
         switch (exerciseState){
             case WarmUp:
