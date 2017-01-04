@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.enums.PreferenceType;
+import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.Threadings;
@@ -28,6 +29,9 @@ public class ReadyActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ready);
+
+
+        AdsMediation.showInterstitial(this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

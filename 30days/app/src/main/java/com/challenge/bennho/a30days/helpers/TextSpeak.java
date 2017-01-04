@@ -1,15 +1,11 @@
 package com.challenge.bennho.a30days.helpers;
 
-import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
+import android.os.Build;
 import android.speech.tts.TextToSpeech;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+
+import java.util.ArrayList;
 import java.util.Locale;
-import com.challenge.bennho.a30days.R;
 
 
 /**
@@ -18,28 +14,53 @@ import com.challenge.bennho.a30days.R;
 
 public class TextSpeak{
 
-    TextToSpeech t1;
+    private TextToSpeech textToSpeech;
+    private ArrayList<String> unspeakStrings;
+    private boolean initialized;
 
     public TextSpeak(Context context){
-        t1=new TextToSpeech(context, new TextToSpeech.OnInitListener() {
+        unspeakStrings = new ArrayList();
+        textToSpeech =new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if(status != TextToSpeech.ERROR) {
-                    t1.setLanguage(Locale.UK);
+                    textToSpeech.setLanguage(Locale.UK);
+                    initialized = true;
+
+                    for(String toSpeak : unspeakStrings){
+                        speak(toSpeak);
+                    }
+
                 }
             }
         });
     }
 
-    public void speak(String text){
-        t1.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    public void speak(final String text){
+        if(!initialized){
+            unspeakStrings.add(text);
+        }
+        else{
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+            } else {
+                textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        }
     }
 
 
     public void onPause(){
-        if(t1 !=null){
-            t1.stop();
-            t1.shutdown();
+        if(textToSpeech !=null){
+            textToSpeech.stop();
+            textToSpeech.shutdown();
         }
     }
+
+    public void dispose(){
+        textToSpeech.stop();
+        textToSpeech.shutdown();
+        unspeakStrings.clear();
+    }
+
 }

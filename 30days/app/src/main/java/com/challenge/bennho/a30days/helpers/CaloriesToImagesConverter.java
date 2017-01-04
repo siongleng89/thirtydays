@@ -81,26 +81,20 @@ public class CaloriesToImagesConverter {
         ArrayList<FoodModel.FoodType> typeEFood= new ArrayList();
         typeEFood.add(FoodModel.FoodType.tea);
         typeEFood.add(FoodModel.FoodType.water);
-
-       /* FoodModel.FoodType foodOne = getRandomFood(typeAFood);
-        FoodModel.FoodType foodTwo = getRandomFood(typeBFood);
-        FoodModel.FoodType foodThree = getRandomFood(typeCFood);
-        FoodModel.Foode foodFour = getRandomFood(typeDFood);
-        FoodModel.FoodType fooTypdFive = getRandomFood(typeEFood);*/
-
-
-
+        typeEFood.add(FoodModel.FoodType.green_tea);
+        
 
         FoodModel.FoodType foodOne;
         FoodModel.FoodType foodTwo;
         FoodModel.FoodType foodThree;
-        
-        if (calories>900){
+
+
+        if (calories > 900){
             foodOne = getRandomFood(typeAFood);
             foodTwo = getRandomFood(typeAFood);
             foodThree = getRandomFood(typeAFood);
         }
-        else if (calories >800){
+        else if (calories > 800){
             foodOne = getRandomFood(typeAFood);
             foodTwo = getRandomFood(typeAFood);
             foodThree = getRandomFood(typeBFood);
@@ -154,16 +148,11 @@ public class CaloriesToImagesConverter {
         result.add(foodModelTwo);
         result.add(foodModelThree);
 
-        /*result.ad(new FoodModel(FoodModel.FoodType.french_fries));
-        result.add(new FoodModel(FoodModel.FoodType.apple));
-        result.add(new FoodModel(FoodModel.FoodType.banana));*/
-
 
         return result;
 
     }
     private FoodModel.FoodType getRandomFood(ArrayList<FoodModel.FoodType> foodType){
-
         //get type a food, shuffle, add food, remove the food from list,
         Collections.shuffle(foodType);
         FoodModel.FoodType getFoodOne =  foodType.get(0);

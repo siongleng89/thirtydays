@@ -19,6 +19,7 @@ import com.challenge.bennho.a30days.helpers.AnimateBuilder;
 import com.challenge.bennho.a30days.helpers.CaloriesToImagesConverter;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.RealmHelper;
+import com.challenge.bennho.a30days.helpers.RunReminderHelper;
 import com.challenge.bennho.a30days.helpers.Strings;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.FoodModel;
@@ -111,6 +112,13 @@ public class ExerciseResultActivity extends MyActivity {
 
                 user.addCaloriesBurnt(calories);
                 user.addRunningSecs(totalElapsedMs / 1000);
+
+                if(isCompleted && dayPlan == user.getCurrentDay()){
+                    user.addCurrentDay();
+
+                    //so that after 30days it is removed
+                    RunReminderHelper.updateReminders(this);
+                }
 
                 PreferenceUtils.putString(this, PreferenceType.ExerciseRecordSaved, "1");
             }

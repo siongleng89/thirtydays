@@ -109,9 +109,6 @@ public class AnimateBuilder {
 
                     }
 
-
-
-
                     anim.setDuration(durationMs);
                     anim.setRepeatCount(ObjectAnimator.INFINITE);
                     anim.setRepeatMode(ObjectAnimator.REVERSE);

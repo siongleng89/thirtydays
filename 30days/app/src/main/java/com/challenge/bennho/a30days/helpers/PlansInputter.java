@@ -6,6 +6,7 @@ import com.challenge.bennho.a30days.models.ExerciseModel;
 import com.challenge.bennho.a30days.models.ExercisePartModel;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -78,9 +79,15 @@ public class PlansInputter {
         }
         else if(bmi >= 30){
             runFactor = 1d / 2d;
+            sprintFactor = 1d / 2d;;
+        }
+        else if(bmi >= 40){
+            runFactor = 1d / 6d;
             sprintFactor = 0d;
         }
         decreaseIntensity(exerciseModel, runFactor, sprintFactor);
+
+        removedZeroDurationExercisePart(exerciseModel);
 
         return exerciseModel;
     }
@@ -94,7 +101,7 @@ public class PlansInputter {
                     == ExercisePartModel.ExerciseState.Run) {
                 ExercisePartModel toMinusModel = exerciseModel.getExercisePartModels().get(i);
                 int minusSecs = (int) toMinusModel.getDurationSecs() -
-                        (int) (toMinusModel.getDurationSecs() * sprintFactor);
+                        (int) (toMinusModel.getDurationSecs() * runFactor);
 
                 for (int q = i; q < exerciseModel.getExercisePartModels().size(); q++) {
                     if (exerciseModel.getExercisePartModels().get(q).getExerciseState() !=
@@ -116,7 +123,8 @@ public class PlansInputter {
             if (exerciseModel.getExercisePartModels().get(i).getExerciseState()
                     == ExercisePartModel.ExerciseState.Sprint) {
                 ExercisePartModel toMinusModel = exerciseModel.getExercisePartModels().get(i);
-                int minusSecs = (int) (toMinusModel.getDurationSecs() * runFactor);
+                int minusSecs =  (int) toMinusModel.getDurationSecs() -
+                                    (int) (toMinusModel.getDurationSecs() * sprintFactor);
 
                 for (int q = i; q < exerciseModel.getExercisePartModels().size(); q++) {
                     if (exerciseModel.getExercisePartModels().get(q).getExerciseState() !=
@@ -131,6 +139,20 @@ public class PlansInputter {
                     }
                 }
             }
+        }
+    }
+
+    private void removedZeroDurationExercisePart(ExerciseModel exerciseModel){
+        ArrayList<Integer> indexToRemove = new ArrayList();
+        for (int i = 0; i < exerciseModel.getExercisePartModels().size(); i++) {
+            if(exerciseModel.getExercisePartModels().get(i).getDurationSecs() <= 0){
+                indexToRemove.add(i);
+            }
+        }
+
+        Collections.sort(indexToRemove, Collections.reverseOrder());
+        for(Integer index : indexToRemove){
+            exerciseModel.getExercisePartModels().remove(exerciseModel.getExercisePartModels().get(index));
         }
     }
 
@@ -620,40 +642,43 @@ public class PlansInputter {
                     CalculationHelper.prettifySeconds(exerciseModel.getTotalDurationSecs()));
             i++;
 
-            Map<String, Float> dictionary = new HashMap<String, Float>();
-            ArrayList<String> stateTransitions = new ArrayList();
-            for(ExercisePartModel exercisePartModel : exerciseModel.getExercisePartModels()){
-                String exercisePartText = exercisePartModel.getExerciseText(context);
-                stateTransitions.add(exercisePartText + " " +
-                        CalculationHelper.prettifySeconds(exercisePartModel.getDurationSecs()));
+            printExerciseModel(exerciseModel);
+        }
+    }
 
-                if(dictionary.containsKey(exercisePartText)){
-                    Float currentDuration = dictionary.get(exercisePartText);
-                    currentDuration += exercisePartModel.getDurationSecs();
-                    dictionary.put(exercisePartText, currentDuration);
-                }
-                else{
-                    dictionary.put(exercisePartText, exercisePartModel.getDurationSecs());
-                }
+    private void printExerciseModel(ExerciseModel exerciseModel){
+        Map<String, Float> dictionary = new HashMap<String, Float>();
+        ArrayList<String> stateTransitions = new ArrayList();
+        for(ExercisePartModel exercisePartModel : exerciseModel.getExercisePartModels()){
+            String exercisePartText = exercisePartModel.getExerciseText(context);
+            stateTransitions.add(exercisePartText + " " +
+                    CalculationHelper.prettifySeconds(exercisePartModel.getDurationSecs()));
 
+            if(dictionary.containsKey(exercisePartText)){
+                Float currentDuration = dictionary.get(exercisePartText);
+                currentDuration += exercisePartModel.getDurationSecs();
+                dictionary.put(exercisePartText, currentDuration);
             }
-
-            ArrayList<String> dictResults = new ArrayList();
-            for (Map.Entry<String, Float> entry : dictionary.entrySet()) {
-                String key = entry.getKey();
-                Float value = entry.getValue();
-                dictResults.add(key + ":" + CalculationHelper.prettifySeconds(value));
+            else{
+                dictionary.put(exercisePartText, exercisePartModel.getDurationSecs());
             }
-
-            Logs.show("");
-            Logs.show("Printing exercise state transitions");
-            Logs.show(Strings.joinArr(stateTransitions, " / "));
-            Logs.show("");
-            Logs.show("Printing each state duration");
-            Logs.show(Strings.joinArr(dictResults, " / "));
-            Logs.show("--------------------------------------------------------------------------------------");
 
         }
+
+        ArrayList<String> dictResults = new ArrayList();
+        for (Map.Entry<String, Float> entry : dictionary.entrySet()) {
+            String key = entry.getKey();
+            Float value = entry.getValue();
+            dictResults.add(key + ":" + CalculationHelper.prettifySeconds(value));
+        }
+
+        Logs.show("");
+        Logs.show("Printing exercise state transitions");
+        Logs.show(Strings.joinArr(stateTransitions, " / "));
+        Logs.show("");
+        Logs.show("Printing each state duration");
+        Logs.show(Strings.joinArr(dictResults, " / "));
+        Logs.show("--------------------------------------------------------------------------------------");
     }
 
 }

@@ -15,6 +15,7 @@ import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.activities.RunningActivity;
 import com.challenge.bennho.a30days.helpers.CalculationHelper;
 import com.challenge.bennho.a30days.helpers.Logs;
+import com.challenge.bennho.a30days.helpers.TextSpeak;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.ExerciseModel;
 import com.challenge.bennho.a30days.models.ExercisePartModel;
@@ -35,6 +36,7 @@ public class ExerciseService extends Service {
     private boolean paused, stopped, running, completed;
     private final int SERVICE_ID = 7012;
     private String lastNotificationText;
+    private TextSpeak textSpeak;
 
     public ExerciseService() {
         this.binder = new LocalBinder();
@@ -65,6 +67,10 @@ public class ExerciseService extends Service {
             return false;
         }
 
+        disposeExercise();  //dispose previous unfinish exercise
+
+        this.exerciseModel = exerciseModel;
+        this.exerciseListener = exerciseListener;
         this.stopped = false;
         this.paused = false;
         this.completed = false;
@@ -96,6 +102,7 @@ public class ExerciseService extends Service {
             exerciseListener.onExercisePartChanged(currentExercisePartModel);
             exerciseListener.onTimeChanged(currentTotalElapsedMs, 0, currentCaloriesBurnt,
                                                 currentExercisePartModel);
+            speakOutCurrentExercisePart(currentExercisePartModel);
             updateNotification(0, currentExercisePartModel);
         }
 
@@ -161,6 +168,10 @@ public class ExerciseService extends Service {
         currentCaloriesBurnt += currentExercisePartModel.getCaloriesBurnt(deltaMs);
     }
 
+    private void speakOutCurrentExercisePart(ExercisePartModel currentExercisePartModel){
+        getTextSpeak().speak(currentExercisePartModel.getExerciseSpeech(getBaseContext()));
+    }
+
     public void exerciseCompleted(){
         stopped = true;
         completed = true;
@@ -186,6 +197,7 @@ public class ExerciseService extends Service {
         stopped = true;
         running = false;
         this.exerciseListener = null;
+        if(textSpeak != null) textSpeak.dispose();
     }
 
     public void pauseExercise(){
@@ -209,6 +221,13 @@ public class ExerciseService extends Service {
 
     public void goToNextExercisePart(){
         skippingExercisePart = true;
+    }
+
+    public TextSpeak getTextSpeak() {
+        if(textSpeak == null){
+            textSpeak = new TextSpeak(getBaseContext());
+        }
+        return textSpeak;
     }
 
     private Notification getNotification(String title, String content){

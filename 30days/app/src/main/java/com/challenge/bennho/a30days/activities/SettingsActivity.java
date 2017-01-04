@@ -12,9 +12,11 @@ import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.CalculationHelper;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
+import com.challenge.bennho.a30days.helpers.RunReminderHelper;
 import com.challenge.bennho.a30days.helpers.Strings;
 
 public class SettingsActivity extends MyActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class SettingsActivity extends MyActivity {
     protected void onPause() {
         super.onPause();
         overridePendingTransition(0, 0);
+        RunReminderHelper.updateReminders(this);
     }
 
     public static class SettingsFragment extends PreferenceFragment {
@@ -63,6 +66,9 @@ public class SettingsActivity extends MyActivity {
                     return true;
                 }
             });
+
+
+
 
             findPreference("Parameter").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override

@@ -92,9 +92,30 @@
 
         <service android:name=".services.ExerciseService" />
 
-        <activity android:name=".activities.TestActivity">
+        <receiver android:name=".receivers.RunReminderReceiver"
+                    android:exported="true"/>
 
-        </activity>
+        <receiver
+            android:name=".receivers.OnBootReceiver"
+            android:exported="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+
+
+
+
+
+
+
+
+
+
+
+
 
         <meta-data android:name="com.appodeal.framework" android:value="android" />
         <receiver android:name="com.appodeal.ads.AppodealPackageAddedReceiver" android:exported="true" android:enabled="true">

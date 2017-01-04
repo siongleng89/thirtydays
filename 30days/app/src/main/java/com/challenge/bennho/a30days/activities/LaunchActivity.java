@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.enums.PreferenceType;
+import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.Strings;
 import com.challenge.bennho.a30days.models.User;

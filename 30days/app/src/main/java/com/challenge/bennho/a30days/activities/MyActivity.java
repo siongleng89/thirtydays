@@ -1,12 +1,16 @@
 package com.challenge.bennho.a30days.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.NavUtils;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.appodeal.ads.Appodeal;
+import com.challenge.bennho.a30days.helpers.AdsMediation;
+import com.challenge.bennho.a30days.helpers.Analytics;
 
 /**
  * Created by sionglengho on 26/12/16.
@@ -23,6 +27,13 @@ public abstract class MyActivity extends AppCompatActivity {
         else{
             getSupportActionBar().hide();
         }
+    }
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Analytics.logToScreen(this);
+        AdsMediation.init(this);
     }
 
     @Override

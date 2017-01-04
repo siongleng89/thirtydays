@@ -5,6 +5,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -23,6 +24,7 @@ public class LayoutSummary extends RelativeLayout {
     private Context context;
     private ProgressBar progressDay;
     private TextView txtTotalDuration, txtTotalCalories;
+    private ImageView imgViewFat, imgViewFit;
 
     public LayoutSummary(Context context) {
         super(context);
@@ -55,6 +57,9 @@ public class LayoutSummary extends RelativeLayout {
         progressDay = (ProgressBar) findViewById(R.id.progressDay);
         txtTotalCalories = (TextView) findViewById(R.id.txtTotalCalories);
         txtTotalDuration = (TextView) findViewById(R.id.txtTotalDuration);
+        imgViewFit = (ImageView) findViewById(R.id.imgViewFit);
+        imgViewFat = (ImageView) findViewById(R.id.imgViewFat);
+
 
         User user = new User(context);
         user.reload();
@@ -63,6 +68,12 @@ public class LayoutSummary extends RelativeLayout {
     }
 
     public void update(User user){
+
+        //female
+        if(user.getGenderIndex() == 1){
+            imgViewFit.setImageResource(R.drawable.fit_woman);
+            imgViewFat.setImageResource(R.drawable.fat_woman);
+        }
 
         progressDay.setProgress(user.getCurrentDay() - 1);
         txtTotalDuration.setText(String.valueOf((int) Math.ceil((double) user.getTotalRunningSecs() / 60d)));

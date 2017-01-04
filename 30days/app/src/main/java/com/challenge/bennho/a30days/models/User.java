@@ -33,7 +33,7 @@ public class User {
     //reset all user preferences to default
     public void initUser(){
         PreferenceUtils.putBoolean(context, PreferenceType.EnableNotification, true);
-        PreferenceUtils.putString(context, PreferenceType.ReminderTime, "5");
+        PreferenceUtils.putString(context, PreferenceType.ReminderTime, "17");
         PreferenceUtils.putString(context, PreferenceType.ReminderDay, "1,2,3,4,5,6,7");
         PreferenceUtils.putString(context, PreferenceType.CurrentExerciseDay, "1");
     }
@@ -62,6 +62,13 @@ public class User {
     public void setCurrentDay(int currentDay) {
         this.currentDay = currentDay;
         PreferenceUtils.putString(context, PreferenceType.CurrentExerciseDay, String.valueOf(currentDay));
+    }
+
+    public void addCurrentDay(){
+        if(currentDay < 31){
+            currentDay++;
+            setCurrentDay(currentDay);
+        }
     }
 
     public double getHeightInCm() {
