@@ -2,6 +2,7 @@ package com.challenge.bennho.a30days;
 
 import android.app.Application;
 
+import com.challenge.bennho.a30days.helpers.Analytics;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
@@ -18,9 +19,13 @@ public class MyApplication extends Application {
         Threadings.setMainTreadId();
     }
     synchronized public Tracker getDefaultTracker() {
+        if(BuildConfig.DEBUG_MODE) return null;
+
         if (mTracker == null) {
             GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
             mTracker = analytics.newTracker(R.xml.global_tracker);
+            mTracker.enableExceptionReporting(true);
+            Analytics.setTracker(mTracker);
         }
         return mTracker;
     }

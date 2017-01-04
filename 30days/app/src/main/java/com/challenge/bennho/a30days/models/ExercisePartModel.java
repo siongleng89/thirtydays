@@ -1,7 +1,6 @@
 package com.challenge.bennho.a30days.models;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 
@@ -83,12 +82,30 @@ public class ExercisePartModel {
         return null;
     }
 
+    public String getExerciseSpeech(Context context){
+        switch (exerciseState){
+            case WarmUp:
+                return "Warm Up!";
+            case FastWalk:
+                return "Fast Walk Now, My Boy?";
+            case Run:
+                return "Run";
+            case Sprint:
+                return "Sprint";
+            case Walk:
+                return "Walk";
+            case CoolDown:
+                return "Cool Down";
+        }
+        return null;
+    }
+
     public Drawable getExerciseIcon(Context context){
         switch (exerciseState){
             case WarmUp:
                 return ContextCompat.getDrawable(context, R.drawable.warmup_icon);
             case FastWalk:
-                return ContextCompat.getDrawable(context, R.drawable.walking_icon);
+                return ContextCompat.getDrawable(context, R.drawable.fast_walk_icon);
             case Run:
                 return ContextCompat.getDrawable(context, R.drawable.jogging_icon);
             case Sprint:

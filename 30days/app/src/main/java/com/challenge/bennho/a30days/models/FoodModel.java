@@ -33,7 +33,7 @@ public class FoodModel {
     }
 
     public enum FoodType{
-        french_fries, nil, almond, water, apple,
+        french_fries, nil, almond, water, green_tea, apple,
         banana, bean, biscuit, bread, broccolli,
         bubble_milk_tea, candy, carrot, cheese,
         cheese_burger, cheese_tart, chicken, chicken_nugget,

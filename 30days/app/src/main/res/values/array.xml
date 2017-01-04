@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="spinnerWeight">
-        <item>KG</item>
-        <item>POUND</item>
-
-    </string-array>
-
-
     <string-array name="reminderTime">
         <item name="0">12 AM</item>
         <item name="1">1 AM</item>
@@ -61,13 +54,13 @@
     </string-array>
 
     <string-array name="reminderDay">
-        <item name="1">Monday</item>
-        <item name="2">Tuesday</item>
-        <item name="3">Wednesday</item>
-        <item name="4">Thursday</item>
-        <item name="5">Friday</item>
-        <item name="6">Saturday</item>
-        <item name="7">Sunday</item>
+        <item name="1">Sunday</item>
+        <item name="2">Monday</item>
+        <item name="3">Tuesday</item>
+        <item name="4">Wednesday</item>
+        <item name="5">Thursday</item>
+        <item name="6">Friday</item>
+        <item name="7">Saturday</item>
     </string-array>
 
     <string-array name="reminderDayValues">

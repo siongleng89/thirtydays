@@ -3,22 +3,16 @@ package com.challenge.bennho.a30days.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.appodeal.ads.Appodeal;
 import com.appodeal.ads.InterstitialCallbacks;
-import com.challenge.bennho.a30days.MyApplication;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.BottomBar;
 import com.challenge.bennho.a30days.controls.LayoutDayCounter;
-import com.challenge.bennho.a30days.models.User;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
-import com.challenge.bennho.a30days.helpers.TextSpeak;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
+import com.challenge.bennho.a30days.models.User;
 
 public class MainActivity extends MyActivity {
 
@@ -28,7 +22,6 @@ public class MainActivity extends MyActivity {
     private ImageView imgViewPrevious, imgViewNext;
     private int userMaxDay;
     private int currentSelectedDay;
-    private Tracker mTracker;
 
 
     @Override
@@ -47,16 +40,6 @@ public class MainActivity extends MyActivity {
 
         refreshUserProgress();
         setListeners();
-
-        MyApplication application = (MyApplication) getApplication();
-        mTracker = application.getDefaultTracker();
-        mTracker.setScreenName("Image~");
-        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
-
-        AdsMediation adsMediation=new AdsMediation(this);
-
-
-
     }
 
     private void refreshUserProgress(){
@@ -64,13 +47,17 @@ public class MainActivity extends MyActivity {
         user.reload();
         userMaxDay = user.getCurrentDay();
 
-        userMaxDay = 20;
+        userMaxDay = 31;
         dayCounterControl.setMaxDayNumber(userMaxDay);
         updateDay(userMaxDay);
     }
 
     private void updateDay(int day){
         currentSelectedDay = day;
+        if(currentSelectedDay > 30){
+            currentSelectedDay = 30;
+        }
+
         dayCounterControl.updateDayNumber(day);
 
         setEnablePrevDayButton(day > 1);
@@ -82,33 +69,6 @@ public class MainActivity extends MyActivity {
         Intent intent = new Intent(this, ReadyActivity.class);
         intent.putExtra("dayPlan", currentSelectedDay);
         startActivity(intent);
-        /*Intent intent = new Intent(this, ReadyActivity.class);
-        startActivity(intent);*/
-
-        Appodeal.setInterstitialCallbacks(new InterstitialCallbacks() {
-
-            @Override
-            public void onInterstitialLoaded(boolean isPrecache) {
-            }
-
-            @Override
-            public void onInterstitialFailedToLoad() {
-            }
-
-            @Override
-            public void onInterstitialShown() {
-            }
-
-            @Override
-            public void onInterstitialClicked() {
-            }
-
-            @Override
-            public void onInterstitialClosed() {
-            }
-
-        });
-        Appodeal.show(this, Appodeal.INTERSTITIAL);
     }
 
 

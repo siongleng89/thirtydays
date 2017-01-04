@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="wrap_content"
             app:srcCompat="@drawable/fat_man"
-            android:id="@+id/imageView"
+            android:id="@+id/imgViewFat"
             android:layout_height="40dp" />
 
         <ProgressBar
@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             app:srcCompat="@drawable/fit_man"
-            android:id="@+id/imageView3" />
+            android:id="@+id/imgViewFit" />
     </LinearLayout>
 
     <LinearLayout

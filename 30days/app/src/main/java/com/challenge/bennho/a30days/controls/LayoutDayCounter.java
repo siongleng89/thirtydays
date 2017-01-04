@@ -104,6 +104,10 @@ public class LayoutDayCounter extends RelativeLayout {
     public void updateDayNumber(int day){
 
         int currentDayNumber = day;
+        if(currentDayNumber > 30){
+            currentDayNumber = 30;
+        }
+
 
         if(currentDayNumber < maxDayNumber){
             imgViewMedal.setVisibility(VISIBLE);
@@ -113,18 +117,12 @@ public class LayoutDayCounter extends RelativeLayout {
             imgViewMedal.setVisibility(GONE);
             txtCompleted.setText("Incomplete");
         }
-        txtDay.setText(String.format(context.getString(R.string.day_X), String.valueOf(day)));
+        txtDay.setText(String.format(context.getString(R.string.day_X), String.valueOf(currentDayNumber)));
 
         ViewCompat.setBackground(layoutBlinkingCircle, new SemiCircleDrawable(
                 ContextCompat.getColor(context, R.color.colorSprint),
                 12, 12 * (currentDayNumber - 1)
         ));
-//
-//        double completedPercent = (completedDays / 30d) * 100d;
-//
-//        txtDay.setText(String.format(context.getString(R.string.day_X), String.valueOf(day)));
-////        txtCompleted.setText(String.format(context.getString(R.string.X_completed),
-////                    String.format("%.2f", completedPercent)));
 
     }
 
