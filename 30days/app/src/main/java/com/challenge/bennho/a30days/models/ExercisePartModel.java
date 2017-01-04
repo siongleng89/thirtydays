@@ -101,6 +101,21 @@ public class ExercisePartModel {
         return null;
     }
 
+    /**
+     * restHeartRate = BMI
+     * 0-24.9=70, 25-29.9=80, 30-39.9=90, >40=100
+     *
+     * maxHeartRate = 210 - (0.8 * Age)
+     *
+     * exerciseHeartRate= intensity%(maxHeartRate-restHeartRate=total) + restHeartRate
+     * warmUp=50%, walk=60*, fastWalk=80%, run=80%,sprint=100%
+     *
+     * Calories Burned = [(Age x 0.2017) — (Weight x 0.09036) + (exerciseHeartRate x 0.6309) — 55.0969] x Time / 4.184
+     * Calories Burned = [(Age x 0.074) — (Weight x 0.05741) + (exerciseHeartRate x 0.4472) — 20.4022] x Time / 4.184
+     *
+     * @param forIntervalMs
+     * @return
+     */
     public float getCaloriesBurnt(float forIntervalMs){
         switch (exerciseState){
             case WarmUp:
