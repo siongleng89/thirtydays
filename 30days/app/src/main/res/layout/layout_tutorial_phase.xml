@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                app:srcCompat="@drawable/phase"
+                android:id="@+id/imageView4"
+                android:elevation="0dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_height="130dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold"
+                    android:text="This exercise is a interval based exercise. It involves a series of low to high intensity exercise workouts interspersed with rest or relief periods for maximize calories burnt to SHAPE YOU IN JUST 30 DAYS!
+              " />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorWarmUp"
+                    android:text="Warm Up"
+                    android:textColor="@color/colorBtnWord"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Walk"
+                    android:background="@color/colorWalk"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@color/colorBtnWord"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Fast Walk"
+                    android:layout_weight="1"
+                    android:background="@color/colorFastWalk"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@color/colorBtnWord"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Run"
+                    android:layout_weight="1"
+                    android:background="@color/colorRun"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@color/colorBtnWord"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Sprint"
+                    android:background="@color/colorSprint"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@color/colorBtnWord"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Cool Down"
+                    android:background="@color/colorCoolDown"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textColor="@color/colorBtnWord"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold|italic" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <Button
+                    android:text="Next"
+                    android:layout_height="match_parent"
+                    android:id="@+id/button2"
+                    android:layout_weight="2"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+

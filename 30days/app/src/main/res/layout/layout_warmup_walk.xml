@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="450dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                app:srcCompat="@drawable/abslady"
+                android:id="@+id/imageView12"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:layout_marginTop="25dp" />
+
+            <TextView
+                android:text="Warm Up"
+                android:layout_width="match_parent"
+                android:id="@+id/textView9"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="24sp"
+                android:textStyle="normal|bold|italic"
+                android:background="@color/colorWarmUp"
+                android:textColor="@color/colorBtnWord" />
+
+            <TextView
+                android:text="Stretch your body and perform a slow walk to get yourself ready for the next phase"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:id="@+id/textView10"
+                android:layout_weight="1"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                app:srcCompat="@drawable/abslady"
+                android:id="@+id/imageView13"
+                android:layout_weight="1"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:text="Walk"
+                android:layout_width="match_parent"
+                android:id="@+id/textView"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="24sp"
+                android:textStyle="normal|bold|italic"
+                android:textColor="@color/colorBtnWord"
+                android:background="@color/colorWalk" />
+
+            <TextView
+                android:text="Perform a moderate speed walk (3.0mph) to heat up your body"
+                android:layout_width="match_parent"
+                android:id="@+id/textView11"
+                android:layout_weight="1"
+                android:layout_height="70dp"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1">
+
+        <Button
+            android:text="Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/button3"
+            android:layout_alignParentBottom="true" />
+
+        <Button
+            android:text="Next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button4"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</LinearLayout>
