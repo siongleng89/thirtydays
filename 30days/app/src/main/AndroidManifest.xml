@@ -26,7 +26,14 @@
             android:label="Personal Detail"></activity>
         <activity
             android:name=".activities.MainActivity"
-            android:launchMode="singleInstance"></activity>
+
+            android:launchMode="singleInstance">
+
+
+        </activity>
+
+        
+
         <activity
             android:name=".activities.ReadyActivity"
             android:label="Starting in"
@@ -68,6 +75,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
         </activity>
+
 
         <activity
             android:name=".activities.TutorialActivity"
