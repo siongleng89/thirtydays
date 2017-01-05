@@ -39,6 +39,7 @@ public class ReadyActivity extends MyActivity {
 
         textSpeak = TextSpeak.getInstance(this);
 
+        showTutorialIfNeeded();
         AdsMediation.showInterstitial(this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -57,9 +58,7 @@ public class ReadyActivity extends MyActivity {
             dayPlan = 1;
         }
 
-
         setCountDownSecs(5);
-
         setListeners();
     }
 
@@ -78,6 +77,10 @@ public class ReadyActivity extends MyActivity {
         countDown();
     }
 
+    private void showTutorialIfNeeded(){
+        Intent intent = new Intent(this, TutorialActivity.class);
+        startActivity(intent);
+    }
 
     private void countDown(){
         if(countDownSecs <= 0){

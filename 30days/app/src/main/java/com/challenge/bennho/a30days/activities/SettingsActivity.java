@@ -84,6 +84,15 @@ public class SettingsActivity extends MyActivity {
                 }
             });
 
+            findPreference("ExerciseTutorial").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent intent = new Intent(getActivity(), TutorialActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
+            });
+
         }
 
 

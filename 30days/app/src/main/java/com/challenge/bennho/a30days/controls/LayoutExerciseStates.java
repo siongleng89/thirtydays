@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.drawables.SemiCircleDrawable;
+import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.CalculationHelper;
 import com.challenge.bennho.a30days.helpers.Logs;
 import com.challenge.bennho.a30days.helpers.Threadings;
@@ -37,6 +38,8 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
     private TextView txtState, txtStateTime, txtSkip;
     private ExerciseActionListener exerciseActionListener;
     private int currentCircleIndex = -1;
+    private boolean demoMode;
+    private boolean lock;
 
 
     public LayoutExerciseStates(Context context) {
@@ -142,29 +145,49 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
 
     @Override
     public void onExercisePartChanged(final ExercisePartModel newExercisePartModel) {
-        currentCircleIndex = newExercisePartModel.getIndex();
+        if(newExercisePartModel != null){
+            currentCircleIndex = newExercisePartModel.getIndex();
+        }
 
         Threadings.postRunnable(new Runnable() {
             @Override
             public void run() {
-                for(int i = newExercisePartModel.getIndex() - 1; i >= 0; i--){
-                    final RelativeLayout animatingCircle = circlesArr.get(i);
-                    ((SemiCircleDrawable) animatingCircle.getBackground()).setCompleteElapsed();
+
+                if(newExercisePartModel == null){
+                    imgState.setVisibility(GONE);
+                    txtState.setVisibility(GONE);
+                    txtStateTime.setVisibility(GONE);
                 }
+                else{
+                    imgState.setVisibility(VISIBLE);
+                    txtState.setVisibility(VISIBLE);
+                    txtStateTime.setVisibility(VISIBLE);
 
-                imgState.setColorFilter(newExercisePartModel.getExerciseColor(context));
-                imgState.setImageDrawable(newExercisePartModel.getExerciseIcon(context));
-                txtState.setText(newExercisePartModel.getExerciseText(context));
-                txtState.setTextColor(newExercisePartModel.getExerciseColor(context));
-                txtStateTime.setTextColor(newExercisePartModel.getExerciseColor(context));
+                    if(!demoMode){
+                        for(int i = newExercisePartModel.getIndex() - 1; i >= 0; i--){
+                            final RelativeLayout animatingCircle = circlesArr.get(i);
+                            ((SemiCircleDrawable) animatingCircle.getBackground()).setCompleteElapsed();
+                        }
+                    }
 
-                txtSkip.setVisibility(newExercisePartModel.getExerciseState() ==
-                        ExercisePartModel.ExerciseState.WarmUp ?
-                        VISIBLE : GONE);
-                txtSkip.setBackgroundColor(newExercisePartModel.getExerciseColor(context));
 
-                txtStateTime.setText(CalculationHelper.prettifySeconds(
-                                         newExercisePartModel.getDurationSecs()));
+                    imgState.setColorFilter(newExercisePartModel.getExerciseColor(context));
+                    imgState.setImageDrawable(newExercisePartModel.getExerciseIcon(context));
+                    txtState.setText(newExercisePartModel.getExerciseText(context));
+                    txtState.setTextColor(newExercisePartModel.getExerciseColor(context));
+                    txtStateTime.setTextColor(newExercisePartModel.getExerciseColor(context));
+
+                    if(!demoMode){
+                        txtSkip.setVisibility(newExercisePartModel.getExerciseState() ==
+                                ExercisePartModel.ExerciseState.WarmUp ?
+                                VISIBLE : GONE);
+                        txtSkip.setBackgroundColor(newExercisePartModel.getExerciseColor(context));
+                    }
+
+
+                    txtStateTime.setText(CalculationHelper.prettifySeconds(
+                            newExercisePartModel.getDurationSecs()));
+                }
             }
         });
     }
@@ -174,8 +197,45 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
 
     }
 
+    public void removeFocusExercisePart(){
+        for(RelativeLayout circleLayout : circlesArr){
+            circleLayout.setAlpha(1f);
+        }
+    }
+
+    public void focusExercisePart(int exerciseIndex){
+        int i = 0;
+        for(RelativeLayout circleLayout : circlesArr){
+            if(i == exerciseIndex){
+                circleLayout.setAlpha(1);
+            }
+            else{
+                circleLayout.setAlpha(0.2f);
+            }
+            i++;
+        }
+    }
+
+    public void enableDemoMode(){
+        demoMode = true;
+
+        imgState.setScaleX(0.5f);
+        imgState.setScaleY(0.5f);
+
+        txtStateTime.setScaleY(0.5f);
+        txtStateTime.setScaleX(0.5f);
+
+        txtState.setScaleY(0.5f);
+        txtState.setScaleX(0.5f);
+
+        imgState.setY(AndroidUtils.dpToPx(context, 30f));
+        txtState.setY(AndroidUtils.dpToPx(context, -30f));
+    }
+
     private void skipExercisePart(){
-        exerciseActionListener.onSkippingExercise();
+        if(exerciseActionListener != null){
+            exerciseActionListener.onSkippingExercise();
+        }
     }
 
     private float getExercisePartAngle(ExercisePartModel exercisePartModel){
@@ -190,11 +250,22 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
         txtSkip.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                skipExercisePart();
+                if(lock){
+                    txtSkip.setText("Unlock First");
+                }
+                else{
+                    skipExercisePart();
+                }
             }
         });
     }
 
+    public void setLock(boolean lock) {
+        this.lock = lock;
+        if(!lock){
+            txtSkip.setText("Skip");
+        }
+    }
 
     public interface ExerciseActionListener{
         void onSkippingExercise();

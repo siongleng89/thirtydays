@@ -1,6 +1,7 @@
 package com.challenge.bennho.a30days.activities;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NavUtils;
@@ -116,10 +117,14 @@ public abstract class MyActivity extends AppCompatActivity {
 
     protected void setAdsLayout(){
         adsLayout = (RelativeLayout) findViewById(R.id.adLayout);
+        if(adsLayout != null){
+            adsLayout.setBackgroundColor(Color.BLACK);
+        }
     }
-
 
     protected boolean isPaused() {
         return paused;
     }
+
+
 }

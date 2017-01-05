@@ -9,65 +9,11 @@
     android:layout_height="match_parent">
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_centerVertical="true"
-        android:background="@color/colorAction"
-        android:id="@+id/layoutUnlockCountdown"
-        android:visibility="gone">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <TextView
-                android:text="(Hold to Unlock)"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView15"
-                android:textColor="@color/colorBtnWord"
-                android:textAlignment="center"
-                android:layout_marginBottom="20dp"
-                android:textStyle="normal|bold"
-                android:textSize="18sp" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/unlock_icon"
-                    android:id="@+id/imageView9"
-                    android:layout_weight="0" />
-
-                <TextView
-                    android:text="3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtUnlockCountDown"
-                    android:layout_weight="0"
-                    android:layout_marginLeft="40dp"
-                    android:textSize="70sp"
-                    android:textStyle="normal|bold"
-                    android:textColor="@color/colorBtnWord" />
-            </LinearLayout>
-        </LinearLayout>
-
-    </RelativeLayout>
-
     <LinearLayout
         android:id="@+id/activity_result"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_below="@+id/layoutUnlockCountdown"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
@@ -286,6 +232,59 @@
         </RelativeLayout>
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerVertical="true"
+        android:background="@color/colorAction"
+        android:id="@+id/layoutUnlockCountdown"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:text="(Hold to Unlock)"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView15"
+                android:textColor="@color/colorBtnWord"
+                android:textAlignment="center"
+                android:layout_marginBottom="20dp"
+                android:textStyle="normal|bold"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/unlock_icon"
+                    android:id="@+id/imageView9"
+                    android:layout_weight="0" />
+
+                <TextView
+                    android:text="3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtUnlockCountDown"
+                    android:layout_weight="0"
+                    android:layout_marginLeft="40dp"
+                    android:textSize="70sp"
+                    android:textStyle="normal|bold"
+                    android:textColor="@color/colorBtnWord" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>
 

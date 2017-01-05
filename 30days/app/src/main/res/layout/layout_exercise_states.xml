@@ -4,7 +4,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="1dp"
-    android:id="@+id/layoutOuterCircle">
+    android:id="@+id/layoutOuterCircle"
+    android:clipChildren="false"
+    android:clipToPadding="false">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,14 +20,18 @@
         android:layout_height="match_parent"
         android:id="@+id/layoutInnerCircle"
         android:layout_margin="20dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:clipChildren="false"
+        android:clipToPadding="false">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/layoutUpper"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:clipChildren="false"
+            android:clipToPadding="false">
 
             <ImageView
                 android:layout_width="70dp"
@@ -50,7 +56,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:gravity="center">
+                android:gravity="center"
+                android:clipChildren="false"
+                android:clipToPadding="false">
 
                 <TextView
                     android:layout_width="wrap_content"
