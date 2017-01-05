@@ -25,13 +25,19 @@ public class RealmHelper {
     public RealmHelper(Context context) {
         this.context = context;
 
-        // Initialize Realm
-        Realm.init(context);
+        reinit(context);
+    }
 
-        // Get a Realm instance for this thread
-        realm = Realm.getDefaultInstance();
+    public void reinit(Context context){
+        if(realm == null || realm.isClosed()){
+            // Initialize Realm
+            Realm.init(context);
 
-        realmResultsArr = new ArrayList();
+            // Get a Realm instance for this thread
+            realm = Realm.getDefaultInstance();
+
+            realmResultsArr = new ArrayList();
+        }
     }
 
     public void insertHistoryRecord(final HistoryRecord historyRecord){

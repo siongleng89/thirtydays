@@ -22,21 +22,25 @@ public class RunReminderHelper {
 
         boolean enabledNotification = PreferenceUtils.getBoolean(context, PreferenceType.EnableNotification);
         if(enabledNotification){
-            User user = new User(context);
-            user.reload();
-            if(user.getCurrentDay() < 31){
-                String days = PreferenceUtils.getString(context, PreferenceType.ReminderDay);
-                if(!Strings.isEmpty(days)){
-                    String reminderTime = PreferenceUtils.getString(context, PreferenceType.ReminderTime);
-                    if(!Strings.isNumeric(reminderTime)){
-                        reminderTime = "17";
-                    }
+//            User user = new User(context);
+//            user.reload();
+//            if(user.getCurrentDay() < 31){
+//
+//            }
 
-                    for(String day : days.split(",")){
-                        setReminderForDay(Integer.valueOf(day), Integer.valueOf(reminderTime), context);
-                    }
+            String days = PreferenceUtils.getString(context, PreferenceType.ReminderDay);
+            if(!Strings.isEmpty(days)){
+                String reminderTime = PreferenceUtils.getString(context, PreferenceType.ReminderTime);
+                if(!Strings.isNumeric(reminderTime)){
+                    reminderTime = "17";
+                }
+
+                for(String day : days.split(",")){
+                    setReminderForDay(Integer.valueOf(day), Integer.valueOf(reminderTime), context);
                 }
             }
+
+
         }
     }
 

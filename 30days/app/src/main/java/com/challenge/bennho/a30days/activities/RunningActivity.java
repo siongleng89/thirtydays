@@ -10,16 +10,20 @@ import android.os.IBinder;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.appodeal.ads.Appodeal;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.LayoutExerciseStates;
+import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.AnimateBuilder;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.PlansInputter;
+import com.challenge.bennho.a30days.helpers.Strings;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.ExerciseModel;
 import com.challenge.bennho.a30days.models.ExercisePartModel;
@@ -49,6 +53,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_running);
+        setAdsLayout();
 
         this.setActionBarVisibility(false);
 
@@ -122,7 +127,11 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
                 double remainingMins = Math.ceil(remainingSecs / 60);
                 txtTime.setText(String.valueOf((int) remainingMins));
 
-                txtCalories.setText(String.valueOf((int) caloriesBurnt));
+                int decimalPlaces = 2;
+                if(caloriesBurnt > 1000){
+                    decimalPlaces = 1;
+                }
+                txtCalories.setText(Strings.formatToXDec(decimalPlaces, caloriesBurnt));
             }
         });
     }
@@ -154,6 +163,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
     protected void onStart() {
         super.onStart();
         startExerciseService();
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     @Override
@@ -163,6 +173,8 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
             unbindService(exerciseServiceConnection);
             boundService = false;
         }
+        getWindow().clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        AdsMediation.hideBanner(this);
     }
 
     private void startExerciseService(){
@@ -384,7 +396,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
 
         PlansInputter plansInputter = new PlansInputter(this);
         exerciseModel = plansInputter.getExerciseModelByDay(dayPlan,
-                    user.getAge(), user.getHeightInCm(), user.getWeightKg());
+                    user.getAge(), user.getBMIValue());
 
 //        exerciseModel = new ExerciseModel();
 //        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);
@@ -402,9 +414,9 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
 
 
 //       exerciseModel = new ExerciseModel();
-//        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 2));
-//        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Walk, 2));
-//        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Run, 2));
+//        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 20));
+//        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Walk, 10));
+//        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Run, 10));
 //        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 2));
 //        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 5));
 //        exerciseModel.addExercisePartModel(new ExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 2));

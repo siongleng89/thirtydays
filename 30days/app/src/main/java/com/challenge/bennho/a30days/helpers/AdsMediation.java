@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.appodeal.ads.Appodeal;
+import com.appodeal.ads.BannerCallbacks;
 import com.appodeal.ads.InterstitialCallbacks;
 import com.challenge.bennho.a30days.statics.Constants;
 
@@ -34,7 +35,7 @@ public class AdsMediation {
         Appodeal.disableLocationPermissionCheck();
         Appodeal.initialize(activity, appKey, Appodeal.INTERSTITIAL | Appodeal.BANNER);
 
-        Appodeal.cache(activity, Appodeal.INTERSTITIAL);
+        Appodeal.cache(activity, Appodeal.INTERSTITIAL | Appodeal.BANNER);
     }
 
     public static void showInterstitial(final Activity activity){
@@ -52,7 +53,6 @@ public class AdsMediation {
                 @Override
                 public void onInterstitialShown() {
                     //logs analytics
-                    Appodeal.cache(activity, Appodeal.INTERSTITIAL);
                 }
 
                 @Override
@@ -70,6 +70,57 @@ public class AdsMediation {
         else{
             //logs analytics
         }
+    }
+
+    public static void showBanner(final Activity activity, final AdsListener adsListener){
+//        if(Appodeal.isLoaded(Appodeal.BANNER)){
+//
+//        }
+//        else{
+//            //log analytics
+//        }
+        setBannerListener(activity, adsListener);
+
+
+
+        Appodeal.show(activity, Appodeal.BANNER_BOTTOM);
+
+    }
+
+    public static void setBannerListener(final Activity activity, final AdsListener adsListener){
+        Appodeal.setBannerCallbacks(new BannerCallbacks() {
+            private int nextAdsHeightPx = AndroidUtils.getAdViewHeightInPixels(activity);
+
+            @Override
+            public void onBannerLoaded(int height, boolean isPrecache) {
+                nextAdsHeightPx = AndroidUtils.dpToPx(activity, height);
+            }
+
+            @Override
+            public void onBannerFailedToLoad() {
+            }
+
+            @Override
+            public void onBannerShown() {
+                if(adsListener != null){
+                    adsListener.onBannerShown(nextAdsHeightPx);
+                }
+                //log analytics
+            }
+
+            @Override
+            public void onBannerClicked() {
+            }
+
+        });
+    }
+
+    public static void hideBanner(Activity activity){
+        Appodeal.hide(activity, Appodeal.BANNER_BOTTOM);
+    }
+
+    public interface AdsListener{
+        void onBannerShown(int heightPixel);
     }
 
 }

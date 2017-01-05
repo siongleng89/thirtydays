@@ -15,10 +15,12 @@ import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.activities.RunningActivity;
 import com.challenge.bennho.a30days.helpers.CalculationHelper;
 import com.challenge.bennho.a30days.helpers.Logs;
+import com.challenge.bennho.a30days.helpers.MediaHelper;
 import com.challenge.bennho.a30days.helpers.TextSpeak;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.ExerciseModel;
 import com.challenge.bennho.a30days.models.ExercisePartModel;
+import com.challenge.bennho.a30days.models.User;
 
 /**
  * Created by sionglengho on 27/12/16.
@@ -37,6 +39,7 @@ public class ExerciseService extends Service {
     private final int SERVICE_ID = 7012;
     private String lastNotificationText;
     private TextSpeak textSpeak;
+    private User user;
 
     public ExerciseService() {
         this.binder = new LocalBinder();
@@ -44,6 +47,8 @@ public class ExerciseService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        //initiate text speech first, as it will take a while
+        getTextSpeak();
         return START_STICKY;
     }
 
@@ -67,8 +72,10 @@ public class ExerciseService extends Service {
             return false;
         }
 
-        disposeExercise();  //dispose previous unfinish exercise
+        resetService();  //dispose previous unfinish exercise
 
+        this.user = new User(getBaseContext());
+        user.reload();
         this.exerciseModel = exerciseModel;
         this.exerciseListener = exerciseListener;
         this.stopped = false;
@@ -154,9 +161,15 @@ public class ExerciseService extends Service {
 
     private void updateNotification(float currentExercisePartElapsedMs,
                                                 ExercisePartModel currentExercisePartModel){
-        String notificationTime = CalculationHelper.prettifySeconds(
-                currentExercisePartModel.getDurationSecs() - (currentExercisePartElapsedMs / 1000));
+        float remainingSecs = currentExercisePartModel.getDurationSecs() - (currentExercisePartElapsedMs / 1000);
+
+        String notificationTime = CalculationHelper.prettifySeconds(remainingSecs);
         if(!notificationTime.equals(lastNotificationText)){
+            lastNotificationText = notificationTime;
+            if(Math.floor(remainingSecs) == 2){
+                MediaHelper.playAnnouncementSound(getBaseContext());
+            }
+
             NotificationManager mNotificationManager = (NotificationManager)
                                         getSystemService(Context.NOTIFICATION_SERVICE);
             mNotificationManager.notify(SERVICE_ID, getNotification(
@@ -165,7 +178,8 @@ public class ExerciseService extends Service {
     }
 
     private void updateCaloriesBurnt(float deltaMs, ExercisePartModel currentExercisePartModel){
-        currentCaloriesBurnt += currentExercisePartModel.getCaloriesBurnt(deltaMs);
+        currentCaloriesBurnt += currentExercisePartModel.getCaloriesBurnt(deltaMs, user.getBMIValue(),
+                            user.getWeightKg(), user.getAge(), user.getGenderEnum());
     }
 
     private void speakOutCurrentExercisePart(ExercisePartModel currentExercisePartModel){
@@ -173,6 +187,7 @@ public class ExerciseService extends Service {
     }
 
     public void exerciseCompleted(){
+        getTextSpeak().speak("Exercise finished");
         stopped = true;
         completed = true;
         stopForeground(true);
@@ -186,18 +201,6 @@ public class ExerciseService extends Service {
     public void exerciseGaveUp(){
         stopped = true;
         exerciseListener.onExerciseEnded(realElapsedMs, currentCaloriesBurnt, false);
-    }
-
-    public void disposeExercise(){
-        stopForeground(true);
-        stopSelf();
-        NotificationManager mNotificationManager = (NotificationManager)
-                getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.cancel(SERVICE_ID);
-        stopped = true;
-        running = false;
-        this.exerciseListener = null;
-        if(textSpeak != null) textSpeak.dispose();
     }
 
     public void pauseExercise(){
@@ -223,9 +226,25 @@ public class ExerciseService extends Service {
         skippingExercisePart = true;
     }
 
+    public void resetService(){
+        stopForeground(true);
+        NotificationManager mNotificationManager = (NotificationManager)
+                getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager.cancel(SERVICE_ID);
+        stopped = true;
+        running = false;
+    }
+
+    public void disposeExercise(){
+        resetService();
+        stopSelf();
+        exerciseListener = null;
+    }
+
+
     public TextSpeak getTextSpeak() {
         if(textSpeak == null){
-            textSpeak = new TextSpeak(getBaseContext());
+            textSpeak = TextSpeak.getInstance(getApplicationContext());
         }
         return textSpeak;
     }

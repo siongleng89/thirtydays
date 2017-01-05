@@ -45,13 +45,10 @@ public class PlansInputter {
      * BMI = weight in kilograms / height in meters²
      * @param day
      * @param age
-     * @param heightCm
-     * @param weightKg
+     * @param bmi
      * @return
      */
-    public ExerciseModel getExerciseModelByDay(int day, int age, double heightCm, double weightKg){
-
-        double bmi = weightKg / Math.pow(heightCm / 100, 2);
+    public ExerciseModel getExerciseModelByDay(int day, int age, double bmi){
 
         ExerciseModel exerciseModel = exerciseModels.get(day - 1);
         double runFactor = 1d;

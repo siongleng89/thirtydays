@@ -8,6 +8,7 @@ import com.challenge.bennho.a30days.enums.GenderEnum;
 import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.Logs;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
+import com.challenge.bennho.a30days.helpers.RunReminderHelper;
 
 /**
  * Created by sionglengho on 30/12/16.
@@ -36,6 +37,7 @@ public class User {
         PreferenceUtils.putString(context, PreferenceType.ReminderTime, "17");
         PreferenceUtils.putString(context, PreferenceType.ReminderDay, "1,2,3,4,5,6,7");
         PreferenceUtils.putString(context, PreferenceType.CurrentExerciseDay, "1");
+        RunReminderHelper.updateReminders(context);
     }
 
     public void reload(){
@@ -89,6 +91,10 @@ public class User {
         PreferenceUtils.putString(context, PreferenceType.Weight, String.valueOf(weight));
     }
 
+    public double getBMIValue(){
+        return getWeightKg() / Math.pow(getHeightInCm() / 100, 2);
+    }
+
     public int getUnitIndex() {
         return unitIndex;
     }
@@ -100,6 +106,15 @@ public class User {
 
     public int getGenderIndex() {
         return genderIndex;
+    }
+
+    public GenderEnum getGenderEnum(){
+        if(getGenderIndex() == 0){
+            return GenderEnum.male;
+        }
+        else{
+            return GenderEnum.female;
+        }
     }
 
     public void setGenderIndex(int genderIndex) {

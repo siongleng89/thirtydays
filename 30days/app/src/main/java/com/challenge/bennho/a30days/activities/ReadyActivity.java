@@ -13,6 +13,7 @@ import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
+import com.challenge.bennho.a30days.helpers.TextSpeak;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.services.ExerciseService;
 
@@ -23,13 +24,20 @@ public class ReadyActivity extends MyActivity {
     private int countDownSecs;
     private boolean pauseCountDown;
     private int dayPlan;
+    private TextSpeak textSpeak;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ready);
+        setAdsLayout();
 
+        //let the service do some initiation first
+        Intent serviceIntent = new Intent(this, ExerciseService.class);
+        startService(serviceIntent);
+
+        textSpeak = TextSpeak.getInstance(this);
 
         AdsMediation.showInterstitial(this);
 
@@ -70,6 +78,7 @@ public class ReadyActivity extends MyActivity {
         countDown();
     }
 
+
     private void countDown(){
         if(countDownSecs <= 0){
             countDownComplete();
@@ -86,6 +95,9 @@ public class ReadyActivity extends MyActivity {
                     Threadings.postRunnable(new Runnable() {
                         @Override
                         public void run() {
+                            if(countDownSecs <= 3 && countDownSecs > 0){
+                                textSpeak.speak(String.valueOf(countDownSecs));
+                            }
                             txtCountdown.setText(String.valueOf(countDownSecs));
                             countDown();
                         }

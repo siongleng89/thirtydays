@@ -10,6 +10,7 @@ import android.os.Bundle;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.enums.PreferenceType;
+import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.CalculationHelper;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.RunReminderHelper;
@@ -22,11 +23,14 @@ public class SettingsActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        setAdsLayout();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        AdsMediation.showInterstitial(this);
+
         getFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new SettingsFragment())
+                .replace(R.id.layout_settings, new SettingsFragment())
                 .commit();
 
     }

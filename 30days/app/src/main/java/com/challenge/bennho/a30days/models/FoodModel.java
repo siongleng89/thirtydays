@@ -29,7 +29,7 @@ public class FoodModel {
     }
 
     public String getDescription() {
-        return "sample";
+        return foodType.name();
     }
 
     public enum FoodType{

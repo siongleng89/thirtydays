@@ -43,6 +43,7 @@ public class ExerciseResultActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_result);
+        setAdsLayout();
 
         btnEnd = (Button) findViewById(R.id.btnEnd);
         layoutIncompleteCircle = (LinearLayout) findViewById(R.id.layoutIncompleteCircle);
@@ -115,9 +116,6 @@ public class ExerciseResultActivity extends MyActivity {
 
                 if(isCompleted && dayPlan == user.getCurrentDay()){
                     user.addCurrentDay();
-
-                    //so that after 30days it is removed
-                    RunReminderHelper.updateReminders(this);
                 }
 
                 PreferenceUtils.putString(this, PreferenceType.ExerciseRecordSaved, "1");

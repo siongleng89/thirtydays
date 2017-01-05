@@ -7,10 +7,15 @@ import android.support.v4.app.NavUtils;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.appodeal.ads.Appodeal;
+import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.Analytics;
+import com.challenge.bennho.a30days.helpers.AndroidUtils;
 
 /**
  * Created by sionglengho on 26/12/16.
@@ -19,6 +24,7 @@ import com.challenge.bennho.a30days.helpers.Analytics;
 public abstract class MyActivity extends AppCompatActivity {
 
     private boolean paused;
+    private RelativeLayout adsLayout;
 
     protected void setActionBarVisibility(boolean visible){
         if(visible){
@@ -34,7 +40,20 @@ public abstract class MyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Analytics.logToScreen(this);
         AdsMediation.init(this);
+
+
+//        if(adsLayout != null){
+//            adsLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0));
+//        }
+
+        AdsMediation.showBanner(this, new AdsMediation.AdsListener() {
+            @Override
+            public void onBannerShown(int heightPixel) {
+                onAdsBannerHeightDetermined(heightPixel);
+            }
+        });
     }
+
 
     @Override
     protected void onPause() {
@@ -45,9 +64,17 @@ public abstract class MyActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        paused = false;
-        Appodeal.onResume(this, Appodeal.BANNER);
 
+        paused = false;
+
+        AdsMediation.setBannerListener(this, new AdsMediation.AdsListener() {
+            @Override
+            public void onBannerShown(int heightPixel) {
+                onAdsBannerHeightDetermined(heightPixel);
+            }
+        });
+
+        Appodeal.onResume(this, Appodeal.BANNER);
     }
 
     @Override
@@ -79,6 +106,18 @@ public abstract class MyActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    private void onAdsBannerHeightDetermined(int heightPixel){
+        if(adsLayout != null){
+            adsLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    heightPixel));
+        }
+    }
+
+    protected void setAdsLayout(){
+        adsLayout = (RelativeLayout) findViewById(R.id.adLayout);
+    }
+
 
     protected boolean isPaused() {
         return paused;

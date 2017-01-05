@@ -20,6 +20,20 @@ import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 
 public class AndroidUtils {
 
+    public static int getAdViewHeightInPixels(Activity activity) {
+        int adHeight = 0;
+
+        int screenHeightInDP = (int) getScreenDpHeight(activity);
+        if (screenHeightInDP < 400)
+            adHeight = 32;
+        else if (screenHeightInDP >= 400 && screenHeightInDP <= 720)
+            adHeight = 50;
+        else
+            adHeight = 90;
+
+        return dpToPx(activity, adHeight);
+    }
+
     public static int pxToDp(Context context, int px) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         int dp = Math.round(px / (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
