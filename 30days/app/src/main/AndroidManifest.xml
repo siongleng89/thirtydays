@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.challenge.bennho.a30days">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -13,7 +13,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".activities.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,26 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activities.LandingActivity">
-
-        </activity>
+        <activity android:name=".activities.LandingActivity"></activity>
         <activity
             android:name=".activities.PersonalDetailActivity"
-            android:label="Personal Detail">
-        </activity>
-
+            android:label="Personal Detail"></activity>
         <activity
             android:name=".activities.MainActivity"
-            android:launchMode="singleInstance">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-
+            android:launchMode="singleInstance"></activity>
         <activity
             android:name=".activities.ReadyActivity"
             android:label="Starting in"
@@ -50,18 +36,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
         </activity>
-
         <activity
             android:name=".activities.RunningActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait">
-
-        </activity>
-
-        <activity android:name=".activities.ExerciseResultActivity">
-
-        </activity>
-
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.ExerciseResultActivity"></activity>
         <activity
             android:name=".activities.HistoryActivity"
             android:label="Exercise History"
@@ -92,106 +71,121 @@
 
         <service android:name=".services.ExerciseService" />
 
-        <receiver android:name=".receivers.RunReminderReceiver"
-                    android:exported="true"/>
-
+        <receiver
+            android:name=".receivers.RunReminderReceiver"
+            android:exported="true" />
         <receiver
             android:name=".receivers.OnBootReceiver"
             android:exported="true"
             android:process=":remote">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
             </intent-filter>
         </receiver>
 
+        <meta-data
+            android:name="com.appodeal.framework"
+            android:value="android" />
 
-
-
-
-
-
-
-
-
-
-
-
-        <meta-data android:name="com.appodeal.framework" android:value="android" />
-        <receiver android:name="com.appodeal.ads.AppodealPackageAddedReceiver" android:exported="true" android:enabled="true">
+        <receiver
+            android:name="com.appodeal.ads.AppodealPackageAddedReceiver"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
+
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
 
-        <activity android:name="com.appodeal.ads.InterstitialActivity"
+        <activity
+            android:name="com.appodeal.ads.InterstitialActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name="com.appodeal.ads.VideoActivity"
+        <activity
+            android:name="com.appodeal.ads.VideoActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.appodeal.ads.LoaderActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <activity android:name="com.appodeal.ads.LoaderActivity"
-            android:configChanges="orientation|screenSize"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <meta-data android:name="com.google.android.gms.version"
+        <meta-data
+            android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-
-        <activity android:name="com.mopub.mobileads.MoPubActivity"
+        <activity
+            android:name="com.mopub.mobileads.MoPubActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent" />
-        <activity android:name="com.mopub.common.MoPubBrowser"
+        <activity
+            android:name="com.mopub.common.MoPubBrowser"
             android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity android:name="com.mopub.mobileads.MraidActivity"
+        <activity
+            android:name="com.mopub.mobileads.MraidActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
+        <activity
+            android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" />
-
-        <activity android:name="org.nexage.sourcekit.mraid.MRAIDBrowser"
+        <activity
+            android:name="org.nexage.sourcekit.mraid.MRAIDBrowser"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent" />
-
-
-        <activity android:name="com.amazon.device.ads.AdActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
-
-        <activity android:name="org.nexage.sourcekit.vast.activity.VASTActivity"
+        <activity
+            android:name="com.amazon.device.ads.AdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name="org.nexage.sourcekit.vast.activity.VASTActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="org.nexage.sourcekit.vast.activity.VPAIDActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
-        <activity android:name="org.nexage.sourcekit.vast.activity.VPAIDActivity"
+        <!-- suppress AndroidDomInspection -->
+        <activity
+            android:name="com.appodeal.ads.networks.vpaid.VPAIDActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-
-        <!--suppress AndroidDomInspection -->
-        <activity android:name="com.appodeal.ads.networks.vpaid.VPAIDActivity"
+        <activity
+            android:name="com.appodeal.ads.networks.SpotXActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <!-- suppress AndroidDomInspection -->
+        <activity
+            android:name="com.facebook.ads.InterstitialAdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
 
-        <activity android:name="com.appodeal.ads.networks.SpotXActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
-        <!--suppress AndroidDomInspection -->
-        <activity android:name="com.facebook.ads.InterstitialAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
-
-
-        <!--suppress AndroidDomInspection -->
-        <activity android:name="com.revmob.FullscreenActivity" android:theme="@android:style/Theme.Translucent"
-            android:configChanges="keyboardHidden|orientation"/>
-
-        <!--suppress AndroidDomInspection -->
-        <activity android:name="com.tapjoy.TJAdUnitActivity" android:configChanges="orientation|keyboardHidden|screenSize"
-            android:hardwareAccelerated="true" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-        <!--suppress AndroidDomInspection -->
-        <activity android:name="com.tapjoy.mraid.view.ActionHandler" android:configChanges="orientation|keyboardHidden|screenSize" />
-        <!--suppress AndroidDomInspection -->
-        <activity android:name="com.tapjoy.mraid.view.Browser" android:configChanges="orientation|keyboardHidden|screenSize" />
-        <!--suppress AndroidDomInspection -->
-        <activity android:name="com.tapjoy.TJContentActivity" android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" android:hardwareAccelerated="true" />
-
-        <activity android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+        <!-- suppress AndroidDomInspection -->
+        <activity
+            android:name="com.revmob.FullscreenActivity"
+            android:configChanges="keyboardHidden|orientation"
             android:theme="@android:style/Theme.Translucent" />
 
+        <!-- suppress AndroidDomInspection -->
+        <activity
+            android:name="com.tapjoy.TJAdUnitActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        <!-- suppress AndroidDomInspection -->
+        <activity
+            android:name="com.tapjoy.mraid.view.ActionHandler"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- suppress AndroidDomInspection -->
+        <activity
+            android:name="com.tapjoy.mraid.view.Browser"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <!-- suppress AndroidDomInspection -->
+        <activity
+            android:name="com.tapjoy.TJContentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity android:name=".activities.TutorialActivity"></activity>
     </application>
 
 </manifest>

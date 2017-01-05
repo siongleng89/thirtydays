@@ -19,6 +19,7 @@ import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.BottomBar;
 import com.challenge.bennho.a30days.controls.ImageCircularFood;
 import com.challenge.bennho.a30days.controls.LayoutSummary;
+import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.DateTimeUtils;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.RealmHelper;
@@ -34,7 +35,6 @@ import io.realm.RealmResults;
 
 public class HistoryActivity extends MyActivity {
 
-    private BottomBar bottomBar;
     private HistoryAdapter historyAdapter;
     private RecyclerView recycleViewItems;
     private LayoutSummary layoutSummary;
@@ -46,18 +46,17 @@ public class HistoryActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+        setAdsLayout();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        AdsMediation.showInterstitial(this);
+
         layoutSummary = (LayoutSummary) findViewById(R.id.layoutSummary);
         recycleViewItems = (RecyclerView) findViewById(R.id.recycleViewItems);
-        bottomBar = (BottomBar) findViewById(R.id.bottomBar);
-        bottomBar.setCurrentSelectedPageIndex(1);
 
         user = new User(this);
         user.reload();
-
-        realmHelper = new RealmHelper(this);
 
         recycleViewItems = (RecyclerView) findViewById(R.id.recycleViewItems);
         recycleViewItems.setNestedScrollingEnabled(false);
@@ -66,8 +65,6 @@ public class HistoryActivity extends MyActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         // layoutManager.setAutoMeasureEnabled(false);
         recycleViewItems.setLayoutManager(layoutManager);
-
-        getHistoryRecords();
     }
 
     @Override
@@ -94,6 +91,13 @@ public class HistoryActivity extends MyActivity {
     protected void onPause() {
         super.onPause();
         overridePendingTransition(0, 0);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        realmHelper = new RealmHelper(this);
+        getHistoryRecords();
     }
 
     @Override

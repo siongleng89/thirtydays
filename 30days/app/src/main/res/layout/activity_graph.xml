@@ -57,6 +57,13 @@
 
     </ScrollView>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/adLayout"
+        android:background="#000"
+        android:layout_height="wrap_content">
+
+    </RelativeLayout>
 
 </LinearLayout>
 

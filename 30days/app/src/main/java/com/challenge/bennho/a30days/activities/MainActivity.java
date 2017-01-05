@@ -12,7 +12,9 @@ import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.BottomBar;
 import com.challenge.bennho.a30days.controls.LayoutDayCounter;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
+import com.challenge.bennho.a30days.helpers.TextSpeak;
 import com.challenge.bennho.a30days.models.User;
+import com.challenge.bennho.a30days.services.ExerciseService;
 
 public class MainActivity extends MyActivity {
 
@@ -28,6 +30,7 @@ public class MainActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setAdsLayout();
 
         bottomBar = (BottomBar) findViewById(R.id.bottomBar) ;
         dayCounterControl = (LayoutDayCounter) findViewById(R.id.dayCounterControl);
@@ -38,8 +41,18 @@ public class MainActivity extends MyActivity {
 
         bottomBar.setCurrentSelectedPageIndex(0);
 
-        refreshUserProgress();
         setListeners();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //stop any orphaned ExerciseService
+        Intent serviceIntent = new Intent(this, ExerciseService.class);
+        stopService(serviceIntent);
+
+        refreshUserProgress();
     }
 
     private void refreshUserProgress(){
@@ -47,7 +60,6 @@ public class MainActivity extends MyActivity {
         user.reload();
         userMaxDay = user.getCurrentDay();
 
-        userMaxDay = 31;
         dayCounterControl.setMaxDayNumber(userMaxDay);
         updateDay(userMaxDay);
     }

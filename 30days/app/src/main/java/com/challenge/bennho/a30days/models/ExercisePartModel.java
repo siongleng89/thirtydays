@@ -5,6 +5,8 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 
 import com.challenge.bennho.a30days.R;
+import com.challenge.bennho.a30days.enums.GenderEnum;
+import com.challenge.bennho.a30days.helpers.CalculationHelper;
 
 /**
  * Created by sionglengho on 26/12/16.
@@ -85,17 +87,17 @@ public class ExercisePartModel {
     public String getExerciseSpeech(Context context){
         switch (exerciseState){
             case WarmUp:
-                return "Warm Up!";
+                return "Warm Up Now";
             case FastWalk:
-                return "Fast Walk Now, My Boy?";
+                return "Fast Walk Now";
             case Run:
-                return "Run";
+                return "Run Now";
             case Sprint:
-                return "Sprint";
+                return "Sprint Now";
             case Walk:
-                return "Walk";
+                return "Walk Now";
             case CoolDown:
-                return "Cool Down";
+                return "Cool Down Now";
         }
         return null;
     }
@@ -124,8 +126,8 @@ public class ExercisePartModel {
      *
      * maxHeartRate = 210 - (0.8 * Age)
      *
-     * exerciseHeartRate= intensity%(maxHeartRate-restHeartRate=total) + restHeartRate
-     * warmUp=50%, walk=60*, fastWalk=80%, run=80%,sprint=100%
+     * exerciseHeartRate= intensity * (maxHeartRate-restHeartRate=total) + restHeartRate
+     * warmUp=50%, walk=60*, fastWalk=80%, run=90%,sprint=100%
      *
      * Calories Burned = [(Age x 0.2017) — (Weight x 0.09036) + (exerciseHeartRate x 0.6309) — 55.0969] x Time / 4.184
      * Calories Burned = [(Age x 0.074) — (Weight x 0.05741) + (exerciseHeartRate x 0.4472) — 20.4022] x Time / 4.184
@@ -133,24 +135,54 @@ public class ExercisePartModel {
      * @param forIntervalMs
      * @return
      */
-    public float getCaloriesBurnt(float forIntervalMs){
-        switch (exerciseState){
-            case WarmUp:
-                return 1.1f;
-            case FastWalk:
-                return 1.2f;
-            case Run:
-                return 1.3f;
-            case Sprint:
-                return 1.5f;
-            case Walk:
-                return 1.1f;
-            case CoolDown:
-                return 1.2f;
+    public float getCaloriesBurnt(float forIntervalMs, double bmiValue, double weightInKg,
+                                  int age, GenderEnum genderEnum){
 
+        double restHeartRate = 70;
+        if(bmiValue >= 25){
+            restHeartRate = 80;
+        }
+        else if(bmiValue >= 30){
+            restHeartRate = 90;
+        }
+        else if(bmiValue >= 40){
+            restHeartRate = 100;
         }
 
-        return 0;
+        double intensity = 0.50;
+        if(exerciseState == ExerciseState.Walk
+                || exerciseState == ExerciseState.CoolDown){
+            intensity = 0.60;
+        }
+        else if(exerciseState == ExerciseState.FastWalk){
+            intensity = 0.80;
+        }
+        else if(exerciseState == ExerciseState.Run){
+            intensity = 0.90;
+        }
+        else if(exerciseState == ExerciseState.Sprint){
+            intensity = 1.00;
+        }
+
+        double maxHeartRate;
+        maxHeartRate = 210d - (0.8d * (double) age);
+
+        double exerciseHeartRate;
+        exerciseHeartRate = (intensity * (maxHeartRate - restHeartRate)) + restHeartRate;
+
+        double caloriesBurntPerMinute = 0;
+        if(genderEnum == GenderEnum.male){
+            caloriesBurntPerMinute = (((double) age * 0.2017) - (CalculationHelper.kgToPounds(weightInKg) * 0.09036)
+                    + (exerciseHeartRate * 0.6309) - 55.0969) * (1 / 4.184);
+        }
+        else if(genderEnum == GenderEnum.female){
+            caloriesBurntPerMinute = (((double) age * 0.074) - (CalculationHelper.kgToPounds(weightInKg) * 0.05741)
+                    + (exerciseHeartRate * 0.4472) - 20.4022) * (1 / 4.184);
+        }
+
+        float caloriesBurntPerMs = (float) caloriesBurntPerMinute / (60f * 1000f);
+
+        return caloriesBurntPerMs * forIntervalMs;
     }
 
     public enum ExerciseState{

@@ -17,6 +17,8 @@ public class LandingActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
+        setAdsLayout();
+
         btnBegin = (Button) findViewById(R.id.btnBegin);
 
         setListeners();

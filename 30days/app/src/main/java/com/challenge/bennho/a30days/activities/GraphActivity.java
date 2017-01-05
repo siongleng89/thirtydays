@@ -30,6 +30,7 @@ public class GraphActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
+        setAdsLayout();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

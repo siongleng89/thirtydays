@@ -3,6 +3,7 @@ package com.challenge.bennho.a30days;
 import android.app.Application;
 
 import com.challenge.bennho.a30days.helpers.Analytics;
+import com.challenge.bennho.a30days.helpers.TextSpeak;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
@@ -17,7 +18,11 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Threadings.setMainTreadId();
+        TextSpeak.getInstance(this);
     }
+
+
+
     synchronized public Tracker getDefaultTracker() {
         if(BuildConfig.DEBUG_MODE) return null;
 
