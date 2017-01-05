@@ -20,10 +20,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.LandingActivity"></activity>
+
+        <activity android:name=".activities.LandingActivity">
+
+        </activity>
+
         <activity
             android:name=".activities.PersonalDetailActivity"
-            android:label="Personal Detail"></activity>
+            android:label="Personal Detail">
+
+        </activity>
+
         <activity
             android:name=".activities.MainActivity"
 
@@ -46,8 +53,15 @@
         <activity
             android:name=".activities.RunningActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".activities.ExerciseResultActivity"></activity>
+            android:screenOrientation="portrait">
+
+
+        </activity>
+
+        <activity android:name=".activities.ExerciseResultActivity">
+
+        </activity>
+
         <activity
             android:name=".activities.HistoryActivity"
             android:label="Exercise History"

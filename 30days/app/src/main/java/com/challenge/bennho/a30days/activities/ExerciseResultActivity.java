@@ -155,7 +155,7 @@ public class ExerciseResultActivity extends MyActivity {
 
         AnimateBuilder.build(this, imgViewStickman)
                 .setAnimateType(AnimateBuilder.AnimateType.moveByX)
-                .setValueDp(AndroidUtils.getScreenDpWidth(ExerciseResultActivity.this) - 25)
+                .setValueDp(AndroidUtils.getScreenDpWidth(ExerciseResultActivity.this) / 2 + 100 - 12)
                 .setDurationMs(4000)
                 .setFinishCallback(new Runnable() {
                     @Override
