@@ -11,12 +11,16 @@
 
     <color name="colorPositive">#057e31</color>
 
-    <color name="colorWarmUp">#ff8254</color>
+    <color name="colorWarmUp">#ff8a65</color>
     <color name="colorRun">#ff4400</color>
     <color name="colorWalk">#4fc604</color>
     <color name="colorFastWalk">#157901</color>
     <color name="colorSprint">#b90000</color>
     <color name="colorCoolDown">#00b8d4</color>
     <color name="colorBackground">#fdfdfd</color>
+    <color name="colorFastWalk2">#33691e</color>
+    <color name="colorWalk2">#64dd17</color>
+    <color name="colorRun2">#ff3d00</color>
+    <color name="colorSprint2">#b71c1c</color>
 
 </resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorRun2"
+    android:gravity="center_vertical">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        app:srcCompat="@drawable/win"
+        android:id="@+id/imageView3"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:tint="@color/colorBackground"
+        android:layout_marginBottom="20dp"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:text="RUN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:gravity="bottom|center_horizontal|center"
+        android:textSize="25sp"
+        android:textColor="@color/colorBackground"
+        android:fontFamily="sans-serif-condensed" />
+
+    <TextView
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis turpis dignissim, luctus elit sed, posuere dui. In sed sapien sed nulla tempor scelerisque pulvinar vel diam. "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView11"
+        android:gravity="top|center_vertical|center_horizontal"
+        android:textColor="@color/colorBackground"
+        android:textStyle="normal|bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp" />
+</LinearLayout>
