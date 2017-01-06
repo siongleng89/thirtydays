@@ -15,8 +15,10 @@ import android.widget.RelativeLayout;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.LayoutExerciseStates;
+import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.fragments.FragmentTutorialItem;
 import com.challenge.bennho.a30days.helpers.Logs;
+import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.ExerciseModel;
 import com.challenge.bennho.a30days.models.ExercisePartModel;
@@ -78,6 +80,7 @@ public class TutorialActivity extends MyActivity{
     }
 
     private void endTutorial(){
+        PreferenceUtils.putString(this, PreferenceType.SeenTutorial, "1");
         finish();
     }
 

@@ -5,4 +5,5 @@
     android:layout_height="wrap_content"
     android:background="@color/colorAction"
     app:titleTextColor="@color/colorBtnWord"
-    app:subtitleTextColor="@color/colorBtnWord"/>
+    app:subtitleTextColor="@color/colorBtnWord"
+    app:theme="@style/ToolbarStyle" />

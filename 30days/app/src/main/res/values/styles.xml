@@ -8,14 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/colorBackground</item>
 
-        <item name="colorControlNormal">@color/colorBtnWord</item>
-
-        <!-- The style for the widgets on the ActionBar. -->
-        <item name="actionBarWidgetTheme">@style/WidgetStyle</item>
-
     </style>
 
-    <style name="WidgetStyle" parent="style/ThemeOverlay.AppCompat.Light">
+    <style name="ToolbarStyle" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
         <item name="colorControlNormal">@color/colorBtnWord</item>
     </style>
 

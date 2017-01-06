@@ -24,6 +24,7 @@ import com.challenge.bennho.a30days.activities.MainActivity;
 import com.challenge.bennho.a30days.activities.MyActivity;
 import com.challenge.bennho.a30days.activities.SettingsActivity;
 import com.challenge.bennho.a30days.activities.TutorialActivity;
+import com.challenge.bennho.a30days.models.User;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,10 +40,14 @@ public class DrawerHelper implements ListView.OnItemClickListener {
     private DrawerLayout layoutDrawer;
     private ListView listViewDrawer;
     private MyActivity activity;
+    private CustomDrawerAdapter drawerAdapter;
     private List<String> drawItemList;
+    private User user;
 
     public DrawerHelper(MyActivity activity) {
         this.activity = activity;
+        user = new User(activity);
+        user.reload();
     }
 
     public void show(){
@@ -51,8 +56,9 @@ public class DrawerHelper implements ListView.OnItemClickListener {
             drawItemList = Arrays.asList(activity.getResources().getStringArray(R.array.drawItems));
 
             listViewDrawer = (ListView) activity.findViewById(R.id.left_drawer);
+            drawerAdapter = new CustomDrawerAdapter(activity,drawItemList);
 
-            listViewDrawer.setAdapter(new CustomDrawerAdapter(activity,drawItemList));
+            listViewDrawer.setAdapter(drawerAdapter);
             listViewDrawer.setOnItemClickListener(this);
 
             ActionBarDrawerToggle actionBarDrawerToggle =
@@ -73,6 +79,23 @@ public class DrawerHelper implements ListView.OnItemClickListener {
             layoutDrawer.addDrawerListener(actionBarDrawerToggle);
             actionBarDrawerToggle.syncState();
         }
+    }
+
+    public void refreshDayCounter(){
+        if(layoutDrawer == null) return;
+
+        Threadings.runInBackground(new Runnable() {
+            @Override
+            public void run() {
+                user.reload();
+                Threadings.postRunnable(new Runnable() {
+                    @Override
+                    public void run() {
+                        drawerAdapter.notifyDataSetChanged();
+                    }
+                });
+            }
+        });
     }
 
     @Override
@@ -189,6 +212,10 @@ public class DrawerHelper implements ListView.OnItemClickListener {
                 drawerHolder.layoutTitle.setVisibility(View.GONE);
                 drawerHolder.layoutItem.setVisibility(View.GONE);
                 drawerHolder.layoutSpacing.setVisibility(View.GONE);
+
+                int userMaxDay = user.getCurrentDay();
+                drawerHolder.txtDayCounter.setText(String.format("%s/30", userMaxDay - 1));
+                drawerHolder.txtDayText.setText(String.format("Go to Day %s Plan", Math.min(userMaxDay, 30)));
             }
             else if(isMenuTitle){
                 drawerHolder.layoutDay.setVisibility(View.GONE);
@@ -236,6 +263,9 @@ public class DrawerHelper implements ListView.OnItemClickListener {
                 }
                 else if(drawerItem.equals(activity.getString(R.string.drawer_item_about))){
                     drawableRes = R.drawable.about_us_icon;
+                }
+                else if(drawerItem.equals(activity.getString(R.string.drawer_item_share))){
+                    drawableRes = R.drawable.share_icon;
                 }
                 drawerHolder.imgIcon.setImageResource(drawableRes);
 

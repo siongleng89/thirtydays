@@ -34,6 +34,7 @@ public abstract class MyActivity extends AppCompatActivity {
     private boolean paused;
     private RelativeLayout adsLayout;
     private Toolbar toolbar;
+    private DrawerHelper drawerHelper;
 
 
     @Override
@@ -73,6 +74,7 @@ public abstract class MyActivity extends AppCompatActivity {
         });
 
         Appodeal.onResume(this, Appodeal.BANNER);
+        drawerHelper.refreshDayCounter();
     }
 
     @Override
@@ -135,7 +137,8 @@ public abstract class MyActivity extends AppCompatActivity {
             adsLayout.setBackgroundColor(Color.BLACK);
         }
 
-        new DrawerHelper(this).show();
+        drawerHelper = new DrawerHelper(this);
+        drawerHelper.show();
     }
 
 

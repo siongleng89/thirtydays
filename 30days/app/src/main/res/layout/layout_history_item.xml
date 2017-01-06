@@ -54,13 +54,6 @@
             android:layout_height="20dp"
             android:id="@+id/imgViewDelete" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            app:srcCompat="@drawable/share_icon"
-            android:tint="@color/colorWord"
-            android:layout_height="20dp"
-            android:id="@+id/imgViewShare" />
-
     </LinearLayout>
 
     <TextView

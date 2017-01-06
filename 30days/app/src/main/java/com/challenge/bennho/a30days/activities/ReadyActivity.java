@@ -13,6 +13,7 @@ import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
+import com.challenge.bennho.a30days.helpers.Strings;
 import com.challenge.bennho.a30days.helpers.TextSpeak;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.services.ExerciseService;
@@ -39,8 +40,8 @@ public class ReadyActivity extends MyActivity {
 
         textSpeak = TextSpeak.getInstance(this);
 
-        showTutorialIfNeeded();
-        AdsMediation.showInterstitial(this);
+        showTutorialIfNeededOrShowAds();
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -77,10 +78,16 @@ public class ReadyActivity extends MyActivity {
         countDown();
     }
 
-    private void showTutorialIfNeeded(){
-        Intent intent = new Intent(this, TutorialActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-        startActivity(intent);
+    private void showTutorialIfNeededOrShowAds(){
+        String seenTutorial = PreferenceUtils.getString(this, PreferenceType.SeenTutorial);
+        if(Strings.isEmpty(seenTutorial) || !seenTutorial.equals("1")){
+            Intent intent = new Intent(this, TutorialActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            startActivity(intent);
+        }
+        else{
+            AdsMediation.showInterstitial(this);
+        }
     }
 
     private void countDown(){

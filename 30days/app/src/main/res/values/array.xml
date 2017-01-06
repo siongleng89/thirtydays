@@ -17,6 +17,7 @@
         <item name="-">-</item>
         <item name="miscellaneous_title">@string/drawer_title_miscellaneous</item>
         <item name="rate">@string/drawer_item_rate</item>
+        <item name="share">@string/drawer_item_share</item>
         <item name="contact">@string/drawer_item_contact</item>
         <item name="about">@string/drawer_item_about</item>
         <item name="spacing"></item>

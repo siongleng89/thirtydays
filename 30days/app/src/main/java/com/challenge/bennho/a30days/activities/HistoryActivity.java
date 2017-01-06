@@ -148,7 +148,7 @@ public class HistoryActivity extends MyActivity {
 
             private TextView txtDayPlan, txtDate, txtDuration, txtCalories, txtIndex;
             private ImageView imgViewComplete, imgViewIncomplete;
-            private ImageView imgViewDelete, imgViewShare;
+            private ImageView imgViewDelete;
             private ImageCircularFood imageViewFood1, imageViewFood2, imageViewFood3;
             private TextView txtItemSeparatorThick, txtItemSeparatorThin;
             private TextView txtDateTitle, txtPlanTitle, txtCompletedTitle,
@@ -171,7 +171,6 @@ public class HistoryActivity extends MyActivity {
                 imageViewFood2 = (ImageCircularFood) itemView.findViewById(R.id.imgViewFood2);
                 imageViewFood3 = (ImageCircularFood) itemView.findViewById(R.id.imgViewFood3);
                 imgViewDelete = (ImageView) itemView.findViewById(R.id.imgViewDelete);
-                imgViewShare = (ImageView) itemView.findViewById(R.id.imgViewShare);
                 txtItemSeparatorThin = (TextView) itemView.findViewById(R.id.txtItemSeparatorThin);
                 txtItemSeparatorThick = (TextView) itemView.findViewById(R.id.txtItemSeparatorThick);
 
@@ -231,7 +230,6 @@ public class HistoryActivity extends MyActivity {
                 imageViewFood2.setVisibility(View.VISIBLE);
                 imageViewFood3.setVisibility(View.VISIBLE);
                 imgViewDelete.setVisibility(View.VISIBLE);
-                imgViewShare.setVisibility(View.VISIBLE);
 
                 txtDateTitle.setVisibility(View.VISIBLE);
                 txtPlanTitle.setVisibility(View.VISIBLE);
@@ -302,7 +300,6 @@ public class HistoryActivity extends MyActivity {
                 imageViewFood2.setVisibility(View.INVISIBLE);
                 imageViewFood3.setVisibility(View.INVISIBLE);
                 imgViewDelete.setVisibility(View.INVISIBLE);
-                imgViewShare.setVisibility(View.INVISIBLE);
 
                 txtDateTitle.setVisibility(View.INVISIBLE);
                 txtPlanTitle.setVisibility(View.INVISIBLE);
