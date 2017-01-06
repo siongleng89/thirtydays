@@ -31,7 +31,7 @@ public class ReadyActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ready);
-        setAdsLayout();
+        onLayoutSet();
 
         //let the service do some initiation first
         Intent serviceIntent = new Intent(this, ExerciseService.class);
@@ -79,6 +79,7 @@ public class ReadyActivity extends MyActivity {
 
     private void showTutorialIfNeeded(){
         Intent intent = new Intent(this, TutorialActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivity(intent);
     }
 

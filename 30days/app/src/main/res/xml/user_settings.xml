@@ -2,18 +2,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory android:title="Tutorials" >
-
-        <Preference
-            android:key="ExerciseTutorial"
-            android:title="Exercise Tutorial"
-            android:summary="Tap to view">
-
-        </Preference>
-
-    </PreferenceCategory>
-
-
     <PreferenceCategory android:title="Notifications Settings" >
 
         <CheckBoxPreference
@@ -52,15 +40,6 @@
 
         </Preference>
 
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="About" >
-        <com.challenge.bennho.a30days.controls.UrlPreference
-            android:key="button_voicemail_category_key"
-            android:title="Version "
-            android:summary="Version: 1.00"
-            android:persistent="false">
-        </com.challenge.bennho.a30days.controls.UrlPreference>
     </PreferenceCategory>
 
 </PreferenceScreen>

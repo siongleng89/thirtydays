@@ -9,6 +9,10 @@
     android:clipChildren="false"
     android:clipToPadding="false">
 
+    <include
+        android:id="@+id/my_toolbar"
+        layout="@layout/my_toolbar" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_weight="1"

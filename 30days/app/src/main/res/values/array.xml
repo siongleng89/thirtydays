@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string-array name="drawItems">
+        <item name="main">@string/drawer_title_day_x_plan</item>
+        <item name="-">-</item>
+        <item name="history_title">@string/drawer_title_history</item>
+        <item name="history_list">@string/drawer_item_history_list</item>
+        <item name="history_graph">@string/drawer_item_history_graph</item>
+        <item name="-">-</item>
+        <item name="tutorial_title">@string/drawer_title_tutorial</item>
+        <item name="tutorial">@string/drawer_item_exercise_tutorial</item>
+        <item name="-">-</item>
+        <item name="more_title">@string/drawer_title_more</item>
+        <item name="settings">@string/drawer_item_settings</item>
+        <item name="pro_version">@string/drawer_item_pro_version</item>
+        <item name="-">-</item>
+        <item name="miscellaneous_title">@string/drawer_title_miscellaneous</item>
+        <item name="rate">@string/drawer_item_rate</item>
+        <item name="contact">@string/drawer_item_contact</item>
+        <item name="about">@string/drawer_item_about</item>
+        <item name="spacing"></item>
+        <item name="spacing"></item>
+    </string-array>
+
+
+
     <string-array name="reminderTime">
         <item name="0">12 AM</item>
         <item name="1">1 AM</item>
@@ -72,8 +97,6 @@
         <item name="6">6</item>
         <item name="7">7</item>
     </string-array>
-
-
 
     <string-array name="unit">
         <item name="kg">kg</item>

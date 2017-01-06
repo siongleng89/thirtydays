@@ -23,7 +23,7 @@ public class SettingsActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        setAdsLayout();
+        onLayoutSet();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -84,14 +84,6 @@ public class SettingsActivity extends MyActivity {
                 }
             });
 
-            findPreference("ExerciseTutorial").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    Intent intent = new Intent(getActivity(), TutorialActivity.class);
-                    startActivity(intent);
-                    return true;
-                }
-            });
 
         }
 

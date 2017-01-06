@@ -2,9 +2,7 @@ package com.challenge.bennho.a30days.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
-import com.challenge.bennho.a30days.controls.BottomBar;
 import com.challenge.bennho.a30days.controls.ImageCircularFood;
 import com.challenge.bennho.a30days.controls.LayoutSummary;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
@@ -27,9 +24,6 @@ import com.challenge.bennho.a30days.models.FoodModel;
 import com.challenge.bennho.a30days.models.HistoryRecord;
 import com.challenge.bennho.a30days.models.User;
 
-import java.util.ArrayList;
-
-import io.realm.Realm;
 import io.realm.RealmChangeListener;
 import io.realm.RealmResults;
 
@@ -46,7 +40,7 @@ public class HistoryActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        setAdsLayout();
+        onLayoutSet();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

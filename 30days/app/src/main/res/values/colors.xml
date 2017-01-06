@@ -22,5 +22,6 @@
     <color name="colorWalk2">#64dd17</color>
     <color name="colorRun2">#ff3d00</color>
     <color name="colorSprint2">#b71c1c</color>
+    <color name="colorDrawer">#212121</color>
 
 </resources>

@@ -2,44 +2,48 @@ package com.challenge.bennho.a30days.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.appodeal.ads.Appodeal;
-import com.appodeal.ads.InterstitialCallbacks;
 import com.challenge.bennho.a30days.R;
-import com.challenge.bennho.a30days.controls.BottomBar;
 import com.challenge.bennho.a30days.controls.LayoutDayCounter;
-import com.challenge.bennho.a30days.helpers.AdsMediation;
-import com.challenge.bennho.a30days.helpers.TextSpeak;
+import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.models.User;
 import com.challenge.bennho.a30days.services.ExerciseService;
 
 public class MainActivity extends MyActivity {
 
+    private DrawerLayout drawerLayout;
+    private ListView drawerList;
     private LayoutDayCounter dayCounterControl;
-    private BottomBar bottomBar;
-    private TextView txtStart;
     private ImageView imgViewPrevious, imgViewNext;
     private int userMaxDay;
     private int currentSelectedDay;
+    private RelativeLayout layoutExercise, layoutMeal;
+    private TextView txtDayNumber1, txtDayNumber2;
+    private RelativeLayout layoutLockExercise, layoutLockMeal;
+    private boolean lockedExercise, lockedMeal;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setAdsLayout();
+        onLayoutSet();
 
-        bottomBar = (BottomBar) findViewById(R.id.bottomBar) ;
+        layoutExercise = (RelativeLayout) findViewById(R.id.layoutExercise);
+        layoutMeal = (RelativeLayout) findViewById(R.id.layoutMeal);
+        layoutLockExercise = (RelativeLayout) findViewById(R.id.layoutLockExercise);
+        layoutLockMeal = (RelativeLayout) findViewById(R.id.layoutLockMeal);
         dayCounterControl = (LayoutDayCounter) findViewById(R.id.dayCounterControl);
-        txtStart = (TextView) findViewById(R.id.txtStart);
-
         imgViewNext = (ImageView) findViewById(R.id.imgViewNext);
         imgViewPrevious = (ImageView) findViewById(R.id.imgViewPrevious);
-
-        bottomBar.setCurrentSelectedPageIndex(0);
+        txtDayNumber1 = (TextView) findViewById(R.id.txtDayNumber1);
+        txtDayNumber2 = (TextView) findViewById(R.id.txtDayNumber2);
 
         setListeners();
     }
@@ -71,24 +75,65 @@ public class MainActivity extends MyActivity {
         }
 
         dayCounterControl.updateDayNumber(day);
+        txtDayNumber1.setText(String.format("DAY %s", day));
+        txtDayNumber2.setText(String.format("DAY %s", day));
 
         setEnablePrevDayButton(day > 1);
-        setEnableNextDayButton(day < userMaxDay);
+        setEnableNextDayButton(day < 30);
+        setLockMeal(day > 7);
+        setLockExercise(currentSelectedDay > userMaxDay);
     }
 
 
     private void startExercise(){
-        Intent intent = new Intent(this, ReadyActivity.class);
-        intent.putExtra("dayPlan", currentSelectedDay);
-        startActivity(intent);
+        if(lockedExercise){
+            OverlayBuilder.build(this)
+                    .setTitle("Exercise Locked")
+                    .setContent("Please finish all previous running exercise plans first!")
+                    .setOverlayType(OverlayBuilder.OverlayType.OkOnly)
+                    .show();
+        }
+        else{
+            Intent intent = new Intent(this, ReadyActivity.class);
+            intent.putExtra("dayPlan", currentSelectedDay);
+            startActivity(intent);
+        }
+    }
+
+    private void showMeal(){
+        if(lockedMeal){
+            OverlayBuilder.build(this)
+                    .setTitle("Meal Locked")
+                    .setContent("Please upgrade to pro version to view all meal plans")
+                    .setOverlayType(OverlayBuilder.OverlayType.OkCancel)
+                    .setRunnables(new Runnable() {
+                        @Override
+                        public void run() {
+
+                        }
+                    })
+                    .show();
+        }
+        else{
+            Intent intent = new Intent(this, ReadyActivity.class);
+            intent.putExtra("dayPlan", currentSelectedDay);
+            startActivity(intent);
+        }
     }
 
 
     private void setListeners(){
-        txtStart.setOnClickListener(new View.OnClickListener() {
+        layoutExercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startExercise();
+            }
+        });
+
+        layoutMeal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMeal();
             }
         });
     }
@@ -124,6 +169,26 @@ public class MainActivity extends MyActivity {
             imgViewPrevious.setAlpha(0.3f);
         }
 
+    }
+
+    private void setLockExercise(boolean locked){
+        lockedExercise = locked;
+        if(locked){
+            layoutLockExercise.setVisibility(View.VISIBLE);
+        }
+        else{
+            layoutLockExercise.setVisibility(View.GONE);
+        }
+    }
+
+    private void setLockMeal(boolean locked){
+        lockedMeal = locked;
+        if(locked){
+            layoutLockMeal.setVisibility(View.VISIBLE);
+        }
+        else{
+            layoutLockMeal.setVisibility(View.GONE);
+        }
     }
 
 }

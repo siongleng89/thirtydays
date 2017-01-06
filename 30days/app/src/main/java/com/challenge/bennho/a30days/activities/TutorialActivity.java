@@ -37,7 +37,7 @@ public class TutorialActivity extends MyActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
-        setAdsLayout();
+        onLayoutSet();
 
         setTitle("Exercise Tutorial");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

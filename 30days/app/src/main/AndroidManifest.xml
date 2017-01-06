@@ -33,7 +33,6 @@
 
         <activity
             android:name=".activities.MainActivity"
-
             android:launchMode="singleInstance">
 
 

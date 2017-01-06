@@ -6,10 +6,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NavUtils;
 import android.support.v4.app.TaskStackBuilder;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import com.appodeal.ads.Appodeal;
@@ -17,6 +23,7 @@ import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.Analytics;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
+import com.challenge.bennho.a30days.helpers.DrawerHelper;
 
 /**
  * Created by sionglengho on 26/12/16.
@@ -26,26 +33,16 @@ public abstract class MyActivity extends AppCompatActivity {
 
     private boolean paused;
     private RelativeLayout adsLayout;
+    private Toolbar toolbar;
 
-    protected void setActionBarVisibility(boolean visible){
-        if(visible){
-            getSupportActionBar().show();
-        }
-        else{
-            getSupportActionBar().hide();
-        }
-    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Analytics.logToScreen(this);
         AdsMediation.init(this);
 
-
-//        if(adsLayout != null){
-//            adsLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0));
-//        }
 
         AdsMediation.showBanner(this, new AdsMediation.AdsListener() {
             @Override
@@ -108,6 +105,18 @@ public abstract class MyActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    protected void setActionBarVisibility(boolean visible){
+        if(getSupportActionBar() != null){
+            if(visible){
+                getSupportActionBar().show();
+            }
+            else{
+                getSupportActionBar().hide();
+            }
+        }
+    }
+
+
     private void onAdsBannerHeightDetermined(int heightPixel){
         if(adsLayout != null){
             adsLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
@@ -115,11 +124,23 @@ public abstract class MyActivity extends AppCompatActivity {
         }
     }
 
-    protected void setAdsLayout(){
+    protected void onLayoutSet(){
+        toolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        if(toolbar != null){
+            setSupportActionBar(toolbar);
+        }
+
         adsLayout = (RelativeLayout) findViewById(R.id.adLayout);
         if(adsLayout != null){
             adsLayout.setBackgroundColor(Color.BLACK);
         }
+
+        new DrawerHelper(this).show();
+    }
+
+
+    public Toolbar getToolbar() {
+        return toolbar;
     }
 
     protected boolean isPaused() {

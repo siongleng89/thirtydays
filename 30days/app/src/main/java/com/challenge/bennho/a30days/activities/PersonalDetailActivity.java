@@ -29,7 +29,7 @@ public class PersonalDetailActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_detail);
-        setAdsLayout();
+        onLayoutSet();
 
         isInitial = false;
         if(getIntent() != null){

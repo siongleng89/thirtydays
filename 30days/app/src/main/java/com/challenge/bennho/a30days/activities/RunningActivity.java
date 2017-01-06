@@ -53,7 +53,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_running);
-        setAdsLayout();
+        onLayoutSet();
 
         this.setActionBarVisibility(false);
 
