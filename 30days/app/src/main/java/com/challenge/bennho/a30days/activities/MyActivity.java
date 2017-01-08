@@ -44,7 +44,6 @@ public abstract class MyActivity extends AppCompatActivity {
         Analytics.logToScreen(this);
         AdsMediation.init(this);
 
-
         AdsMediation.showBanner(this, new AdsMediation.AdsListener() {
             @Override
             public void onBannerShown(int heightPixel) {

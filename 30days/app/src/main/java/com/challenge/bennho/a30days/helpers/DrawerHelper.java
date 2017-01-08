@@ -151,17 +151,17 @@ public class DrawerHelper implements ListView.OnItemClickListener {
 
         public CustomDrawerAdapter(Context context,
                                    List<String> listItems) {
-            super(context, R.layout.layout_drawer_item, listItems);
-            this.context = context;
-            this.drawerItemList = listItems;
+                super(context, R.layout.layout_drawer_item, listItems);
+                this.context = context;
+                this.drawerItemList = listItems;
 
-        }
+            }
 
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            // TODO Auto-generated method stub
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                // TODO Auto-generated method stub
 
-            DrawerItemHolder drawerHolder;
+                DrawerItemHolder drawerHolder;
             View view = convertView;
 
             String drawerItem = this.drawerItemList.get(position);
