@@ -14,31 +14,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.LaunchActivity">
+
+        </activity>
+        <activity android:name=".activities.LandingActivity"></activity>
+        <activity
+            android:name=".activities.PersonalDetailActivity"
+            android:label="Personal Detail"></activity>
+        <activity
+            android:name=".activities.MainActivity"
+            android:launchMode="singleInstance"></activity>
+
+        <activity
+            android:name=".activities.MealActivity"
+            android:parentActivityName=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
         </activity>
-
-        <activity android:name=".activities.LandingActivity">
-
-        </activity>
-
-        <activity
-            android:name=".activities.PersonalDetailActivity"
-            android:label="Personal Detail">
-
-        </activity>
-
-        <activity
-            android:name=".activities.MainActivity"
-            android:launchMode="singleInstance">
-
-
-        </activity>
-
-        
 
         <activity
             android:name=".activities.ReadyActivity"
@@ -52,15 +49,8 @@
         <activity
             android:name=".activities.RunningActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait">
-
-
-        </activity>
-
-        <activity android:name=".activities.ExerciseResultActivity">
-
-        </activity>
-
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.ExerciseResultActivity"></activity>
         <activity
             android:name=".activities.HistoryActivity"
             android:label="Exercise History"
@@ -88,12 +78,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
         </activity>
-
-
         <activity
             android:name=".activities.TutorialActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
 
         <service android:name=".services.ExerciseService" />
 
