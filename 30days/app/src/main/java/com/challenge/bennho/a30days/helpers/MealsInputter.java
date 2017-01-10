@@ -294,6 +294,35 @@ public class MealsInputter {
         for(int i=0; i<30; i++){
             tipOfTheDays.add(0, "You SHOULD NOT add sugar to your tea and coffee within 30 days!");
             tipOfTheDays.add(1, "Always remember to remove skin and fat from the meat");
+            tipOfTheDays.add(2, "Take one tablespoon of extra virgin olive oil in the morning helps with weight loss");
+            tipOfTheDays.add(3, "Cook with olive oil when you're tying to grill the food");
+            tipOfTheDays.add(4, "Sugar and artificial sweeteners is the main factor of obese");
+            tipOfTheDays.add(5, "Avoid salty food, it will makes your body bloated");
+            tipOfTheDays.add(6, "Drink more water can boost your metabolism to burn fat");
+            tipOfTheDays.add(7, "Caffeine in coffee and tea can boost metabolism, drink 1 to 2 cup everyday to speed up your weight loss progress");
+            tipOfTheDays.add(8, "You are what you eat, so choose your food wisely");
+            tipOfTheDays.add(9, "Get a good night’s sleep, every night. Poor sleep is one of the strongest risk factors for weight gain");
+            tipOfTheDays.add(10, "Stress may increase levels of stress hormones in your body, this can cause increased hunger and result in weight gain");
+            tipOfTheDays.add(11, "Fast eaters gain more weight over time. Eating slowly makes you feel more full and boosts weight-reducing hormones");
+            tipOfTheDays.add(12, "Eat spicy food, it can actually help you cut back on calories");
+            tipOfTheDays.add(13, "Sugar-free product often often contain unhealthy sugar alternatives");
+            tipOfTheDays.add(14, "Always prepare food by yourself so you'll know what you're eating");
+            tipOfTheDays.add(15, "Snack on a small handful of nuts helps stave off hunger and keeps your metabolism stoked");
+            tipOfTheDays.add(16, "Always choose whole-grain for the carb");
+            tipOfTheDays.add(17, "An extra tablespoon of salad dressing can add 75-100 calories");
+            tipOfTheDays.add(18, "Breakfast skippers weigh more than breakfast eaters");
+            tipOfTheDays.add(19, "Think about your waistline instead of the food waste");
+            tipOfTheDays.add(20, "Try to get out of the habit of always eating something while you are sitting and relaxing,");
+            tipOfTheDays.add(21, "If you replaced a 20oz bottle of soda with water daily, you would easily lose up to 35 pounds in one year");
+            tipOfTheDays.add(22, "Eat more vegetable, it contain lot of fiber that help with weight loss");
+            tipOfTheDays.add(23, "Beer contains rapidly digested carbs that shut down fat burning");
+            tipOfTheDays.add(24, "Stop eating potato chips, popcorn, cookies, candy, ice cream, cakes");
+            tipOfTheDays.add(25, "Avoid fast food, most of them are unhealthy and contain lot of calories");
+            tipOfTheDays.add(26, "Taking drug or pill to lose weight destroy your health at the same time");
+            tipOfTheDays.add(27, "If you return to living exactly the way did when you gained weight, don’t be surprised when the excess weight returns. It will");
+            tipOfTheDays.add(28, "Weight loss effect doesn't last forever unless you get rid of the bad habit");
+            tipOfTheDays.add(29, "Always remind yourself how hard you have come this far");
+
         }
     }
 
