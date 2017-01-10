@@ -142,7 +142,7 @@ public abstract class MyActivity extends AppCompatActivity {
         drawerHelper.show();
     }
 
-    protected ProVersionHelpers getProVersionHelpers(){
+    public ProVersionHelpers getProVersionHelpers(){
         return ((MyApplication) getApplication()).getProVersionHelpers();
     }
 

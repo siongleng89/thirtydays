@@ -41,38 +41,45 @@ public class AdsMediation {
     }
 
     public static void showInterstitial(final MyActivity activity){
-        if (Appodeal.isLoaded(Appodeal.INTERSTITIAL)) {
-            Appodeal.setInterstitialCallbacks(new InterstitialCallbacks() {
+        activity.getProVersionHelpers().isProPurchased(new RunnableArgs<Boolean>() {
+            @Override
+            public void run() {
+                if(!this.getFirstArg()){
+                    if (Appodeal.isLoaded(Appodeal.INTERSTITIAL)) {
+                        Appodeal.setInterstitialCallbacks(new InterstitialCallbacks() {
 
-                @Override
-                public void onInterstitialLoaded(boolean isPrecache) {
+                            @Override
+                            public void onInterstitialLoaded(boolean isPrecache) {
+                            }
+
+                            @Override
+                            public void onInterstitialFailedToLoad() {
+                            }
+
+                            @Override
+                            public void onInterstitialShown() {
+                                Analytics.logEvent(AnalyticEvent.SuccessInterstitial);
+                            }
+
+                            @Override
+                            public void onInterstitialClicked() {
+                            }
+
+                            @Override
+                            public void onInterstitialClosed() {
+                            }
+
+                        });
+
+                        Appodeal.show(activity, Appodeal.INTERSTITIAL);
+                    }
+                    else{
+                        //logs analytics
+                        Analytics.logEvent(AnalyticEvent.FailLoadInterstitial);
+                    }
                 }
-
-                @Override
-                public void onInterstitialFailedToLoad() {
-                }
-
-                @Override
-                public void onInterstitialShown() {
-                    Analytics.logEvent(AnalyticEvent.SuccessInterstitial);
-                }
-
-                @Override
-                public void onInterstitialClicked() {
-                }
-
-                @Override
-                public void onInterstitialClosed() {
-                }
-
-            });
-
-            Appodeal.show(activity, Appodeal.INTERSTITIAL);
-        }
-        else{
-            //logs analytics
-            Analytics.logEvent(AnalyticEvent.FailLoadInterstitial);
-        }
+            }
+        });
     }
 
     public static void showBanner(final MyActivity activity, final AdsListener adsListener){
