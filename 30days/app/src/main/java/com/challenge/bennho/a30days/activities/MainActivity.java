@@ -62,13 +62,7 @@ public class MainActivity extends MyActivity {
         checkProVersionLockedMeal();
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(!((MyApplication) getApplication()).getProVersionHelpers()
-                .onActivityResult(requestCode, resultCode, data)){
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-    }
+
 
     private void refreshUserProgress(){
         User user = new User(this);
@@ -115,23 +109,7 @@ public class MainActivity extends MyActivity {
 
     private void showMeal(){
         if(lockedMeal){
-            OverlayBuilder.build(this)
-                    .setTitle("Pro Version")
-                    .setContent("Upgrade to pro version now to view all meal plans and remove ads.")
-                    .setOverlayType(OverlayBuilder.OverlayType.OkCancel)
-                    .setRunnables(new Runnable() {
-                        @Override
-                        public void run() {
-                            getProVersionHelpers().purchasePro(MainActivity.this,
-                                    new Runnable() {
-                                @Override
-                                public void run() {
-
-                                }
-                            });
-                        }
-                    })
-                    .show();
+            purchasePro();
         }
         else{
             Intent intent = new Intent(this, MealActivity.class);

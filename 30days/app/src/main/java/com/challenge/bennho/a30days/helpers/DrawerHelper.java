@@ -3,6 +3,9 @@ package com.challenge.bennho.a30days.helpers;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Gravity;
@@ -123,6 +126,21 @@ public class DrawerHelper implements ListView.OnItemClickListener {
                 else if(item.equals(activity.getString(R.string.drawer_item_settings))){
                     intent = new Intent(activity, SettingsActivity.class);
                 }
+                else if(item.equals(activity.getString(R.string.drawer_item_pro_version))){
+                    activity.purchasePro();
+                }
+                else if(item.equals(activity.getString(R.string.drawer_item_share))){
+                    shareApps();
+                }
+                else if(item.equals(activity.getString(R.string.drawer_item_rate))){
+                    rateApps();
+                }
+                else if(item.equals(activity.getString(R.string.drawer_item_contact))){
+                    contactUs();
+                }
+                else if(item.equals(activity.getString(R.string.drawer_item_about))){
+                    aboutUs();
+                }
             }
             else{
                 return;
@@ -143,6 +161,50 @@ public class DrawerHelper implements ListView.OnItemClickListener {
 
     }
 
+    private void shareApps(){
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        String shareBody = "Download 30 days running weight loss + diet to shape your body today! https://play.google.com/store/apps/details?id=com.challenge.bennho.a30days";
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "30 days running weight loss");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        activity.startActivityForResult(Intent.createChooser(sharingIntent, "Share"), 123);
+    }
+
+    private void rateApps(){
+        final String appPackageName = activity.getPackageName(); // getPackageName() from Context or Activity object
+        try {
+            activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+        }
+    }
+
+    private void contactUs(){
+        final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+
+        emailIntent.setType("plain/text");
+        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"benjandho@gmail.com"});
+        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "30 days running weight loss support");
+        emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "");
+
+        activity.startActivity(Intent.createChooser(emailIntent, "Contact us"));
+    }
+
+    private void aboutUs(){
+        PackageInfo pInfo = null;
+        try {
+            pInfo = activity.getPackageManager().getPackageInfo(activity.getPackageName(), 0);
+            String version = pInfo.versionName;
+
+            OverlayBuilder.build(activity)
+                    .setOverlayType(OverlayBuilder.OverlayType.OkOnly)
+                    .setTitle(activity.getString(R.string.app_name))
+                    .setContent(String.format("Version: %s", version))
+                    .show();
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     private class CustomDrawerAdapter extends ArrayAdapter<String> {
 

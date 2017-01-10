@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<dexprotector>
+    <verbose>true</verbose>
+    <optimize>false</optimize>
+    <signMode>release</signMode>
+    <keystore>/Users/sionglengho/Documents/thirtydays/30days/key.jks</keystore>
+    <alias>key</alias>
+    <storepass>aka890505</storepass>
+    <keypass>aka890505</keypass>
+    <stringEncryption>
+        <filters>
+            <filter><![CDATA[glob:com/challenge/bennho/a30days/statics/**]]></filter>
+        </filters>
+    </stringEncryption>
+    <classEncryption>
+        <filters>
+            <filter><![CDATA[glob:com/challenge/bennho/a30days/**]]></filter>
+        </filters>
+    </classEncryption>
+    <integrityControl mode="all">
+        <checkCertificate>on</checkCertificate>
+    </integrityControl>
+</dexprotector>

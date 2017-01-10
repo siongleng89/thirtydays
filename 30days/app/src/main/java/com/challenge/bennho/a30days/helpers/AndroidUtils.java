@@ -104,4 +104,13 @@ public class AndroidUtils {
 
     }
 
+    public static String getStringByIdentifier(Context context, String name) {
+        return context.getString(context.getResources().getIdentifier(name, "string", context.getPackageName()));
+    }
+
+    public static int getDrawableIdentifier(Context context, String name) {
+        return context.getResources().getIdentifier(name, "drawable", context.getPackageName());
+    }
+
+
 }

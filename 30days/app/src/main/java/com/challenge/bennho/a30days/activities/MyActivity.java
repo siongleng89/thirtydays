@@ -25,6 +25,7 @@ import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.Analytics;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.DrawerHelper;
+import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.ProVersionHelpers;
 
 /**
@@ -144,6 +145,40 @@ public abstract class MyActivity extends AppCompatActivity {
 
     public ProVersionHelpers getProVersionHelpers(){
         return ((MyApplication) getApplication()).getProVersionHelpers();
+    }
+
+    public void purchasePro(){
+        OverlayBuilder.build(this)
+                .setTitle("Pro Version")
+                .setContent("Upgrade to pro version now to view all meal plans and remove ads.")
+                .setOverlayType(OverlayBuilder.OverlayType.OkCancel)
+                .setRunnables(new Runnable() {
+                    @Override
+                    public void run() {
+                        getProVersionHelpers().purchasePro(MyActivity.this,
+                                new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        AdsMediation.hideBanner(MyActivity.this);
+                                        if(adsLayout != null){
+                                            adsLayout.setVisibility(View.GONE);
+                                        }
+                                    }
+                                });
+                    }
+                })
+                .show();
+
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(!((MyApplication) getApplication()).getProVersionHelpers()
+                .onActivityResult(requestCode, resultCode, data)){
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     public Toolbar getToolbar() {

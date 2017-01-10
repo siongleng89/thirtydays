@@ -33,15 +33,24 @@ public class NotificationShower {
 
     public static void showRunReminder(Context context, int dayNumber){
 
-        String title = "Remember to run";
-        String content = String.format("Complete your day %s plan today!", dayNumber);
+        String title = String.format("Remember to run! (Day %s)", dayNumber);
+        String content = AndroidUtils.getStringByIdentifier(context, "exercise_quote" + dayNumber);
 
 
+        NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
+        bigTextStyle.setBigContentTitle(title);
+        bigTextStyle.bigText(content);
+
+        Bitmap bm = BitmapFactory.decodeResource(context.getResources(), R.drawable.icon);
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(context)
                         .setSmallIcon(R.drawable.icon)
+                        .setLargeIcon(bm)
                         .setContentTitle(title)
                         .setContentText(content);
+
+        builder.setStyle(bigTextStyle);
+
 
         Intent targetIntent = new Intent(context, LaunchActivity.class);
         targetIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP

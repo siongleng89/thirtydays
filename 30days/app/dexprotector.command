@@ -1,0 +1,2 @@
+cd /Users/sionglengho/Documents/thirtydays/30days/app
+java -jar dexprotector.jar -configFile dexprotector_mac.xml "/Users/sionglengho/Documents/thirtydays/30days/app/app-release.apk" "dex_protector_out.apk" 
