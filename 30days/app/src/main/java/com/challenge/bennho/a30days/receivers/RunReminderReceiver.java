@@ -18,9 +18,10 @@ public class RunReminderReceiver extends BroadcastReceiver {
         User user = new User(context);
         user.reload();
 
-        String title = "Remember to run";
-        String content = String.format("Complete your day %s plan today!", user);
+        if(user.getCurrentDay() > 30){
+            return;
+        }
 
-        NotificationShower.show(context, NotificationShower.RunReminderId, title, content);
+        NotificationShower.showRunReminder(context, user.getCurrentDay());
     }
 }

@@ -1,13 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_tutorial"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.challenge.bennho.a30days.activities.TutorialActivity">
+    android:orientation="vertical">
 
-</RelativeLayout>
+    <include
+        android:id="@+id/my_toolbar"
+        layout="@layout/my_toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center_horizontal"
+        android:layout_margin="10dp">
+
+        <com.challenge.bennho.a30days.controls.LayoutExerciseStates android:layout_height="200dp"
+            android:layout_width="200dp"
+            android:id="@+id/layoutExerciseStates">
+
+        </com.challenge.bennho.a30days.controls.LayoutExerciseStates>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pagerTutorial"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/indicator"
+            android:visibility="visible"
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="15dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:id="@+id/layoutPrev"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    app:srcCompat="@drawable/arrowleft"
+                    android:layout_alignParentBottom="true"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:tint="@color/colorBtnWord" />
+
+                <TextView
+                    android:text="Prev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorBtnWord"
+                    android:textStyle="normal|bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true"
+                android:id="@+id/layoutNext">
+
+                <TextView
+                    android:text="Next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorBtnWord"
+                    android:textStyle="normal|bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    app:srcCompat="@drawable/arrowleft"
+                    android:layout_alignParentBottom="true"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:tint="@color/colorBtnWord"
+                    android:rotation="180" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true"
+                android:id="@+id/layoutEnd"
+                android:visibility="gone">
+
+                <TextView
+                    android:text="Start Run"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorBtnWord"
+                    android:textStyle="normal|bold" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    app:srcCompat="@drawable/sprinting_icon"
+                    android:layout_alignParentBottom="true"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:tint="@color/colorBtnWord" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/adLayout">
+
+    </RelativeLayout>
+
+</LinearLayout>

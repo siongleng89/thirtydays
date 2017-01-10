@@ -53,7 +53,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_running);
-        setAdsLayout();
+        onLayoutSet();
 
         this.setActionBarVisibility(false);
 
@@ -174,7 +174,6 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
             boundService = false;
         }
         getWindow().clearFlags(android.view.WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        AdsMediation.hideBanner(this);
     }
 
     private void startExerciseService(){
@@ -204,6 +203,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
                 .setDurationMs(200)
                 .setValuePx(0)
                 .start();
+        layoutExerciseStates.setLock(true);
     }
 
     private void unlockScreen(){
@@ -220,6 +220,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
                     }
                 })
                 .start();
+        layoutExerciseStates.setLock(false);
     }
 
     private void startUnlockScreen(){

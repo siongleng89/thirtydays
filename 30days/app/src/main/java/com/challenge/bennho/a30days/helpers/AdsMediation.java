@@ -7,6 +7,7 @@ import com.appodeal.ads.Appodeal;
 import com.appodeal.ads.BannerCallbacks;
 import com.appodeal.ads.InterstitialCallbacks;
 import com.challenge.bennho.a30days.enums.AnalyticEvent;
+import com.challenge.bennho.a30days.activities.MyActivity;
 import com.challenge.bennho.a30days.statics.Constants;
 
 /**
@@ -39,7 +40,7 @@ public class AdsMediation {
         Appodeal.cache(activity, Appodeal.INTERSTITIAL | Appodeal.BANNER);
     }
 
-    public static void showInterstitial(final Activity activity){
+    public static void showInterstitial(final MyActivity activity){
         if (Appodeal.isLoaded(Appodeal.INTERSTITIAL)) {
             Appodeal.setInterstitialCallbacks(new InterstitialCallbacks() {
 
@@ -74,7 +75,7 @@ public class AdsMediation {
         }
     }
 
-    public static void showBanner(final Activity activity, final AdsListener adsListener){
+    public static void showBanner(final MyActivity activity, final AdsListener adsListener){
 //        if(Appodeal.isLoaded(Appodeal.BANNER)){
 //
 //        }
@@ -117,7 +118,7 @@ public class AdsMediation {
         });
     }
 
-    public static void hideBanner(Activity activity){
+    public static void hideBanner(MyActivity activity){
         Appodeal.hide(activity, Appodeal.BANNER_BOTTOM);
     }
 

@@ -2,7 +2,6 @@ package com.challenge.bennho.a30days.activities;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,18 +15,17 @@ import com.challenge.bennho.a30days.drawables.CustomAnimationDrawable;
 import com.challenge.bennho.a30days.enums.AnalyticEvent;
 import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.Analytics;
+import com.challenge.bennho.a30days.helpers.AllReminderHelper;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.AnimateBuilder;
 import com.challenge.bennho.a30days.helpers.CaloriesToImagesConverter;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.RealmHelper;
-import com.challenge.bennho.a30days.helpers.RunReminderHelper;
 import com.challenge.bennho.a30days.helpers.Strings;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.FoodModel;
 import com.challenge.bennho.a30days.models.HistoryRecord;
 import com.challenge.bennho.a30days.models.User;
-import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
 
@@ -45,7 +43,7 @@ public class ExerciseResultActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_result);
-        setAdsLayout();
+        onLayoutSet();
 
         btnEnd = (Button) findViewById(R.id.btnEnd);
         layoutIncompleteCircle = (LinearLayout) findViewById(R.id.layoutIncompleteCircle);
@@ -127,6 +125,8 @@ public class ExerciseResultActivity extends MyActivity {
                 if(isCompleted && dayPlan == user.getCurrentDay()){
                     user.addCurrentDay();
 
+                    AllReminderHelper.updateReminders(this);
+
                 }
 
                 PreferenceUtils.putString(this, PreferenceType.ExerciseRecordSaved, "1");
@@ -166,8 +166,8 @@ public class ExerciseResultActivity extends MyActivity {
 
         AnimateBuilder.build(this, imgViewStickman)
                 .setAnimateType(AnimateBuilder.AnimateType.moveByX)
-                .setValueDp(AndroidUtils.getScreenDpWidth(ExerciseResultActivity.this) - 25)
-                .setDurationMs(4000)
+                .setValueDp(AndroidUtils.getScreenDpWidth(ExerciseResultActivity.this) / 2 + 100 - 12)
+                .setDurationMs(3000)
                 .setFinishCallback(new Runnable() {
                     @Override
                     public void run() {

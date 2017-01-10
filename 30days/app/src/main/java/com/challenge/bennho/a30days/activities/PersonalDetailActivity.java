@@ -29,7 +29,7 @@ public class PersonalDetailActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_detail);
-        setAdsLayout();
+        onLayoutSet();
 
         isInitial = false;
         if(getIntent() != null){
@@ -189,7 +189,7 @@ public class PersonalDetailActivity extends MyActivity {
         else{
             OverlayBuilder.build(this)
                     .setOverlayType(OverlayBuilder.OverlayType.OkOnly)
-                    .setContent("Some of the value input is not valid, please check and try again.")
+                    .setContent("Some of the value inputMeal is not valid, please check and try again.")
                     .show();
         }
     }

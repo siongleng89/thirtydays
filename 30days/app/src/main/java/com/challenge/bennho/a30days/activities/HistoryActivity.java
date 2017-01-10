@@ -2,9 +2,7 @@ package com.challenge.bennho.a30days.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
-import com.challenge.bennho.a30days.controls.BottomBar;
 import com.challenge.bennho.a30days.controls.ImageCircularFood;
 import com.challenge.bennho.a30days.controls.LayoutSummary;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
@@ -27,9 +24,6 @@ import com.challenge.bennho.a30days.models.FoodModel;
 import com.challenge.bennho.a30days.models.HistoryRecord;
 import com.challenge.bennho.a30days.models.User;
 
-import java.util.ArrayList;
-
-import io.realm.Realm;
 import io.realm.RealmChangeListener;
 import io.realm.RealmResults;
 
@@ -46,7 +40,7 @@ public class HistoryActivity extends MyActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        setAdsLayout();
+        onLayoutSet();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -154,7 +148,7 @@ public class HistoryActivity extends MyActivity {
 
             private TextView txtDayPlan, txtDate, txtDuration, txtCalories, txtIndex;
             private ImageView imgViewComplete, imgViewIncomplete;
-            private ImageView imgViewDelete, imgViewShare;
+            private ImageView imgViewDelete;
             private ImageCircularFood imageViewFood1, imageViewFood2, imageViewFood3;
             private TextView txtItemSeparatorThick, txtItemSeparatorThin;
             private TextView txtDateTitle, txtPlanTitle, txtCompletedTitle,
@@ -177,7 +171,6 @@ public class HistoryActivity extends MyActivity {
                 imageViewFood2 = (ImageCircularFood) itemView.findViewById(R.id.imgViewFood2);
                 imageViewFood3 = (ImageCircularFood) itemView.findViewById(R.id.imgViewFood3);
                 imgViewDelete = (ImageView) itemView.findViewById(R.id.imgViewDelete);
-                imgViewShare = (ImageView) itemView.findViewById(R.id.imgViewShare);
                 txtItemSeparatorThin = (TextView) itemView.findViewById(R.id.txtItemSeparatorThin);
                 txtItemSeparatorThick = (TextView) itemView.findViewById(R.id.txtItemSeparatorThick);
 
@@ -237,7 +230,6 @@ public class HistoryActivity extends MyActivity {
                 imageViewFood2.setVisibility(View.VISIBLE);
                 imageViewFood3.setVisibility(View.VISIBLE);
                 imgViewDelete.setVisibility(View.VISIBLE);
-                imgViewShare.setVisibility(View.VISIBLE);
 
                 txtDateTitle.setVisibility(View.VISIBLE);
                 txtPlanTitle.setVisibility(View.VISIBLE);
@@ -308,7 +300,6 @@ public class HistoryActivity extends MyActivity {
                 imageViewFood2.setVisibility(View.INVISIBLE);
                 imageViewFood3.setVisibility(View.INVISIBLE);
                 imgViewDelete.setVisibility(View.INVISIBLE);
-                imgViewShare.setVisibility(View.INVISIBLE);
 
                 txtDateTitle.setVisibility(View.INVISIBLE);
                 txtPlanTitle.setVisibility(View.INVISIBLE);

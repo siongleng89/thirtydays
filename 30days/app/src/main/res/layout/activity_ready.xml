@@ -8,6 +8,10 @@
     android:orientation="vertical"
     tools:context="com.challenge.bennho.a30days.activities.ReadyActivity">
 
+    <include
+        android:id="@+id/my_toolbar"
+        layout="@layout/my_toolbar" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

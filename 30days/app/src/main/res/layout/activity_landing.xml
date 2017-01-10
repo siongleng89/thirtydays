@@ -9,6 +9,10 @@
     android:orientation="vertical"
     tools:context="com.challenge.bennho.a30days.activities.LandingActivity">
 
+    <include
+        android:id="@+id/my_toolbar"
+        layout="@layout/my_toolbar" />
+
     <ImageView
         android:layout_width="wrap_content"
         app:srcCompat="@drawable/abslady"
