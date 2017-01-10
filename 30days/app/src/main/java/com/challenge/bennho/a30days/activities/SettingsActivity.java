@@ -2,8 +2,6 @@ package com.challenge.bennho.a30days.activities;
 
 import android.content.Intent;
 import android.preference.CheckBoxPreference;
-import android.preference.EditTextPreference;
-import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.os.Bundle;
@@ -11,10 +9,7 @@ import android.os.Bundle;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
-import com.challenge.bennho.a30days.helpers.CalculationHelper;
-import com.challenge.bennho.a30days.helpers.PreferenceUtils;
-import com.challenge.bennho.a30days.helpers.RunReminderHelper;
-import com.challenge.bennho.a30days.helpers.Strings;
+import com.challenge.bennho.a30days.helpers.AllReminderHelper;
 
 public class SettingsActivity extends MyActivity {
 
@@ -39,7 +34,7 @@ public class SettingsActivity extends MyActivity {
     protected void onPause() {
         super.onPause();
         overridePendingTransition(0, 0);
-        RunReminderHelper.updateReminders(this);
+        AllReminderHelper.updateReminders(this);
     }
 
     public static class SettingsFragment extends PreferenceFragment {

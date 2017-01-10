@@ -1,14 +1,11 @@
 package com.challenge.bennho.a30days.models;
 
 import android.content.Context;
-import android.content.Intent;
-import android.preference.Preference;
 
 import com.challenge.bennho.a30days.enums.GenderEnum;
 import com.challenge.bennho.a30days.enums.PreferenceType;
-import com.challenge.bennho.a30days.helpers.Logs;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
-import com.challenge.bennho.a30days.helpers.RunReminderHelper;
+import com.challenge.bennho.a30days.helpers.AllReminderHelper;
 
 /**
  * Created by sionglengho on 30/12/16.
@@ -33,11 +30,12 @@ public class User {
 
     //reset all user preferences to default
     public void initUser(){
+        PreferenceUtils.putBoolean(context, PreferenceType.EnableMealPlanNotification, true);
         PreferenceUtils.putBoolean(context, PreferenceType.EnableNotification, true);
         PreferenceUtils.putString(context, PreferenceType.ReminderTime, "17");
         PreferenceUtils.putString(context, PreferenceType.ReminderDay, "1,2,3,4,5,6,7");
         PreferenceUtils.putString(context, PreferenceType.CurrentExerciseDay, "1");
-        RunReminderHelper.updateReminders(context);
+        AllReminderHelper.updateReminders(context);
     }
 
     public void reload(){

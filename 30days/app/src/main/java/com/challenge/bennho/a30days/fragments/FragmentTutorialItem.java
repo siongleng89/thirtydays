@@ -44,7 +44,7 @@ public class FragmentTutorialItem extends Fragment {
 
         if(index == 0){
             txtTitle.setText("Quick Tutorial");
-            txtContent.setText("We will walk you through for the first time you exercise. We adapt HIIT exercise method to maximize calories burn in our exercise plan, which means each exercise involves several state. The exercise plan will vary depends on the information you input. Each exercise contains several states which represented by different color.");
+            txtContent.setText("We will walk you through for the first time you exercise. We adapt HIIT exercise method to maximize calories burn in our exercise plan, which means each exercise involves several state. The exercise plan will vary depends on the information you inputMeal. Each exercise contains several states which represented by different color.");
         }
         else if(index == 1){
             layoutItem.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorWarmUp));

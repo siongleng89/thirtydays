@@ -9,9 +9,11 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.challenge.bennho.a30days.MyApplication;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.LayoutDayCounter;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
+import com.challenge.bennho.a30days.helpers.RunnableArgs;
 import com.challenge.bennho.a30days.models.User;
 import com.challenge.bennho.a30days.services.ExerciseService;
 
@@ -46,6 +48,8 @@ public class MainActivity extends MyActivity {
         txtDayNumber2 = (TextView) findViewById(R.id.txtDayNumber2);
 
         setListeners();
+
+        refreshUserProgress();
     }
 
     @Override
@@ -56,7 +60,15 @@ public class MainActivity extends MyActivity {
         Intent serviceIntent = new Intent(this, ExerciseService.class);
         stopService(serviceIntent);
 
-        refreshUserProgress();
+        checkProVersionLockedMeal();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(!((MyApplication) getApplication()).getProVersionHelpers()
+                .onActivityResult(requestCode, resultCode, data)){
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     private void refreshUserProgress(){
@@ -103,24 +115,40 @@ public class MainActivity extends MyActivity {
     private void showMeal(){
         if(lockedMeal){
             OverlayBuilder.build(this)
-                    .setTitle("Meal Locked")
-                    .setContent("Please upgrade to pro version to view all meal plans")
+                    .setTitle("Pro Version")
+                    .setContent("Upgrade to pro version now to view all meal plans and remove ads.")
                     .setOverlayType(OverlayBuilder.OverlayType.OkCancel)
                     .setRunnables(new Runnable() {
                         @Override
                         public void run() {
+                            getProVersionHelpers().purchasePro(MainActivity.this,
+                                    new Runnable() {
+                                @Override
+                                public void run() {
 
+                                }
+                            });
                         }
                     })
                     .show();
         }
         else{
-            Intent intent = new Intent(this, ReadyActivity.class);
+            Intent intent = new Intent(this, MealActivity.class);
             intent.putExtra("dayPlan", currentSelectedDay);
             startActivity(intent);
         }
     }
 
+    private void checkProVersionLockedMeal(){
+        if(currentSelectedDay > 7){
+            getProVersionHelpers().isProPurchased(new RunnableArgs<Boolean>() {
+                @Override
+                public void run() {
+                    setLockMeal(!this.getFirstArg());
+                }
+            });
+        }
+    }
 
     private void setListeners(){
         layoutExercise.setOnClickListener(new View.OnClickListener() {
@@ -190,5 +218,8 @@ public class MainActivity extends MyActivity {
             layoutLockMeal.setVisibility(View.GONE);
         }
     }
+
+
+
 
 }

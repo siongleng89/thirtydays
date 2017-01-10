@@ -19,11 +19,13 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import com.appodeal.ads.Appodeal;
+import com.challenge.bennho.a30days.MyApplication;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.Analytics;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.DrawerHelper;
+import com.challenge.bennho.a30days.helpers.ProVersionHelpers;
 
 /**
  * Created by sionglengho on 26/12/16.
@@ -140,6 +142,9 @@ public abstract class MyActivity extends AppCompatActivity {
         drawerHelper.show();
     }
 
+    protected ProVersionHelpers getProVersionHelpers(){
+        return ((MyApplication) getApplication()).getProVersionHelpers();
+    }
 
     public Toolbar getToolbar() {
         return toolbar;

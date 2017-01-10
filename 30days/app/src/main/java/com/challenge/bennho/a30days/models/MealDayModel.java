@@ -19,6 +19,9 @@ public class MealDayModel {
         return this;
     }
 
+    public DishModel getDishByMealType(MealType mealType){
+        return dishesMap.get(mealType);
+    }
 
     public enum MealType{
         breakfast, morning_snack, lunch, evening_snack, dinner
