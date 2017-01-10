@@ -6,16 +6,16 @@
     android:layout_marginTop="10dp">
 
     <ImageView
-        android:layout_height="wrap_content"
         app:srcCompat="@drawable/food_egg"
         android:id="@+id/imgViewDish"
         android:layout_width="150dp"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:layout_height="120dp" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="15dp">
 
         <TextView
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtMealType"
             android:textColor="@color/colorWord"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="normal|bold"
             android:fontFamily="sans-serif-condensed" />
 
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtMealName"
             android:textColor="@color/colorWord"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:layout_marginTop="5dp" />
 
         <TextView
@@ -43,7 +43,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtMealInstruction"
             android:textColor="@color/colorWord"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:textSize="12sp" />
     </LinearLayout>
 
 </LinearLayout>

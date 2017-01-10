@@ -197,6 +197,9 @@ public class MealActivity extends MyActivity {
                 }
 
                 txtMealType.setText(mealTypeString);
+                imgViewDish.setImageResource(dishModel.getImageResourceId());
+                txtMealName.setText(dishModel.getDishName());
+                txtMealInstruction.setText(dishModel.getInstruction());
             }
         }
 

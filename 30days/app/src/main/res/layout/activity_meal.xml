@@ -87,7 +87,9 @@
                 android:backgroundTint="@color/colorAccent"
                 android:gravity="center"
                 android:layout_height="70dp"
-                android:id="@+id/layoutViewIngredients">
+                android:id="@+id/layoutViewIngredients"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp">
 
                 <ImageView
                     android:layout_width="40dp"
@@ -103,7 +105,8 @@
                     android:layout_marginLeft="10dp"
                     android:textSize="18sp"
                     android:textStyle="normal|bold"
-                    android:textColor="@color/colorBtnWord" />
+                    android:textColor="@color/colorBtnWord"
+                    android:gravity="center_vertical|center_horizontal" />
 
             </LinearLayout>
 
