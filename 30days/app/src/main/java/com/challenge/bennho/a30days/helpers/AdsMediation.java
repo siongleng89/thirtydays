@@ -6,6 +6,7 @@ import android.content.Context;
 import com.appodeal.ads.Appodeal;
 import com.appodeal.ads.BannerCallbacks;
 import com.appodeal.ads.InterstitialCallbacks;
+import com.challenge.bennho.a30days.enums.AnalyticEvent;
 import com.challenge.bennho.a30days.statics.Constants;
 
 /**
@@ -52,7 +53,7 @@ public class AdsMediation {
 
                 @Override
                 public void onInterstitialShown() {
-                    //logs analytics
+                    Analytics.logEvent(AnalyticEvent.SuccessInterstitial);
                 }
 
                 @Override
@@ -69,6 +70,7 @@ public class AdsMediation {
         }
         else{
             //logs analytics
+            Analytics.logEvent(AnalyticEvent.FailLoadInterstitial);
         }
     }
 
@@ -105,7 +107,7 @@ public class AdsMediation {
                 if(adsListener != null){
                     adsListener.onBannerShown(nextAdsHeightPx);
                 }
-                //log analytics
+                Analytics.logEvent(AnalyticEvent.SuccessBanner);
             }
 
             @Override

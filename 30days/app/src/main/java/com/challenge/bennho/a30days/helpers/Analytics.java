@@ -34,7 +34,7 @@ public class Analytics {
         logEvent(analyticEvent.name(), value);
     }
 
-    public static void logEvent(String eventName, String value){
+    private static void logEvent(String eventName, String value){
         if(BuildConfig.DEBUG_MODE) return;
 
         Tracker tracker = getTracker(null);

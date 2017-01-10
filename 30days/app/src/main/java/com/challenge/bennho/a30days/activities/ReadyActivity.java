@@ -9,8 +9,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
+import com.challenge.bennho.a30days.enums.AnalyticEvent;
 import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
+import com.challenge.bennho.a30days.helpers.Analytics;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.TextSpeak;
@@ -118,6 +120,7 @@ public class ReadyActivity extends MyActivity {
         startActivity(intent);
 
         finish();
+        Analytics.logEvent(AnalyticEvent.StartExercise);
     }
 
     private void openMusic(){

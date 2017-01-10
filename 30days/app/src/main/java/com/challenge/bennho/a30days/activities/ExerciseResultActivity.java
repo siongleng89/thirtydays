@@ -13,7 +13,9 @@ import android.widget.TextView;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.ImageCircularFood;
 import com.challenge.bennho.a30days.drawables.CustomAnimationDrawable;
+import com.challenge.bennho.a30days.enums.AnalyticEvent;
 import com.challenge.bennho.a30days.enums.PreferenceType;
+import com.challenge.bennho.a30days.helpers.Analytics;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.AnimateBuilder;
 import com.challenge.bennho.a30days.helpers.CaloriesToImagesConverter;
@@ -87,6 +89,13 @@ public class ExerciseResultActivity extends MyActivity {
             boolean isCompleted = getIntent().getBooleanExtra("isCompleted", true);
             int dayPlan = getIntent().getIntExtra("dayPlan", 1);
 
+            if(isCompleted){
+                Analytics.logEvent(AnalyticEvent.ExerciseComplete, String.valueOf(dayPlan));
+            }
+            else{
+                Analytics.logEvent(AnalyticEvent.ExerciseFail, dayPlan + ": " +String.valueOf(totalElapsedMs/1000));
+            }
+
             setTitle(String.format("Day %s exercise result", dayPlan));
             txtTitle.setText(String.format("DAY %s EXERCISE", dayPlan));
 
@@ -114,8 +123,10 @@ public class ExerciseResultActivity extends MyActivity {
                 user.addCaloriesBurnt(calories);
                 user.addRunningSecs(totalElapsedMs / 1000);
 
+
                 if(isCompleted && dayPlan == user.getCurrentDay()){
                     user.addCurrentDay();
+
                 }
 
                 PreferenceUtils.putString(this, PreferenceType.ExerciseRecordSaved, "1");

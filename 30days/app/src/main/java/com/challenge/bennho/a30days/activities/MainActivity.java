@@ -11,7 +11,9 @@ import com.appodeal.ads.InterstitialCallbacks;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.BottomBar;
 import com.challenge.bennho.a30days.controls.LayoutDayCounter;
+import com.challenge.bennho.a30days.enums.AnalyticEvent;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
+import com.challenge.bennho.a30days.helpers.Analytics;
 import com.challenge.bennho.a30days.helpers.TextSpeak;
 import com.challenge.bennho.a30days.models.User;
 import com.challenge.bennho.a30days.services.ExerciseService;
@@ -81,6 +83,8 @@ public class MainActivity extends MyActivity {
         Intent intent = new Intent(this, ReadyActivity.class);
         intent.putExtra("dayPlan", currentSelectedDay);
         startActivity(intent);
+
+
     }
 
 

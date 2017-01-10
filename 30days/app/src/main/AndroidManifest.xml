@@ -16,7 +16,14 @@
         <activity android:name=".activities.LaunchActivity">
 
         </activity>
-        <activity android:name=".activities.LandingActivity"></activity>
+        <activity android:name=".activities.LandingActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
         <activity
             android:name=".activities.PersonalDetailActivity"
             android:label="Personal Detail"></activity>
@@ -28,7 +35,7 @@
 
         </activity>
 
-        
+
 
         <activity
             android:name=".activities.ReadyActivity"
@@ -72,12 +79,6 @@
                 android:value=".activities.MainActivity" />
         </activity>
         <activity android:name=".activities.ActivityLayout">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
 
         </activity>
 
