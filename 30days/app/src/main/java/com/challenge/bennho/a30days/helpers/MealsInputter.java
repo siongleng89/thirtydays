@@ -79,431 +79,431 @@ public class MealsInputter {
     private void inputMeal(){
 
         mealDayModels.add(0, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Ham Sandwich" , R.drawable.meal_sandwich))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Nuts + Tea", R.drawable.meal_almond, "Any kind of nut and tea without sugar"))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Brown Rice with Grill Chicken and Brocolli", R.drawable.meal_rice_chicken_brocolli, "Grill with lil bit of olive oil"))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Apple", R.drawable.meal_apple))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Egg White With Mushroom", R.drawable.meal_steamegg_mushroom, "4 egg white and 1 egg yolk")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_0_0_name) , R.drawable.meal_sandwich))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_0_1_name), R.drawable.meal_almond, context.getString(R.string.meal_0_1_instruction)))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_0_2_name), R.drawable.meal_rice_chicken_brocolli, context.getString(R.string.meal_0_2_instruction)))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_0_3_name), R.drawable.meal_apple))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_0_4_name), R.drawable.meal_steamegg_mushroom, context.getString(R.string.meal_0_4_instruction))));
 
         mealDayModels.add(1, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Omelette and Whole Wheat Bread + Coffee" , R.drawable.meal_omelette))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Banana", R.drawable.meal_banana))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Salmon with Potato and Tomato", R.drawable.meal_salmon_potato))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Papaya", R.drawable.meal_papaya))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Boiled Egg White and Garden Salad", R.drawable.meal_salad, "Without Dressing")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_1_0_name) , R.drawable.meal_omelette))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_1_1_name), R.drawable.meal_banana))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_1_2_name), R.drawable.meal_salmon_potato))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_1_3_name), R.drawable.meal_papaya))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_1_4_name), R.drawable.meal_salad, context.getString(R.string.meal_1_4_instruction))));
 
         mealDayModels.add(2, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Berries Oatmeal" , R.drawable.meal_berry_oatmeal))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Nuts + Tea"  , R.drawable.food_green_tea, "Any kind of nut and tea without sugar"))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Brown Rice with Lean Pork Meat and Spinach", R.drawable.meal_rice_pork))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Apple", R.drawable.meal_apple))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Chicken with Brocolli", R.drawable.meal_steam_chicken)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_2_0_name) , R.drawable.meal_berry_oatmeal))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_2_1_name)  , R.drawable.food_green_tea, context.getString(R.string.meal_2_1_instruction)))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_2_2_name), R.drawable.meal_rice_pork))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_2_3_name), R.drawable.meal_apple))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_2_4_name), R.drawable.meal_steam_chicken)));
 
 
         mealDayModels.add(3, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Egg White Sandwich + Coffee" , R.drawable.meal_egg_sandwich))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Orange", R.drawable.meal_orange))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Grill Chicken Breast with Potato and Bell Pepper", R.drawable.meal_bell_pepper_chicken, "Remove the skin and fat from chicken"))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Banana", R.drawable.meal_banana))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Dory Fish with Green Beans", R.drawable.meal_dory_greenbean)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_3_0_name) , R.drawable.meal_egg_sandwich))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_3_1_name), R.drawable.meal_orange))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_3_2_name), R.drawable.meal_bell_pepper_chicken, context.getString(R.string.meal_3_2_instruction)))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_3_3_name), R.drawable.meal_banana))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_3_4_name), R.drawable.meal_dory_greenbean)));
 
         mealDayModels.add(4, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Ham and Lettuce Wrap" , R.drawable.meal_ham_wrap))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Berries Greek Yogurt + Green Tea", R.drawable.meal_berries_yogurt))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Chicken Bolognese Spaghetti", R.drawable.meal_chicken_spaghetti))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Papaya", R.drawable.meal_papaya))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Boiled Egg White and Spinach", R.drawable.meal_egg_spinach)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_4_0_name) , R.drawable.meal_ham_wrap))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_4_1_name), R.drawable.meal_berries_yogurt))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_4_2_name), R.drawable.meal_chicken_spaghetti))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_4_3_name), R.drawable.meal_papaya))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_4_4_name), R.drawable.meal_egg_spinach)));
 
         mealDayModels.add(5, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Oatmeal and Scramble Egg White" , R.drawable.meal_oat_egg))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Nut + Tea", R.drawable.meal_walnut, "Any kind of nut and tea without sugar"))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Brown Rice with Stir-fry Chicken and Celery", R.drawable.meal_celery_chicken))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Apple", R.drawable.meal_apple))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Prawn with Garlic", R.drawable.meal_steam_prawn)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_5_0_name) , R.drawable.meal_oat_egg))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_5_1_name), R.drawable.meal_walnut, context.getString(R.string.meal_5_1_instruction)))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_5_2_name), R.drawable.meal_celery_chicken))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_5_3_name), R.drawable.meal_apple))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_5_4_name), R.drawable.meal_steam_prawn)));
 
         mealDayModels.add(6, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Boiled Egg and Toast + Coffee" , R.drawable.meal_egg_toast))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Banana", R.drawable.meal_banana))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Grill Steak with Potato and Asparagus", R.drawable.meal_steak_potato))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Tomato Juice", R.drawable.meal_tomato_juice))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Garden Salad", R.drawable.meal_garden_salad,"Without Dressing")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_6_0_name) , R.drawable.meal_egg_toast))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_6_1_name), R.drawable.meal_banana))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_6_2_name), R.drawable.meal_steak_potato))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_6_3_name), R.drawable.meal_tomato_juice))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_6_4_name), R.drawable.meal_garden_salad,context.getString(R.string.meal_6_4_instruction))));
 
         mealDayModels.add(7, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Berries Overnight Oat" , R.drawable.meal_berries_overnightoat))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Nuts + Tea ", R.drawable.food_tea,"Any kind of nut and tea without sugar"))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Tuna with Mashed Potato and Brocolli", R.drawable.meal_tuna_potato))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Guava", R.drawable.meal_guava))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Boiled Egg with Celery and Carrot", R.drawable.meal_celery_carrot)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_7_0_name) , R.drawable.meal_berries_overnightoat))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_7_1_name), R.drawable.food_tea,context.getString(R.string.meal_7_1_instruction)))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_7_2_name), R.drawable.meal_tuna_potato))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_7_3_name), R.drawable.meal_guava))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_7_4_name), R.drawable.meal_celery_carrot)));
 
         mealDayModels.add(8, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Chicken Sandwich + Coffee" , R.drawable.meal_chicken_sandwish))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Papaya", R.drawable.meal_papaya))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Brown Rice with Duck Meat and Celery", R.drawable.meal_duck_rice, "Remove the duck skin"))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Apple Juice", R.drawable.meal_apple_juice))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Tilapia with Spring Onion", R.drawable.meal_tilapia, "You can replace the fish with dory fish")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_8_0_name) , R.drawable.meal_chicken_sandwish))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_8_1_name), R.drawable.meal_papaya))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_8_2_name), R.drawable.meal_duck_rice, context.getString(R.string.meal_8_2_instruction)))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_8_3_name), R.drawable.meal_apple_juice))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_8_4_name), R.drawable.meal_tilapia, context.getString(R.string.meal_8_4_instruction))));
 
         mealDayModels.add(9, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Blueberry Cereal Greek Yogurt" , R.drawable.meal_cereal_yogurt))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Orange + Tea", R.drawable.meal_orange))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Grill Lean Pork Meat with Carrot and Spinach", R.drawable.meal_pork_spinach_carrot))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Banana", R.drawable.meal_banana))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Tofu with Mushroom and Minced Chicken", R.drawable.meal_tofu_mushroom)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_9_0_name) , R.drawable.meal_cereal_yogurt))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_9_1_name), R.drawable.meal_orange))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_9_2_name), R.drawable.meal_pork_spinach_carrot))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_9_3_name), R.drawable.meal_banana))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_9_4_name), R.drawable.meal_tofu_mushroom)));
 
         mealDayModels.add(10, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Peanut Butter Toast" , R.drawable.meal_peanut_butter_toast,"Two teaspoon of peanut butter"))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Apple + Green Tea", R.drawable.meal_apple))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Brown Rice with Chicken Breast and Cucumber", R.drawable.meal_chicken_cucumber))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Guava", R.drawable.meal_guava))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Dory Fish and Green Beans", R.drawable.meal_dory_greenbean)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_10_0_name) , R.drawable.meal_peanut_butter_toast,context.getString(R.string.meal_10_0_instruction)))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_10_1_name), R.drawable.meal_apple))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_10_2_name), R.drawable.meal_chicken_cucumber))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_10_3_name), R.drawable.meal_guava))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_10_4_name), R.drawable.meal_dory_greenbean)));
 
         mealDayModels.add(11, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Oatmeal and Boiled Egg White" , R.drawable.meal_oatmeal_egg))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Orange + Tea", R.drawable.meal_orange))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Baked Salmon with Potato and Bell Pepper", R.drawable.meal_salmon_pepper))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Berries", R.drawable.meal_berries))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Garden Salad", R.drawable.meal_garden_salad,"Without dressing")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_11_0_name) , R.drawable.meal_oatmeal_egg))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_11_1_name), R.drawable.meal_orange))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_11_2_name), R.drawable.meal_salmon_pepper))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_11_3_name), R.drawable.meal_berries))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_11_4_name), R.drawable.meal_garden_salad,context.getString(R.string.meal_11_4_instruction))));
 
         mealDayModels.add(12, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Omelette with Whole Wheat Bread + Coffee" , R.drawable.meal_omelette, "4 egg white and 1 egg yolk"))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Banana Greek Yogurt", R.drawable.meal_banana_yogurt))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Beef Bolognese Spaghetti", R.drawable.meal_beef_spaghetti))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Watermelon", R.drawable.meal_watermelon))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Boiled Egg with Tomato and Carrot", R.drawable.meal_tomato_carrot)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_12_0_name) , R.drawable.meal_omelette, context.getString(R.string.meal_12_0_instruction)))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_12_1_name), R.drawable.meal_banana_yogurt))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_12_2_name), R.drawable.meal_beef_spaghetti))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_12_3_name), R.drawable.meal_watermelon))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_12_4_name), R.drawable.meal_tomato_carrot)));
 
         mealDayModels.add(13, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Blueberry Pancake" , R.drawable.meal_blueberry_pancake))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Nuts + Tea", R.drawable.meal_almond, "Any kind of nut and tea without sugar"))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Brown Rice with Stir-fry Prawn and Spinach", R.drawable.meal_prawn_spinach))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Apple", R.drawable.meal_apple))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Chicken Breast Salad", R.drawable.meal_chicken_salad,"Without Dressing")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_13_0_name) , R.drawable.meal_blueberry_pancake))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_13_1_name), R.drawable.meal_almond, context.getString(R.string.meal_13_1_instruction)))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_13_2_name), R.drawable.meal_prawn_spinach))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_13_3_name), R.drawable.meal_apple))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_13_4_name), R.drawable.meal_chicken_salad,context.getString(R.string.meal_13_4_instruction))));
 
         mealDayModels.add(14, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Boiled with Toast + Coffee" , R.drawable.meal_egg_toast))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Guava", R.drawable.meal_guava))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Grill Lamb Steak with Green Beans and Potato", R.drawable.meal_lamb_greenbean))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Orange Juice", R.drawable.meal_orange_juice))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Squid with Lime Sauce", R.drawable.meal_lime_squid)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_14_0_name) , R.drawable.meal_egg_toast))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_14_1_name), R.drawable.meal_guava))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_14_2_name), R.drawable.meal_lamb_greenbean))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_14_3_name), R.drawable.meal_orange_juice))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_14_4_name), R.drawable.meal_lime_squid)));
 
         mealDayModels.add(15, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Egg White Salad" , R.drawable.meal_salad,"Natural Greek Yogurt Dressing"))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Berries + Tea", R.drawable.meal_berries))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Grill Dory Fish with Potato and Green Beans", R.drawable.meal_dory_greenbean))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Banana", R.drawable.meal_banana))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Boiled Egg with Asparagus", R.drawable.meal_egg_asparagus)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_15_0_name) , R.drawable.meal_salad,context.getString(R.string.meal_15_0_instruction)))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_15_1_name), R.drawable.meal_berries))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_15_2_name), R.drawable.meal_dory_greenbean))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_15_3_name), R.drawable.meal_banana))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_15_4_name), R.drawable.meal_egg_asparagus)));
 
         mealDayModels.add(16, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Salmon Cucumber Toast" , R.drawable.meal_salmon_toast))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Nuts + Tea", R.drawable.food_green_tea,"Any kind of nut and tea without sugar"))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Brown Rice with Stir-fry Chicken and Spring Onion", R.drawable.meal_chicken_spring_onion))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Berries", R.drawable.meal_berries))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Egg with Mushroom", R.drawable.meal_steamegg_mushroom,"4 egg white and 1 egg yolk")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_16_0_name) , R.drawable.meal_salmon_toast))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_16_1_name), R.drawable.food_green_tea,context.getString(R.string.meal_16_1_instruction)))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_16_2_name), R.drawable.meal_chicken_spring_onion))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_16_3_name), R.drawable.meal_berries))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_16_4_name), R.drawable.meal_steamegg_mushroom,context.getString(R.string.meal_16_4_instruction))));
 
         mealDayModels.add(17, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Ham Omelette" , R.drawable.meal_ham_omelette))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Banana + Tea", R.drawable.meal_banana))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Baked Salmon with Corn and Spinach", R.drawable.meal_salmon_spinach))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Apple", R.drawable.meal_apple))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Prawn with Garlic", R.drawable.meal_steam_prawn)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_17_0_name) , R.drawable.meal_ham_omelette))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_17_1_name), R.drawable.meal_banana))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_17_2_name), R.drawable.meal_salmon_spinach))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_17_3_name), R.drawable.meal_apple))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_17_4_name), R.drawable.meal_steam_prawn)));
 
         mealDayModels.add(18, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Oatmeal and Scramble Egg" , R.drawable.meal_oat_egg))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Nuts + Tea", R.drawable.meal_walnut,"Any kind of nut and tea without sugar"))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Chicken Sandwich with Lettuce and Tomato", R.drawable.meal_chicken_sandwish,"Without Sauce"))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Guava", R.drawable.meal_guava))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Garden Salad", R.drawable.meal_garden_salad)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_18_0_name) , R.drawable.meal_oat_egg))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_18_1_name), R.drawable.meal_walnut,context.getString(R.string.meal_18_1_instruction)))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_18_2_name), R.drawable.meal_chicken_sandwish,context.getString(R.string.meal_18_2_instruction)))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_18_3_name), R.drawable.meal_guava))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_18_4_name), R.drawable.meal_garden_salad)));
 
         mealDayModels.add(19, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Avocado Chicken Wrap" , R.drawable.meal_chicken_avocado))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Orange + Tea", R.drawable.meal_orange))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Spaghetti with Prawn and Asparagus", R.drawable.meal_prawn_spaghetti))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Banana", R.drawable.meal_banana))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Tofu with Minced Chicken and Mushroom", R.drawable.meal_tofu_mushroom)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_19_0_name) , R.drawable.meal_chicken_avocado))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_19_1_name), R.drawable.meal_orange))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_19_2_name), R.drawable.meal_prawn_spaghetti))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_19_3_name), R.drawable.meal_banana))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_19_4_name), R.drawable.meal_tofu_mushroom)));
 
         mealDayModels.add(20, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Peanut Butter Waffle" , R.drawable.meal_peanut_waffle,"2 teaspoon peanut butter"))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Apple", R.drawable.meal_apple))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Stir-fry Beef with Brocolli and Carrot", R.drawable.meal_beef_carrot))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Papaya", R.drawable.meal_papaya))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Boiled Egg White and Garden Salad", R.drawable.meal_salad,"Without Dressing")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_20_0_name) , R.drawable.meal_peanut_waffle,context.getString(R.string.meal_20_0_instruction)))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_20_1_name), R.drawable.meal_apple))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_20_2_name), R.drawable.meal_beef_carrot))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_20_3_name), R.drawable.meal_papaya))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_20_4_name), R.drawable.meal_salad,context.getString(R.string.meal_20_4_instruction))));
 
         mealDayModels.add(21, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Banana Nut Oatmeal" , R.drawable.meal_banana_oatmeal))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Apple and Tea", R.drawable.meal_apple))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Roasted Lamb with Carrot and Brocolli", R.drawable.meal_lamb_carrot))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Papaya", R.drawable.meal_papaya))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Boiled Egg White and Asparagus", R.drawable.meal_egg_asparagus)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_21_0_name) , R.drawable.meal_banana_oatmeal))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_21_1_name), R.drawable.meal_apple))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_21_2_name), R.drawable.meal_lamb_carrot))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_21_3_name), R.drawable.meal_papaya))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_21_4_name), R.drawable.meal_egg_asparagus)));
 
         mealDayModels.add(22, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Salmon Egg Toast" , R.drawable.meal_salmon_toast))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Nutsand Tea", R.drawable.food_tea))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Brown Rice with Grill Tuna and Bell Pepper", R.drawable.meal_tuna_pepper))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Banana", R.drawable.meal_banana))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Chicken Breast Salad", R.drawable.meal_chicken_salad,"Without skin and dressing")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_22_0_name) , R.drawable.meal_salmon_toast))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_22_1_name), R.drawable.food_tea))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_22_2_name), R.drawable.meal_tuna_pepper))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_22_3_name), R.drawable.meal_banana))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_22_4_name), R.drawable.meal_chicken_salad,context.getString(R.string.meal_22_4_instruction))));
 
         mealDayModels.add(23, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Ham Omelette" , R.drawable.meal_ham_omelette))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Guava and Tea", R.drawable.meal_guava))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Salmon with Mashed Potato and Asparagus", R.drawable.meal_salmon_asparagus))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Berries", R.drawable.meal_berries))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Egg with Mushroom", R.drawable.meal_steamegg_mushroom,"4 egg white 1 egg yolk")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_23_0_name) , R.drawable.meal_ham_omelette))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_23_1_name), R.drawable.meal_guava))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_23_2_name), R.drawable.meal_salmon_asparagus))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_23_3_name), R.drawable.meal_berries))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_23_4_name), R.drawable.meal_steamegg_mushroom,context.getString(R.string.meal_23_4_instruction))));
 
         mealDayModels.add(24, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Banana Kiwi Overnight Oat" , R.drawable.meal_oat_banana_kiwi))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Nuts and Tea", R.drawable.food_green_tea))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Roasted Chicken with Potato and Carrot", R.drawable.meal_chicken_carrot_potato,"Remove chicken skin and fat"))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Banana", R.drawable.meal_banana))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Garden Salad", R.drawable.meal_garden_salad,"Without dressing")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_24_0_name) , R.drawable.meal_oat_banana_kiwi))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_24_1_name), R.drawable.food_green_tea))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_24_2_name), R.drawable.meal_chicken_carrot_potato,context.getString(R.string.meal_24_2_instruction)))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_24_3_name), R.drawable.meal_banana))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_24_4_name), R.drawable.meal_garden_salad,context.getString(R.string.meal_24_4_instruction))));
 
         mealDayModels.add(25, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Avocado Toast with Egg + Coffee" , R.drawable.meal_avocado_egg_toast))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Orange", R.drawable.meal_orange))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Brown Rice with Grill Dory Fish and Brocolli", R.drawable.meal_dory_brocolli))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Apple", R.drawable.meal_apple))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Boiled Egg White and Spinach", R.drawable.meal_egg_spinach)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_25_0_name) , R.drawable.meal_avocado_egg_toast))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_25_1_name), R.drawable.meal_orange))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_25_2_name), R.drawable.meal_dory_brocolli))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_25_3_name), R.drawable.meal_apple))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_25_4_name), R.drawable.meal_egg_spinach)));
 
         mealDayModels.add(26, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Scramble Egg and Whole Wheat Bread + Coffee" , R.drawable.meal_egg_bread))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Watermelon", R.drawable.meal_watermelon))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Brown Rice with Stir-fry Prawn and Squid and Asparagus", R.drawable.meal_prawn_squid_asparagus))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Banana", R.drawable.meal_banana))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Steam Tofu with Minced Chicken and Mushroom", R.drawable.meal_tofu_mushroom)));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_26_0_name) , R.drawable.meal_egg_bread))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_26_1_name), R.drawable.meal_watermelon))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_26_2_name), R.drawable.meal_prawn_squid_asparagus))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_26_3_name), R.drawable.meal_banana))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_26_4_name), R.drawable.meal_tofu_mushroom)));
 
         mealDayModels.add(27, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Banana Pancake" , R.drawable.meal_banana_pancake,"Without Sauce"))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Berries and Tea", R.drawable.meal_berries))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Grill Steak with Bell Pepper", R.drawable.meal_steak_pepper))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Carrot Juice", R.drawable.meal_carrot_juice))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Prawn Salad", R.drawable.meal_prawn_salad,"With lime dressing")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_27_0_name) , R.drawable.meal_banana_pancake,context.getString(R.string.meal_27_0_instruction)))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_27_1_name), R.drawable.meal_berries))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_27_2_name), R.drawable.meal_steak_pepper))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_27_3_name), R.drawable.meal_carrot_juice))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_27_4_name), R.drawable.meal_prawn_salad,context.getString(R.string.meal_27_4_instruction))));
 
         mealDayModels.add(28, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Berries Overnight Oat" , R.drawable.meal_berries_overnightoat))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Guava", R.drawable.meal_guava))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Brown Rice with Baked Salmon and Spinach", R.drawable.meal_salmon_spinach))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Tomato Juice", R.drawable.meal_tomato_juice))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Egg White and Garden Salad", R.drawable.meal_salad,"Without Dressing")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_28_0_name) , R.drawable.meal_berries_overnightoat))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_28_1_name), R.drawable.meal_guava))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_28_2_name), R.drawable.meal_salmon_spinach))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_28_3_name), R.drawable.meal_tomato_juice))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_28_4_name), R.drawable.meal_salad,context.getString(R.string.meal_28_4_instruction))));
 
         mealDayModels.add(29, new MealDayModel()
-                .addDish(MealDayModel.MealType.breakfast, new DishModel("Oatmeal and Scramble Egg White" , R.drawable.meal_oat_egg))
-                .addDish(MealDayModel.MealType.morning_snack, new DishModel("Apple", R.drawable.meal_apple))
-                .addDish(MealDayModel.MealType.lunch, new DishModel("Brown Rice with Roasted Chicken and Brocolli", R.drawable.meal_rice_chicken_brocolli,"Remove chicken fat and skin"))
-                .addDish(MealDayModel.MealType.evening_snack, new DishModel("Banana", R.drawable.meal_banana))
-                .addDish(MealDayModel.MealType.dinner, new DishModel("Boiled Egg White", R.drawable.meal_egg_white,"6 egg white")));
+                .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_29_0_name) , R.drawable.meal_oat_egg))
+                .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_29_1_name), R.drawable.meal_apple))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_29_2_name), R.drawable.meal_rice_chicken_brocolli,context.getString(R.string.meal_29_2_instruction)))
+                .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_29_3_name), R.drawable.meal_banana))
+                .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_29_4_name), R.drawable.meal_egg_white,context.getString(R.string.meal_29_4_instruction))));
     }
 
     private void inputTipOfTheDay(){
         for(int i=0; i<30; i++){
-            tipOfTheDays.add(0, "You SHOULD NOT add sugar to your tea and coffee within 30 days!");
-            tipOfTheDays.add(1, "Always remember to remove skin and fat from the meat");
-            tipOfTheDays.add(2, "Take one tablespoon of extra virgin olive oil in the morning helps with weight loss");
-            tipOfTheDays.add(3, "Cook with olive oil when you're tying to grill the food");
-            tipOfTheDays.add(4, "Sugar and artificial sweeteners is the main factor of obese");
-            tipOfTheDays.add(5, "Avoid salty food, it will makes your body bloated");
-            tipOfTheDays.add(6, "Drink more water can boost your metabolism to burn fat");
-            tipOfTheDays.add(7, "Caffeine in coffee and tea can boost metabolism, drink 1 to 2 cup everyday to speed up your weight loss progress");
-            tipOfTheDays.add(8, "You are what you eat, so choose your food wisely");
-            tipOfTheDays.add(9, "Get a good night’s sleep, every night. Poor sleep is one of the strongest risk factors for weight gain");
-            tipOfTheDays.add(10, "Stress may increase levels of stress hormones in your body, this can cause increased hunger and result in weight gain");
-            tipOfTheDays.add(11, "Fast eaters gain more weight over time. Eating slowly makes you feel more full and boosts weight-reducing hormones");
-            tipOfTheDays.add(12, "Eat spicy food, it can actually help you cut back on calories");
-            tipOfTheDays.add(13, "Sugar-free product often often contain unhealthy sugar alternatives");
-            tipOfTheDays.add(14, "Always prepare food by yourself so you'll know what you're eating");
-            tipOfTheDays.add(15, "Snack on a small handful of nuts helps stave off hunger and keeps your metabolism stoked");
-            tipOfTheDays.add(16, "Always choose whole-grain for the carb");
-            tipOfTheDays.add(17, "An extra tablespoon of salad dressing can add 75-100 calories");
-            tipOfTheDays.add(18, "Breakfast skippers weigh more than breakfast eaters");
-            tipOfTheDays.add(19, "Think about your waistline instead of the food waste");
-            tipOfTheDays.add(20, "Try to get out of the habit of always eating something while you are sitting and relaxing,");
-            tipOfTheDays.add(21, "If you replaced a 20oz bottle of soda with water daily, you would easily lose up to 35 pounds in one year");
-            tipOfTheDays.add(22, "Eat more vegetable, it contain lot of fiber that help with weight loss");
-            tipOfTheDays.add(23, "Beer contains rapidly digested carbs that shut down fat burning");
-            tipOfTheDays.add(24, "Stop eating potato chips, popcorn, cookies, candy, ice cream, cakes");
-            tipOfTheDays.add(25, "Avoid fast food, most of them are unhealthy and contain lot of calories");
-            tipOfTheDays.add(26, "Taking drug or pill to lose weight destroy your health at the same time");
-            tipOfTheDays.add(27, "If you return to living exactly the way did when you gained weight, don’t be surprised when the excess weight returns. It will");
-            tipOfTheDays.add(28, "Weight loss effect doesn't last forever unless you get rid of the bad habit");
-            tipOfTheDays.add(29, "Always remind yourself how hard you have come this far");
+            tipOfTheDays.add(0, context.getString(R.string.tip_day_0));
+            tipOfTheDays.add(1, context.getString(R.string.tip_day_1));
+            tipOfTheDays.add(2, context.getString(R.string.tip_day_2));
+            tipOfTheDays.add(3, context.getString(R.string.tip_day_3));
+            tipOfTheDays.add(4, context.getString(R.string.tip_day_4));
+            tipOfTheDays.add(5, context.getString(R.string.tip_day_5));
+            tipOfTheDays.add(6, context.getString(R.string.tip_day_6));
+            tipOfTheDays.add(7, context.getString(R.string.tip_day_7));
+            tipOfTheDays.add(8, context.getString(R.string.tip_day_8));
+            tipOfTheDays.add(9, context.getString(R.string.tip_day_9));
+            tipOfTheDays.add(10, context.getString(R.string.tip_day_10));
+            tipOfTheDays.add(11, context.getString(R.string.tip_day_11));
+            tipOfTheDays.add(12, context.getString(R.string.tip_day_12));
+            tipOfTheDays.add(13, context.getString(R.string.tip_day_13));
+            tipOfTheDays.add(14, context.getString(R.string.tip_day_14));
+            tipOfTheDays.add(15, context.getString(R.string.tip_day_15));
+            tipOfTheDays.add(16, context.getString(R.string.tip_day_16));
+            tipOfTheDays.add(17, context.getString(R.string.tip_day_17));
+            tipOfTheDays.add(18, context.getString(R.string.tip_day_18));
+            tipOfTheDays.add(19, context.getString(R.string.tip_day_19));
+            tipOfTheDays.add(20, context.getString(R.string.tip_day_20));
+            tipOfTheDays.add(21, context.getString(R.string.tip_day_21));
+            tipOfTheDays.add(22, context.getString(R.string.tip_day_22));
+            tipOfTheDays.add(23, context.getString(R.string.tip_day_23));
+            tipOfTheDays.add(24, context.getString(R.string.tip_day_24));
+            tipOfTheDays.add(25, context.getString(R.string.tip_day_25));
+            tipOfTheDays.add(26, context.getString(R.string.tip_day_26));
+            tipOfTheDays.add(27, context.getString(R.string.tip_day_27));
+            tipOfTheDays.add(28, context.getString(R.string.tip_day_28));
+            tipOfTheDays.add(29, context.getString(R.string.tip_day_29));
 
         }
     }
 
     private void inputIngredientsList(){
         ArrayList<Pair<String, String>> ingredientsWeek1 = new ArrayList();
-        ingredientsWeek1.add(new Pair<String, String>("Apple", "3 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Asparagus", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Banana", "3 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Bell Pepper", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Berries", "3 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Bolognese Sauce", "1 bottle"));
-        ingredientsWeek1.add(new Pair<String, String>("Brocolli", "2 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Brown Rice", "1 pack"));
-        ingredientsWeek1.add(new Pair<String, String>("Celery", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Chicken Breast", "5 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Coffee", "3 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Dory Fish", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Egg", "24 unit"));
-        ingredientsWeek1.add(new Pair<String, String>("Garlic", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Green Beans", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Lean Ham", "2 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Lettuce", "2 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Mushroom", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Natural Greek Yogurt", "2 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Nuts", "3 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Oatmeal", "1 pack"));
-        ingredientsWeek1.add(new Pair<String, String>("Olive Oil", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Orange", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Papaya", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Lean Pork Meat", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Potato", "3 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Prawn", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Salad", "2 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Salmon", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Spinach", "3 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Steak", "1 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Tea", "3 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Tomato", "4 serv"));
-        ingredientsWeek1.add(new Pair<String, String>("Whole Wheat Bread", "1 pack"));
-        ingredientsWeek1.add(new Pair<String, String>("Whole Wheat Spaghetti", "1 pack"));
-        ingredientsWeek1.add(new Pair<String, String>("Whole Wheat Wrap", "1 pack"));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_apple), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_asparagus), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_banana), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_bell_pepper), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_berries), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_bolognese_sauce), String.format(context.getString(R.string.x_bottle), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_brocolli), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_brown_rice),  String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_celery), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_chicken_breast), String.format(context.getString(R.string.x_serving),"5")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_coffee), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_dory_fish), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_egg), String.format(context.getString(R.string.x_unit), "24")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_garlic), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_green_beans), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_lean_ham), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_lettuce), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_mushroom), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_natural_greek_yogurt), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_nuts), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_oatmeal),  String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_olive_oil), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_orange), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_papaya), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_lean_pork_meat), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_potato), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_prawn), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_salad), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_salmon), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_spinach), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_steak), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_tea),  String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_tomato), String.format(context.getString(R.string.x_pack),"4")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_bread),  String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_spaghetti),  String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_wrap),  String.format(context.getString(R.string.x_pack),"1")));
 
 
         ingredientsList.add(ingredientsWeek1);
 
         ArrayList<Pair<String, String>> ingredientsWeek2 = new ArrayList();
-        ingredientsWeek2.add(new Pair<String, String>("Apple", "3 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Banana", "3 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Bell Pepper", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Berries", "3 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Brocolli", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Brown Rice", "1 pack"));
-        ingredientsWeek2.add(new Pair<String, String>("Carrot", "3 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Celery", "2 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Cereal", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Chicken Breast", "3 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Coffee", "2 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Cucumber", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Dory Fish", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Duck Meat", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Egg", "14 Unit"));
-        ingredientsWeek2.add(new Pair<String, String>("Green Beans", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Guava", "2 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Lettuce", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Minced Chicken", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Mushroom", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Natural Greek Yogurt", "2 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Nuts", "2 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Oatmeal", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Orange", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Pancake", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Papaya", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Peanut Butter", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Lean Pork Meat", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Potato", "2 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Prawn", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Salad", "2 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Salmon", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Spinach", "3 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Spring Onion", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Steak", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Tea", "5 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Tilapia", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Tofu", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Tomato", "3 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Tuna", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Watermelon", "1 serv"));
-        ingredientsWeek2.add(new Pair<String, String>("Whole Wheat Bread", "1 pack"));
-        ingredientsWeek2.add(new Pair<String, String>("Whole Wheat Spaghetti", "1 pack"));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_apple), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_banana), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_bell_pepper), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_berries),String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_brocolli), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_brown_rice),  String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_carrot), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_celery), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_cereal), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_chicken_breast), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_coffee), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_cucumber), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_dory_fish), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_duck_meat), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_egg), String.format(context.getString(R.string.x_unit), "14")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_green_beans), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_guava), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_lettuce), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_minced_chicken), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_mushroom), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_natural_greek_yogurt), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_nuts), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_oatmeal), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_orange), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_pancake), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_papaya), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_peanut_butter), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_lean_pork_meat), String.format(context.getString(R.string.x_serving),"1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_potato), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_prawn), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_salad), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_salmon), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_spinach), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_spring_onion), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_steak), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_tea), String.format(context.getString(R.string.x_serving),"5")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_tilapia), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_tofu), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_tomato), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_tuna), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_watermelon), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_bread), String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_spaghetti),  String.format(context.getString(R.string.x_pack),"1")));
         
         ingredientsList.add(ingredientsWeek2);
 
         ArrayList<Pair<String, String>> ingredientsWeek3 = new ArrayList();
-        ingredientsWeek3.add(new Pair<String, String>("Apple", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Asparagus", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Avocado", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Banana", "3 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Berries", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Brocolli", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Brown Rice", "1 pack"));
-        ingredientsWeek3.add(new Pair<String, String>("Carrot", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Chicken Breast", "3 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Coffee", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Corn", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Cucumber", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Dory Fish", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Egg", "24 Unit"));
-        ingredientsWeek3.add(new Pair<String, String>("Garlic", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Green Beans", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Guava", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Lamb", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Lean Ham", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Lettuce", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Lime", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Minced Chicken", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Mushroom", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Natural Greek Yogurt", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Nuts", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Oatmeal", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Orange", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Papaya", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Peanut Butter", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Potato", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Prawn", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Salad", "3 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Salmon", "2 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Spinach", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Spring Onion", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Squid", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Steak", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Tea", "5 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Tofu", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Tomato", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Waffle", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Watermelon", "1 serv"));
-        ingredientsWeek3.add(new Pair<String, String>("Whole Wheat Bread", "1 pack"));
-        ingredientsWeek3.add(new Pair<String, String>("Whole Wheat Spaghetti", "1 pack"));
-        ingredientsWeek3.add(new Pair<String, String>("Whole Wheat Wrap", "1 pack"));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_apple), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_asparagus), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_avocado), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_banana), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_berries), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_brocolli), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_brown_rice), String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_carrot), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_chicken_breast), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_coffee), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_corn), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_cucumber), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_dory_fish), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_egg), String.format(context.getString(R.string.x_unit), "24")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_garlic), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_green_beans), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_guava), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_lamb), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_lean_ham), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_lettuce), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_lime), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_minced_chicken), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_mushroom), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_natural_greek_yogurt), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_nuts), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_oatmeal), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_orange), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_papaya), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_peanut_butter), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_potato), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_prawn),String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_salad), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_salmon), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_spinach), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_spring_onion), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_squid), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_steak), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_tea), String.format(context.getString(R.string.x_serving), "5")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_tofu), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_tomato), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_waffle), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_watermelon), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_bread), String.format(context.getString(R.string.x_pack), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_spaghetti), String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_wrap), String.format(context.getString(R.string.x_pack),"1")));
 
         ingredientsList.add(ingredientsWeek3);
 
         ArrayList<Pair<String, String>> ingredientsWeek4 = new ArrayList();
-        ingredientsWeek4.add(new Pair<String, String>("Apple", "3 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Asparagus", "3 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Avocado", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Banana", "8 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Bell Pepper", "2 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Berries", "3 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Brocolli", "3 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Brown Rice", "1 pack"));
-        ingredientsWeek4.add(new Pair<String, String>("Carrot", "3 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Chicken Breast", "3 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Coffee", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Dory Fish", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Egg", "34 Unit"));
-        ingredientsWeek4.add(new Pair<String, String>("Guava", "2 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Kiwi", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Lamb", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Lean Ham", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Lettuce", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Minced Chicken", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Mushroom", "2 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Natural Greek Yogurt", "2 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Nuts", "3 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Oatmeal", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Orange", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Pancake", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Papaya", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Potato", "2 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Prawn", "2 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Salad", "4 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Salmon", "3 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Spinach", "2 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Squid", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Steak", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Tea", "5 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Tofu", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Tomato", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Tuna", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Watermelon", "1 serv"));
-        ingredientsWeek4.add(new Pair<String, String>("Whole Wheat Bread", "1 pack"));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_apple), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_asparagus), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_avocado), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_banana), String.format(context.getString(R.string.x_serving), "8")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_bell_pepper), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_berries), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_brocolli), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_brown_rice), String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_carrot),String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_chicken_breast), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_coffee), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_dory_fish), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_egg), String.format(context.getString(R.string.x_unit), "34")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_guava), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_kiwi), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_lamb), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_lean_ham), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_lettuce), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_minced_chicken), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_mushroom), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_natural_greek_yogurt), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_nuts), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_oatmeal), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_orange), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_pancake), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_papaya), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_potato), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_prawn), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_salad), String.format(context.getString(R.string.x_serving), "4")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_salmon), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_spinach), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_squid), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_steak), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_tea), String.format(context.getString(R.string.x_serving), "5")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_tofu), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_tomato), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_tuna), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_watermelon), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_bread), String.format(context.getString(R.string.x_pack),"1")));
 
         ingredientsList.add(ingredientsWeek4);
 
