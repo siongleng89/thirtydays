@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">30 Days Running Weight Loss</string>
-    <string name="btn_begin">RUNS BEGIN</string>
     <string name="txt_weight">Weight</string>
     <string name="txt_gender">Gender</string>
     <string name="txt_age">Age</string>
@@ -17,7 +16,7 @@
     <string name="btn_more">MORE</string>
     <string name="txt_congrat">Congrats! You have complete Day 1 Challenge!</string>
 
-
+    <string name="pro">PRO</string>
     <string name="day_X">DAY %s</string>
     <string name="X_completed">%s%% completed</string>
     <string name="total_time">Total Time</string>
@@ -27,6 +26,21 @@
     <string name="btn_end">End</string>
     <string name="title_activity_ready">ReadyActivity</string>
 
+    <string name="completed">COMPLETED</string>
+    <string name="incomplete">INCOMPLETE</string>
+
+    <string name="avty_landing_btn_begin">RUNS BEGIN</string>
+
+    <string name="avty_main_btn_meal_plan">MEAL PLAN</string>
+    <string name="avty_main_btn_running_plan">RUNNING PLAN</string>
+
+    <string name="avty_result_title">Day %s exercise result</string>
+    <string name="avty_result_day_x">DAY %s EXERCISE</string>
+
+    <string name="avty_graph_title"></string>
+    <string name="avty_graph_subtitle">Each Day Plan Calories Burn</string>
+
+    <string name="avty_history_title">Exercise History</string>
 
     <string name="drawer_title_day_x_plan">Day %s Plan</string>
     <string name="drawer_title_history">Exercise History</string>
@@ -42,8 +56,6 @@
     <string name="drawer_item_rate">Rate us</string>
     <string name="drawer_item_contact">Contact us</string>
     <string name="drawer_item_about">About us</string>
-
-
 
     <string name="tip_olive_oil">Average Greek consumes more than 20 liters of olive oil a year, that why the spartan look so sexy and we have included in your meal plan today, check it out now!</string>
     <string name="tip_coffee">Coffee can specifically increase the burning of fat, by as much as 10% in obese individuals, but drinking too much will make you count sheep at the night, so follow our meal plan today to burn fat and sleep soundly tonight!</string>
@@ -106,4 +118,9 @@
     <string name="exercise_quote28">Whenever you do a thing, act as if all the world were watching.</string>
     <string name="exercise_quote29">You are braver than you believe, stronger than you seem, and smarter than you think.</string>
     <string name="exercise_quote30">The future is always beginning now.</string>
+    <string name="exercise_duration">Exercise Duration</string>
+    <string name="min_s">Min(s)</string>
+    <string name="kcal">Kcal</string>
+
+
 </resources>

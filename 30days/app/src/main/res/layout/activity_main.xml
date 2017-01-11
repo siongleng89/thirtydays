@@ -96,7 +96,7 @@
                         android:gravity="center">
 
                         <TextView
-                            android:text="DAY 1"
+                            android:text="@string/day_X"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorBtnWord"
@@ -107,7 +107,7 @@
                             android:id="@+id/txtDayNumber1" />
 
                         <TextView
-                            android:text="MEAL PLAN"
+                            android:text="@string/avty_main_btn_meal_plan"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorBtnWord"
@@ -140,7 +140,7 @@
                             android:layout_width="25dp" />
 
                         <TextView
-                            android:text="PRO"
+                            android:text="@string/pro"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView9"
@@ -180,7 +180,7 @@
                         android:gravity="center">
 
                         <TextView
-                            android:text="DAY 1"
+                            android:text="@string/day_X"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorBtnWord"
@@ -191,7 +191,7 @@
                             android:id="@+id/txtDayNumber2" />
 
                         <TextView
-                            android:text="RUNNING PLAN"
+                            android:text="@string/avty_main_btn_running_plan"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorBtnWord"
@@ -236,18 +236,6 @@
                 android:background="#000">
 
             </RelativeLayout>
-
-            <TextView
-                android:text="@string/btn_start"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtStart"
-                android:layout_weight="1"
-                android:textSize="36sp"
-                android:gravity="center"
-                android:textStyle="normal|bold"
-                android:textColor="@color/colorAction"
-                android:visibility="gone" />
 
         </LinearLayout>
 

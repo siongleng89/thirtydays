@@ -94,8 +94,8 @@ public class ExerciseResultActivity extends MyActivity {
                 Analytics.logEvent(AnalyticEvent.ExerciseFail, dayPlan + ": " +String.valueOf(totalElapsedMs/1000));
             }
 
-            setTitle(String.format("Day %s exercise result", dayPlan));
-            txtTitle.setText(String.format("DAY %s EXERCISE", dayPlan));
+            setTitle(String.format(getString(R.string.avty_result_title), String.valueOf(dayPlan)));
+            txtTitle.setText(String.format(getString(R.string.avty_result_day_x), String.valueOf(dayPlan)));
 
             int minutes = (int) Math.ceil((totalElapsedMs / 1000) / 60);
             int calories = (int) Math.ceil(caloriesBurnt);

@@ -150,15 +150,13 @@ public class DrawerHelper implements ListView.OnItemClickListener {
         if(intent != null){
             activity.startActivity(intent);
         }
-
-
+        
         Threadings.delay(500, new Runnable() {
             @Override
             public void run() {
                 layoutDrawer.closeDrawer(Gravity.LEFT);
             }
         });
-
     }
 
     private void shareApps(){

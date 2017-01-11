@@ -80,8 +80,8 @@ public class MainActivity extends MyActivity {
         }
 
         dayCounterControl.updateDayNumber(day);
-        txtDayNumber1.setText(String.format("DAY %s", day));
-        txtDayNumber2.setText(String.format("DAY %s", day));
+        txtDayNumber1.setText(String.format(getString(R.string.day_X), String.valueOf(day)));
+        txtDayNumber2.setText(String.format(getString(R.string.day_X), String.valueOf(day)));
 
         setEnablePrevDayButton(day > 1);
         setEnableNextDayButton(day < 30);
