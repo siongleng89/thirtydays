@@ -18,7 +18,7 @@
         android:paddingRight="10dp">
 
         <TextView
-            android:text="Quick Tutorial"
+            android:text="@string/avty_tutorial_introduction_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtTitle"

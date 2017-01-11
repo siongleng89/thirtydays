@@ -73,8 +73,7 @@
                     android:padding="15dp"
                     android:id="@+id/layoutCompletedCircle"
                     android:layout_weight="1"
-                    android:background="@drawable/circle"
-                    android:backgroundTint="@color/colorPositive"
+                    android:background="@drawable/circle_positive_bg"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:gravity="center"
@@ -105,8 +104,7 @@
                     android:padding="15dp"
                     android:id="@+id/layoutIncompleteCircle"
                     android:layout_weight="1"
-                    android:background="@drawable/circle"
-                    android:backgroundTint="@color/colorAccent"
+                    android:background="@drawable/circle_accent_bg"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:gravity="center">
@@ -141,7 +139,7 @@
                 android:paddingLeft="15dp">
 
                     <TextView
-                        android:text="@string/exercise_duration"
+                        android:text="@string/avty_exercise_duration_title"
                         android:layout_width="match_parent"
                         android:id="@+id/txtTotal"
                         android:layout_height="wrap_content"
@@ -185,7 +183,7 @@
                     android:id="@+id/linearCalories">
 
                     <TextView
-                        android:text="@string/calories_burn"
+                        android:text="@string/avty_result_calories_burn_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
@@ -284,7 +282,7 @@
     </ScrollView>
 
     <Button
-        android:text="@string/btn_end"
+        android:text="@string/end"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnEnd"

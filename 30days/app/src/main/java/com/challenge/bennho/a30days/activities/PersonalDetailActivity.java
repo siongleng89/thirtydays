@@ -92,7 +92,7 @@ public class PersonalDetailActivity extends MyActivity {
     }
 
     private void setUnitToKgCm(){
-        txtWeight.setHint("Your weight in kg");
+        txtWeight.setHint(R.string.avty_details_weight_kg_hint);
 
         layoutHeightCM.setVisibility(View.VISIBLE);
         layoutHeighFeet.setVisibility(View.GONE);
@@ -101,7 +101,7 @@ public class PersonalDetailActivity extends MyActivity {
     }
 
     private void setUnitToPoundsMiles(){
-        txtWeight.setHint("Your weight in pounds");
+        txtWeight.setHint(R.string.avty_details_weight_pounds_hint);
 
         layoutHeightCM.setVisibility(View.GONE);
         layoutHeighFeet.setVisibility(View.VISIBLE);
@@ -121,11 +121,9 @@ public class PersonalDetailActivity extends MyActivity {
             String inputAge = txtAge.getText().toString();
 
             if(checkInputsIsValid(inputWeight, inputHeight, inputAge)){
-
-
                 weightKg = Double.valueOf(inputWeight);
                 heightCm = Double.valueOf(inputHeight);
-                age = Integer.valueOf(inputAge);
+                age = (int) Math.floor(Double.valueOf(inputAge));
                 complete(switchControlUnit.getSelectedOptionIndex(), weightKg,
                         heightCm, age, switchControlGender.getSelectedOptionIndex());
             }
@@ -183,13 +181,13 @@ public class PersonalDetailActivity extends MyActivity {
         if(isEmptyError){
             OverlayBuilder.build(this)
                     .setOverlayType(OverlayBuilder.OverlayType.OkOnly)
-                    .setContent("Please make sure all fields are filled before continue")
+                    .setContent(getString(R.string.avty_details_empty_error))
                     .show();
         }
         else{
             OverlayBuilder.build(this)
                     .setOverlayType(OverlayBuilder.OverlayType.OkOnly)
-                    .setContent("Some of the value inputMeal is not valid, please check and try again.")
+                    .setContent(getString(R.string.avty_details_invalid_error))
                     .show();
         }
     }

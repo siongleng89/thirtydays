@@ -111,11 +111,11 @@ public class LayoutDayCounter extends RelativeLayout {
 
         if(currentDayNumber < maxDayNumber){
             imgViewMedal.setVisibility(VISIBLE);
-            txtCompleted.setText("Completed");
+            txtCompleted.setText(context.getString(R.string.completed));
         }
         else{
             imgViewMedal.setVisibility(GONE);
-            txtCompleted.setText("Incomplete");
+            txtCompleted.setText(context.getString(R.string.incomplete));
         }
         txtDay.setText(String.format(context.getString(R.string.day_X), String.valueOf(currentDayNumber)));
 

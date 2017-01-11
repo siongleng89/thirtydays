@@ -41,7 +41,7 @@ public class TutorialActivity extends MyActivity{
         setContentView(R.layout.activity_tutorial);
         onLayoutSet();
 
-        setTitle("Exercise Tutorial");
+        setTitle(getString(R.string.avty_tutorial_title));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         layoutPrev = (LinearLayout) findViewById(R.id.layoutPrev);

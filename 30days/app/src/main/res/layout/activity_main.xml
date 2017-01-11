@@ -150,8 +150,7 @@
                             android:layout_marginTop="-25dp"
                             android:textStyle="normal|bold"
                             android:layout_marginLeft="-15dp"
-                            android:background="@drawable/corner_radius_bg"
-                            android:backgroundTint="@color/colorAccent"
+                            android:background="@drawable/accent_corner_radius_bg"
                             android:paddingLeft="5dp"
                             android:paddingRight="5dp" />
 

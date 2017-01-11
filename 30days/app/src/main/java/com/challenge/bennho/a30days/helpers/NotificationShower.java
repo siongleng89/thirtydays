@@ -8,8 +8,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.util.Pair;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.activities.LaunchActivity;
@@ -33,7 +31,7 @@ public class NotificationShower {
 
     public static void showRunReminder(Context context, int dayNumber){
 
-        String title = String.format("Remember to run! (Day %s)", dayNumber);
+        String title = String.format(context.getString(R.string.notf_run_reminder_title), String.valueOf(dayNumber));
         String content = AndroidUtils.getStringByIdentifier(context, "exercise_quote" + dayNumber);
 
 
@@ -70,8 +68,10 @@ public class NotificationShower {
         PendingIntent pendingSettingsIntent = PendingIntent.getActivity(context, 0, settingsIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT);
 
-        builder.addAction(R.drawable.ic_action_maps_directions_walk, "Run Now", pendingMainIntent);
-        builder.addAction(R.drawable.ic_action_action_settings, "Settings", pendingSettingsIntent);
+        builder.addAction(R.drawable.ic_action_maps_directions_walk,
+                                context.getString(R.string.notf_run_reminder_action_run), pendingMainIntent);
+        builder.addAction(R.drawable.ic_action_action_settings,
+                                context.getString(R.string.notf_run_reminder_action_settings), pendingSettingsIntent);
 
         builder.setAutoCancel(true);
         builder.setDefaults(DEFAULT_SOUND | DEFAULT_VIBRATE | DEFAULT_LIGHTS);
@@ -86,7 +86,7 @@ public class NotificationShower {
     public static void showMealReminder(Context context, int dayNumber,
                                         DishModel dishModelWithTip){
 
-        String title = String.format("Meal day %s", dayNumber);
+        String title = String.format(context.getString(R.string.notf_meal_reminder_title), String.valueOf(dayNumber));
         String content = dishModelWithTip.getTip();
 
         NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
@@ -123,8 +123,10 @@ public class NotificationShower {
         PendingIntent pendingSettingsIntent = PendingIntent.getActivity(context, 0, settingsIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
-        builder.addAction(R.drawable.ic_action_action_pageview, "View Plan", pendingMealIntent);
-        builder.addAction(R.drawable.ic_action_action_settings, "Settings", pendingSettingsIntent);
+        builder.addAction(R.drawable.ic_action_action_pageview,
+                context.getString(R.string.notf_meal_reminder_action_view), pendingMealIntent);
+        builder.addAction(R.drawable.ic_action_action_settings,
+                context.getString(R.string.notf_meal_reminder_action_settings), pendingSettingsIntent);
 
         builder.setAutoCancel(true);
         builder.setDefaults(DEFAULT_SOUND | DEFAULT_VIBRATE | DEFAULT_LIGHTS);

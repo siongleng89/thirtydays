@@ -307,8 +307,8 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
     private void giveUp(){
         OverlayBuilder.build(RunningActivity.this)
                 .setOverlayType(OverlayBuilder.OverlayType.OkCancel)
-                .setTitle("Give up?")
-                .setContent("Confirm giving up this exercise?")
+                .setTitle(getString(R.string.avty_running_give_up_title))
+                .setContent(getString(R.string.avty_running_give_up_content))
                 .setRunnables(new Runnable() {
                     @Override
                     public void run() {

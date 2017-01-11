@@ -187,14 +187,14 @@ public class ExerciseService extends Service {
     }
 
     public void exerciseCompleted(){
-        getTextSpeak().speak("Exercise finished");
+        getTextSpeak().speak(getString(R.string.speech_running_finished));
         stopped = true;
         completed = true;
         stopForeground(true);
         NotificationManager mNotificationManager = (NotificationManager)
                 getSystemService(Context.NOTIFICATION_SERVICE);
-        mNotificationManager.notify(SERVICE_ID, getNotification("Good Job!",
-                                "Completed exercise, click for result."));
+        mNotificationManager.notify(SERVICE_ID, getNotification(getString(R.string.notf_running_finished_title),
+                                getString(R.string.notf_running_finished_content)));
         exerciseListener.onExerciseEnded(realElapsedMs, currentCaloriesBurnt, completed);
     }
 

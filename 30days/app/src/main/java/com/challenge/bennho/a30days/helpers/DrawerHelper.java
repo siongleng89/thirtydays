@@ -29,7 +29,6 @@ import com.challenge.bennho.a30days.activities.SettingsActivity;
 import com.challenge.bennho.a30days.activities.TutorialActivity;
 import com.challenge.bennho.a30days.models.User;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -66,7 +65,7 @@ public class DrawerHelper implements ListView.OnItemClickListener {
 
             ActionBarDrawerToggle actionBarDrawerToggle =
                     new ActionBarDrawerToggle(activity, layoutDrawer, activity.getToolbar(),
-                            R.string.accept, R.string.accept) {
+                            R.string.open, R.string.close) {
 
                         @Override
                         public void onDrawerClosed(View drawerView) {
@@ -150,7 +149,7 @@ public class DrawerHelper implements ListView.OnItemClickListener {
         if(intent != null){
             activity.startActivity(intent);
         }
-        
+
         Threadings.delay(500, new Runnable() {
             @Override
             public void run() {
@@ -162,10 +161,10 @@ public class DrawerHelper implements ListView.OnItemClickListener {
     private void shareApps(){
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");
-        String shareBody = "Download 30 days running weight loss + diet to shape your body today! https://play.google.com/store/apps/details?id=com.challenge.bennho.a30days";
-        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "30 days running weight loss");
+        String shareBody = activity.getString(R.string.share_apps_msg);
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, activity.getString(R.string.app_name));
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-        activity.startActivityForResult(Intent.createChooser(sharingIntent, "Share"), 123);
+        activity.startActivityForResult(Intent.createChooser(sharingIntent, activity.getString(R.string.share)), 123);
     }
 
     private void rateApps(){
@@ -181,11 +180,13 @@ public class DrawerHelper implements ListView.OnItemClickListener {
         final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
 
         emailIntent.setType("plain/text");
-        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"benjandho@gmail.com"});
-        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "30 days running weight loss support");
+        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{
+                activity.getString(R.string.main_email_address)});
+        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, activity.getString(R.string.app_name) + " " +
+                                                        activity.getString(R.string.support));
         emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "");
 
-        activity.startActivity(Intent.createChooser(emailIntent, "Contact us"));
+        activity.startActivity(Intent.createChooser(emailIntent, activity.getString(R.string.drawer_item_contact)));
     }
 
     private void aboutUs(){
@@ -197,7 +198,7 @@ public class DrawerHelper implements ListView.OnItemClickListener {
             OverlayBuilder.build(activity)
                     .setOverlayType(OverlayBuilder.OverlayType.OkOnly)
                     .setTitle(activity.getString(R.string.app_name))
-                    .setContent(String.format("Version: %s", version))
+                    .setContent(String.format(activity.getString(R.string.version_x), version))
                     .show();
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
@@ -274,8 +275,11 @@ public class DrawerHelper implements ListView.OnItemClickListener {
                 drawerHolder.layoutSpacing.setVisibility(View.GONE);
 
                 int userMaxDay = user.getCurrentDay();
-                drawerHolder.txtDayCounter.setText(String.format("%s/30", userMaxDay - 1));
-                drawerHolder.txtDayText.setText(String.format("Go to Day %s Plan", Math.min(userMaxDay, 30)));
+                drawerHolder.txtDayCounter.setText(String.format(
+                        context.getString(R.string.drawer_day_counter_numeric), String.valueOf(userMaxDay - 1)));
+                drawerHolder.txtDayText.setText(
+                        String.format(context.getString(R.string.drawer_day_counter_text),
+                                String.valueOf(Math.min(userMaxDay, 30))));
             }
             else if(isMenuTitle){
                 drawerHolder.layoutDay.setVisibility(View.GONE);

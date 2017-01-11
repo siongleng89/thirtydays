@@ -43,7 +43,7 @@
             android:layout_height="0px"/>
 
         <TextView
-            android:text="@string/txt_detail"
+            android:text="@string/avty_details_instruction"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/txtDetail"
@@ -58,8 +58,8 @@
         <com.challenge.bennho.a30days.controls.LayoutSwitchControl
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            app:option1="kg/km"
-            app:option2="pounds/miles"
+            app:option1="@string/metric_units"
+            app:option2="@string/american_units"
             android:id="@+id/switchControlUnit">
         </com.challenge.bennho.a30days.controls.LayoutSwitchControl>
 
@@ -72,7 +72,7 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:text="Weight"
+                android:text="@string/avty_details_weight_title"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3"
                 android:textSize="16sp"
@@ -88,7 +88,7 @@
                 android:inputType="number"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
-                android:hint="Your weight in kg" />
+                android:hint="@string/avty_details_weight_kg_hint" />
         </LinearLayout>
 
         <LinearLayout
@@ -99,7 +99,7 @@
             android:id="@+id/layoutHeightCm">
 
             <TextView
-                android:text="Height"
+                android:text="@string/avty_details_height_title"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteY="37dp"
@@ -115,7 +115,7 @@
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your height in cm"
+                android:hint="@string/avty_details_height_cm_hint"
                 android:id="@+id/txtHeightCM" />
         </LinearLayout>
 
@@ -128,7 +128,7 @@
             android:visibility="gone">
 
             <TextView
-                android:text="Height"
+                android:text="@string/avty_details_height_title"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 tools:layout_editor_absoluteY="37dp"
@@ -151,7 +151,7 @@
                     android:id="@+id/txtHeightFeet"
                     android:layout_weight="1"
                     android:textSize="16sp"
-                    android:hint="Height in foot" />
+                    android:hint="@string/avty_details_height_foot_hint" />
 
                 <TextView
                     android:layout_width="20dp"
@@ -166,7 +166,7 @@
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Height in inch"
+                    android:hint="@string/avty_details_height_inch_hint"
                     android:id="@+id/txtHeightInch" />
             </LinearLayout>
 
@@ -179,7 +179,7 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:text="@string/txt_age"
+                android:text="@string/avty_details_age_title"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4"
                 android:textSize="16sp"
@@ -190,13 +190,13 @@
                 android:textStyle="normal|bold" />
 
             <EditText
-                android:digits="0123456789."
+                android:digits="0123456789"
                 android:inputType="number"
                 android:id="@+id/txtAge"
                 android:textSize="16sp"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:hint="Your age" />
+                android:hint="@string/avty_details_age_hint" />
 
         </LinearLayout>
 
@@ -207,7 +207,7 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                    android:text="@string/txt_gender"
+                    android:text="@string/avty_details_gender_title"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView2"
                     android:textSize="16sp"
@@ -220,8 +220,8 @@
                 android:textStyle="normal|bold" />
 
             <com.challenge.bennho.a30days.controls.LayoutSwitchControl
-                app:option1="Male"
-                app:option2="Female"
+                app:option1="@string/gender_male"
+                app:option2="@string/gender_female"
                 android:layout_height="30dp"
                 android:layout_width="300dp"
                 android:id="@+id/switchControlGender">
@@ -244,7 +244,7 @@
         android:layout_alignParentStart="true">
 
         <Button
-            android:text="@string/btn_done"
+            android:text="@string/done"
             android:id="@+id/btnDone"
             android:layout_height="50dp"
             android:textSize="18sp"

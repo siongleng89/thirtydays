@@ -2,10 +2,9 @@ package com.challenge.bennho.a30days.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.util.Pair;
 import android.support.v4.widget.NestedScrollView;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,20 +17,10 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
-import com.challenge.bennho.a30days.controls.ImageCircularFood;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
-import com.challenge.bennho.a30days.helpers.DateTimeUtils;
-import com.challenge.bennho.a30days.helpers.Logs;
 import com.challenge.bennho.a30days.helpers.MealsInputter;
-import com.challenge.bennho.a30days.helpers.NotificationShower;
-import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.models.DishModel;
-import com.challenge.bennho.a30days.models.FoodModel;
-import com.challenge.bennho.a30days.models.HistoryRecord;
 import com.challenge.bennho.a30days.models.MealDayModel;
-import com.challenge.bennho.a30days.models.User;
-
-import org.w3c.dom.Text;
 
 
 public class MealActivity extends MyActivity {
@@ -40,7 +29,7 @@ public class MealActivity extends MyActivity {
     private MealAdapter mealAdapter;
     private MealDayModel mealDayModel;
     private MealsInputter mealsInputter;
-    private TextView txtTip;
+    private TextView txtTip, txtViewShoppingPeriod;
     private LinearLayout layoutViewIngredients;
     private TableLayout tableIngredients;
     private NestedScrollView scrollView;
@@ -56,6 +45,7 @@ public class MealActivity extends MyActivity {
 
         scrollView = (NestedScrollView) findViewById(R.id.scrollView);
         txtTip = (TextView) findViewById(R.id.txtTip);
+        txtViewShoppingPeriod = (TextView) findViewById(R.id.txtViewShoppingPeriod);
         layoutViewIngredients = (LinearLayout) findViewById(R.id.layoutViewIngredients);
         tableIngredients = (TableLayout) findViewById(R.id.tableIngredients);
 
@@ -74,7 +64,28 @@ public class MealActivity extends MyActivity {
             dayPlan = intent.getIntExtra("dayPlan", 1);
         }
 
-        setTitle(String.format("Day %s Meal Plan", dayPlan));
+        setTitle(String.format(getString(R.string.avty_meal_title), String.valueOf(dayPlan)));
+
+        int startDay, endDay;
+        if(dayPlan <= 7){
+            startDay = 1;
+            endDay = 7;
+        }
+        else if(dayPlan <= 15){
+            startDay = 8;
+            endDay = 15;
+        }
+        else if(dayPlan <= 23){
+            startDay = 16;
+            endDay = 23;
+        }
+        else{
+            startDay = 24;
+            endDay = 30;
+        }
+
+        txtViewShoppingPeriod.setText(String.format(getString(R.string.avty_meal_shopping_list_day_x_to_day_x),
+                String.valueOf(startDay), String.valueOf(endDay)));
 
         mealsInputter = new MealsInputter(this);
         mealDayModel = mealsInputter.getMealByDayNumber(dayPlan);
@@ -180,19 +191,19 @@ public class MealActivity extends MyActivity {
                 String mealTypeString = "";
                 switch (mealType){
                     case breakfast:
-                        mealTypeString = "Breakfast";
+                        mealTypeString = getString(R.string.avty_meal_breakfast);
                         break;
                     case morning_snack:
-                        mealTypeString = "Morning Snack";
+                        mealTypeString = getString(R.string.avty_meal_morning_snack);
                         break;
                     case lunch:
-                        mealTypeString = "Lunch";
+                        mealTypeString = getString(R.string.avty_meal_lunch);
                         break;
                     case evening_snack:
-                        mealTypeString = "Evening Snack";
+                        mealTypeString = getString(R.string.avty_meal_evening_snack);
                         break;
                     case dinner:
-                        mealTypeString = "Dinner";
+                        mealTypeString = getString(R.string.avty_meal_dinner);
                         break;
                 }
 

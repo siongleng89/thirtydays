@@ -100,8 +100,6 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
             ));
             circleLayout.setTag(exerciseAngle);
 
-            Logs.show(exerciseAngle + "," + accumulateAngle);
-
             circleLayout.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                                 ViewGroup.LayoutParams.MATCH_PARENT));
             layoutCirclesContainer.addView(circleLayout);
@@ -131,6 +129,7 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
                 for(int i = currentExercisePartModel.getIndex() - 1; i >= 0; i--){
                     final RelativeLayout animatingCircle = circlesArr.get(i);
                     ((SemiCircleDrawable) animatingCircle.getBackground()).setCompleteElapsed();
+                    animatingCircle.setVisibility(INVISIBLE);
                 }
 
                 ((SemiCircleDrawable) animatingCircle.getBackground())
@@ -167,6 +166,7 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
                         for(int i = newExercisePartModel.getIndex() - 1; i >= 0; i--){
                             final RelativeLayout animatingCircle = circlesArr.get(i);
                             ((SemiCircleDrawable) animatingCircle.getBackground()).setCompleteElapsed();
+                            animatingCircle.setVisibility(INVISIBLE);
                         }
                     }
 
@@ -251,7 +251,7 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
             @Override
             public void onClick(View v) {
                 if(lock){
-                    txtSkip.setText("Unlock First");
+                    txtSkip.setText(R.string.avty_running_unlock_first);
                 }
                 else{
                     skipExercisePart();
@@ -263,7 +263,7 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
     public void setLock(boolean lock) {
         this.lock = lock;
         if(!lock){
-            txtSkip.setText("Skip");
+            txtSkip.setText(R.string.skip);
         }
     }
 

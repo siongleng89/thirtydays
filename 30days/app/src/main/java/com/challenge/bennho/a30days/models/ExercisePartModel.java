@@ -69,17 +69,17 @@ public class ExercisePartModel {
     public String getExerciseText(Context context){
         switch (exerciseState){
             case WarmUp:
-                return "Warm Up";
+                return context.getString(R.string.warm_up_state);
             case FastWalk:
-                return "Fast Walk";
+                return context.getString(R.string.fast_walk_state);
             case Run:
-                return "Run";
+                return context.getString(R.string.run_state);
             case Sprint:
-                return "Sprint";
+                return context.getString(R.string.sprint_state);
             case Walk:
-                return "Walk";
+                return context.getString(R.string.walk_state);
             case CoolDown:
-                return "Cool Down";
+                return context.getString(R.string.cool_down_state);
         }
         return null;
     }
@@ -87,17 +87,17 @@ public class ExercisePartModel {
     public String getExerciseSpeech(Context context){
         switch (exerciseState){
             case WarmUp:
-                return "Warm Up Now";
+                return context.getString(R.string.speech_warm_up);
             case FastWalk:
-                return "Fast Walk Now";
+                return context.getString(R.string.speech_fast_walk);
             case Run:
-                return "Run Now";
+                return context.getString(R.string.speech_run);
             case Sprint:
-                return "Sprint Now";
+                return context.getString(R.string.speech_sprint);
             case Walk:
-                return "Walk Now";
+                return context.getString(R.string.speech_walk);
             case CoolDown:
-                return "Cool Down Now";
+                return context.getString(R.string.speech_cool_down);
         }
         return null;
     }

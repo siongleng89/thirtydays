@@ -16,8 +16,12 @@
         android:width="100dp"
         android:height="100dp"
         />
-    <stroke
-        android:width="3dp"
-        android:color="#878787"
-        />
+    <!--<stroke-->
+        <!--android:width="3dp"-->
+        <!--android:color="@color/colorAccent"-->
+        <!--/>-->
+
+    <solid
+        android:color="@color/colorAccent" >
+    </solid>
 </shape>

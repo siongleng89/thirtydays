@@ -188,9 +188,8 @@ public class HistoryActivity extends MyActivity {
                     public void onClick(View v) {
                         OverlayBuilder.build(HistoryActivity.this)
                                 .setOverlayType(OverlayBuilder.OverlayType.OkCancel)
-                                .setTitle("Delete History Record")
-                                .setContent("Are you sure you want to delete this record? " +
-                                        "Total exercise time and total calories recorded until now will be affected.")
+                                .setTitle(getString(R.string.avty_history_delete_title))
+                                .setContent(getString(R.string.avty_history_delete_content))
                                 .setRunnables(new Runnable() {
                                     @Override
                                     public void run() {
@@ -203,7 +202,6 @@ public class HistoryActivity extends MyActivity {
                                         else{
                                             user.minusRunningSecs(historyRecord.getExerciseTimeMs() / 1000);
                                         }
-
 
                                         realmHelper.deleteHistoryRecord(historyRecord);
                                         layoutSummary.update(user);
@@ -246,11 +244,12 @@ public class HistoryActivity extends MyActivity {
                 txtIndex.setText("#" + (historyRecords.size() - position));
                 txtDate.setText(DateTimeUtils.convertUnixMsToDateTimeString(HistoryActivity.this,
                         historyRecord.getRecordUnixTime()));
-                txtDayPlan.setText(String.format("Day %s", historyRecord.getDayNumber()));
+                txtDayPlan.setText(String.format(getString(R.string.day_X),
+                                        String.valueOf(historyRecord.getDayNumber())));
 
                 int minutes = (int) Math.ceil(historyRecord.getExerciseTimeMs() / 1000 / 60);
 
-                txtDuration.setText(String.format("%s min(s)", minutes));
+                txtDuration.setText(minutes + " " + getString(R.string.min_s));
                 txtCalories.setText(String.valueOf((int) Math.ceil(historyRecord.getCaloriesBurnt())));
                 if(historyRecord.isCompletedExercise()){
                     imgViewComplete.setVisibility(View.VISIBLE);
