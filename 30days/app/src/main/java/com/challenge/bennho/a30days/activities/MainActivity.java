@@ -86,7 +86,8 @@ public class MainActivity extends MyActivity {
         setEnablePrevDayButton(day > 1);
         setEnableNextDayButton(day < 30);
         checkProVersionLockedMeal();
-        setLockExercise(currentSelectedDay > userMaxDay);
+        //setLockExercise(currentSelectedDay > userMaxDay);
+        setLockExercise(false);
     }
 
 

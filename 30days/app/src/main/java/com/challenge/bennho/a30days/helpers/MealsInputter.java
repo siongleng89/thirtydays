@@ -117,7 +117,7 @@ public class MealsInputter {
         mealDayModels.add(5, new MealDayModel()
                 .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_5_0_name) , R.drawable.meal_oat_egg))
                 .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_5_1_name), R.drawable.meal_walnut, context.getString(R.string.meal_5_1_instruction)))
-                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_5_2_name), R.drawable.meal_celery_chicken,context.getString(R.string.meal_5_3_instruction)))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_5_2_name), R.drawable.meal_celery_chicken,context.getString(R.string.meal_5_2_instruction)))
                 .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_5_3_name), R.drawable.meal_apple))
                 .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_5_4_name), R.drawable.meal_steam_prawn)));
 
