@@ -29,8 +29,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/corner_radius_bg"
-                android:backgroundTint="@color/colorAccent"
+                android:background="@drawable/accent_corner_radius_bg"
                 android:layout_margin="20dp"
                 android:padding="15dp">
 
@@ -47,7 +46,7 @@
                         android:layout_width="25dp" />
 
                     <TextView
-                        android:text="TIP OF THE DAY"
+                        android:text="@string/avty_meal_tip_of_the_day"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView10"
@@ -80,11 +79,10 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:background="@drawable/corner_radius_bg"
+                android:background="@drawable/accent_corner_radius_bg"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:backgroundTint="@color/colorAccent"
                 android:gravity="center"
                 android:layout_height="70dp"
                 android:id="@+id/layoutViewIngredients"
@@ -98,10 +96,10 @@
                     android:id="@+id/imageView14" />
 
                 <TextView
-                    android:text="Day 1 - 7 Shopping List"
+                    android:text="@string/avty_meal_shopping_list_day_x_to_day_x"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView"
+                    android:id="@+id/txtViewShoppingPeriod"
                     android:layout_marginLeft="10dp"
                     android:textSize="18sp"
                     android:textStyle="normal|bold"
@@ -123,7 +121,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <TextView
-                        android:text="Ingredient"
+                        android:text="@string/avty_meal_ingredients"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorWord"
@@ -133,7 +131,7 @@
 
 
                     <TextView
-                        android:text="Portion"
+                        android:text="@string/avty_meal_quantity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"

@@ -62,7 +62,7 @@
                         android:layout_width="30dp" />
 
                     <TextView
-                        android:text="DAY 1"
+                        android:text="@string/day_X"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtDay"
@@ -80,7 +80,7 @@
                     android:gravity="center">
 
                     <TextView
-                        android:text="COMPLETED"
+                        android:text="@string/completed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"

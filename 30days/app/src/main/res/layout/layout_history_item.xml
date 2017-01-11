@@ -38,7 +38,7 @@
             android:layout_marginLeft="3dp" />
 
         <TextView
-            android:text="No records found...."
+            android:text="@string/layout_history_no_records_msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtNoRecords"
@@ -68,8 +68,8 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:text="Date"
-            android:layout_height="wrap_content"
+            android:text="@string/layout_history_date_title"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:textColor="@color/colorWord"
             android:textStyle="normal|bold"
@@ -113,7 +113,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:text="Plan"
+            android:text="@string/layout_history_plan_title"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textColor="@color/colorWord"
@@ -159,7 +159,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:text="Completed"
+            android:text="@string/layout_history_is_completed_title"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textColor="@color/colorWord"
@@ -218,7 +218,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:text="Duration"
+            android:text="@string/layout_history_duration_title"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textColor="@color/colorWord"
@@ -254,16 +254,13 @@
         android:layout_height="1dp"
         android:background="#b2c2b0" />
 
-
-
-
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:text="Calories"
+            android:text="@string/layout_history_calories_title"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textColor="@color/colorWord"
@@ -285,9 +282,6 @@
             android:layout_marginLeft="3dp" />
 
     </LinearLayout>
-
-
-
 
 
     <TextView
@@ -397,7 +391,7 @@
                 android:textSize="25sp" />
 
             <TextView
-                android:text="k/cal"
+                android:text="@string/kcal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtKcalTitle"

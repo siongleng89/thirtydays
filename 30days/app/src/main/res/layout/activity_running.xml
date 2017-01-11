@@ -71,7 +71,7 @@
                         android:textColor="@color/colorPrimary" />
 
                     <TextView
-                        android:text="Mins Remaining"
+                        android:text="@string/avty_running_mins_remain"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView8"
@@ -106,7 +106,7 @@
                         android:textColor="@color/colorPrimary" />
 
                     <TextView
-                        android:text="Calories Burn (Kcal)"
+                        android:text="@string/avty_running_calories_burnt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView19"
@@ -248,7 +248,7 @@
             android:gravity="center">
 
             <TextView
-                android:text="(Hold to Unlock)"
+                android:text="@string/avty_running_hold_to_unlock"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView15"

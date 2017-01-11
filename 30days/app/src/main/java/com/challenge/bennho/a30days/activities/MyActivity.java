@@ -150,8 +150,8 @@ public abstract class MyActivity extends AppCompatActivity {
 
     public void purchasePro(){
         OverlayBuilder.build(this)
-                .setTitle("Pro Version")
-                .setContent("Upgrade to pro version now to view all meal plans and remove ads.")
+                .setTitle(getString(R.string.pro_version_title))
+                .setContent(getString(R.string.pro_version_content))
                 .setOverlayType(OverlayBuilder.OverlayType.OkCancel)
                 .setRunnables(new Runnable() {
                     @Override

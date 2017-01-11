@@ -26,7 +26,6 @@ public class LaunchActivity extends MyActivity {
         user.reload();
 
         Intent intent;
-
         //new user
         if(user.getHeightInCm() == 0){
             user.initUser();

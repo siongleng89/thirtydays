@@ -95,8 +95,8 @@ public class MainActivity extends MyActivity {
 
         if(lockedExercise){
             OverlayBuilder.build(this)
-                    .setTitle("Exercise Locked")
-                    .setContent("Please finish all previous running exercise plans first!")
+                    .setTitle(getString(R.string.running_locked_title))
+                    .setContent(getString(R.string.running_locked_content))
                     .setOverlayType(OverlayBuilder.OverlayType.OkOnly)
                     .show();
         }

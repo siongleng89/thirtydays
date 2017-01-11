@@ -117,21 +117,21 @@ public class MealsInputter {
         mealDayModels.add(5, new MealDayModel()
                 .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_5_0_name) , R.drawable.meal_oat_egg))
                 .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_5_1_name), R.drawable.meal_walnut, context.getString(R.string.meal_5_1_instruction)))
-                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_5_2_name), R.drawable.meal_celery_chicken))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_5_2_name), R.drawable.meal_celery_chicken,context.getString(R.string.meal_5_3_instruction)))
                 .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_5_3_name), R.drawable.meal_apple))
                 .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_5_4_name), R.drawable.meal_steam_prawn)));
 
         mealDayModels.add(6, new MealDayModel()
                 .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_6_0_name) , R.drawable.meal_egg_toast))
                 .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_6_1_name), R.drawable.meal_banana))
-                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_6_2_name), R.drawable.meal_steak_potato))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_6_2_name), R.drawable.meal_steak_potato,context.getString(R.string.meal_6_2_instruction)))
                 .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_6_3_name), R.drawable.meal_tomato_juice))
                 .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_6_4_name), R.drawable.meal_garden_salad,context.getString(R.string.meal_6_4_instruction))));
 
         mealDayModels.add(7, new MealDayModel()
                 .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_7_0_name) , R.drawable.meal_berries_overnightoat))
                 .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_7_1_name), R.drawable.food_tea,context.getString(R.string.meal_7_1_instruction)))
-                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_7_2_name), R.drawable.meal_tuna_potato))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_7_2_name), R.drawable.meal_tuna_potato,context.getString(R.string.meal_7_2_instruction)))
                 .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_7_3_name), R.drawable.meal_guava))
                 .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_7_4_name), R.drawable.meal_celery_carrot)));
 
@@ -173,7 +173,7 @@ public class MealsInputter {
         mealDayModels.add(13, new MealDayModel()
                 .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_13_0_name) , R.drawable.meal_blueberry_pancake))
                 .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_13_1_name), R.drawable.meal_almond, context.getString(R.string.meal_13_1_instruction)))
-                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_13_2_name), R.drawable.meal_prawn_spinach))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_13_2_name), R.drawable.meal_prawn_spinach,context.getString(R.string.meal_13_2_instruction)))
                 .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_13_3_name), R.drawable.meal_apple))
                 .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_13_4_name), R.drawable.meal_chicken_salad,context.getString(R.string.meal_13_4_instruction))));
 
@@ -194,7 +194,7 @@ public class MealsInputter {
         mealDayModels.add(16, new MealDayModel()
                 .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_16_0_name) , R.drawable.meal_salmon_toast))
                 .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_16_1_name), R.drawable.food_green_tea,context.getString(R.string.meal_16_1_instruction)))
-                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_16_2_name), R.drawable.meal_chicken_spring_onion))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_16_2_name), R.drawable.meal_chicken_spring_onion,context.getString(R.string.meal_16_2_instruction)))
                 .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_16_3_name), R.drawable.meal_berries))
                 .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_16_4_name), R.drawable.meal_steamegg_mushroom,context.getString(R.string.meal_16_4_instruction))));
 
@@ -222,7 +222,7 @@ public class MealsInputter {
         mealDayModels.add(20, new MealDayModel()
                 .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_20_0_name) , R.drawable.meal_peanut_waffle,context.getString(R.string.meal_20_0_instruction)))
                 .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_20_1_name), R.drawable.meal_apple))
-                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_20_2_name), R.drawable.meal_beef_carrot))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_20_2_name), R.drawable.meal_beef_carrot,context.getString(R.string.meal_20_2_instruction)))
                 .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_20_3_name), R.drawable.meal_papaya))
                 .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_20_4_name), R.drawable.meal_salad,context.getString(R.string.meal_20_4_instruction))));
 
@@ -236,7 +236,7 @@ public class MealsInputter {
         mealDayModels.add(22, new MealDayModel()
                 .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_22_0_name) , R.drawable.meal_salmon_toast))
                 .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_22_1_name), R.drawable.food_tea))
-                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_22_2_name), R.drawable.meal_tuna_pepper))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_22_2_name), R.drawable.meal_tuna_pepper,context.getString(R.string.meal_22_2_instruction)))
                 .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_22_3_name), R.drawable.meal_banana))
                 .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_22_4_name), R.drawable.meal_chicken_salad,context.getString(R.string.meal_22_4_instruction))));
 
@@ -264,14 +264,14 @@ public class MealsInputter {
         mealDayModels.add(26, new MealDayModel()
                 .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_26_0_name) , R.drawable.meal_egg_bread))
                 .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_26_1_name), R.drawable.meal_watermelon))
-                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_26_2_name), R.drawable.meal_prawn_squid_asparagus))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_26_2_name), R.drawable.meal_prawn_squid_asparagus,context.getString(R.string.meal_26_2_instruction)))
                 .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_26_3_name), R.drawable.meal_banana))
                 .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_26_4_name), R.drawable.meal_tofu_mushroom)));
 
         mealDayModels.add(27, new MealDayModel()
                 .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_27_0_name) , R.drawable.meal_banana_pancake,context.getString(R.string.meal_27_0_instruction)))
                 .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_27_1_name), R.drawable.meal_berries))
-                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_27_2_name), R.drawable.meal_steak_pepper))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_27_2_name), R.drawable.meal_steak_pepper,context.getString(R.string.meal_27_2_instruction)))
                 .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_27_3_name), R.drawable.meal_carrot_juice))
                 .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_27_4_name), R.drawable.meal_prawn_salad,context.getString(R.string.meal_27_4_instruction))));
 
