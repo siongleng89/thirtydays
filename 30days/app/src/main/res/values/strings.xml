@@ -72,6 +72,8 @@
     <string name="summary_total_calories_burnt">Total Calories Burnt</string>
     <string name="summary_total_exercise_duration">Total Exercise Duration</string>
 
+    <string name="avty_settings_title">Settings</string>
+
     <string name="drawer_title_day_x_plan">Day %s Plan</string>
     <string name="drawer_title_history">Exercise History</string>
     <string name="drawer_item_history_list">List History</string>

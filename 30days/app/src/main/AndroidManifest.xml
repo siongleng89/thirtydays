@@ -73,7 +73,7 @@
         </activity>
         <activity
             android:name=".activities.SettingsActivity"
-            android:label="Settings"
+            android:label="@string/avty_settings_title"
             android:launchMode="singleInstance"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
