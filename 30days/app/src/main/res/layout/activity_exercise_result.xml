@@ -51,10 +51,10 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txtTitle"
                 android:layout_weight="1"
-                android:textAlignment="center"
                 android:textSize="35sp"
                 android:textStyle="normal|bold"
-                android:textColor="@color/colorStatus" />
+                android:textColor="@color/colorStatus"
+                android:gravity="center_horizontal" />
 
             <LinearLayout
                 android:orientation="vertical"

@@ -22,6 +22,7 @@
         android:layout_marginLeft="10dp"
         android:textColor="@color/colorWord"
         android:textSize="18sp"
-        android:textAlignment="viewEnd" />
+        android:textAlignment="viewEnd"
+        android:gravity="end" />
 
 </TableRow>

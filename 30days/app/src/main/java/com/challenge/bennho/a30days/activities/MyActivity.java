@@ -76,7 +76,7 @@ public abstract class MyActivity extends AppCompatActivity {
         });
 
         Appodeal.onResume(this, Appodeal.BANNER);
-        drawerHelper.refreshDayCounter();
+        drawerHelper.onResume();
 
     }
 

@@ -46,6 +46,22 @@
                     android:layout_marginLeft="15dp"
                     android:textSize="20sp" />
 
+                <TextView
+                    android:text="@string/pro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtProMarker"
+                    android:layout_weight="1"
+                    android:background="@drawable/accent_corner_radius_bg"
+                    android:textColor="@color/colorBtnWord"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textStyle="normal|bold"
+                    android:layout_marginLeft="15dp"
+                    android:visibility="gone" />
+
             </LinearLayout>
 
             <TextView

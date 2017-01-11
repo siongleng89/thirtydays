@@ -78,6 +78,7 @@ public class ProVersionHelpers {
 
 
             Purchase proPurchase = inventory.getPurchase(itemSku);
+
             if (proPurchase != null && proPurchase.getDeveloperPayload().equals(Constants.IABDeveloperPayload)) {
                 proPurchased();
                 return;

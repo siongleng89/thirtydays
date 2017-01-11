@@ -53,7 +53,7 @@
             android:layout_marginTop="10dp"
             android:textColor="@color/colorWord"
             android:textStyle="normal|bold"
-            android:textAlignment="center" />
+            android:gravity="center_horizontal" />
 
         <com.challenge.bennho.a30days.controls.LayoutSwitchControl
             android:layout_width="match_parent"

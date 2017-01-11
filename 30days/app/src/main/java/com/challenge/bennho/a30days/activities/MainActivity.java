@@ -85,7 +85,7 @@ public class MainActivity extends MyActivity {
 
         setEnablePrevDayButton(day > 1);
         setEnableNextDayButton(day < 30);
-        setLockMeal(day > 7);
+        checkProVersionLockedMeal();
         setLockExercise(currentSelectedDay > userMaxDay);
     }
 
@@ -127,6 +127,9 @@ public class MainActivity extends MyActivity {
                     setLockMeal(!this.getFirstArg());
                 }
             });
+        }
+        else{
+            setLockMeal(false);
         }
     }
 

@@ -83,18 +83,18 @@ public class AdsMediation {
     }
 
     public static void showBanner(final MyActivity activity, final AdsListener adsListener){
-//        if(Appodeal.isLoaded(Appodeal.BANNER)){
-//
-//        }
-//        else{
-//            //log analytics
-//        }
-        setBannerListener(activity, adsListener);
-
-
-
-        Appodeal.show(activity, Appodeal.BANNER_BOTTOM);
-
+        activity.getProVersionHelpers().isProPurchased(new RunnableArgs<Boolean>() {
+            @Override
+            public void run() {
+                if(!this.getFirstArg()){
+                    setBannerListener(activity, adsListener);
+                    Appodeal.show(activity, Appodeal.BANNER_BOTTOM);
+                }
+                else{
+                    hideBanner(activity);
+                }
+            }
+        });
     }
 
     public static void setBannerListener(final Activity activity, final AdsListener adsListener){

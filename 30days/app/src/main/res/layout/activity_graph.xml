@@ -41,10 +41,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtGraphTitle"
-                    android:textAlignment="center"
                     android:textColor="@color/colorAction"
                     android:textSize="20sp"
-                    android:textStyle="normal|bold" />
+                    android:textStyle="normal|bold"
+                    android:gravity="center_horizontal" />
 
                 <com.jjoe64.graphview.GraphView
                     android:layout_width="match_parent"

@@ -83,7 +83,11 @@ public class DrawerHelper implements ListView.OnItemClickListener {
         }
     }
 
-    public void refreshDayCounter(){
+    public void onResume(){
+        refreshItems();
+    }
+
+    public void refreshItems(){
         if(layoutDrawer == null) return;
 
         Threadings.runInBackground(new Runnable() {
@@ -222,7 +226,7 @@ public class DrawerHelper implements ListView.OnItemClickListener {
             public View getView(int position, View convertView, ViewGroup parent) {
                 // TODO Auto-generated method stub
 
-                DrawerItemHolder drawerHolder;
+                final DrawerItemHolder drawerHolder;
             View view = convertView;
 
             String drawerItem = this.drawerItemList.get(position);
@@ -247,6 +251,7 @@ public class DrawerHelper implements ListView.OnItemClickListener {
                 drawerHolder.txtTitle = (TextView) view.findViewById(R.id.txtTitle);
                 drawerHolder.txtDayCounter = (TextView) view.findViewById(R.id.txtDayCounter);
                 drawerHolder.txtDayText = (TextView) view.findViewById(R.id.txtDayText);
+                drawerHolder.txtProMarker = (TextView) view.findViewById(R.id.txtProMarker);
                 drawerHolder.txtItemContent = (TextView) view.findViewById(R.id.txtItemContent);
                 drawerHolder.imgIcon = (ImageView) view.findViewById(R.id.imgIcon);
                 drawerHolder.layoutSpacing = (LinearLayout) view.findViewById(R.id.layoutSpacing);
@@ -280,6 +285,15 @@ public class DrawerHelper implements ListView.OnItemClickListener {
                 drawerHolder.txtDayText.setText(
                         String.format(context.getString(R.string.drawer_day_counter_text),
                                 String.valueOf(Math.min(userMaxDay, 30))));
+
+                activity.getProVersionHelpers().isProPurchased(new RunnableArgs<Boolean>() {
+                    @Override
+                    public void run() {
+                        if(drawerHolder.txtProMarker != null){
+                            drawerHolder.txtProMarker.setVisibility(this.getFirstArg() ? View.VISIBLE : View.GONE);
+                        }
+                    }
+                });
             }
             else if(isMenuTitle){
                 drawerHolder.layoutDay.setVisibility(View.GONE);
@@ -341,7 +355,7 @@ public class DrawerHelper implements ListView.OnItemClickListener {
         private class DrawerItemHolder {
             LinearLayout layoutTitle, layoutItem, layoutSpacing;
             RelativeLayout layoutDay;
-            TextView txtTitle, txtDayCounter, txtDayText, txtItemContent;
+            TextView txtTitle, txtProMarker, txtDayCounter, txtDayText, txtItemContent;
             ImageView imgIcon;
         }
     }

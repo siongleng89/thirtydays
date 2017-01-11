@@ -46,10 +46,10 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txtStateTime"
                 android:layout_below="@+id/layoutUpper"
-                android:textAlignment="center"
                 android:textSize="60sp"
                 android:textStyle="normal|bold"
-                android:layout_weight="0" />
+                android:layout_weight="0"
+                android:gravity="center_horizontal" />
 
             <LinearLayout
                 android:orientation="horizontal"
