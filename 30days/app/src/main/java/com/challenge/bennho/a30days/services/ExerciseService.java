@@ -6,8 +6,10 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.PowerManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 
@@ -40,6 +42,7 @@ public class ExerciseService extends Service {
     private String lastNotificationText;
     private TextSpeak textSpeak;
     private User user;
+    private PowerManager.WakeLock wakeLock;
 
     public ExerciseService() {
         this.binder = new LocalBinder();
@@ -50,6 +53,14 @@ public class ExerciseService extends Service {
         //initiate text speech first, as it will take a while
         getTextSpeak();
         return START_STICKY;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(wakeLock != null && wakeLock.isHeld()){
+            wakeLock.release();
+        }
     }
 
     @Nullable
@@ -90,6 +101,15 @@ public class ExerciseService extends Service {
         exercising(0);
         running = true;
         startAsForeground();
+
+        if(wakeLock != null && wakeLock.isHeld()){
+            wakeLock.release();
+        }
+
+        PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+                         "ExerciseServiceWakeLock");
+        wakeLock.acquire();
 
         return true;
     }
@@ -156,7 +176,7 @@ public class ExerciseService extends Service {
     }
 
     private void startAsForeground(){
-        startForeground(SERVICE_ID, getNotification(getString(R.string.app_name), ""));
+        startForeground(SERVICE_ID, getNotification(getString(R.string.app_name), "", -1));
     }
 
     private void updateNotification(float currentExercisePartElapsedMs,
@@ -173,7 +193,8 @@ public class ExerciseService extends Service {
             NotificationManager mNotificationManager = (NotificationManager)
                                         getSystemService(Context.NOTIFICATION_SERVICE);
             mNotificationManager.notify(SERVICE_ID, getNotification(
-                    currentExercisePartModel.getExerciseText(this.getBaseContext()), notificationTime));
+                    currentExercisePartModel.getExerciseText(this.getBaseContext()), notificationTime,
+                    currentExercisePartModel.getExerciseIcon()));
         }
     }
 
@@ -194,7 +215,7 @@ public class ExerciseService extends Service {
         NotificationManager mNotificationManager = (NotificationManager)
                 getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(SERVICE_ID, getNotification(getString(R.string.notf_running_finished_title),
-                                getString(R.string.notf_running_finished_content)));
+                                getString(R.string.notf_running_finished_content), -1));
         exerciseListener.onExerciseEnded(realElapsedMs, currentCaloriesBurnt, completed);
     }
 
@@ -239,6 +260,9 @@ public class ExerciseService extends Service {
         resetService();
         stopSelf();
         exerciseListener = null;
+        if(wakeLock != null && wakeLock.isHeld()){
+            wakeLock.release();
+        }
     }
 
 
@@ -249,15 +273,19 @@ public class ExerciseService extends Service {
         return textSpeak;
     }
 
-    private Notification getNotification(String title, String content){
+    private Notification getNotification(String title, String content, int icon){
         Intent notificationIntent = new Intent(this, RunningActivity.class);
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
                 notificationIntent, 0);
 
+        if(icon < 0){
+            icon = R.mipmap.ic_launcher;
+        }
+
         Notification notification = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(icon)
                 .setContentTitle(title)
                 .setContentText(content)
                 .setContentIntent(pendingIntent).build();

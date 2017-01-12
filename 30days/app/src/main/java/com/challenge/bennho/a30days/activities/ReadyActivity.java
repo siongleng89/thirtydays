@@ -61,6 +61,8 @@ public class ReadyActivity extends MyActivity {
             dayPlan = 1;
         }
 
+        setTitle(String.format(getString(R.string.avty_ready_title), String.valueOf(dayPlan)));
+
         setCountDownSecs(5);
         setListeners();
     }

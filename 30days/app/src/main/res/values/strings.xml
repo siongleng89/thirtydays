@@ -32,7 +32,7 @@
     <string name="avty_meal_ingredients">Ingredient</string>
     <string name="avty_meal_quantity">Quantity</string>
 
-    <string name="avty_ready_title">Starting in. . .</string>
+    <string name="avty_ready_title">Day %s run starting in. . .</string>
 
     <string name="avty_tutorial_title">Exercise Tutorial</string>
     <string name="avty_tutorial_end_text">Start Run</string>
@@ -55,7 +55,7 @@
     <string name="avty_result_title">Day %s exercise result</string>
     <string name="avty_result_day_x">DAY %s EXERCISE</string>
     <string name="avty_result_calories_burn_title">Calories Burn</string>
-    <string name="avty_exercise_duration_title">Running Duration</string>
+    <string name="avty_result_exercise_duration_title">Running Duration</string>
 
     <string name="avty_graph_title">Graph History</string>
     <string name="avty_graph_subtitle">Each Day Plan Calories Burn</string>

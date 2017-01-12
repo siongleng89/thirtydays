@@ -127,10 +127,11 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
                 double remainingMins = Math.ceil(remainingSecs / 60);
                 txtTime.setText(String.valueOf((int) remainingMins));
 
-                int decimalPlaces = 2;
-                if(caloriesBurnt > 1000){
-                    decimalPlaces = 1;
-                }
+//                int decimalPlaces = 2;
+//                if(caloriesBurnt > 1000){
+//                    decimalPlaces = 1;
+//                }
+                int decimalPlaces = 0;
                 txtCalories.setText(Strings.formatToXDec(decimalPlaces, caloriesBurnt));
             }
         });
@@ -151,6 +152,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
         startActivity(intent);
 
         exerciseService.disposeExercise();
+        AndroidUtils.setFullscreen(this, false);
         finish();
     }
 
@@ -204,6 +206,9 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
                 .setValuePx(0)
                 .start();
         layoutExerciseStates.setLock(true);
+
+        AndroidUtils.setFullscreen(this, true);
+        hideBanner();
     }
 
     private void unlockScreen(){
@@ -221,6 +226,9 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
                 })
                 .start();
         layoutExerciseStates.setLock(false);
+
+        AndroidUtils.setFullscreen(this, false);
+        showBanner();
     }
 
     private void startUnlockScreen(){

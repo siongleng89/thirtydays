@@ -6,16 +6,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NavUtils;
 import android.support.v4.app.TaskStackBuilder;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import com.appodeal.ads.Appodeal;
@@ -23,8 +19,8 @@ import com.challenge.bennho.a30days.MyApplication;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.Analytics;
-import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.DrawerHelper;
+import com.challenge.bennho.a30days.helpers.Logs;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.ProVersionHelpers;
 
@@ -47,12 +43,7 @@ public abstract class MyActivity extends AppCompatActivity {
         Analytics.logToScreen(this);
         AdsMediation.init(this);
 
-        AdsMediation.showBanner(this, new AdsMediation.AdsListener() {
-            @Override
-            public void onBannerShown(int heightPixel) {
-                onAdsBannerHeightDetermined(heightPixel);
-            }
-        });
+        showBanner();
     }
 
 
@@ -67,7 +58,6 @@ public abstract class MyActivity extends AppCompatActivity {
         super.onResume();
 
         paused = false;
-
         AdsMediation.setBannerListener(this, new AdsMediation.AdsListener() {
             @Override
             public void onBannerShown(int heightPixel) {
@@ -81,34 +71,55 @@ public abstract class MyActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+
+        Intent upIntent = NavUtils.getParentActivityIntent(this);
+        if(upIntent == null){
+            super.onBackPressed();
+        }
+        else{
+            finish();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+
+
+
+//        Intent upIntent = NavUtils.getParentActivityIntent(this);
+//        if(upIntent == null){
+//            finish();
+//        }
+//        else{
+//            if(NavUtils.shouldUpRecreateTask(this, upIntent)){
+//                // This activity is NOT part of this app's task, so create a new task
+//                // when navigating up, with a synthesized back stack.
+//                TaskStackBuilder.create(this)
+//                        // Add all of this activity's parents to the back stack
+//                        .addNextIntentWithParentStack(upIntent)
+//                        // Navigate up to the closest parent
+//                        .startActivities();
+//            }
+//            else {
+//                // This activity is part of this app's task, so simply
+//                // navigate up to the logical parent activity.
+//                //NavUtils.navigateUpTo(this, upIntent);
+//
+//                super.onBackPressed();
+//            }
+//        }
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
-                Intent upIntent = NavUtils.getParentActivityIntent(this);
-                if(upIntent == null){
-                    finish();
-                }
-                else{
-                    if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
-                        // This activity is NOT part of this app's task, so create a new task
-                        // when navigating up, with a synthesized back stack.
-                        TaskStackBuilder.create(this)
-                                // Add all of this activity's parents to the back stack
-                                .addNextIntentWithParentStack(upIntent)
-                                // Navigate up to the closest parent
-                                .startActivities();
-                    } else {
-                        // This activity is part of this app's task, so simply
-                        // navigate up to the logical parent activity.
-                        NavUtils.navigateUpTo(this, upIntent);
-                    }
-                }
-
+                this.onBackPressed();
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
 
     protected void setActionBarVisibility(boolean visible){
         if(getSupportActionBar() != null){
@@ -121,6 +132,19 @@ public abstract class MyActivity extends AppCompatActivity {
         }
     }
 
+    protected void hideBanner(){
+        AdsMediation.hideBanner(this);
+        onAdsBannerHeightDetermined(0);
+    }
+
+    protected void showBanner(){
+        AdsMediation.showBanner(this, new AdsMediation.AdsListener() {
+            @Override
+            public void onBannerShown(int heightPixel) {
+                onAdsBannerHeightDetermined(heightPixel);
+            }
+        });
+    }
 
     private void onAdsBannerHeightDetermined(int heightPixel){
         if(adsLayout != null){

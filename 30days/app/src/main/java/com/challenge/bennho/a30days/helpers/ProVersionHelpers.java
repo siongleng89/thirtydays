@@ -79,6 +79,12 @@ public class ProVersionHelpers {
 
             Purchase proPurchase = inventory.getPurchase(itemSku);
 
+//            try {
+//                iabHelper.consumeAsync(proPurchase, null);
+//            } catch (IabHelper.IabAsyncInProgressException e) {
+//                e.printStackTrace();
+//            }
+
             if (proPurchase != null && proPurchase.getDeveloperPayload().equals(Constants.IABDeveloperPayload)) {
                 proPurchased();
                 return;

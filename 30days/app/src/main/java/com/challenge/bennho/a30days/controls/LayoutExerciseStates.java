@@ -172,7 +172,7 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
 
 
                     imgState.setColorFilter(newExercisePartModel.getExerciseColor(context));
-                    imgState.setImageDrawable(newExercisePartModel.getExerciseIcon(context));
+                    imgState.setImageResource(newExercisePartModel.getExerciseIcon());
                     txtState.setText(newExercisePartModel.getExerciseText(context));
                     txtState.setTextColor(newExercisePartModel.getExerciseColor(context));
                     txtStateTime.setTextColor(newExercisePartModel.getExerciseColor(context));

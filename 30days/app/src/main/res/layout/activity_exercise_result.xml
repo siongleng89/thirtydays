@@ -139,7 +139,7 @@
                 android:paddingLeft="15dp">
 
                     <TextView
-                        android:text="@string/avty_exercise_duration_title"
+                        android:text="@string/avty_result_exercise_duration_title"
                         android:layout_width="match_parent"
                         android:id="@+id/txtTotal"
                         android:layout_height="wrap_content"

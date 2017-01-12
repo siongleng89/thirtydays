@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.challenge.bennho.a30days.MyApplication;
+
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.LayoutDayCounter;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
@@ -62,6 +62,21 @@ public class MainActivity extends MyActivity {
         checkProVersionLockedMeal();
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("dayPlan", currentSelectedDay);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        if(savedInstanceState != null && savedInstanceState.containsKey("dayPlan")){
+            updateDay(savedInstanceState.getInt("dayPlan"));
+        }
+    }
 
 
     private void refreshUserProgress(){
