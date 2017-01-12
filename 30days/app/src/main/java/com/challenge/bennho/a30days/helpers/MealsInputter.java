@@ -117,7 +117,7 @@ public class MealsInputter {
         mealDayModels.add(5, new MealDayModel()
                 .addDish(MealDayModel.MealType.breakfast, new DishModel(context.getString(R.string.meal_5_0_name) , R.drawable.meal_oat_egg))
                 .addDish(MealDayModel.MealType.morning_snack, new DishModel(context.getString(R.string.meal_5_1_name), R.drawable.meal_walnut, context.getString(R.string.meal_5_1_instruction)))
-                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_5_2_name), R.drawable.meal_celery_chicken,context.getString(R.string.meal_5_3_instruction)))
+                .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_5_2_name), R.drawable.meal_celery_chicken,context.getString(R.string.meal_5_2_instruction)))
                 .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_5_3_name), R.drawable.meal_apple))
                 .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_5_4_name), R.drawable.meal_steam_prawn)));
 
@@ -329,181 +329,198 @@ public class MealsInputter {
     private void inputIngredientsList(){
         ArrayList<Pair<String, String>> ingredientsWeek1 = new ArrayList();
         ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_apple), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_asparagus), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_banana), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_bell_pepper), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_berries), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_bolognese_sauce), String.format(context.getString(R.string.x_bottle), "1")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_brocolli), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_brown_rice),  String.format(context.getString(R.string.x_pack),"1")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_celery), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_chicken_breast), String.format(context.getString(R.string.x_serving),"5")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_coffee), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_dory_fish), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_egg), String.format(context.getString(R.string.x_unit), "24")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_garlic), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_green_beans), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_lean_ham), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_lettuce), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_mushroom), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_natural_greek_yogurt), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_nuts), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_oatmeal),  String.format(context.getString(R.string.x_pack),"1")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_olive_oil), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_orange), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_papaya), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_lean_pork_meat), String.format(context.getString(R.string.x_serving), "1")));
+
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_asparagus), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_bell_pepper), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_brocolli), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_celery), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_garlic), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_green_beans), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_lettuce), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_mushroom), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_potato), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_prawn), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_salad), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_salmon), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_spinach), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_steak), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_tea),  String.format(context.getString(R.string.x_pack),"1")));
         ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_tomato), String.format(context.getString(R.string.x_pack),"4")));
+
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_chicken_breast), String.format(context.getString(R.string.x_serving),"5")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_dory_fish), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_egg), String.format(context.getString(R.string.x_unit), "24")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_lean_ham), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_lean_pork_meat), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_prawn), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_salmon), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_steak), String.format(context.getString(R.string.x_serving), "1")));
+
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_brown_rice),  String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_oatmeal),  String.format(context.getString(R.string.x_pack),"1")));
         ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_bread),  String.format(context.getString(R.string.x_pack),"1")));
         ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_spaghetti),  String.format(context.getString(R.string.x_pack),"1")));
         ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_wrap),  String.format(context.getString(R.string.x_pack),"1")));
 
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_bolognese_sauce), String.format(context.getString(R.string.x_bottle), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_coffee), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_natural_greek_yogurt), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_nuts), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_olive_oil), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek1.add(new Pair<String, String>(context.getString(R.string.i_tea),  String.format(context.getString(R.string.x_pack),"1")));
 
         ingredientsList.add(ingredientsWeek1);
 
         ArrayList<Pair<String, String>> ingredientsWeek2 = new ArrayList();
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_apple), String.format(context.getString(R.string.x_serving), "3")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_banana), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_bell_pepper), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_berries),String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_guava), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_orange), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_papaya), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_watermelon), String.format(context.getString(R.string.x_serving), "1")));
+
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_bell_pepper), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_brocolli), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_brown_rice),  String.format(context.getString(R.string.x_pack),"1")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_carrot), String.format(context.getString(R.string.x_serving), "3")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_celery), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_cereal), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_chicken_breast), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_coffee), String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_cucumber), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_green_beans), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_lettuce), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_mushroom), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_potato), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_salad), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_spinach), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_spring_onion), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_tomato), String.format(context.getString(R.string.x_serving), "3")));
+
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_chicken_breast), String.format(context.getString(R.string.x_serving), "3")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_dory_fish), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_duck_meat), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_egg), String.format(context.getString(R.string.x_unit), "14")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_green_beans), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_guava), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_lettuce), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_minced_chicken), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_mushroom), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_natural_greek_yogurt), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_nuts), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_oatmeal), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_orange), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_pancake), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_papaya), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_peanut_butter), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_lean_pork_meat), String.format(context.getString(R.string.x_serving),"1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_potato), String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_prawn), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_salad), String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_salmon), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_spinach), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_spring_onion), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_steak), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_tea), String.format(context.getString(R.string.x_serving),"5")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_tilapia), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_tofu), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_tomato), String.format(context.getString(R.string.x_serving), "3")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_tuna), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_watermelon), String.format(context.getString(R.string.x_serving), "1")));
+
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_brown_rice),  String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_cereal), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_oatmeal), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_pancake), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_bread), String.format(context.getString(R.string.x_pack),"1")));
         ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_spaghetti),  String.format(context.getString(R.string.x_pack),"1")));
-        
+
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_coffee), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_natural_greek_yogurt), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_nuts), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_peanut_butter), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek2.add(new Pair<String, String>(context.getString(R.string.i_tea), String.format(context.getString(R.string.x_serving),"5")));
+
         ingredientsList.add(ingredientsWeek2);
 
         ArrayList<Pair<String, String>> ingredientsWeek3 = new ArrayList();
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_apple), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_asparagus), String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_avocado), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_banana), String.format(context.getString(R.string.x_serving), "3")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_berries), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_brocolli), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_brown_rice), String.format(context.getString(R.string.x_pack),"1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_carrot), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_chicken_breast), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_coffee), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_corn), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_cucumber), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_dory_fish), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_egg), String.format(context.getString(R.string.x_unit), "24")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_garlic), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_green_beans), String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_guava), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_lamb), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_lean_ham), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_lettuce), String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_lime), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_minced_chicken), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_mushroom), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_natural_greek_yogurt), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_nuts), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_oatmeal), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_orange), String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_papaya), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_peanut_butter), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_watermelon), String.format(context.getString(R.string.x_serving), "1")));
+
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_asparagus), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_brocolli), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_carrot), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_corn), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_cucumber), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_garlic), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_green_beans), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_lettuce), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_mushroom), String.format(context.getString(R.string.x_serving), "2")));
+
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_potato), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_prawn),String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_salad), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_salmon), String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_spinach), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_spring_onion), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_squid), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_steak), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_tea), String.format(context.getString(R.string.x_serving), "5")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_minced_chicken), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_tofu), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_tomato), String.format(context.getString(R.string.x_serving), "1")));
+
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_chicken_breast), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_dory_fish), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_egg), String.format(context.getString(R.string.x_unit), "24")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_lamb), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_lean_ham), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_prawn),String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_salmon), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_squid), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_steak), String.format(context.getString(R.string.x_serving), "1")));
+
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_brown_rice), String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_oatmeal), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_waffle), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_watermelon), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_bread), String.format(context.getString(R.string.x_pack), "1")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_spaghetti), String.format(context.getString(R.string.x_pack),"1")));
         ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_wrap), String.format(context.getString(R.string.x_pack),"1")));
+
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_coffee), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_natural_greek_yogurt), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_nuts), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_peanut_butter), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek3.add(new Pair<String, String>(context.getString(R.string.i_tea), String.format(context.getString(R.string.x_serving), "5")));
 
         ingredientsList.add(ingredientsWeek3);
 
         ArrayList<Pair<String, String>> ingredientsWeek4 = new ArrayList();
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_apple), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_asparagus), String.format(context.getString(R.string.x_serving), "3")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_avocado), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_banana), String.format(context.getString(R.string.x_serving), "8")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_bell_pepper), String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_berries), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_brocolli), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_brown_rice), String.format(context.getString(R.string.x_pack),"1")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_carrot),String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_chicken_breast), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_coffee), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_dory_fish), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_egg), String.format(context.getString(R.string.x_unit), "34")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_guava), String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_kiwi), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_lamb), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_lean_ham), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_lettuce), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_minced_chicken), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_mushroom), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_natural_greek_yogurt), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_nuts), String.format(context.getString(R.string.x_serving), "3")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_oatmeal), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_orange), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_pancake), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_papaya), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_watermelon), String.format(context.getString(R.string.x_serving), "1")));
+
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_asparagus), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_bell_pepper), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_brocolli), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_carrot),String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_lettuce), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_mushroom), String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_potato), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_prawn), String.format(context.getString(R.string.x_serving), "2")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_salad), String.format(context.getString(R.string.x_serving), "4")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_salmon), String.format(context.getString(R.string.x_serving), "3")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_spinach), String.format(context.getString(R.string.x_serving), "2")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_squid), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_steak), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_tea), String.format(context.getString(R.string.x_serving), "5")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_tofu), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_tomato), String.format(context.getString(R.string.x_serving), "1")));
+
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_chicken_breast), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_dory_fish), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_egg), String.format(context.getString(R.string.x_unit), "34")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_lamb), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_lean_ham), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_minced_chicken), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_prawn), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_salmon), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_squid), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_steak), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_tuna), String.format(context.getString(R.string.x_serving), "1")));
-        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_watermelon), String.format(context.getString(R.string.x_serving), "1")));
+
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_brown_rice), String.format(context.getString(R.string.x_pack),"1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_oatmeal), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_pancake), String.format(context.getString(R.string.x_serving), "1")));
         ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_whole_wheat_bread), String.format(context.getString(R.string.x_pack),"1")));
+
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_coffee), String.format(context.getString(R.string.x_serving), "1")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_natural_greek_yogurt), String.format(context.getString(R.string.x_serving), "2")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_nuts), String.format(context.getString(R.string.x_serving), "3")));
+        ingredientsWeek4.add(new Pair<String, String>(context.getString(R.string.i_tea), String.format(context.getString(R.string.x_serving), "5")));
+
 
         ingredientsList.add(ingredientsWeek4);
 
