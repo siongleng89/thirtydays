@@ -150,6 +150,7 @@ public abstract class MyActivity extends AppCompatActivity {
         if(adsLayout != null){
             adsLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     heightPixel));
+            adsLayout.setVisibility(View.VISIBLE);
         }
     }
 

@@ -85,68 +85,85 @@ public class CaloriesToImagesConverter {
         
 
         FoodModel.FoodType foodOne;
-        FoodModel.FoodType foodTwo;
-        FoodModel.FoodType foodThree;
+//        FoodModel.FoodType foodTwo;
+//        FoodModel.FoodType foodThree;
 
 
-        if (calories > 900){
+        if(calories > 200){
             foodOne = getRandomFood(typeAFood);
-            foodTwo = getRandomFood(typeAFood);
-            foodThree = getRandomFood(typeAFood);
         }
-        else if (calories > 800){
-            foodOne = getRandomFood(typeAFood);
-            foodTwo = getRandomFood(typeAFood);
-            foodThree = getRandomFood(typeBFood);
-        }
-        else if (calories > 700){
-            foodOne = getRandomFood(typeAFood);
-            foodTwo = getRandomFood(typeBFood);
-            foodThree = getRandomFood(typeBFood);
-        }
-        else if (calories > 600){
+        else if(calories > 100){
             foodOne = getRandomFood(typeBFood);
-            foodTwo = getRandomFood(typeBFood);
-            foodThree = getRandomFood(typeBFood);
         }
-        else if (calories > 500){
-            foodOne = getRandomFood(typeBFood);
-            foodTwo = getRandomFood(typeBFood);
-            foodThree = getRandomFood(typeCFood);
-        }
-        else if (calories > 400){
-            foodOne = getRandomFood(typeBFood);
-            foodTwo = getRandomFood(typeCFood);
-            foodThree = getRandomFood(typeCFood);
-        }
-        else if (calories > 300){
+        else if(calories > 50){
             foodOne = getRandomFood(typeCFood);
-            foodTwo = getRandomFood(typeCFood);
-            foodThree = getRandomFood(typeCFood);
         }
-        else if (calories > 200){
-            foodOne = getRandomFood(typeCFood);
-            foodTwo = getRandomFood(typeDFood);
-            foodThree = getRandomFood(typeDFood);
-        }
-        else if (calories > 100){
+        else if(calories > 20){
             foodOne = getRandomFood(typeDFood);
-            foodTwo = getRandomFood(typeDFood);
-            foodThree = getRandomFood(typeEFood);
         }
         else{
-            foodOne = getRandomFood(typeDFood);
-            foodTwo = getRandomFood(typeEFood);
-            foodThree = getRandomFood(typeEFood);
+            foodOne = getRandomFood(typeEFood);
         }
 
+
+//        if (calories > 900){
+//            foodOne = getRandomFood(typeAFood);
+//            foodTwo = getRandomFood(typeAFood);
+//            foodThree = getRandomFood(typeAFood);
+//        }
+//        else if (calories > 800){
+//            foodOne = getRandomFood(typeAFood);
+//            foodTwo = getRandomFood(typeAFood);
+//            foodThree = getRandomFood(typeBFood);
+//        }
+//        else if (calories > 700){
+//            foodOne = getRandomFood(typeAFood);
+//            foodTwo = getRandomFood(typeBFood);
+//            foodThree = getRandomFood(typeBFood);
+//        }
+//        else if (calories > 600){
+//            foodOne = getRandomFood(typeBFood);
+//            foodTwo = getRandomFood(typeBFood);
+//            foodThree = getRandomFood(typeBFood);
+//        }
+//        else if (calories > 500){
+//            foodOne = getRandomFood(typeBFood);
+//            foodTwo = getRandomFood(typeBFood);
+//            foodThree = getRandomFood(typeCFood);
+//        }
+//        else if (calories > 400){
+//            foodOne = getRandomFood(typeBFood);
+//            foodTwo = getRandomFood(typeCFood);
+//            foodThree = getRandomFood(typeCFood);
+//        }
+//        else if (calories > 300){
+//            foodOne = getRandomFood(typeCFood);
+//            foodTwo = getRandomFood(typeCFood);
+//            foodThree = getRandomFood(typeCFood);
+//        }
+//        else if (calories > 200){
+//            foodOne = getRandomFood(typeCFood);
+//            foodTwo = getRandomFood(typeDFood);
+//            foodThree = getRandomFood(typeDFood);
+//        }
+//        else if (calories > 100){
+//            foodOne = getRandomFood(typeDFood);
+//            foodTwo = getRandomFood(typeDFood);
+//            foodThree = getRandomFood(typeEFood);
+//        }
+//        else{
+//            foodOne = getRandomFood(typeDFood);
+//            foodTwo = getRandomFood(typeEFood);
+//            foodThree = getRandomFood(typeEFood);
+//        }
+
         FoodModel foodModelOne=new FoodModel(foodOne);
-        FoodModel foodModelTwo=new FoodModel(foodTwo);
-        FoodModel foodModelThree=new FoodModel(foodThree);
+//        FoodModel foodModelTwo=new FoodModel(foodTwo);
+//        FoodModel foodModelThree=new FoodModel(foodThree);
 
         result.add(foodModelOne);
-        result.add(foodModelTwo);
-        result.add(foodModelThree);
+//        result.add(foodModelTwo);
+//        result.add(foodModelThree);
 
 
         return result;

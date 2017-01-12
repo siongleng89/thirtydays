@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.challenge.bennho.a30days.R;
 
 public class LandingActivity extends MyActivity {
 
+    private LinearLayout layoutIntroduction, layoutNext;
     private Button btnBegin;
 
 
@@ -20,6 +22,8 @@ public class LandingActivity extends MyActivity {
         onLayoutSet();
 
         btnBegin = (Button) findViewById(R.id.btnBegin);
+        layoutIntroduction = (LinearLayout) findViewById(R.id.layoutIntroduction);
+        layoutNext = (LinearLayout) findViewById(R.id.layoutNext);
 
         setListeners();
     }
@@ -35,9 +39,19 @@ public class LandingActivity extends MyActivity {
         btnBegin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnBegin.setVisibility(View.INVISIBLE);
+                layoutIntroduction.setVisibility(View.VISIBLE);
+            }
+        });
+
+        layoutNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 begin();
             }
         });
+
+
     }
 
 }

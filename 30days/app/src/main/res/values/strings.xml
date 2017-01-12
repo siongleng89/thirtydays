@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">30 Days Running Weight Loss</string>
 
-    <string name="avty_landing_btn_begin">RUNS BEGIN</string>
+    <string name="avty_landing_btn_begin">BEGIN LOSS WEIGHT</string>
+    <string name="avty_landing_intro_title">How we help you loss weight?</string>
+    <string name="avty_landing_intro_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin turpis in rhoncus pretium. In dictum risus et sollicitudin pharetra. Sed maximus non libero quis tempus. Etiam congue ex vitae ipsum pulvinar pulvinar non vitae purus. Phasellus at nisl quis neque viverra rutrum. Praesent id gravida ipsum, eget tempus lacus. Vivamus ante nibh, elementum et quam nec, elementum gravida lacus. Maecenas sagittis feugiat leo, a aliquet odio ultricies id. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+
 
     <string name="avty_details_title">Personal Detail</string>
     <string name="avty_details_instruction">Input your accurate parameters to customize your training plan.</string>
@@ -20,6 +23,8 @@
 
     <string name="avty_main_btn_meal_plan">MEAL PLAN</string>
     <string name="avty_main_btn_running_plan">RUNNING PLAN</string>
+    <string name="avty_main_calories_counter_title">Calories Counter</string>
+    <string name="avty_main_customized_plan_title">Slim Plan For</string>
 
     <string name="avty_meal_title">Day %s Meal Plan</string>
     <string name="avty_meal_tip_of_the_day">TIP OF THE DAY</string>
@@ -162,16 +167,21 @@
     <string name="pro">PRO</string>
     <string name="day_X">DAY %s</string>
     <string name="end">End</string>
-    <string name="metric_units">kg/km</string>
-    <string name="american_units">pounds/miles</string>
+    <string name="x_kg">%skg</string>
+    <string name="x_cm">%scm</string>
+    <string name="x_pounds">%slb</string>
+    <string name="x_foot_x_inch">%1$s\'%2$s\'\'</string>
+    <string name="x_kcal">%sK/cal</string>
+    <string name="metric_units">kg/cm</string>
+    <string name="american_units">pounds/foot&amp;inch</string>
     <string name="gender_male">Male</string>
     <string name="gender_female">Female</string>
     <string name="completed">COMPLETED</string>
     <string name="incomplete">INCOMPLETE</string>
     <string name="done">DONE</string>
     <string name="min_s">Min(s)</string>
+    <string name="kcal">K/cal</string>
 
-    <string name="kcal">Kcal</string>
     <string name="meal_0_0_name">Ham Sandwich</string>
     <string name="meal_0_1_name">Nuts + Tea</string>
     <string name="meal_0_2_name">Brown Rice with Grill Chicken and Brocolli</string>
@@ -555,6 +565,11 @@
     <string name="pro_version_content">Upgrade to pro version now to view all meal plans and remove ads.</string>
     <string name="running_locked_title">Exercise Locked</string>
     <string name="running_locked_content">Please finish all previous running exercise plans first!</string>
+
+
+    <string name="itype_fruits">Fruits</string>
+    <string name="itype_vege">Vegetable</string>
+
 
 
 </resources>

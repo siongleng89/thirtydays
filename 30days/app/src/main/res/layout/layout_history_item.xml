@@ -419,11 +419,11 @@
                 android:textSize="30sp" />
 
             <com.challenge.bennho.a30days.controls.ImageCircularFood
-                android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:id="@+id/imgViewFood1"
-                android:visibility="gone"
-                android:layout_marginLeft="10dp">
+                android:visibility="visible"
+                android:layout_marginLeft="30dp"
+                android:layout_width="90dp">
             </com.challenge.bennho.a30days.controls.ImageCircularFood>
 
             <com.challenge.bennho.a30days.controls.ImageCircularFood

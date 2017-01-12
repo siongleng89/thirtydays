@@ -20,6 +20,7 @@ import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.MealsInputter;
 import com.challenge.bennho.a30days.models.DishModel;
+import com.challenge.bennho.a30days.models.IngredientModel;
 import com.challenge.bennho.a30days.models.MealDayModel;
 
 
@@ -30,8 +31,7 @@ public class MealActivity extends MyActivity {
     private MealDayModel mealDayModel;
     private MealsInputter mealsInputter;
     private TextView txtTip, txtViewShoppingPeriod;
-    private LinearLayout layoutViewIngredients;
-    private TableLayout tableIngredients;
+    private LinearLayout layoutViewIngredients, layoutIngredients;
     private NestedScrollView scrollView;
     private int dayPlan;
 
@@ -47,7 +47,7 @@ public class MealActivity extends MyActivity {
         txtTip = (TextView) findViewById(R.id.txtTip);
         txtViewShoppingPeriod = (TextView) findViewById(R.id.txtViewShoppingPeriod);
         layoutViewIngredients = (LinearLayout) findViewById(R.id.layoutViewIngredients);
-        tableIngredients = (TableLayout) findViewById(R.id.tableIngredients);
+        layoutIngredients = (LinearLayout) findViewById(R.id.layoutIngredients);
 
         onNewIntent(getIntent());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -103,24 +103,38 @@ public class MealActivity extends MyActivity {
     private void update(String todayTip){
         txtTip.setText(todayTip);
 
-        for(int i = 1; i < tableIngredients.getChildCount(); i++){
-            tableIngredients.removeViewAt(i);
-        }
+        layoutIngredients.removeAllViews();
 
-        for(Pair<String, String> ingredient : mealsInputter.getIngredientsByDayNumber(dayPlan)){
+        IngredientModel.IngredientType previousIngredientType = IngredientModel.IngredientType.empty;
+
+        LinearLayout layoutTableIngredients = null;
+        TableLayout layoutTable = null;
+
+        for(IngredientModel ingredient : mealsInputter.getIngredientsByDayNumber(dayPlan)){
+            if(previousIngredientType != ingredient.getIngredientType()){
+                layoutTableIngredients = (LinearLayout) getLayoutInflater().inflate(R.layout.table_ingredients, null);
+                layoutTable = (TableLayout) layoutTableIngredients.findViewById(R.id.layoutTable);
+                TextView txtTitle = (TextView) layoutTableIngredients.findViewById(R.id.txtTitle);
+
+                txtTitle.setText(ingredient.getIngredientType().toString(this));
+                previousIngredientType = ingredient.getIngredientType();
+
+                layoutIngredients.addView(layoutTableIngredients);
+            }
+
             TableRow tableRow = (TableRow) getLayoutInflater().inflate(R.layout.table_row_ingredient, null);
 
             TextView txtIngredient = (TextView) tableRow.findViewById(R.id.txtIngredient);
             TextView txtPortion = (TextView) tableRow.findViewById(R.id.txtPortion);
-            txtIngredient.setText(ingredient.first);
-            txtPortion.setText(ingredient.second);
+            txtIngredient.setText(ingredient.getName());
+            txtPortion.setText(ingredient.getQuantity());
 
-            tableIngredients.addView(tableRow);
+            layoutTable.addView(tableRow);
         }
     }
 
     private void showIngredients(){
-        scrollView.smoothScrollTo(0, tableIngredients.getTop());
+        scrollView.smoothScrollTo(0, layoutIngredients.getTop());
     }
 
     private void setListeners(){

@@ -225,8 +225,8 @@ public class HistoryActivity extends MyActivity {
                 imgViewComplete.setVisibility(View.VISIBLE);
                 imgViewIncomplete.setVisibility(View.VISIBLE);
                 imageViewFood1.setVisibility(View.VISIBLE);
-                imageViewFood2.setVisibility(View.VISIBLE);
-                imageViewFood3.setVisibility(View.VISIBLE);
+                imageViewFood2.setVisibility(View.GONE);
+                imageViewFood3.setVisibility(View.GONE);
                 imgViewDelete.setVisibility(View.VISIBLE);
 
                 txtDateTitle.setVisibility(View.VISIBLE);
@@ -262,13 +262,14 @@ public class HistoryActivity extends MyActivity {
 
                 for(int i = 0; i < 3; i++){
                     FoodModel foodModel = null;
-                    if(i <= historyRecord.getFoodModels().size()){
+                    if(i < historyRecord.getFoodModels().size()){
                         foodModel = historyRecord.getFoodModels().get(i);
                     }
 
                     ImageCircularFood imageCircularFood = null;
                     if(i == 0){
                         imageCircularFood = imageViewFood1;
+                        imageCircularFood.setVisibility(View.VISIBLE);
                     }
                     else if(i == 1){
                         imageCircularFood = imageViewFood2;
@@ -277,7 +278,6 @@ public class HistoryActivity extends MyActivity {
                         imageCircularFood = imageViewFood3;
                     }
 
-                    imageCircularFood.setVisibility(foodModel == null ? View.GONE : View.VISIBLE);
                     imageCircularFood.setFood(foodModel);
 
                 }
