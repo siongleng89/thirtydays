@@ -35,7 +35,6 @@ public class User {
         PreferenceUtils.putString(context, PreferenceType.ReminderTime, "17");
         PreferenceUtils.putString(context, PreferenceType.ReminderDay, "1,2,3,4,5,6,7");
         PreferenceUtils.putString(context, PreferenceType.CurrentExerciseDay, "1");
-        AllReminderHelper.updateReminders(context);
     }
 
     public void reload(){
