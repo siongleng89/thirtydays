@@ -557,7 +557,7 @@
     <string name="notf_run_reminder_title">Remember to run! (Day %s)</string>
     <string name="notf_run_reminder_action_run">Run Now</string>
     <string name="notf_run_reminder_action_settings">Settings</string>
-    <string name="notf_meal_reminder_title">Meal day %s</string>
+    <string name="notf_meal_reminder_title">Meal day %1$s - %2$s</string>
     <string name="notf_meal_reminder_action_view">View Plan</string>
     <string name="notf_meal_reminder_action_settings">Settings</string>
 

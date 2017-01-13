@@ -36,7 +36,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
     private int dayPlan;
     private ExerciseModel exerciseModel;
     private TextView txtUnlockCountdown;
-    private TextView txtTime, txtCalories;
+    private TextView txtTime, txtCalories, txtDayView;
     private LayoutExerciseStates layoutExerciseStates;
     private LinearLayout layoutBottom;
     private RelativeLayout layoutUnlockCountdown;
@@ -71,6 +71,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
 
         txtTime = (TextView) findViewById(R.id.txtTime);
         txtCalories = (TextView) findViewById(R.id.txtCalories);
+        txtDayView = (TextView) findViewById(R.id.txtDayView);
         txtUnlockCountdown = (TextView) findViewById(R.id.txtUnlockCountDown);
         layoutBottom = (LinearLayout) findViewById(R.id.layoutBottom);
         layoutLock = (RelativeLayout) findViewById(R.id.layoutLock);
@@ -82,6 +83,8 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
         layoutExerciseStates = (LayoutExerciseStates) findViewById(R.id.layoutExerciseStates);
 
         layoutExerciseStates.start(exerciseModel, this);
+
+        txtDayView.setText(String.format(getString(R.string.day_X), String.valueOf(dayPlan)));
 
         setListeners();
     }

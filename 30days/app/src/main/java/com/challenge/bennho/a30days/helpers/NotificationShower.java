@@ -86,7 +86,8 @@ public class NotificationShower {
     public static void showMealReminder(Context context, int dayNumber,
                                         DishModel dishModelWithTip){
 
-        String title = String.format(context.getString(R.string.notf_meal_reminder_title), String.valueOf(dayNumber));
+        String title = String.format(context.getString(R.string.notf_meal_reminder_title),
+                String.valueOf(dayNumber), dishModelWithTip.getDishName());
         String content = dishModelWithTip.getTip();
 
         NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();

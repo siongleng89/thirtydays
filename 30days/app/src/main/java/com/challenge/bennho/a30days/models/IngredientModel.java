@@ -34,8 +34,9 @@ public class IngredientModel {
         return ingredientType;
     }
 
+    //empty type is needed, don't remove it
     public enum IngredientType{
-        fruits, vegetable, carbohydrate, protein, others;
+        fruits, vegetable, carbohydrate, protein, others, empty;
 
         public String toString(Context context) {
             switch (this){
@@ -47,10 +48,8 @@ public class IngredientModel {
                     return context.getString(R.string.itype_carbo);
                 case protein:
                     return context.getString(R.string.itype_protein);
-
                 case others:
                     return context.getString(R.string.itype_others);
-
             }
             return "";
         }
