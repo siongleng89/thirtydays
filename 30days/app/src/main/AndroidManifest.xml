@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".MyApplication"
@@ -33,15 +34,19 @@
             android:label="@string/avty_details_title" />
         <activity
             android:name=".activities.MainActivity"
-            android:launchMode="singleInstance"></activity>
+            android:launchMode="singleInstance">
+    </activity>
 
         <activity
             android:name=".activities.MealActivity"
-            android:parentActivityName=".activities.MainActivity"></activity>
+            android:parentActivityName=".activities.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
 
         <activity
             android:name=".activities.ReadyActivity"
-            android:label="@string/avty_ready_title"
             android:parentActivityName=".activities.MainActivity"
             android:screenOrientation="portrait">
             <meta-data
@@ -56,7 +61,6 @@
         <activity
             android:name=".activities.HistoryActivity"
             android:label="@string/avty_history_title"
-            android:launchMode="singleInstance"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -65,16 +69,14 @@
         <activity
             android:name=".activities.GraphActivity"
             android:label="@string/avty_graph_title"
-            android:launchMode="singleInstance"
-            android:parentActivityName=".activities.HistoryActivity">
+            android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HistoryActivity" />
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
             android:name=".activities.SettingsActivity"
             android:label="@string/avty_settings_title"
-            android:launchMode="singleInstance"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -82,11 +84,14 @@
         </activity>
 
 
-
-
         <activity
             android:name=".activities.TutorialActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activities.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
 
 
         <service android:name=".services.ExerciseService" />

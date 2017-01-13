@@ -85,6 +85,7 @@ public class CaloriesToImagesConverter {
         
 
         FoodModel.FoodType foodOne;
+
 /*
         FoodModel.FoodType foodTwo;
         FoodModel.FoodType foodThree;
@@ -92,7 +93,7 @@ public class CaloriesToImagesConverter {
 
 
 
-        if (calories > 300){
+       /* if (calories > 300){
             foodOne = getRandomFood(typeAFood);
 
         }
@@ -104,7 +105,24 @@ public class CaloriesToImagesConverter {
             foodOne = getRandomFood(typeCFood);
 
         }
-        else if (calories > 5){
+        else if (calories > 5) {
+            foodOne = getRandomFood(typeDFood);
+        }*/
+
+//        FoodModel.FoodType foodTwo;
+//        FoodModel.FoodType foodThree;
+
+
+        if(calories > 300){
+            foodOne = getRandomFood(typeAFood);
+        }
+        else if(calories > 200){
+            foodOne = getRandomFood(typeBFood);
+        }
+        else if(calories > 100){
+            foodOne = getRandomFood(typeCFood);
+        }
+        else if(calories > 5){
             foodOne = getRandomFood(typeDFood);
 
         }
@@ -112,7 +130,59 @@ public class CaloriesToImagesConverter {
             foodOne = getRandomFood(typeEFood);
         }
 
+//        if (calories > 900){
+//            foodOne = getRandomFood(typeAFood);
+//            foodTwo = getRandomFood(typeAFood);
+//            foodThree = getRandomFood(typeAFood);
+//        }
+//        else if (calories > 800){
+//            foodOne = getRandomFood(typeAFood);
+//            foodTwo = getRandomFood(typeAFood);
+//            foodThree = getRandomFood(typeBFood);
+//        }
+//        else if (calories > 700){
+//            foodOne = getRandomFood(typeAFood);
+//            foodTwo = getRandomFood(typeBFood);
+//            foodThree = getRandomFood(typeBFood);
+//        }
+//        else if (calories > 600){
+//            foodOne = getRandomFood(typeBFood);
+//            foodTwo = getRandomFood(typeBFood);
+//            foodThree = getRandomFood(typeBFood);
+//        }
+//        else if (calories > 500){
+//            foodOne = getRandomFood(typeBFood);
+//            foodTwo = getRandomFood(typeBFood);
+//            foodThree = getRandomFood(typeCFood);
+//        }
+//        else if (calories > 400){
+//            foodOne = getRandomFood(typeBFood);
+//            foodTwo = getRandomFood(typeCFood);
+//            foodThree = getRandomFood(typeCFood);
+//        }
+//        else if (calories > 300){
+//            foodOne = getRandomFood(typeCFood);
+//            foodTwo = getRandomFood(typeCFood);
+//            foodThree = getRandomFood(typeCFood);
+//        }
+//        else if (calories > 200){
+//            foodOne = getRandomFood(typeCFood);
+//            foodTwo = getRandomFood(typeDFood);
+//            foodThree = getRandomFood(typeDFood);
+//        }
+//        else if (calories > 100){
+//            foodOne = getRandomFood(typeDFood);
+//            foodTwo = getRandomFood(typeDFood);
+//            foodThree = getRandomFood(typeEFood);
+//        }
+//        else{
+//            foodOne = getRandomFood(typeDFood);
+//            foodTwo = getRandomFood(typeEFood);
+//            foodThree = getRandomFood(typeEFood);
+//        }
+
         FoodModel foodModelOne=new FoodModel(foodOne);
+
        /* FoodModel foodModelTwo=new FoodModel(foodTwo);
         FoodModel foodModelThree=new FoodModel(foodThree);*/
 
@@ -120,6 +190,14 @@ public class CaloriesToImagesConverter {
         /*result.add(foodModelTwo);
         result.add(foodModelThree);
 */
+
+//        FoodModel foodModelTwo=new FoodModel(foodTwo);
+//        FoodModel foodModelThree=new FoodModel(foodThree);
+
+//        result.add(foodModelOne);
+//        result.add(foodModelTwo);
+//        result.add(foodModelThree);
+
 
         return result;
 

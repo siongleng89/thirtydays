@@ -80,6 +80,11 @@ public class ExerciseResultActivity extends MyActivity {
         realmHelper.dispose();
     }
 
+    @Override
+    public void onBackPressed() {
+        finishExercise();
+    }
+
     private void processResults(){
         if(getIntent() != null){
             float totalElapsedMs = getIntent().getFloatExtra("totalElapsedMs", 0);
@@ -122,7 +127,7 @@ public class ExerciseResultActivity extends MyActivity {
                 user.addRunningSecs(totalElapsedMs / 1000);
 
 
-                if(isCompleted && dayPlan == user.getCurrentDay()){
+                if(isCompleted && dayPlan >= user.getCurrentDay()){
                     user.addCurrentDay();
 
                     AllReminderHelper.updateReminders(this);

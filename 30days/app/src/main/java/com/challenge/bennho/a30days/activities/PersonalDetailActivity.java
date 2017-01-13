@@ -65,13 +65,13 @@ public class PersonalDetailActivity extends MyActivity {
 
         //user selected kg/cm
         if(myUser.getUnitIndex() == 0){
-            setUnitToKgCm();
+            setUnitToKgCm(false);
             txtWeight.setText(Strings.setEmptyIfZero(myUser.getWeightKg()));
             txtHeightCM.setText(Strings.setEmptyIfZero(myUser.getHeightInCm()));
         }
         //user selected pounds/miles
         else{
-            setUnitToPoundsMiles();
+            setUnitToPoundsMiles(false);
             if(myUser.getWeightKg() != 0){
                 txtWeight.setText(
                         Strings.removeRedundantZero(
@@ -91,22 +91,22 @@ public class PersonalDetailActivity extends MyActivity {
 
     }
 
-    private void setUnitToKgCm(){
+    private void setUnitToKgCm(boolean initiated){
         txtWeight.setHint(R.string.avty_details_weight_kg_hint);
 
         layoutHeightCM.setVisibility(View.VISIBLE);
         layoutHeighFeet.setVisibility(View.GONE);
 
-        txtWeight.setText("");
+        if(initiated) txtWeight.setText("");
     }
 
-    private void setUnitToPoundsMiles(){
+    private void setUnitToPoundsMiles(boolean initiated){
         txtWeight.setHint(R.string.avty_details_weight_pounds_hint);
 
         layoutHeightCM.setVisibility(View.GONE);
         layoutHeighFeet.setVisibility(View.VISIBLE);
 
-        txtWeight.setText("");
+        if(initiated) txtWeight.setText("");
     }
 
     private void validateSubmit(){
@@ -215,12 +215,12 @@ public class PersonalDetailActivity extends MyActivity {
 
         switchControlUnit.setSwitchControlListener(new LayoutSwitchControl.SwitchControlListener() {
             @Override
-            public void onChanged(int index) {
+            public void onChanged(int index, boolean initiated) {
                 if(index == 0){
-                    setUnitToKgCm();
+                    setUnitToKgCm(initiated);
                 }
                 else{
-                    setUnitToPoundsMiles();
+                    setUnitToPoundsMiles(initiated);
                 }
             }
         });

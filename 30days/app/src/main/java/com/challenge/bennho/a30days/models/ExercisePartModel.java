@@ -102,22 +102,22 @@ public class ExercisePartModel {
         return null;
     }
 
-    public Drawable getExerciseIcon(Context context){
+    public int getExerciseIcon(){
         switch (exerciseState){
             case WarmUp:
-                return ContextCompat.getDrawable(context, R.drawable.warmup_icon);
+                return R.drawable.warmup_icon;
             case FastWalk:
-                return ContextCompat.getDrawable(context, R.drawable.fast_walk_icon);
+                return R.drawable.fast_walk_icon;
             case Run:
-                return ContextCompat.getDrawable(context, R.drawable.jogging_icon);
+                return R.drawable.jogging_icon;
             case Sprint:
-                return ContextCompat.getDrawable(context, R.drawable.sprinting_icon);
+                return R.drawable.sprinting_icon;
             case Walk:
-                return ContextCompat.getDrawable(context, R.drawable.walking_icon);
+                return R.drawable.walking_icon;
             case CoolDown:
-                return ContextCompat.getDrawable(context, R.drawable.cool_down_icon);
+                return R.drawable.cool_down_icon;
         }
-        return null;
+        return -1;
     }
 
     /**

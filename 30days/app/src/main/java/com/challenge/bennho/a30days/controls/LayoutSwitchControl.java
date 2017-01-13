@@ -30,6 +30,7 @@ public class LayoutSwitchControl extends RelativeLayout {
     private String optionText1, optionText2;
     private int selectedOption;
     private SwitchControlListener switchControlListener;
+    private boolean initiated = false;
 
     public LayoutSwitchControl(Context context) {
         super(context);
@@ -108,7 +109,7 @@ public class LayoutSwitchControl extends RelativeLayout {
         moveLayoutBackground(choice, animate);
 
         if(switchControlListener != null){
-            switchControlListener.onChanged(selectedOption);
+            switchControlListener.onChanged(selectedOption, initiated);
         }
     }
 
@@ -160,6 +161,8 @@ public class LayoutSwitchControl extends RelativeLayout {
                             changeSelected(selectedOption, false);
                         }
 
+                        initiated = true;
+
                     }
                 });
 
@@ -201,7 +204,7 @@ public class LayoutSwitchControl extends RelativeLayout {
     }
 
     public interface SwitchControlListener{
-        void onChanged(int index);
+        void onChanged(int index, boolean initiated);
     }
 
 }
