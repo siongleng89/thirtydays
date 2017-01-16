@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.drawables.SemiCircleDrawable;
+import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.AnimateBuilder;
 
 /**
@@ -25,7 +26,7 @@ public class LayoutDayCounter extends RelativeLayout {
     private RelativeLayout layoutOuterCircle, layoutCircle, layoutDummyCircle, layoutBlinkingCircle,
                             layoutInnerCircle;
     private LinearLayout layoutContentCircle;
-    private TextView txtDay, txtCompleted;
+    private TextView txtDay, txtCompleted, txtQuote;
     private ImageView imgViewMedal;
     private int maxDayNumber;
 
@@ -65,6 +66,7 @@ public class LayoutDayCounter extends RelativeLayout {
 
         txtDay = (TextView) findViewById(R.id.txtDay);
         txtCompleted = (TextView) findViewById(R.id.txtCompleted);
+        txtQuote = (TextView) findViewById(R.id.txtQuote);
         imgViewMedal = (ImageView) findViewById(R.id.imgViewMedal);
 
         ViewCompat.setBackground(layoutOuterCircle, new SemiCircleDrawable(
@@ -123,6 +125,13 @@ public class LayoutDayCounter extends RelativeLayout {
                 ContextCompat.getColor(context, R.color.colorSprint),
                 12, 12 * (currentDayNumber - 1)
         ));
+
+        if(currentDayNumber > maxDayNumber){
+            txtQuote.setText(R.string.locked);
+        }
+        else{
+            txtQuote.setText(String.format("\"%s\"", AndroidUtils.getStringByIdentifier(context, "exercise_quote" + currentDayNumber)));
+        }
 
     }
 
