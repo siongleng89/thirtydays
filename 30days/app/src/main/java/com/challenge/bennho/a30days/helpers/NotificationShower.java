@@ -34,15 +34,14 @@ public class NotificationShower {
         String title = String.format(context.getString(R.string.notf_run_reminder_title), String.valueOf(dayNumber));
         String content = AndroidUtils.getStringByIdentifier(context, "exercise_quote" + dayNumber);
 
-
         NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
         bigTextStyle.setBigContentTitle(title);
         bigTextStyle.bigText(content);
 
-        Bitmap bm = BitmapFactory.decodeResource(context.getResources(), R.drawable.icon);
+        Bitmap bm = BitmapFactory.decodeResource(context.getResources(), R.drawable.gorun);
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(context)
-                        .setSmallIcon(R.drawable.icon)
+                        .setSmallIcon(R.drawable.ic_stat_runs)
                         .setLargeIcon(bm)
                         .setContentTitle(title)
                         .setContentText(content);
@@ -96,7 +95,7 @@ public class NotificationShower {
         Bitmap bm = BitmapFactory.decodeResource(context.getResources(), dishModelWithTip.getImageResourceId());
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(context)
-                        .setSmallIcon(R.drawable.icon)
+                        .setSmallIcon(R.drawable.ic_stat_runs)
                         .setLargeIcon(bm)
                         .setContentTitle(title)
                         .setContentText(content);

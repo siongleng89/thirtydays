@@ -35,7 +35,7 @@ public class IngredientModel {
     }
 
     public enum IngredientType{
-        fruits, vegetable, carbohydrate, protein, others;
+        fruits, vegetable, carbohydrate, protein, empty, others;
 
         public String toString(Context context) {
             switch (this){
