@@ -34,7 +34,7 @@
             android:layout_height="match_parent"
             android:id="@+id/layoutInnerCircle"
             android:padding="2dp"
-            android:layout_margin="20dp">
+            android:layout_margin="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -45,39 +45,30 @@
                 android:clipChildren="false"
                 android:clipToPadding="false">
 
-                <RelativeLayout
+                <TextView
+                    android:text="@string/day_X"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clipChildren="false"
-                    android:clipToPadding="false"
-                    android:gravity="center">
-
-                    <ImageView
-                        app:srcCompat="@drawable/medal_icon"
-                        android:id="@+id/imgViewMedal"
-                        android:layout_above="@+id/txtDay"
-                        android:layout_marginTop="-50dp"
-                        android:layout_centerInParent="true"
-                        android:layout_height="wrap_content"
-                        android:layout_width="30dp" />
-
-                    <TextView
-                        android:text="@string/day_X"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/txtDay"
-                        android:layout_marginBottom="15dp"
-                        android:textSize="36sp"
-                        android:textColor="@color/colorDay"
-                        android:textStyle="normal|bold"
-                        android:gravity="center" />
-                </RelativeLayout>
+                    android:id="@+id/txtDay"
+                    android:textSize="28sp"
+                    android:textColor="@color/colorDay"
+                    android:textStyle="normal|bold"
+                    android:gravity="center" />
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center">
+
+                    <ImageView
+                        app:srcCompat="@drawable/medal_icon"
+                        android:id="@+id/imgViewMedal"
+                        android:layout_above="@+id/txtDay"
+                        android:layout_centerInParent="true"
+                        android:layout_width="15dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp" />
 
                     <TextView
                         android:text="@string/completed"
@@ -86,6 +77,19 @@
                         android:textColor="@color/colorDay"
                         android:id="@+id/txtCompleted" />
                 </LinearLayout>
+
+                <TextView
+                    android:text="@string/exercise_quote1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtQuote"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="normal|italic"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorLightGray" />
 
             </LinearLayout>
 

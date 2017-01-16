@@ -92,6 +92,7 @@ public class MainActivity extends MyActivity {
         User user = new User(this);
         user.reload();
         userMaxDay = user.getCurrentDay();
+
         dayCounterControl.setMaxDayNumber(userMaxDay);
 
         txtCalories.setText(String.format(getString(R.string.x_kcal), String.valueOf(user.getTotalCaloriesBurnt())));
@@ -159,6 +160,7 @@ public class MainActivity extends MyActivity {
 
     private void checkProVersionLockedMeal(){
         if(currentSelectedDay > 7){
+            setLockMeal(true);
             getProVersionHelpers().isProPurchased(new RunnableArgs<Boolean>() {
                 @Override
                 public void run() {

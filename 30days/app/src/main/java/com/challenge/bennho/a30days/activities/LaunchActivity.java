@@ -8,9 +8,12 @@ import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.AllReminderHelper;
+import com.challenge.bennho.a30days.helpers.Logs;
+import com.challenge.bennho.a30days.helpers.MealsInputter;
 import com.challenge.bennho.a30days.helpers.NotificationShower;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.Strings;
+import com.challenge.bennho.a30days.models.DishModel;
 import com.challenge.bennho.a30days.models.User;
 
 public class LaunchActivity extends MyActivity {

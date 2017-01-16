@@ -6,7 +6,6 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.PowerManager;
@@ -16,7 +15,6 @@ import android.support.v4.app.NotificationCompat;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.activities.RunningActivity;
 import com.challenge.bennho.a30days.helpers.CalculationHelper;
-import com.challenge.bennho.a30days.helpers.Logs;
 import com.challenge.bennho.a30days.helpers.MediaHelper;
 import com.challenge.bennho.a30days.helpers.TextSpeak;
 import com.challenge.bennho.a30days.helpers.Threadings;
@@ -187,7 +185,7 @@ public class ExerciseService extends Service {
         if(!notificationTime.equals(lastNotificationText)){
             lastNotificationText = notificationTime;
             if(Math.floor(remainingSecs) == 2){
-                MediaHelper.playAnnouncementSound(getBaseContext());
+                MediaHelper.playAnnouncementSoundAndVibrate(getBaseContext());
             }
 
             NotificationManager mNotificationManager = (NotificationManager)
