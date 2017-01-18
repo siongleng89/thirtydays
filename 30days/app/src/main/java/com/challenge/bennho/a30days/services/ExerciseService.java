@@ -14,8 +14,10 @@ import android.support.v4.app.NotificationCompat;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.activities.RunningActivity;
+import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.CalculationHelper;
 import com.challenge.bennho.a30days.helpers.MediaHelper;
+import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.TextSpeak;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.ExerciseModel;
@@ -35,7 +37,7 @@ public class ExerciseService extends Service {
     private long accSleepMs;
     private ExercisePartModel currentExercisePartModel;
     private ExerciseListener exerciseListener;
-    private boolean paused, stopped, running, completed;
+    private boolean paused, stopped, completed;
     private final int SERVICE_ID = 7012;
     private String lastNotificationText;
     private TextSpeak textSpeak;
@@ -77,12 +79,14 @@ public class ExerciseService extends Service {
         this.exerciseModel = exerciseModel;
         this.exerciseListener = exerciseListener;
 
-        if(running){
+        boolean exerciseIsRunning = PreferenceUtils.getBoolean(getBaseContext(), PreferenceType.ExerciseRunning);
+        if(exerciseIsRunning){
             return false;
         }
 
         resetService();  //dispose previous unfinish exercise
 
+        PreferenceUtils.putBoolean(getBaseContext(), PreferenceType.ExerciseRunning, true);
         this.user = new User(getBaseContext());
         user.reload();
         this.exerciseModel = exerciseModel;
@@ -97,7 +101,6 @@ public class ExerciseService extends Service {
         this.realElapsedMs = 0;
         this.lastNotificationText = "";
         exercising(0);
-        running = true;
         startAsForeground();
 
         if(wakeLock != null && wakeLock.isHeld()){
@@ -163,9 +166,10 @@ public class ExerciseService extends Service {
 
                     updateNotification(accSleepMs, currentExercisePartModel);
                     updateCaloriesBurnt(sleepMs, currentExercisePartModel);
-                    exerciseListener.onTimeChanged(currentTotalElapsedMs,
-                            accSleepMs, currentCaloriesBurnt, currentExercisePartModel);
-
+                    if(exerciseListener != null) {
+                        exerciseListener.onTimeChanged(currentTotalElapsedMs,
+                                accSleepMs, currentCaloriesBurnt, currentExercisePartModel);
+                    }
                 }
 
                 exercising(index + 1);
@@ -174,7 +178,7 @@ public class ExerciseService extends Service {
     }
 
     private void startAsForeground(){
-        startForeground(SERVICE_ID, getNotification(getString(R.string.app_name), "", -1));
+        startForeground(SERVICE_ID, getNotification(getString(R.string.app_name), "", -1, false));
     }
 
     private void updateNotification(float currentExercisePartElapsedMs,
@@ -192,7 +196,7 @@ public class ExerciseService extends Service {
                                         getSystemService(Context.NOTIFICATION_SERVICE);
             mNotificationManager.notify(SERVICE_ID, getNotification(
                     currentExercisePartModel.getExerciseText(this.getBaseContext()), notificationTime,
-                    currentExercisePartModel.getExerciseIcon()));
+                    currentExercisePartModel.getExerciseIcon(), false));
         }
     }
 
@@ -213,13 +217,17 @@ public class ExerciseService extends Service {
         NotificationManager mNotificationManager = (NotificationManager)
                 getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(SERVICE_ID, getNotification(getString(R.string.notf_running_finished_title),
-                                getString(R.string.notf_running_finished_content), -1));
-        exerciseListener.onExerciseEnded(realElapsedMs, currentCaloriesBurnt, completed);
+                                getString(R.string.notf_running_finished_content), -1, true));
+        if(exerciseListener != null) {
+            exerciseListener.onExerciseEnded(realElapsedMs, currentCaloriesBurnt, completed);
+        }
     }
 
     public void exerciseGaveUp(){
         stopped = true;
-        exerciseListener.onExerciseEnded(realElapsedMs, currentCaloriesBurnt, false);
+        if(exerciseListener != null) {
+            exerciseListener.onExerciseEnded(realElapsedMs, currentCaloriesBurnt, false);
+        }
     }
 
     public void pauseExercise(){
@@ -233,11 +241,13 @@ public class ExerciseService extends Service {
 
 
     public void requestTriggerStateChangedOnce(){
-        exerciseListener.onTimeChanged(currentTotalElapsedMs,
-                accSleepMs, currentCaloriesBurnt, currentExercisePartModel);
+        if(exerciseListener != null) {
+            exerciseListener.onTimeChanged(currentTotalElapsedMs,
+                    accSleepMs, currentCaloriesBurnt, currentExercisePartModel);
 
-        if(stopped){
-            exerciseListener.onExerciseEnded(currentTotalElapsedMs, currentCaloriesBurnt, completed);
+            if(stopped){
+                exerciseListener.onExerciseEnded(currentTotalElapsedMs, currentCaloriesBurnt, completed);
+            }
         }
     }
 
@@ -251,7 +261,6 @@ public class ExerciseService extends Service {
                 getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.cancel(SERVICE_ID);
         stopped = true;
-        running = false;
     }
 
     public void disposeExercise(){
@@ -271,7 +280,7 @@ public class ExerciseService extends Service {
         return textSpeak;
     }
 
-    private Notification getNotification(String title, String content, int icon){
+    private Notification getNotification(String title, String content, int icon, boolean autoCancel){
         Intent notificationIntent = new Intent(this, RunningActivity.class);
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
@@ -279,13 +288,14 @@ public class ExerciseService extends Service {
                 notificationIntent, 0);
 
         if(icon < 0){
-            icon = R.mipmap.ic_launcher;
+            icon = R.drawable.ic_stat_runs;
         }
 
         Notification notification = new NotificationCompat.Builder(this)
                 .setSmallIcon(icon)
                 .setContentTitle(title)
                 .setContentText(content)
+                .setAutoCancel(autoCancel)
                 .setContentIntent(pendingIntent).build();
 
         return notification;

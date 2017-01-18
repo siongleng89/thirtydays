@@ -154,7 +154,6 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
         intent.putExtra("dayPlan", dayPlan);
         startActivity(intent);
 
-        exerciseService.disposeExercise();
         AndroidUtils.setFullscreen(this, false);
         finish();
     }

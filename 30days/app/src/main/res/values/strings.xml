@@ -1,572 +1,1101 @@
+<?xml version="1.0"?>
+
 <resources>
-    <string name="app_name">30 Days Running Weight Loss</string>
 
-    <string name="avty_landing_btn_begin">BEGIN LOSS WEIGHT</string>
-    <string name="avty_landing_intro_title">How we help you loss weight?</string>
-    <string name="avty_landing_intro_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin turpis in rhoncus pretium. In dictum risus et sollicitudin pharetra. Sed maximus non libero quis tempus. Etiam congue ex vitae ipsum pulvinar pulvinar non vitae purus. Phasellus at nisl quis neque viverra rutrum. Praesent id gravida ipsum, eget tempus lacus. Vivamus ante nibh, elementum et quam nec, elementum gravida lacus. Maecenas sagittis feugiat leo, a aliquet odio ultricies id. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="app_name">30 Day Weight Loss - Run Diet</string>
 
+    <string name="avty_landing_btn_begin">BEGIN LOSE WEIGHT</string>
 
-    <string name="avty_details_title">Personal Detail</string>
-    <string name="avty_details_instruction">Input your accurate parameters to customize your training plan.</string>
+    <string name="avty_landing_intro_title">How can we help you to lose weight?</string>
+
+    <string name="avty_landing_intro_content">
+        "This is a weight loss program that incorporates HIIT exercise and nutrition diet. We will guide you day by day through the entire weight loss process and also show you how to eat to maximise fat loss.
+
+        Our HIIT exercise is a form of simple high intensity interval training which speeds up your metabolic rate and boosts your metabolism for up to 24 hours. This means you\'ll be burning fat even after you\'ve finished the run and walk.
+
+        On the other hand, our diet plan consists of lots of high fiber and protein food, which will let you eat without getting fat.
+
+        No more going hungry just to lose weight!"
+    </string>
+
+    <string name="avty_details_title">Personal Details</string>
+
+    <string name="avty_details_instruction">Input your details to customize your training plan.</string>
+
     <string name="avty_details_weight_title">Weight</string>
+
     <string name="avty_details_height_title">Height</string>
+
     <string name="avty_details_weight_kg_hint">Your weight in kg</string>
-    <string name="avty_details_weight_pounds_hint">Your weight in pounds</string>
+
+    <string name="avty_details_weight_pounds_hint">Your weight in pound</string>
+
     <string name="avty_details_height_cm_hint">Your height in cm</string>
+
     <string name="avty_details_height_foot_hint">Height in foot</string>
+
     <string name="avty_details_height_inch_hint">Height in inch</string>
+
     <string name="avty_details_age_hint">Your age</string>
+
     <string name="avty_details_age_title">Age</string>
+
     <string name="avty_details_gender_title">Gender</string>
-    <string name="avty_details_empty_error">Please make sure all fields are filled before continue.</string>
-    <string name="avty_details_invalid_error">Some of the value input is not valid, please check and try again.</string>
+
+    <string name="avty_details_empty_error">Please make sure all fields are filled before you continue.</string>
+
+    <string name="avty_details_invalid_error">Some of the values are not valid, please check and try again.</string>
 
     <string name="avty_main_btn_meal_plan">MEAL PLAN</string>
-    <string name="avty_main_btn_running_plan">RUNNING PLAN</string>
+
+    <string name="avty_main_btn_running_plan1">START</string>
+    <string name="avty_main_btn_running_plan2">RUN</string>
+
     <string name="avty_main_calories_counter_title">Calories Counter</string>
-    <string name="avty_main_customized_plan_title">Slim Plan For</string>
+
+    <string name="avty_main_customized_plan_title">Slimming Plan For</string>
 
     <string name="avty_meal_title">Day %s Meal Plan</string>
+
     <string name="avty_meal_tip_of_the_day">TIP OF THE DAY</string>
+
     <string name="avty_meal_shopping_list_day_x_to_day_x">Day %1$s to %2$s Shopping List</string>
+
     <string name="avty_meal_breakfast">Breakfast</string>
+
     <string name="avty_meal_morning_snack">Morning Snack</string>
+
     <string name="avty_meal_lunch">Lunch</string>
+
     <string name="avty_meal_evening_snack">Evening Snack</string>
+
     <string name="avty_meal_dinner">Dinner</string>
+
     <string name="avty_meal_ingredients">Ingredient</string>
+
     <string name="avty_meal_quantity">Quantity</string>
 
     <string name="avty_ready_title">Day %s run starting in. . .</string>
 
-    <string name="avty_tutorial_title">Exercise Tutorial</string>
+    <string name="avty_tutorial_title">Running Tutorial</string>
+
     <string name="avty_tutorial_end_text">Start Run</string>
+
     <string name="avty_tutorial_introduction_title">Quick Tutorial</string>
-    <string name="avty_tutorial_introduction_content">We will walk you through for the first time you exercise. We adapt HIIT exercise method to maximize calories burn in our exercise plan, which means each exercise involves several state. The exercise plan will vary depends on the information you inputMeal. Each exercise contains several states which represented by different color.</string>
-    <string name="avty_tutorial_warm_up_explain">Warm up phase is represented by LIGHT ORANGE color, do some stretching and slow run, this phase is important to prevent injury.</string>
-    <string name="avty_tutorial_walk_explain">Walk phase is represented by LIGHT GREEN color, in this phase please walk with your normal walking speed.</string>
-    <string name="avty_tutorial_fast_walk_explain">Fast Walk phase is represented by DARK GREEN color, you should try to walk with your maximum possible speed in this phase.</string>
-    <string name="avty_tutorial_run_explain">Run phase is represented by LIGHT RED color, run normally in this phase.</string>
-    <string name="avty_tutorial_sprint_explain">Sprint phase is represented by DARK RED color, run with your FULL SPEED in this phase.</string>
-    <string name="avty_tutorial_cool_down_explain">Cool down phase is represented by BLUE color, gradually slow down your run in this final exercise phase.</string>
+
+    <string name="avty_tutorial_introduction_content">Welcome to 30 days running weight loss! We adapt HIIT exercise method to maximize calorie burn in our running plan, which means each running involves several states, represented by different colors. The running plan will vary depending on the information you have input. </string>
+
+    <string name="avty_tutorial_warm_up_explain">Warm up phase is represented by LIGHT ORANGE color. At this point, do some stretching and slow run as this phase is important to prevent injury.</string>
+
+    <string name="avty_tutorial_walk_explain">Walk phase is represented by LIGHT GREEN color. Please walk with your normal walking speed.</string>
+
+    <string name="avty_tutorial_fast_walk_explain">Fast Walk phase is represented by DARK GREEN color. You should try to walk with your maximum possible speed during this phase.</string>
+
+    <string name="avty_tutorial_run_explain">Run phase is represented by LIGHT RED color. Run at your normal speed during this phase.</string>
+
+    <string name="avty_tutorial_sprint_explain">Sprint phase is represented by DARK RED color. Run with your FULL SPEED during this phase.</string>
+
+    <string name="avty_tutorial_cool_down_explain">Cool down phase is represented by BLUE color. Gradually slow down your run/walk in this final exercise phase.</string>
 
     <string name="avty_running_mins_remain">Mins Remaining</string>
-    <string name="avty_running_calories_burnt">Calories Burn (Kcal)</string>
-    <string name="avty_running_hold_to_unlock">(Hold to Unlock)</string>
-    <string name="avty_running_unlock_first">Unlock First</string>
-    <string name="avty_running_give_up_title">Give up?</string>
-    <string name="avty_running_give_up_content">Confirm giving up this exercise?</string>
 
-    <string name="avty_result_title">Day %s exercise result</string>
-    <string name="avty_result_day_x">DAY %s EXERCISE</string>
+    <string name="avty_running_calories_burnt">Calories Burnt (Kcal)</string>
+
+    <string name="avty_running_hold_to_unlock">(Hold to Unlock)</string>
+
+    <string name="avty_running_unlock_first">Unlock First</string>
+
+    <string name="avty_running_give_up_title">Give up?</string>
+
+    <string name="avty_running_give_up_content">Confirm giving up on this exercise?</string>
+
+    <string name="avty_result_title">Day %s run result</string>
+
+    <string name="avty_result_day_x">DAY %s RUN</string>
+
     <string name="avty_result_calories_burn_title">Calories Burn</string>
-    <string name="avty_result_exercise_duration_title">Running Duration</string>
+
+    <string name="avty_result_exercise_duration_title">Run Duration</string>
 
     <string name="avty_graph_title">Graph History</string>
-    <string name="avty_graph_subtitle">Each Day Plan Calories Burn</string>
 
-    <string name="avty_history_title">Exercise History</string>
+    <string name="avty_graph_subtitle">Calories burn by each day plan</string>
+
+    <string name="avty_history_title">Run History</string>
+
     <string name="avty_history_delete_title">Delete History Record</string>
-    <string name="avty_history_delete_content">"Are you sure you want to delete this record? Total exercise time and total calories recorded until now will be affected."</string>
-    <string name="layout_history_no_records_msg">No records found....</string>
+
+    <string name="avty_history_delete_content">"Are you sure you want to delete this record? Total run time and calories recorded until now will be affected."</string>
+
+    <string name="layout_history_no_records_msg">No record found....</string>
+
     <string name="layout_history_date_title">Date</string>
+
     <string name="layout_history_plan_title">Plan</string>
+
     <string name="layout_history_is_completed_title">Completed</string>
+
     <string name="layout_history_duration_title">Duration</string>
+
     <string name="layout_history_calories_title">Calories</string>
+
     <string name="summary_total_calories_burnt">Total Calories Burnt</string>
-    <string name="summary_total_exercise_duration">Total Exercise Duration</string>
+
+    <string name="summary_total_exercise_duration">Total Run Duration</string>
 
     <string name="avty_settings_title">Settings</string>
 
     <string name="drawer_title_day_x_plan">Day %s Plan</string>
-    <string name="drawer_title_history">Exercise History</string>
+
+    <string name="drawer_title_history">Run History</string>
+
     <string name="drawer_item_history_list">List History</string>
+
     <string name="drawer_item_history_graph">Graph History</string>
+
     <string name="drawer_title_tutorial">Tutorial</string>
-    <string name="drawer_item_exercise_tutorial">Exercise Tutorial</string>
+
+    <string name="drawer_item_exercise_tutorial">Running Tutorial</string>
+
     <string name="drawer_title_more">More</string>
+
     <string name="drawer_item_settings">Settings</string>
+
     <string name="drawer_item_pro_version">Pro + Remove Ads</string>
+
     <string name="drawer_title_miscellaneous">Miscellaneous</string>
+
     <string name="drawer_item_share">Share</string>
+
     <string name="drawer_item_rate">Rate us</string>
+
     <string name="drawer_item_contact">Contact us</string>
+
     <string name="drawer_item_about">About us</string>
 
-    <string name="tip_olive_oil">Average Greek consumes more than 20 liters of olive oil a year, that why the spartan look so sexy and we have included in your meal plan today, check it out now!</string>
-    <string name="tip_coffee">Coffee can specifically increase the burning of fat, by as much as 10% in obese individuals, but drinking too much will make you count sheep at the night, so follow our meal plan today to burn fat and sleep soundly tonight!</string>
-    <string name="tip_almonds">Almonds consumed as snacks reduce hunger and desire to eat later in the day but try not to overconsume it, because it is soooo expensive. Almonds is included in our meal plan today, check it out now.</string>
-    <string name="tip_brown_rice">Brown rice is an excellent source of dietary fibre, it tend to fill you up more and has been associated with decreased food intake and maintenance of a healthy body weight, so say no to racist and become a riceist, brown rice > white rice, check out our brown rice meal today!</string>
-    <string name="tip_chicken_breast">Eating chicken breast, without breading or skin, helps you eat fewer calories and even burn extra calories for effective weight loss, transforming yourself into the nemesis of chicken breast is always the first step to shape your body, check out our chicken breast meal plan for today.</string>
-    <string name="tip_brocolli">Broccoli is high in fiber, which aids in digestion, prevents constipation, maintains low blood sugar, and also helps in prevent cancer. So next time you meet a cancerous attitude person, feed them brocolli to make them shut up. Check out our brocolli meal plan today!</string>
-    <string name="tip_apple"> An apple a day keeps the doctor away, because you won\'t be able to afford anything if you buy so many iphones, check out our meal plan today for cheaper apple meal.</string>
+    <string name="tip_olive_oil">Average Greek consumes more than 20 liters of olive oil a year - that is why the spartans look so toned! We have included it in your meal plan today, check it out!</string>
+
+    <string name="tip_coffee">Coffee can increase body fat burn by as much as 10% in obese individuals, but drinking too much will give you insomnia at night. Follow our meal plan today to burn fats and sleep soundly tonight!</string>
+
+    <string name="tip_almonds">Almonds consumed as snacks reduce hunger and desire to eat later in the day, so you never have to reach for that chocolate bar sprinkled with sugar. Almond is included in our meal plan today, check it out now.</string>
+
+    <string name="tip_brown_rice">Brown rice is an excellent source of dietary fibre as it tends to fill you up more and has been associated with decreased food intake and maintenance of a healthy body weight. Brown is the new white, so check out our brown rice meal today!</string>
+
+    <string name="tip_chicken_breast">Eating chicken breast, without breading or skin, helps you to eat fewer calories and even burn extra calories for effective weight loss. Transforming yourself into the nemesis of chicken (breast) is always the first step to shape your body to something other than round. Check out our chicken breast meal plan for today.</string>
+
+    <string name="tip_brocolli">Broccoli is high in fiber, which aids in digestion, prevents constipation and lowers blood sugar. Now you know why your mother insists on you finishing your broccoli! Check out this vegetable in our meal plan today.</string>
+
+    <string name="tip_apple"> This apple is not the apple (phone) you want, but the apple you need. Check out our meal plan today for much needed apple meal!</string>
+
     <string name="tip_eggs">Whole eggs are among the most nutritious foods on the planet, containing a little bit of almost every nutrient we need. Not too eggciting huh, come check out our more eggciting meal plan today!</string>
-    <string name="tip_mushrooms">Mushrooms are the only fruit or vegetable source of vitamin D and especially low in glycemic index which means it make you feel fuller for longer time. Super Mario\'s favourite. Check out our dish cooked with mushroom today.</string>
-    <string name="tip_spinach">Spinach help you lose weight because they\'re low in calories but nutrient-dense. Although Popeye would have you believe it will bulk you up, actually spinach is the key to keep you slim. Check out our meal with spinach today.</string>
-    <string name="tip_tomato_juice">According to the study, a daily glass of tomato juice can help trim your waistline. So we included it in our meal plan today and don\'t worry, you won\'t become a vampire.</string>
-    <string name="tip_banana">Banana is effective in curbing your appetite and controlling the increased blood sugar levels in the body but don\'t feed it to the wild monkeys. Check out our meal plan today with banana.</string>
-    <string name="tip_potato">A serving of potato contains only just 110 calories and having zero fat as well as zero cholestrol. According to the study, eating potato not gonna make you looks like a potato. Tap to check out our potato meal plan today.</string>
-    <string name="tip_salmon_oil">Salmon oil can help to lower triglycerides in the blood and, therefore, reduce the amount of stored fat on your body. Thats why there are so many salmon oil supplements selling everywhere. Don\'t like eating supplements? Come check out our real tasty salmon meal today.</string>
-    <string name="tip_papaya">Papaya is well known for its low fat, cholesterol free and low calorie nature. It also helps to enhance your digestive system and relieve constipation. It will be so fast that your colleague won\'t even notice you went to toilet. Come check out our meal plan with papaya today.</string>
-    <string name="tip_oatmeal">The body digests oatmeal at a slower pace, keeping blood sugar levels steady, energy up, and hunger away. Perfect food for elderly, we know that you are only 18 year old, but oatmeal is still good for your body. Tap to see how to eat oatmeal tastily.</string>
-    <string name="tip_strawberry">Strawberry contains Anthocyanins actually increase the body’s production of a hormone called adiponectin, which stimulates your metabolism and suppresses your appetite. What do you call a sad strawberry? Check out our meal plan for the answer!</string>
-    <string name="tip_walnuts"> Eating a diet rich in walnuts can lead to the same amount of weight loss as a lower fat, higher carbohydrate diet and also walnuts are rich in polyunsaturated fats, which are beneficial to heart health and lower cholesterol. So remember to buy some Walnuts when you pass by Walmart. Check out our meal plan today which included walnuts.</string>
-    <string name="tip_green_tea">Green tea, is packed with catechins, which help to promote weight loss by boosting your body\'s ability to metabolise lipids (fat). So, do you want to have a tea with me? Remember to check out today meal plan with green tea before our rendezvous.</string>
-    <string name="tip_carrots">Carrots are mostly water and fiber to keep you hydrated and feeling full. You\'ll also get essential nutrients, such as vitamins A and K. Therefore start eating carrots now you little bunny. Check out our meal plan today with carrots.</string>
-    <string name="tip_asparagus">As a natural diuretic, asparagus helps flush excess liquid, combating belly bulge. Keep going and you will eventually become slim like asparagus. Tap to see your meal plan today with asparagus.</string>
+
+    <string name="tip_mushrooms">Mushrooms are the only fiber source of vitamin D. It is also low in glycemic index which means it will make you feel fuller for longer time. Super Mario\'s favourite. Check out our dish cooked with mushroom today.</string>
+
+    <string name="tip_spinach">Spinach helps you to lose weight because they\'re low in calories but nutrient-dense. Although Popeye would have you believe it will bulk you up, spinach is actually the key to keep you slim. Check out our meal with spinach today.</string>
+
+    <string name="tip_tomato_juice">According to the study, a daily glass of tomato juice can help to trim your waistline. We have included it in our meal plan today so enjoy some vegetable blood equivalent!</string>
+
+    <string name="tip_banana">Banana is effective in curbing your appetite and controlling the increased blood sugar levels in the body. Just watch out for the wild monkeys. Check out our meal plan today with banana.</string>
+
+    <string name="tip_potato">A serving of potato contains only just 110 calories, with zero fat as well as zero cholesterol. Thus, eating potato will actually make you shaping less like a potato. Tap to check out our potato meal plan today.</string>
+
+    <string name="tip_salmon_oil">Salmon oil can help to lower triglycerides in the blood and, therefore, reduce the amount of stored fat in your body. Don\'t like eating fish oil supplement though? Come check out our real tasty salmon meal today.</string>
+
+    <string name="tip_papaya">Papaya is known for its low fat and cholesterol free content. It also helps to enhance your digestive system and relieve constipation. It will be so fast that your colleague won\'t even notice you have gone to the toilet, if you know what I mean. Come check out our meal plan with papaya today.</string>
+
+    <string name="tip_oatmeal">The body digests oatmeal at a slower pace, helping to keep blood sugar levels steady, energy up, and hunger away. Perfect for you who are forever 18, of course! Tap to see how to have a tasty oatmeal diet.</string>
+
+    <string name="tip_strawberry">Strawberry contains Anthocyanins which stimulates your metabolism and suppresses your appetite. What do you call a sad strawberry? Check out our meal plan for the answer!</string>
+
+    <string name="tip_walnuts">Eating a diet rich in walnuts can lead to the same amount of weight loss as a lower fat, higher carbohydrate diet. Walnuts are also rich in polyunsaturated fats, which help to maintain heart health and lower cholesterol. So remember to buy some Walnuts when you pass by Walmart, puns really not intended. Check out our meal plan today which included walnuts.</string>
+
+    <string name="tip_green_tea">Green tea, is packed with catechins, which help to promote weight loss by boosting your body\'s ability to metabolise fats. Get that green tea to start burning that fat! Remember to check out today meal plan with green tea today.</string>
+
+    <string name="tip_carrots">Carrots are mostly water and fiber to keep you hydrated and yet full. You\'ll also get essential nutrients, such as vitamins A and K. Learn from the bunny and eat some carrots. Check out our meal plan today with carrots.</string>
+
+    <string name="tip_asparagus">As a natural diuretic, asparagus helps to flush out excess liquid and combat belly bulge. Keep going and you will eventually become as slim as an asparagus. Tap to see your meal plan today with asparagus.</string>
+
     <string name="tip_bell_pepper">Red peppers contain a molecule called capsaicin that is shown to increase your fat-burning rate and promote weight loss, also, (rrriiinnnggg.....) oops time to have some "bell" peppers, come check out our meal plan today</string>
-    <string name="tip_avocados">Avocados tend to be high in fiber, about 7% by weight, which is very high compared to most other foods. Fiber can have various important benefits for weight loss and metabolic health. But if avocado is fruit, then is guacamole a smoothie? Come check out our diet plan with avocado today.</string>
-    <string name="tip_green_bean">Adding green beans to the diet ensures a healthy supply of important nutrients without any extra calories and bean is funny. Tap to view our meal plan today with beans.</string>
-    <string name="tip_lettuce">Lettuce has only 12 calories for one shredded cup and zero fat which make it a particularly effective diet food. The nickname of perfect weight loss food is not for nothing. Come to check out our meal plan with lettuce today.</string>
-    <string name="tip_orange">Free radicals contribute to your body\'s aging process. The high levels of antioxidants found in oranges help to reduce damage to your skin caused by high levels of free radicals. A diet rich in oranges can thus result in fewer wrinkles and healthier-looking skin as you age. You want to slim down as well as looks younger at the same time, don\'t you? Come check out today meal plan.</string>
-    <string name="tip_greek_yogurt">Greek yogurt can keep you fortified with essential nutrients and even help you lose weight, it has thicker texture with fewer carbohydrates and sugar, and more protein than regular yogurt. Btw, let me tell you a secret, greek yogurt is not only being sold at Greece. Check out our meal plan today on when is the best time having greek yogurt.</string>
-    <string name="tip_celery">Celery is extremely low in calories and can be a valuable food to help you lose weight because of its ability to provide vital nutrients and to help regulate lipid (fat) metabolism, however not everyone can stand the aroma of it, I can\'t. Come check out our meal plan how we make celery taste good today.</string>
-    <string name="tip_prawn">Prawn has no guts, no spine and a head full of shit, but it\'s market value still high because of its nature of having very less calories as compared to most other meats and thus is very good for keeping the calorie count down and loose weight. Come check out our meal plan with prawn today.</string>
-    <string name="tip_garlic">Onion is a powerful detoxifier. It boost your metabolism and eliminates fat from the cells. But try to avoid kiss after having it. Come check out our meal plan with garlic today.</string>
+
+    <string name="tip_avocados">Avocados tend to be high in fiber, about 7% by weight, which is very high compared to most other foods. Fiber can have various important benefits for weight loss and metabolic health. It also certainly has a crush on guacamole. Come check out our diet plan with avocado today.</string>
+
+    <string name="tip_green_bean">Adding green beans to the diet ensures a healthy supply of important nutrients without any extra calories. Also Mr Bean is funny. Tap to view our meal plan today with beans.</string>
+
+    <string name="tip_lettuce">Lettuce has only 12 calories for one shredded cup and zero fat which make it a particularly effective diet food. The nickname of perfect weight loss food is not for nothing. Come check out our meal plan with lettuce today.</string>
+
+    <string name="tip_orange">Free radicals contribute to your body\'s aging process. The high levels of antioxidants found in oranges help to reduce damage to your skin caused by high levels of free radicals. A diet rich in oranges can thus result in fewer wrinkles and healthier-looking skin as you age. You want to slim down as well as looking young at the same time, don\'t you? Come check out today meal plan.</string>
+
+    <string name="tip_greek_yogurt">Greek yogurt can keep you fortified with essential nutrients and even help you to lose weight. It has thicker texture with fewer carbohydrates and sugar, and more protein than regular yogurt. It is also not only sold in Greece. Check out our meal plan today on when is the best time to have greek yogurt.</string>
+
+    <string name="tip_celery">Celery is extremely low in calories and can be a valuable food to help you to lose weight because of its ability to provide vital nutrients and to help regulate fat metabolism. Add plenty of orange to its juice form though if you can’t stand its unique taste. Come check out our meal plan how we make celery taste good today.</string>
+
+    <string name="tip_prawn">Prawn has no guts, no spine and a head full of shit, but calorie count wise it is the fairest among them all meats. Come check out our meal plan with prawn today.</string>
+
+    <string name="tip_garlic">Garlic is a powerful detoxifier. It boosts your metabolism and eliminates fat from the cells. But try to avoid kissing somebody right after having it. Come check out our meal plan with garlic today.</string>
 
     <string name="exercise_quote1">You cannot expect to achieve new goals or move beyond your present circumstances unless you change.</string>
-    <string name="exercise_quote2">Those who think they have not time for bodily exercise will sooner or later have to find time for illness.</string>
+
+    <string name="exercise_quote2">Those who think they have no time for bodily exercise will sooner or later have to find time for illness.</string>
+
     <string name="exercise_quote3">Every day do something that will inch you closer to a better tomorrow.</string>
+
     <string name="exercise_quote4">You will never change your life until you change something you do daily.</string>
+
     <string name="exercise_quote5">A strong positive attitude will create more miracles than any wonder drug.</string>
+
     <string name="exercise_quote6">Progress is impossible without change and those who cannot change their minds cannot change anything.</string>
+
     <string name="exercise_quote7">Believe while others are doubting.</string>
+
     <string name="exercise_quote8">Failure is not fatal. Only failure to get back up is.</string>
+
     <string name="exercise_quote9">You don’t drown by falling in the water. You drown by staying there.</string>
+
     <string name="exercise_quote10">It’s in your moments of decision that your destiny is shaped.</string>
+
     <string name="exercise_quote11">Most people fail, not because of lack of desire, but, because of lack of commitment.</string>
+
     <string name="exercise_quote12">The road to success is dotted with many tempting parking places.</string>
+
     <string name="exercise_quote13">People may doubt what you say, but they will believe what you do.</string>
+
     <string name="exercise_quote14">Movement is a medicine for creating change in a person’s physical, emotional, and mental states.</string>
+
     <string name="exercise_quote15">Mental will is a muscle that needs exercise, just like the muscles of the body.</string>
+
     <string name="exercise_quote16">Believe and act as if it were impossible to fail.</string>
+
     <string name="exercise_quote17">A goal without a plan is just a wish.</string>
+
     <string name="exercise_quote18">If you want to accomplish anything in life, you can’t just sit back and hope it will happen. You’ve got to make it happen.</string>
+
     <string name="exercise_quote19">Motivation is what gets you started. Habit is what keeps you going.</string>
+
     <string name="exercise_quote20">Nothing worthwhile comes easily. Work, continuous work and hard work, is the only way to accomplish results that last.</string>
+
     <string name="exercise_quote21">The only thing that ever sat its way to success was a hen.</string>
+
     <string name="exercise_quote22">There are only two options regarding commitment; you’re either in or you’re out. There’s no such thing as life in-between.</string>
+
     <string name="exercise_quote23">Our health always seems much more valuable after we lose it.</string>
+
     <string name="exercise_quote24">Nothing will work unless you do.</string>
+
     <string name="exercise_quote25">No matter who you are, no matter what you do, you absolutely, positively do have the power to change.</string>
+
     <string name="exercise_quote26">People often say that motivation doesn’t last. Well, neither does bathing – that’s why we recommend it daily.</string>
+
     <string name="exercise_quote27">Put all excuses aside and remember this: YOU are capable.</string>
+
     <string name="exercise_quote28">Whenever you do a thing, act as if all the world were watching.</string>
+
     <string name="exercise_quote29">You are braver than you believe, stronger than you seem, and smarter than you think.</string>
+
     <string name="exercise_quote30">The future is always beginning now.</string>
 
     <string name="drawer_day_counter_numeric">%s/30</string>
+
     <string name="drawer_day_counter_text">Go to Day %s Plan</string>
+
     <string name="version_x">Version: %s</string>
+
     <string name="share">Share</string>
+
     <string name="share_apps_msg">Download 30 days running weight loss + diet to shape your body today! https://play.google.com/store/apps/details?id=com.challenge.bennho.a30days</string>
+
     <string name="support">Support Email</string>
+
     <string name="main_email_address">benjandho@gmail.com</string>
 
     <string name="pro">PRO</string>
+
     <string name="day_X">DAY %s</string>
+
     <string name="end">End</string>
+
     <string name="x_kg">%sKg</string>
+
     <string name="x_cm">%sCm</string>
+
     <string name="x_pounds">%sLbs</string>
+
     <string name="x_foot_x_inch">%1$s\'%2$s\'\'</string>
+
     <string name="x_kcal">%sK/cal</string>
+
     <string name="metric_units">Kg/Cm</string>
+
     <string name="american_units">Pounds/Inches</string>
+
     <string name="gender_male">Male</string>
+
     <string name="gender_female">Female</string>
+
     <string name="completed">COMPLETED</string>
+
     <string name="incomplete">INCOMPLETE</string>
+
     <string name="done">DONE</string>
+
     <string name="min_s">Min(s)</string>
+
     <string name="kcal">K/cal</string>
+
     <string name="locked">Locked</string>
 
     <string name="meal_0_0_name">Ham Sandwich</string>
+
     <string name="meal_0_1_name">Nuts + Tea</string>
-    <string name="meal_0_2_name">Brown Rice with Grill Chicken and Brocolli</string>
+
+    <string name="meal_0_2_name">Brown Rice with Grilled Chicken and Broccoli</string>
+
     <string name="meal_0_3_name">Apple</string>
+
     <string name="meal_0_4_name">Steam Egg White With Mushroom</string>
+
     <string name="meal_1_0_name">Omelette and Whole Wheat Bread + Coffee</string>
+
     <string name="meal_1_1_name">Banana</string>
+
     <string name="meal_1_2_name">Baked Salmon with Potato and Tomato</string>
+
     <string name="meal_1_3_name">Papaya</string>
+
     <string name="meal_1_4_name">Boiled Egg White and Garden Salad</string>
+
     <string name="meal_2_0_name">Berries Oatmeal</string>
+
     <string name="meal_2_1_name">Nuts + Tea</string>
+
     <string name="meal_2_2_name">Brown Rice with Steam Lean Pork Meat and Spinach</string>
+
     <string name="meal_2_3_name">Apple</string>
-    <string name="meal_2_4_name">Steam Chicken with Brocolli</string>
+
+    <string name="meal_2_4_name">Steam Chicken with Broccoli</string>
+
     <string name="meal_3_0_name">Egg White Sandwich + Coffee</string>
+
     <string name="meal_3_1_name">Orange</string>
+
     <string name="meal_3_2_name">Grill Chicken Breast with Potato and Bell Pepper</string>
+
     <string name="meal_3_3_name">Banana</string>
+
     <string name="meal_3_4_name">Steam Dory Fish with Green Beans</string>
+
     <string name="meal_4_0_name">Ham and Lettuce Wrap</string>
+
     <string name="meal_4_1_name">Berries Greek Yogurt + Green Tea</string>
+
     <string name="meal_4_2_name">Chicken Bolognese Spaghetti</string>
+
     <string name="meal_4_3_name">Papaya</string>
+
     <string name="meal_4_4_name">Boiled Egg White and Spinach</string>
-    <string name="meal_5_0_name">Oatmeal and Scramble Egg White</string>
+
+    <string name="meal_5_0_name">Oatmeal and Scrambled Egg White</string>
+
     <string name="meal_5_1_name">Nut + Tea</string>
+
     <string name="meal_5_2_name">Brown Rice with Stir-fry Chicken and Celery</string>
+
     <string name="meal_5_3_name">Apple</string>
+
     <string name="meal_5_4_name">Steam Prawn with Garlic</string>
+
     <string name="meal_6_0_name">Boiled Egg and Toast + Coffee</string>
+
     <string name="meal_6_1_name">Banana</string>
+
     <string name="meal_6_2_name">Grill Steak with Potato and Asparagus</string>
+
     <string name="meal_6_3_name">Tomato Juice</string>
+
     <string name="meal_6_4_name">Garden Salad</string>
+
     <string name="meal_7_0_name">Berries Overnight Oat</string>
+
     <string name="meal_7_1_name">"Nuts + Tea "</string>
-    <string name="meal_7_2_name">Grill Tuna with Mashed Potato and Brocolli</string>
+
+    <string name="meal_7_2_name">Grill Tuna with Mashed Potato and Broccoli</string>
+
     <string name="meal_7_3_name">Guava</string>
+
     <string name="meal_7_4_name">Boiled Egg with Celery and Carrot</string>
+
     <string name="meal_8_0_name">Chicken Sandwich + Coffee</string>
+
     <string name="meal_8_1_name">Papaya</string>
+
     <string name="meal_8_2_name">Brown Rice with Baked Duck Meat and Celery</string>
+
     <string name="meal_8_3_name">Apple Juice</string>
+
     <string name="meal_8_4_name">Steam Tilapia with Spring Onion</string>
+
     <string name="meal_9_0_name">Blueberry Cereal Greek Yogurt</string>
+
     <string name="meal_9_1_name">Orange + Tea</string>
+
     <string name="meal_9_2_name">Steam Lean Pork Meat with Carrot and Spinach</string>
+
     <string name="meal_9_3_name">Banana</string>
+
     <string name="meal_9_4_name">Steam Tofu with Mushroom and Minced Chicken</string>
+
     <string name="meal_10_0_name">Peanut Butter Toast</string>
+
     <string name="meal_10_1_name">Apple + Green Tea</string>
+
     <string name="meal_10_2_name">Brown Rice with Steam Chicken Breast and Cucumber</string>
+
     <string name="meal_10_3_name">Guava</string>
+
     <string name="meal_10_4_name">Steam Dory Fish and Green Beans</string>
+
     <string name="meal_11_0_name">Oatmeal and Boiled Egg White</string>
+
     <string name="meal_11_1_name">Orange + Tea</string>
+
     <string name="meal_11_2_name">Baked Salmon with Potato and Bell Pepper</string>
-    <string name="meal_11_3_name">Berries</string>
+
+    <string name="meal_11_3_name">Strawberries/Blueberries</string>
+
     <string name="meal_11_4_name">Garden Salad</string>
+
     <string name="meal_12_0_name">Omelette with Whole Wheat Bread + Coffee</string>
+
     <string name="meal_12_1_name">Banana Greek Yogurt</string>
+
     <string name="meal_12_2_name">Beef Bolognese Spaghetti</string>
+
     <string name="meal_12_3_name">Watermelon</string>
+
     <string name="meal_12_4_name">Boiled Egg with Tomato and Carrot</string>
+
     <string name="meal_13_0_name">Blueberry Pancake</string>
+
     <string name="meal_13_1_name">Nuts + Tea</string>
+
     <string name="meal_13_2_name">Brown Rice with Stir-fry Prawn and Spinach</string>
+
     <string name="meal_13_3_name">Apple</string>
+
     <string name="meal_13_4_name">Chicken Breast Salad</string>
+
     <string name="meal_14_0_name">Boiled Egg White with Toast + Coffee</string>
+
     <string name="meal_14_1_name">Guava</string>
+
     <string name="meal_14_2_name">Baked Lamb Steak with Green Beans and Potato</string>
+
     <string name="meal_14_3_name">Orange Juice</string>
+
     <string name="meal_14_4_name">Steam Squid with Lime Sauce</string>
+
     <string name="meal_15_0_name">Egg White Salad</string>
+
     <string name="meal_15_1_name">Berries + Tea</string>
+
     <string name="meal_15_2_name">Steam Dory Fish with Potato and Green Beans</string>
+
     <string name="meal_15_3_name">Banana</string>
+
     <string name="meal_15_4_name">Boiled Egg with Asparagus</string>
+
     <string name="meal_16_0_name">Salmon Cucumber Toast</string>
+
     <string name="meal_16_1_name">Nuts + Tea</string>
+
     <string name="meal_16_2_name">Brown Rice with Stir-fry Chicken and Spring Onion</string>
+
     <string name="meal_16_3_name">Berries</string>
+
     <string name="meal_16_4_name">Steam Egg with Mushroom</string>
+
     <string name="meal_17_0_name">Ham Omelette</string>
+
     <string name="meal_17_1_name">Banana + Tea</string>
+
     <string name="meal_17_2_name">Baked Salmon with Corn and Spinach</string>
+
     <string name="meal_17_3_name">Apple</string>
+
     <string name="meal_17_4_name">Steam Prawn with Garlic</string>
-    <string name="meal_18_0_name">Oatmeal and Scramble Egg</string>
+
+    <string name="meal_18_0_name">Oatmeal and Scrambled Egg</string>
+
     <string name="meal_18_1_name">Nuts + Tea</string>
+
     <string name="meal_18_2_name">Chicken Sandwich with Lettuce and Tomato</string>
+
     <string name="meal_18_3_name">Guava</string>
+
     <string name="meal_18_4_name">Garden Salad</string>
+
     <string name="meal_19_0_name">Avocado Chicken Wrap</string>
+
     <string name="meal_19_1_name">Orange + Tea</string>
+
     <string name="meal_19_2_name">Spaghetti with Prawn and Asparagus</string>
+
     <string name="meal_19_3_name">Banana</string>
+
     <string name="meal_19_4_name">Steam Tofu with Minced Chicken and Mushroom</string>
+
     <string name="meal_20_0_name">Peanut Butter Waffle</string>
+
     <string name="meal_20_1_name">Apple</string>
-    <string name="meal_20_2_name">Stir-fry Beef with Brocolli and Carrot</string>
+
+    <string name="meal_20_2_name">Stir-fry Beef with Broccoli and Carrot</string>
+
     <string name="meal_20_3_name">Papaya</string>
+
     <string name="meal_20_4_name">Boiled Egg White and Garden Salad</string>
+
     <string name="meal_21_0_name">Banana Nut Oatmeal</string>
+
     <string name="meal_21_1_name">Apple and Tea</string>
-    <string name="meal_21_2_name">Roasted Lamb with Carrot and Brocolli</string>
+
+    <string name="meal_21_2_name">Roasted Lamb with Carrot and Broccoli</string>
+
     <string name="meal_21_3_name">Papaya</string>
+
     <string name="meal_21_4_name">Boiled Egg White and Asparagus</string>
+
     <string name="meal_22_0_name">Salmon Egg Toast</string>
+
     <string name="meal_22_1_name">Nuts + Tea</string>
-    <string name="meal_22_2_name">Brown Rice with Grill Tuna and Bell Pepper</string>
+
+    <string name="meal_22_2_name">Brown Rice with Grilled Tuna and Bell Pepper</string>
+
     <string name="meal_22_3_name">Banana</string>
+
     <string name="meal_22_4_name">Chicken Breast Salad</string>
+
     <string name="meal_23_0_name">Ham Omelette</string>
+
     <string name="meal_23_1_name">Guava + Tea</string>
+
     <string name="meal_23_2_name">Baked Salmon with Mashed Potato and Asparagus</string>
+
     <string name="meal_23_3_name">Berries</string>
+
     <string name="meal_23_4_name">Steam Egg with Mushroom</string>
+
     <string name="meal_24_0_name">Banana Kiwi Overnight Oat</string>
+
     <string name="meal_24_1_name">Nuts + Tea</string>
+
     <string name="meal_24_2_name">Roasted Chicken with Potato and Carrot</string>
+
     <string name="meal_24_3_name">Banana</string>
+
     <string name="meal_24_4_name">Garden Salad</string>
+
     <string name="meal_25_0_name">Avocado Toast with Egg + Coffee</string>
+
     <string name="meal_25_1_name">Orange</string>
-    <string name="meal_25_2_name">Brown Rice with Steam Dory Fish and Brocolli</string>
+
+    <string name="meal_25_2_name">Brown Rice with Steam Dory Fish and Broccoli</string>
+
     <string name="meal_25_3_name">Apple</string>
+
     <string name="meal_25_4_name">Boiled Egg White and Spinach</string>
+
     <string name="meal_26_0_name">Scramble Egg and Whole Wheat Bread + Coffee</string>
+
     <string name="meal_26_1_name">Watermelon</string>
+
     <string name="meal_26_2_name">Brown Rice with Stir-fry Prawn and Squid and Asparagus</string>
+
     <string name="meal_26_3_name">Banana</string>
+
     <string name="meal_26_4_name">Steam Tofu with Minced Chicken and Mushroom</string>
+
     <string name="meal_27_0_name">Banana Pancake</string>
+
     <string name="meal_27_1_name">Berries and Tea</string>
+
     <string name="meal_27_2_name">Grill Steak with Bell Pepper</string>
+
     <string name="meal_27_3_name">Carrot Juice</string>
+
     <string name="meal_27_4_name">Prawn Salad</string>
+
     <string name="meal_28_0_name">Berries Overnight Oat</string>
+
     <string name="meal_28_1_name">Guava</string>
+
     <string name="meal_28_2_name">Brown Rice with Baked Salmon and Spinach</string>
+
     <string name="meal_28_3_name">Tomato Juice</string>
+
     <string name="meal_28_4_name">Egg White and Garden Salad</string>
-    <string name="meal_29_0_name">Oatmeal and Scramble Egg White</string>
+
+    <string name="meal_29_0_name">Oatmeal and Scrambled Egg White</string>
+
     <string name="meal_29_1_name">Apple</string>
-    <string name="meal_29_2_name">Brown Rice with Roasted Chicken and Brocolli</string>
+
+    <string name="meal_29_2_name">Brown Rice with Roasted Chicken and Broccoli</string>
+
     <string name="meal_29_3_name">Banana</string>
+
     <string name="meal_29_4_name">Boiled Egg White</string>
+
     <string name="meal_0_1_instruction">A handful of any kind of nut and tea without sugar</string>
+
     <string name="meal_0_2_instruction">Grill with olive oil after remove the chicken skin and fat</string>
+
     <string name="meal_0_4_instruction">4 egg white and 1 egg yolk</string>
+
     <string name="meal_1_4_instruction">Without Dressing</string>
+
     <string name="meal_2_1_instruction">A handful of any kind of nut and tea without sugar</string>
+
     <string name="meal_3_2_instruction">Grill with olive oil after remove the chicken skin and fat</string>
+
     <string name="meal_5_1_instruction">A handful of any kind of nut and tea without sugar</string>
+
     <string name="meal_5_2_instruction">Stir-fry with olive oil</string>
+
     <string name="meal_6_2_instruction">Remove the fat and grill with olive oil</string>
+
     <string name="meal_6_4_instruction">Without Dressing</string>
+
     <string name="meal_7_1_instruction">A handful of any kind of nut and tea without sugar</string>
+
     <string name="meal_7_2_instruction">Grill with olive oil</string>
+
     <string name="meal_8_2_instruction">Remove the duck skin</string>
+
     <string name="meal_8_4_instruction">You can replace the fish with dory fish</string>
+
     <string name="meal_10_0_instruction">Two teaspoon of peanut butter</string>
+
     <string name="meal_11_4_instruction">Without dressing</string>
+
     <string name="meal_12_0_instruction">4 egg white and 1 egg yolk</string>
+
     <string name="meal_13_1_instruction">A handful of any kind of nut and tea without sugar</string>
+
     <string name="meal_13_2_instruction">Stir-fry with olive oil</string>
+
     <string name="meal_13_4_instruction">Without Dressing</string>
+
     <string name="meal_15_0_instruction">Natural Greek Yogurt Dressing</string>
+
     <string name="meal_16_1_instruction">A handful of any kind of nut and tea without sugar</string>
+
     <string name="meal_16_2_instruction">Stir-fry with olive oil</string>
+
     <string name="meal_16_4_instruction">4 egg white and 1 egg yolk</string>
+
     <string name="meal_18_1_instruction">A handful of any kind of nut and tea without sugar</string>
+
     <string name="meal_18_2_instruction">Without Sauce</string>
+
     <string name="meal_20_0_instruction">2 teaspoon peanut butter</string>
+
     <string name="meal_20_2_instruction">Stir-fry with olive oil</string>
+
     <string name="meal_20_4_instruction">Without Dressing</string>
+
     <string name="meal_22_2_instruction">Grill with olive oil</string>
+
     <string name="meal_22_4_instruction">Without skin and dressing</string>
+
     <string name="meal_23_4_instruction">4 egg white 1 egg yolk</string>
+
     <string name="meal_24_2_instruction">Remove chicken skin and fat</string>
+
     <string name="meal_24_4_instruction">Without dressing</string>
+
     <string name="meal_26_2_instruction">Stir-fry with olive oil</string>
+
     <string name="meal_27_0_instruction">Without Sauce</string>
+
     <string name="meal_27_2_instruction">Grill with olive oil</string>
+
     <string name="meal_27_4_instruction">With lime dressing</string>
+
     <string name="meal_28_4_instruction">Without Dressing</string>
+
     <string name="meal_29_2_instruction">Remove chicken fat and skin</string>
+
     <string name="meal_29_4_instruction">6 egg white</string>
 
-
     <string name="tip_day_0">You SHOULD NOT add sugar to your tea and coffee within 30 days!</string>
+
     <string name="tip_day_1">Always remember to remove skin and fat from the meat</string>
+
     <string name="tip_day_2">Take one tablespoon of extra virgin olive oil in the morning helps with weight loss</string>
-    <string name="tip_day_3">Cook with olive oil when you\'re tying to grill the food</string>
-    <string name="tip_day_4">Sugar and artificial sweeteners is the main factor of obese</string>
+
+    <string name="tip_day_3">Cook with olive oil when you\'re trying to grill the food</string>
+
+    <string name="tip_day_4">Sugar is the main cause of obesity</string>
+
     <string name="tip_day_5">Avoid salty food, it will makes your body bloated</string>
+
     <string name="tip_day_6">Drink more water can boost your metabolism to burn fat</string>
+
     <string name="tip_day_7">Caffeine in coffee and tea can boost metabolism, drink 1 to 2 cup everyday to speed up your weight loss progress</string>
+
     <string name="tip_day_8">You are what you eat, so choose your food wisely</string>
+
     <string name="tip_day_9">Get a good night’s sleep, every night. Poor sleep is one of the strongest risk factors for weight gain</string>
+
     <string name="tip_day_10">Stress may increase levels of stress hormones in your body, this can cause increased hunger and result in weight gain</string>
+
     <string name="tip_day_11">Fast eaters gain more weight over time. Eating slowly makes you feel more full and boosts weight-reducing hormones</string>
+
     <string name="tip_day_12">Eat spicy food, it can actually help you cut back on calories</string>
+
     <string name="tip_day_13">Sugar-free product often contain unhealthy sugar alternatives</string>
+
     <string name="tip_day_14">Always prepare food by yourself so you\'ll know what you\'re eating</string>
+
     <string name="tip_day_15">Snack on a small handful of nuts helps stave off hunger and keeps your metabolism stoked</string>
+
     <string name="tip_day_16">Always choose whole-grain for the carb</string>
+
     <string name="tip_day_17">An extra tablespoon of salad dressing can add 75 to 100 calories</string>
+
     <string name="tip_day_18">Breakfast skippers weigh more than breakfast eaters</string>
-    <string name="tip_day_19">Think about your waistline instead of the food waste</string>
+
+    <string name="tip_day_19">Think about your waistline before ordering those extra fries.</string>
+
     <string name="tip_day_20">Try to get out of the habit of always eating something while you are sitting and relaxing,</string>
-    <string name="tip_day_21">If you replaced a 20oz bottle of soda with water daily, you would easily lose up to 35 pounds in one year</string>
-    <string name="tip_day_22">Eat more vegetable, it contain lot of fiber that help with weight loss</string>
+
+    <string name="tip_day_21">If you replace a 20oz bottle of soda with water daily, you would easily lose up to 35 pounds in one year</string>
+
+    <string name="tip_day_22">Eat more vegetables, it contains a lot of fibers that help with weight loss</string>
+
     <string name="tip_day_23">Beer contains rapidly digested carbs that shut down fat burning</string>
+
     <string name="tip_day_24">Stop eating potato chips, popcorn, cookies, candy, ice cream, cakes</string>
-    <string name="tip_day_25">Avoid fast food, most of them are unhealthy and contain lot of calories</string>
-    <string name="tip_day_26">Taking drug or pill to lose weight destroy your health at the same time</string>
-    <string name="tip_day_27">If you return to living exactly the way did when you gained weight, don’t be surprised when the excess weight returns. It will</string>
+
+    <string name="tip_day_25">Avoid fast food, most of them are unhealthy and contain lots of calories</string>
+
+    <string name="tip_day_26">Exercise to lose weight, not via medication!</string>
+
+    <string name="tip_day_27">If you return to living exactly the way you did when you are obese, don’t be surprised when the excess weight returns. It will</string>
+
     <string name="tip_day_28">Weight loss effect doesn\'t last forever unless you get rid of the bad habit</string>
-    <string name="tip_day_29">Always remind yourself how hard you have come this far</string>
+
+    <string name="tip_day_29">Always remind yourself how hard you have worked to come this far</string>
+
     <string name="ingredient_0_0">Apple</string>
+
     <string name="ingredient_0_1">Asparagus</string>
+
     <string name="ingredient_0_2">Banana</string>
+
     <string name="ingredient_0_3">Bell Pepper</string>
+
     <string name="ingredient_0_4">Berries</string>
+
     <string name="ingredient_0_5">Bolognese Sauce</string>
-    <string name="ingredient_0_6">Brocolli</string>
+
+    <string name="ingredient_0_6">Broccoli</string>
+
     <string name="ingredient_0_7">Brown Rice</string>
+
     <string name="ingredient_0_8">Celery</string>
+
     <string name="ingredient_0_9">Chicken Breast</string>
+
     <string name="ingredient_0_10">Coffee</string>
+
     <string name="ingredient_0_11">Dory Fish</string>
+
     <string name="ingredient_0_12">Egg</string>
+
     <string name="ingredient_0_13">Garlic</string>
+
     <string name="ingredient_0_14">Green Beans</string>
+
     <string name="ingredient_0_15">Lean Ham</string>
+
     <string name="ingredient_0_16">Lettuce</string>
+
     <string name="ingredient_0_17">Mushroom</string>
+
     <string name="ingredient_0_18">Natural Greek Yogurt</string>
+
     <string name="ingredient_0_19">Nuts</string>
+
     <string name="ingredient_0_20">Oatmeal</string>
+
     <string name="ingredient_0_21">Olive Oil</string>
+
     <string name="ingredient_0_22">Orange</string>
+
     <string name="ingredient_0_23">Papaya</string>
+
     <string name="ingredient_0_24">Lean Pork Meat</string>
+
     <string name="ingredient_0_25">Potato</string>
+
     <string name="ingredient_0_26">Prawn</string>
+
     <string name="ingredient_0_27">Salad</string>
+
     <string name="ingredient_0_28">Salmon</string>
+
     <string name="ingredient_0_29">Spinach</string>
+
     <string name="ingredient_0_30">Steak</string>
+
     <string name="ingredient_0_31">Tea</string>
+
     <string name="ingredient_0_32">Tomato</string>
+
     <string name="ingredient_0_33">Whole Wheat Bread</string>
+
     <string name="ingredient_0_34">Whole Wheat Spaghetti</string>
+
     <string name="ingredient_0_35">Whole Wheat Wrap</string>
+
     <string name="ingredient_1_0">Apple</string>
+
     <string name="ingredient_1_1">Banana</string>
+
     <string name="ingredient_1_2">Bell Pepper</string>
+
     <string name="ingredient_1_3">Berries</string>
-    <string name="ingredient_1_4">Brocolli</string>
+
+    <string name="ingredient_1_4">Broccoli</string>
+
     <string name="ingredient_1_5">Brown Rice</string>
+
     <string name="ingredient_1_6">Carrot</string>
+
     <string name="ingredient_1_7">Celery</string>
+
     <string name="ingredient_1_8">Cereal</string>
+
     <string name="ingredient_1_9">Chicken Breast</string>
+
     <string name="ingredient_1_10">Coffee</string>
+
     <string name="ingredient_1_11">Cucumber</string>
+
     <string name="ingredient_1_12">Dory Fish</string>
+
     <string name="ingredient_1_13">Duck Meat</string>
+
     <string name="ingredient_1_14">Egg</string>
+
     <string name="ingredient_1_15">Green Beans</string>
+
     <string name="ingredient_1_16">Guava</string>
+
     <string name="ingredient_1_17">Lettuce</string>
+
     <string name="ingredient_1_18">Minced Chicken</string>
+
     <string name="ingredient_1_19">Mushroom</string>
+
     <string name="ingredient_1_20">Natural Greek Yogurt</string>
+
     <string name="ingredient_1_21">Nuts</string>
+
     <string name="ingredient_1_22">Oatmeal</string>
+
     <string name="ingredient_1_23">Orange</string>
+
     <string name="ingredient_1_24">Pancake</string>
+
     <string name="ingredient_1_25">Papaya</string>
+
     <string name="ingredient_1_26">Peanut Butter</string>
+
     <string name="ingredient_1_27">Lean Pork Meat</string>
+
     <string name="ingredient_1_28">Potato</string>
+
     <string name="ingredient_1_29">Prawn</string>
+
     <string name="i_apple">Apple</string>
+
     <string name="i_asparagus">Asparagus</string>
+
     <string name="i_banana">Banana</string>
+
     <string name="i_avocado">Avocado</string>
+
     <string name="i_bell_pepper">Bell Pepper</string>
+
     <string name="i_berries">Berries</string>
+
     <string name="i_bolognese_sauce">Bolognese Sauce</string>
-    <string name="i_brocolli">Brocolli</string>
+
+    <string name="i_brocolli">Broccoli</string>
+
     <string name="i_brown_rice">Brown Rice</string>
+
     <string name="i_celery">Celery</string>
+
     <string name="i_chicken_breast">Chicken Breast</string>
+
     <string name="i_coffee">Coffee</string>
+
     <string name="i_dory_fish">Dory Fish</string>
+
     <string name="i_egg">Egg</string>
+
     <string name="i_garlic">Garlic</string>
+
     <string name="i_green_beans">Green Beans</string>
+
     <string name="i_lean_ham">Lean Ham</string>
+
     <string name="i_lettuce">Lettuce</string>
+
     <string name="i_mushroom">Mushroom</string>
+
     <string name="i_nuts">Nuts</string>
+
     <string name="i_oatmeal">Oatmeal</string>
+
     <string name="i_olive_oil">Olive Oil</string>
+
     <string name="i_orange">Orange</string>
+
     <string name="i_papaya">Papaya</string>
+
     <string name="i_lean_pork_meat">Lean Pork Meat</string>
+
     <string name="i_potato">Potato</string>
+
     <string name="i_prawn">Prawn</string>
+
     <string name="i_salad">Salad</string>
+
     <string name="i_natural_greek_yogurt">Natural Greek Yogurt</string>
+
     <string name="i_salmon">Salmon</string>
+
     <string name="i_spinach">Spinach</string>
+
     <string name="i_steak">Steak</string>
+
     <string name="i_tea">Tea</string>
+
     <string name="i_tomato">Tomato</string>
+
     <string name="i_whole_wheat_bread">Whole Wheat Bread</string>
+
     <string name="i_whole_wheat_spaghetti">Whole Wheat Spaghetti</string>
+
     <string name="i_whole_wheat_wrap">Whole Wheat Wrap</string>
+
     <string name="i_carrot">Carrot</string>
+
     <string name="i_cereal">Cereal</string>
+
     <string name="i_cucumber">Cucumber</string>
+
     <string name="i_duck_meat">Duck Meat</string>
+
     <string name="i_guava">Guava</string>
+
     <string name="i_minced_chicken">Minced Chicken</string>
+
     <string name="i_pancake">Pancake</string>
+
     <string name="i_peanut_butter">Peanut Butter</string>
+
     <string name="i_spring_onion">Spring Onion</string>
+
     <string name="i_tilapia">Tilapia</string>
+
     <string name="i_tofu">Tofu</string>
+
     <string name="i_tuna">Tuna</string>
+
     <string name="i_watermelon">Watermelon</string>
+
     <string name="i_waffle">Waffle</string>
+
     <string name="i_squid">Squid</string>
+
     <string name="i_corn">Corn</string>
+
     <string name="i_lamb">Lamb</string>
+
     <string name="i_lime">Lime</string>
+
     <string name="i_kiwi">Kiwi</string>
+
     <string name="x_serving">%s serv</string>
+
     <string name="x_pack">%s pack</string>
+
     <string name="x_unit">%s unit</string>
+
     <string name="x_bottle">%s bottle</string>
 
     <string name="prev">Prev</string>
+
     <string name="next">Next</string>
+
     <string name="skip">Skip</string>
+
     <string name="open">Open</string>
+
     <string name="close">Close</string>
 
     <string name="warm_up_state">Warm Up</string>
+
     <string name="fast_walk_state">Fast Walk</string>
+
     <string name="run_state">Run</string>
+
     <string name="sprint_state">Sprint</string>
+
     <string name="walk_state">Walk</string>
+
     <string name="cool_down_state">Cool Down</string>
+
     <string name="speech_warm_up">Warm Up Now</string>
+
     <string name="speech_fast_walk">Fast Walk Now</string>
+
     <string name="speech_run">Run Now</string>
+
     <string name="speech_sprint">Sprint Now</string>
+
     <string name="speech_walk">Walk Now</string>
+
     <string name="speech_cool_down">Cool Down Now</string>
-    <string name="speech_running_finished">Exercise finished</string>
+
+    <string name="speech_running_finished">Exercise Done</string>
 
     <string name="notf_running_finished_title">Good Job!</string>
-    <string name="notf_running_finished_content">Completed exercise, click for result.</string>
+
+    <string name="notf_running_finished_content">Completed run, click for result.</string>
+
     <string name="notf_run_reminder_title">Remember to run! (Day %s)</string>
+
     <string name="notf_run_reminder_action_run">Run Now</string>
+
     <string name="notf_run_reminder_action_settings">Settings</string>
+
     <string name="notf_meal_reminder_title">Meal day %1$s - %2$s</string>
+
     <string name="notf_meal_reminder_action_view">View Plan</string>
+
     <string name="notf_meal_reminder_action_settings">Settings</string>
 
     <string name="pro_version_title">Pro Version</string>
-    <string name="pro_version_content">Upgrade to pro version now to view all meal plans and remove ads.</string>
-    <string name="running_locked_title">Exercise Locked</string>
-    <string name="running_locked_content">Please finish all previous running exercise plans first!</string>
 
+    <string name="pro_version_content">Upgrade to pro version now to view all meal plans and remove ads.</string>
+
+    <string name="running_locked_title">Run Plan Locked</string>
+
+    <string name="running_locked_content">Please finish all previous running exercise plan first!</string>
 
     <string name="itype_fruits">Fruits</string>
     <string name="itype_vege">Vegetable</string>
@@ -574,12 +1103,7 @@
     <string name="itype_carbo">Carbohydrate</string>
     <string name="itype_others">Others</string>
 
-    <string name="intro">This is a weight loss program that cooperate with HIIT exercise and nutrition diet.
-                            We will guide you step by step through the entire weight loss process and show you how to diet properly to enhance the effect of fat loss.
-                            HIIT is a exercise that combine high intensity with interval training which speeds your metabolic rate and translates into a metabolism boost for up to 24 hours after a complete HIIT routine.
-                            This means you’ll still be burning fat even after you’ve finish the run.
-                            The diet plan form by lots of high fiber and protein food that actually aid you in weight loss.
-                            No more starvation diet that will destroy your health, metabolism and exercise effort.</string>
+
 
 
 

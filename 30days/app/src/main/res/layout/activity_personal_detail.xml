@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/rootView">
 
     <include
         android:id="@+id/my_toolbar"
@@ -234,29 +235,17 @@
 
     </ScrollView>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
+    <Button
+        android:text="@string/done"
+        android:id="@+id/btnDone"
         android:layout_height="50dp"
-        android:id="@+id/layoutButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <Button
-            android:text="@string/done"
-            android:id="@+id/btnDone"
-            android:layout_height="50dp"
-            android:textSize="18sp"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:background="@color/colorAction"
-            android:textColor="@color/colorBtnWord"
-            tools:layout_editor_absoluteX="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_width="match_parent"
-            android:layout_weight="1" />
-
-    </LinearLayout>
+        android:textSize="18sp"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:background="@color/colorAction"
+        android:textColor="@color/colorBtnWord"
+        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent" />
 
     <RelativeLayout
         android:layout_width="match_parent"

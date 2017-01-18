@@ -32,7 +32,8 @@ public class NotificationShower {
     public static void showRunReminder(Context context, int dayNumber){
 
         String title = String.format(context.getString(R.string.notf_run_reminder_title), String.valueOf(dayNumber));
-        String content = AndroidUtils.getStringByIdentifier(context, "exercise_quote" + dayNumber);
+        String content = AndroidUtils.getStringByIdentifier(context, "exercise_quote" + dayNumber)
+                                + " #" + Integers.random(0, 9999);
 
         NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
         bigTextStyle.setBigContentTitle(title);
@@ -78,7 +79,7 @@ public class NotificationShower {
         Notification notification = builder.build();
 
         NotificationManager nManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        nManager.notify(RunReminderId, notification);
+        nManager.notify(RunReminderId + Integers.random(1, 9999), notification);
 
     }
 
@@ -87,7 +88,7 @@ public class NotificationShower {
 
         String title = String.format(context.getString(R.string.notf_meal_reminder_title),
                 String.valueOf(dayNumber), dishModelWithTip.getDishName());
-        String content = dishModelWithTip.getTip();
+        String content = dishModelWithTip.getTip() + " #" + Integers.random(0, 9999);
 
         NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
         bigTextStyle.setBigContentTitle(title);
@@ -134,7 +135,7 @@ public class NotificationShower {
         Notification notification = builder.build();
 
         NotificationManager nManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        nManager.notify(MealReminderId, notification);
+        nManager.notify(MealReminderId + Integers.random(1, 9999), notification);
 
     }
 

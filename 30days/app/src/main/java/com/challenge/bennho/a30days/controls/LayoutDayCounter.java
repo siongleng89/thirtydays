@@ -109,6 +109,9 @@ public class LayoutDayCounter extends RelativeLayout {
         if(currentDayNumber > 30){
             currentDayNumber = 30;
         }
+        else if(currentDayNumber <= 0){
+            return;
+        }
 
 
         if(currentDayNumber < maxDayNumber){
