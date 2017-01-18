@@ -58,7 +58,10 @@
             android:name=".activities.RunningActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity android:name=".activities.ExerciseResultActivity" />
+
+        <activity android:name=".activities.ExerciseResultActivity"
+            android:launchMode="singleInstance"/>
+
         <activity
             android:name=".activities.HistoryActivity"
             android:label="@string/avty_history_title"

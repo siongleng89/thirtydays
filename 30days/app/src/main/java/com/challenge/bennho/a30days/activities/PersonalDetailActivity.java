@@ -1,10 +1,12 @@
 package com.challenge.bennho.a30days.activities;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -12,15 +14,18 @@ import android.widget.LinearLayout;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.LayoutSwitchControl;
 import com.challenge.bennho.a30days.enums.GenderEnum;
+import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.CalculationHelper;
+import com.challenge.bennho.a30days.helpers.Logs;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.Strings;
+import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.User;
 
 public class PersonalDetailActivity extends MyActivity {
 
     private Button btnDone;
-    private LinearLayout layoutHeightCM, layoutHeighFeet;
+    private LinearLayout rootView, layoutHeightCM, layoutHeighFeet;
     private LayoutSwitchControl switchControlUnit ,switchControlGender;
     private EditText txtWeight, txtHeightCM, txtHeightFeet, txtHeightInch, txtAge;
     private boolean isInitial;
@@ -40,6 +45,7 @@ public class PersonalDetailActivity extends MyActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
+        rootView = (LinearLayout) findViewById(R.id.rootView);
         btnDone = (Button) findViewById(R.id.btnDone);
         switchControlUnit = (LayoutSwitchControl) findViewById(R.id.switchControlUnit);
         switchControlGender = (LayoutSwitchControl) findViewById(R.id.switchControlGender);
@@ -231,6 +237,9 @@ public class PersonalDetailActivity extends MyActivity {
                 validateSubmit();
             }
         });
+
     }
+
+
 
 }

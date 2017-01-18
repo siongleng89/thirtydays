@@ -286,24 +286,43 @@
                         android:gravity="center">
 
                         <TextView
-                            android:text="@string/day_X"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/colorBtnWord"
-                            android:textStyle="normal|bold|italic"
-                            android:textSize="22sp"
-                            android:gravity="center"
-                            android:layout_marginBottom="5dp"
-                            android:id="@+id/txtDayNumber2" />
-
-                        <TextView
-                            android:text="@string/avty_main_btn_running_plan"
+                            android:text="@string/avty_main_btn_running_plan1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorBtnWord"
                             android:textStyle="normal|bold|italic"
                             android:textSize="22sp"
                             android:gravity="center" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:text="@string/day_X"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBtnWord"
+                                android:textStyle="normal|bold|italic"
+                                android:textSize="22sp"
+                                android:gravity="center"
+                                android:id="@+id/txtDayNumber2" />
+
+                            <TextView
+                                android:text="@string/avty_main_btn_running_plan2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBtnWord"
+                                android:textStyle="normal|bold|italic"
+                                android:textSize="22sp"
+                                android:gravity="center"
+                                android:layout_marginLeft="5dp" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
 
                     <RelativeLayout

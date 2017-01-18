@@ -41,7 +41,7 @@ public class AllReminderHelper {
 
             boolean enabledMealNotification = PreferenceUtils.getBoolean(context, PreferenceType.EnableMealPlanNotification);
             if(enabledMealNotification){
-                int reminderTime = 8;       //remind meal at 8am always
+                int reminderTime = 9;       //remind meal at 9am always
 
                 for(int i = 1; i < 7; i++){
                     setReminderForMealDay(i, reminderTime, context);

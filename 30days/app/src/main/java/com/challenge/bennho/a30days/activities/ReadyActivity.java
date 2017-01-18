@@ -127,6 +127,7 @@ public class ReadyActivity extends MyActivity {
         Intent serviceIntent = new Intent(this, ExerciseService.class);
         stopService(serviceIntent);
         PreferenceUtils.delete(this, PreferenceType.ExerciseRecordSaved);
+        PreferenceUtils.delete(this, PreferenceType.ExerciseRunning);
 
         Intent intent = new Intent(this, RunningActivity.class);
         intent.putExtra("dayPlan", dayPlan);

@@ -94,6 +94,7 @@ public class MainActivity extends MyActivity {
         userMaxDay = user.getCurrentDay();
 
         dayCounterControl.setMaxDayNumber(userMaxDay);
+        dayCounterControl.updateDayNumber(currentSelectedDay);
 
         txtCalories.setText(String.format(getString(R.string.x_kcal), String.valueOf(user.getTotalCaloriesBurnt())));
         if(user.getUnitIndex() == 0){
@@ -126,8 +127,8 @@ public class MainActivity extends MyActivity {
         setEnablePrevDayButton(day > 1);
         setEnableNextDayButton(day < 30);
         checkProVersionLockedMeal();
-        //setLockExercise(currentSelectedDay > userMaxDay);
-        setLockExercise(false);
+        setLockExercise(currentSelectedDay > userMaxDay);
+        //setLockExercise(false);
     }
 
 

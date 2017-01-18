@@ -1,9 +1,14 @@
 package com.challenge.bennho.a30days.activities;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,6 +31,7 @@ import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.FoodModel;
 import com.challenge.bennho.a30days.models.HistoryRecord;
 import com.challenge.bennho.a30days.models.User;
+import com.challenge.bennho.a30days.services.ExerciseService;
 
 import java.util.ArrayList;
 
@@ -38,6 +44,7 @@ public class ExerciseResultActivity extends MyActivity {
     private TextView txtCalories, txtTime, txtTitle;
     private User user;
     private RealmHelper realmHelper;
+    private ExerciseService exerciseService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,9 +81,17 @@ public class ExerciseResultActivity extends MyActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        Intent serviceIntent = new Intent(this, ExerciseService.class);
+        startService(serviceIntent); //Starting the service
+        bindService(serviceIntent, exerciseServiceConnection, Context.BIND_AUTO_CREATE);
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
-
+        unbindService(exerciseServiceConnection);
         realmHelper.dispose();
     }
 
@@ -84,6 +99,20 @@ public class ExerciseResultActivity extends MyActivity {
     public void onBackPressed() {
         finishExercise();
     }
+
+    private ServiceConnection exerciseServiceConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName className,
+                                       IBinder service) {
+            ExerciseService.LocalBinder binder = (ExerciseService.LocalBinder) service;
+            exerciseService = binder.getServiceInstance(); //Get instance of your service!
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName arg0) {
+        }
+    };
 
     private void processResults(){
         if(getIntent() != null){
@@ -248,6 +277,10 @@ public class ExerciseResultActivity extends MyActivity {
     }
 
     private void finishExercise(){
+        if(exerciseService != null){
+            exerciseService.disposeExercise();
+        }
+
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
