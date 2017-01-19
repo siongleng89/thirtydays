@@ -34,13 +34,17 @@ public class FoodModel {
 
     public enum FoodType{
         french_fries, nil, almond, water, green_tea, apple,
-        banana, bean, biscuit, bread, broccolli,
-        bubble_milk_tea, candy, carrot, cheese,
-        cheese_burger, cheese_tart, chicken, chicken_nugget,
+        banana, bean, biscuit, bread, broccolli, cheese_burger_meal,
+        bubble_milk_tea, candy, carrot, cheese, mcnugget_meal,
+        cheese_burger, cheese_tart, chicken_chop, chicken_nugget, oreo_cookies,
+        ramen, fried_pancake, baked_cheese_rice, sausage_and_beer, pork_knuckle, curry_chicken,
+        american_breakfast, lamb_chop, chili_crab, meat_ball, honey_toast,
+        popcorn_combo, sushi_roll, baskin_ice_cream, pork_ribs,
+        dunkin_donut, fish_and_chip, fried_chicken_set,chips_and_drink, pablo_cheese,
         chocolate, chocolate_cake, coca_cola, corn, cupcake, donut,
         egg, fried_chicken, ham, ice_cream, instant_noodle, milkshake,
         oat, pancake, peanut_butter, pineapple, pizza, popcorn, pork,
-        potato_chip, prawn, rice, salmon, sandwich, sausage, speghetti,
+        potato_chip, prawn, rice, salmon, sandwich_set, sausage, speghetti,
         spinach, steak, strawberry, sushi, sweet_potato, tea, tomato, waffle;
 
         public static FoodType convertStringToFoodType(String input){

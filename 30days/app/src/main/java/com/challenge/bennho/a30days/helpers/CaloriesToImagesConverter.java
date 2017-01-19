@@ -1,9 +1,11 @@
 package com.challenge.bennho.a30days.helpers;
 
+import android.content.Context;
+
+import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.models.FoodModel;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -19,184 +21,103 @@ public class CaloriesToImagesConverter {
     }
 
 
-    public ArrayList<FoodModel> getFoods(){
+    public ArrayList<FoodModel> getFoods(Context context){
         ArrayList<FoodModel> result = new ArrayList();
         ArrayList<FoodModel.FoodType> typeAFood= new ArrayList();
         typeAFood.add(FoodModel.FoodType.pizza);
         typeAFood.add(FoodModel.FoodType.steak);
-        typeAFood.add(FoodModel.FoodType.cheese_burger);
-        typeAFood.add(FoodModel.FoodType.french_fries);
-        typeAFood.add(FoodModel.FoodType.salmon);
+        typeAFood.add(FoodModel.FoodType.cheese_burger_meal);
         typeAFood.add(FoodModel.FoodType.instant_noodle);
-        typeAFood.add(FoodModel.FoodType.pork);
-        typeAFood.add(FoodModel.FoodType.milkshake);
         typeAFood.add(FoodModel.FoodType.chocolate_cake);
-        typeAFood.add(FoodModel.FoodType.sandwich);
-        typeAFood.add(FoodModel.FoodType.chicken_nugget);
-        typeAFood.add(FoodModel.FoodType.fried_chicken);
+        typeAFood.add(FoodModel.FoodType.mcnugget_meal);
+        typeAFood.add(FoodModel.FoodType.fried_chicken_set);
+        typeAFood.add(FoodModel.FoodType.pancake);
+        typeAFood.add(FoodModel.FoodType.speghetti);
+        typeAFood.add(FoodModel.FoodType.dunkin_donut);
+        typeAFood.add(FoodModel.FoodType.pork_ribs);
+        typeAFood.add(FoodModel.FoodType.waffle);
+        typeAFood.add(FoodModel.FoodType.sandwich_set);
+        typeAFood.add(FoodModel.FoodType.popcorn_combo);
+        typeAFood.add(FoodModel.FoodType.sushi_roll);
+        typeAFood.add(FoodModel.FoodType.ice_cream);
+        typeAFood.add(FoodModel.FoodType.chips_and_drink);
+        typeAFood.add(FoodModel.FoodType.ramen);
+        typeAFood.add(FoodModel.FoodType.fried_pancake);
+        typeAFood.add(FoodModel.FoodType.baked_cheese_rice);
+        typeAFood.add(FoodModel.FoodType.sausage_and_beer);
+        typeAFood.add(FoodModel.FoodType.pork_knuckle);
+        typeAFood.add(FoodModel.FoodType.curry_chicken);
+        typeAFood.add(FoodModel.FoodType.american_breakfast);
+        typeAFood.add(FoodModel.FoodType.fish_and_chip);
+        typeAFood.add(FoodModel.FoodType.lamb_chop);
+        typeAFood.add(FoodModel.FoodType.chili_crab);
+        typeAFood.add(FoodModel.FoodType.chicken_chop);
+        typeAFood.add(FoodModel.FoodType.meat_ball);
+        typeAFood.add(FoodModel.FoodType.honey_toast);
 
         ArrayList<FoodModel.FoodType> typeBFood= new ArrayList();
-        typeBFood.add(FoodModel.FoodType.corn);
-        typeBFood.add(FoodModel.FoodType.biscuit);
+        typeBFood.add(FoodModel.FoodType.milkshake);
+        typeBFood.add(FoodModel.FoodType.oreo_cookies);
         typeBFood.add(FoodModel.FoodType.candy);
-        typeBFood.add(FoodModel.FoodType.pancake);
-        typeBFood.add(FoodModel.FoodType.sushi);
         typeBFood.add(FoodModel.FoodType.chocolate);
-        typeBFood.add(FoodModel.FoodType.chicken);
-        typeBFood.add(FoodModel.FoodType.bubble_milk_tea);
-        typeBFood.add(FoodModel.FoodType.sausage);
-        typeBFood.add(FoodModel.FoodType.speghetti);
-        typeBFood.add(FoodModel.FoodType.rice);
-        typeBFood.add(FoodModel.FoodType.almond);
-        typeBFood.add(FoodModel.FoodType.waffle);
-        typeBFood.add(FoodModel.FoodType.donut);
+        typeBFood.add(FoodModel.FoodType.pablo_cheese);
+        typeBFood.add(FoodModel.FoodType.coca_cola);
+        typeBFood.add(FoodModel.FoodType.cupcake);
 
         ArrayList<FoodModel.FoodType> typeCFood= new ArrayList();
-        typeCFood.add(FoodModel.FoodType.peanut_butter);
-        typeCFood.add(FoodModel.FoodType.cheese_tart);
-        typeCFood.add(FoodModel.FoodType.oat);
-        typeCFood.add(FoodModel.FoodType.potato_chip);
-        typeCFood.add(FoodModel.FoodType.ice_cream);
-        typeCFood.add(FoodModel.FoodType.popcorn);
-        typeCFood.add(FoodModel.FoodType.coca_cola);
-        typeCFood.add(FoodModel.FoodType.cupcake);
-        typeCFood.add(FoodModel.FoodType.ham);
-        typeCFood.add(FoodModel.FoodType.sweet_potato);
-        typeCFood.add(FoodModel.FoodType.cheese);
-        typeCFood.add(FoodModel.FoodType.bean);
-        typeCFood.add(FoodModel.FoodType.prawn);
+        typeCFood.add(FoodModel.FoodType.banana);
+        typeCFood.add(FoodModel.FoodType.pineapple);
+        typeCFood.add(FoodModel.FoodType.bread);
+        typeCFood.add(FoodModel.FoodType.egg);
+        typeCFood.add(FoodModel.FoodType.apple);
+        typeCFood.add(FoodModel.FoodType.strawberry);
+        typeCFood.add(FoodModel.FoodType.spinach);
+        typeCFood.add(FoodModel.FoodType.carrot);
+        typeCFood.add(FoodModel.FoodType.broccolli);
 
         ArrayList<FoodModel.FoodType> typeDFood= new ArrayList();
-        typeDFood.add(FoodModel.FoodType.banana);
-        typeDFood.add(FoodModel.FoodType.pineapple);
-        typeDFood.add(FoodModel.FoodType.bread);
-        typeDFood.add(FoodModel.FoodType.egg);
-        typeDFood.add(FoodModel.FoodType.apple);
-        typeDFood.add(FoodModel.FoodType.strawberry);
-        typeDFood.add(FoodModel.FoodType.spinach);
-        typeDFood.add(FoodModel.FoodType.carrot);
-        typeDFood.add(FoodModel.FoodType.broccolli);
-        typeDFood.add(FoodModel.FoodType.tomato);
+        typeDFood.add(FoodModel.FoodType.tea);
+        typeDFood.add(FoodModel.FoodType.water);
+        typeDFood.add(FoodModel.FoodType.green_tea);
 
-        ArrayList<FoodModel.FoodType> typeEFood= new ArrayList();
-        typeEFood.add(FoodModel.FoodType.tea);
-        typeEFood.add(FoodModel.FoodType.water);
-        typeEFood.add(FoodModel.FoodType.green_tea);
-        
 
         FoodModel.FoodType foodOne;
 
-/*
-        FoodModel.FoodType foodTwo;
-        FoodModel.FoodType foodThree;
-*/
 
-
-
-       /* if (calories > 300){
-            foodOne = getRandomFood(typeAFood);
-
-        }
-        else if (calories > 200){
-            foodOne = getRandomFood(typeBFood);
-
-        }
-        else if (calories > 100){
-            foodOne = getRandomFood(typeCFood);
-
-        }
-        else if (calories > 5) {
-            foodOne = getRandomFood(typeDFood);
-        }*/
-
-//        FoodModel.FoodType foodTwo;
-//        FoodModel.FoodType foodThree;
 
 
         if(calories > 300){
+            String usedFood = PreferenceUtils.getString(context, PreferenceType.UsedFoodResult);
+            if(!Strings.isEmpty(usedFood)){
+                for(String item : usedFood.split(",")){
+                    typeAFood.remove(FoodModel.FoodType.convertStringToFoodType(item));
+                }
+            }
+
             foodOne = getRandomFood(typeAFood);
+
+            ArrayList<String> usedFoodArray= new ArrayList();
+            usedFoodArray.add(foodOne.name());
+            usedFoodArray.add(usedFood);
+
+            PreferenceUtils.putString(context, PreferenceType.UsedFoodResult, Strings.joinArr(usedFoodArray, ","));
         }
         else if(calories > 200){
             foodOne = getRandomFood(typeBFood);
         }
-        else if(calories > 100){
+        else if(calories > 5){
             foodOne = getRandomFood(typeCFood);
         }
-        else if(calories > 5){
-            foodOne = getRandomFood(typeDFood);
-
-        }
         else{
-            foodOne = getRandomFood(typeEFood);
+            foodOne = getRandomFood(typeDFood);
         }
 
-//        if (calories > 900){
-//            foodOne = getRandomFood(typeAFood);
-//            foodTwo = getRandomFood(typeAFood);
-//            foodThree = getRandomFood(typeAFood);
-//        }
-//        else if (calories > 800){
-//            foodOne = getRandomFood(typeAFood);
-//            foodTwo = getRandomFood(typeAFood);
-//            foodThree = getRandomFood(typeBFood);
-//        }
-//        else if (calories > 700){
-//            foodOne = getRandomFood(typeAFood);
-//            foodTwo = getRandomFood(typeBFood);
-//            foodThree = getRandomFood(typeBFood);
-//        }
-//        else if (calories > 600){
-//            foodOne = getRandomFood(typeBFood);
-//            foodTwo = getRandomFood(typeBFood);
-//            foodThree = getRandomFood(typeBFood);
-//        }
-//        else if (calories > 500){
-//            foodOne = getRandomFood(typeBFood);
-//            foodTwo = getRandomFood(typeBFood);
-//            foodThree = getRandomFood(typeCFood);
-//        }
-//        else if (calories > 400){
-//            foodOne = getRandomFood(typeBFood);
-//            foodTwo = getRandomFood(typeCFood);
-//            foodThree = getRandomFood(typeCFood);
-//        }
-//        else if (calories > 300){
-//            foodOne = getRandomFood(typeCFood);
-//            foodTwo = getRandomFood(typeCFood);
-//            foodThree = getRandomFood(typeCFood);
-//        }
-//        else if (calories > 200){
-//            foodOne = getRandomFood(typeCFood);
-//            foodTwo = getRandomFood(typeDFood);
-//            foodThree = getRandomFood(typeDFood);
-//        }
-//        else if (calories > 100){
-//            foodOne = getRandomFood(typeDFood);
-//            foodTwo = getRandomFood(typeDFood);
-//            foodThree = getRandomFood(typeEFood);
-//        }
-//        else{
-//            foodOne = getRandomFood(typeDFood);
-//            foodTwo = getRandomFood(typeEFood);
-//            foodThree = getRandomFood(typeEFood);
-//        }
 
         FoodModel foodModelOne=new FoodModel(foodOne);
 
-       /* FoodModel foodModelTwo=new FoodModel(foodTwo);
-        FoodModel foodModelThree=new FoodModel(foodThree);*/
 
         result.add(foodModelOne);
-        /*result.add(foodModelTwo);
-        result.add(foodModelThree);
-*/
 
-//        FoodModel foodModelTwo=new FoodModel(foodTwo);
-//        FoodModel foodModelThree=new FoodModel(foodThree);
-
-//        result.add(foodModelOne);
-//        result.add(foodModelTwo);
-//        result.add(foodModelThree);
 
 
         return result;
