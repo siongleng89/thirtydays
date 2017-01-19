@@ -122,10 +122,12 @@ public class ExerciseResultActivity extends MyActivity {
             int dayPlan = getIntent().getIntExtra("dayPlan", 1);
 
             if(isCompleted){
-                Analytics.logEvent(AnalyticEvent.ExerciseComplete, String.valueOf(dayPlan));
+                Analytics.logEvent(AnalyticEvent.ExerciseComplete,
+                        "Success Exercise Day " + String.valueOf(dayPlan));
             }
             else{
-                Analytics.logEvent(AnalyticEvent.ExerciseFail, dayPlan + ": " +String.valueOf(totalElapsedMs/1000));
+                Analytics.logEvent(AnalyticEvent.ExerciseFail,
+                        "Fail Exercise Day " + dayPlan + " - timeSecs: " + String.valueOf(totalElapsedMs/1000));
             }
 
             setTitle(String.format(getString(R.string.avty_result_title), String.valueOf(dayPlan)));

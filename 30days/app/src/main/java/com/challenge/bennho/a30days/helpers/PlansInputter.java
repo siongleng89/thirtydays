@@ -590,8 +590,8 @@ public class PlansInputter {
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 300);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 435);
-        day25.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
+        day25.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 435);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
