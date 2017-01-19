@@ -41,7 +41,7 @@ public class PlansInputter {
      * 0-24.9(run=1, sprint=1)
      * 25-29.9=(run=1/1.5, sprint=1/1.5)
      * >30=(run=1/2, sprint=1/2)
-     *  >40=(run=1/6, sprint=0)
+     *  >35=(run=1/6, sprint=0)
      * BMI = weight in kilograms / height in meters²
      * @param day
      * @param age
@@ -53,35 +53,38 @@ public class PlansInputter {
         ExerciseModel exerciseModel = exerciseModels.get(day - 1);
         double runFactor = 1d;
         double sprintFactor = 1d;
-        if(age >= 30){
-            runFactor = 1d / 1.2d;
-            sprintFactor = 1d / 1.2d;
+
+        if(age >= 50){
+            runFactor = 1d / 2d;
+            sprintFactor = 0d;
         }
         else if(age >= 40){
             runFactor = 1d / 1.5d;
             sprintFactor = 1d / 1.5d;
         }
-        if(age >= 50){
-            runFactor = 1d / 2d;
-            sprintFactor = 0d;
+        else if(age >= 30){
+            runFactor = 1d / 1.2d;
+            sprintFactor = 1d / 1.2d;
         }
+
 
         decreaseIntensity(exerciseModel, runFactor, sprintFactor);
 
         runFactor = 1d;
         sprintFactor = 1d;
-        if(bmi >= 25){
-            runFactor = 1d / 1.5d;
-            sprintFactor = 1d / 1.5d;
+        if(bmi >= 35){
+            runFactor = 1d / 6d;
+            sprintFactor = 0d;
         }
         else if(bmi >= 30){
             runFactor = 1d / 2d;
             sprintFactor = 1d / 2d;;
         }
-        else if(bmi >= 40){
-            runFactor = 1d / 6d;
-            sprintFactor = 0d;
+        else if(bmi >= 25){
+            runFactor = 1d / 1.5d;
+            sprintFactor = 1d / 1.5d;
         }
+
         decreaseIntensity(exerciseModel, runFactor, sprintFactor);
 
         removedZeroDurationExercisePart(exerciseModel);

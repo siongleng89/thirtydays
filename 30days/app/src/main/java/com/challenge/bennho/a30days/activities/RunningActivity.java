@@ -311,9 +311,6 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
         }
     }
 
-
-
-
     private void giveUp(){
         OverlayBuilder.build(RunningActivity.this)
                 .setOverlayType(OverlayBuilder.OverlayType.OkCancel)

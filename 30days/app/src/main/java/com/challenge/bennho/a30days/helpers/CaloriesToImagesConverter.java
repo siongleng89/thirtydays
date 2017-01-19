@@ -23,7 +23,73 @@ public class CaloriesToImagesConverter {
 
     public ArrayList<FoodModel> getFoods(Context context){
         ArrayList<FoodModel> result = new ArrayList();
-        ArrayList<FoodModel.FoodType> typeAFood= new ArrayList();
+
+
+        ArrayList<FoodModel.FoodType> typeAFood = getTypeAFoods();
+        ArrayList<FoodModel.FoodType> typeAFoodCopy = (ArrayList) typeAFood.clone();
+
+        ArrayList<FoodModel.FoodType> typeBFood = getTypeBFoods();
+        ArrayList<FoodModel.FoodType> typeCFood = getTypeCFoods();
+        ArrayList<FoodModel.FoodType> typeDFood = getTypeDFoods();
+
+        FoodModel.FoodType foodOne;
+
+        if(calories > 300){
+            String usedFood = PreferenceUtils.getString(context, PreferenceType.UsedFoodResult);
+            if(!Strings.isEmpty(usedFood)){
+                for(String item : usedFood.split(",")){
+                    typeAFood.remove(FoodModel.FoodType.convertStringToFoodType(item));
+                }
+            }
+
+            //if all foods ran out in the list, might happen after post 30 days
+            //then we will delete and reset everything again!
+            if(typeAFood.size() <= 0){
+                PreferenceUtils.delete(context, PreferenceType.UsedFoodResult);
+                usedFood = "";
+                typeAFood = typeAFoodCopy;
+            }
+
+            //get random food from list
+            foodOne = getRandomFood(typeAFood);
+
+            ArrayList<String> usedFoodArray= new ArrayList();
+            usedFoodArray.add(foodOne.name());
+            if(!Strings.isEmpty(usedFood)){
+                usedFoodArray.add(usedFood);
+            }
+
+            PreferenceUtils.putString(context, PreferenceType.UsedFoodResult, Strings.joinArr(usedFoodArray, ","));
+        }
+        else if(calories > 200){
+            foodOne = getRandomFood(typeBFood);
+        }
+        else if(calories > 5){
+            foodOne = getRandomFood(typeCFood);
+        }
+        else{
+            foodOne = getRandomFood(typeDFood);
+        }
+
+
+        FoodModel foodModelOne = new FoodModel(foodOne);
+        result.add(foodModelOne);
+
+        return result;
+
+    }
+    private FoodModel.FoodType getRandomFood(ArrayList<FoodModel.FoodType> foodType){
+        //get type a food, shuffle, add food, remove the food from list,
+        Collections.shuffle(foodType);
+        FoodModel.FoodType getFoodOne =  foodType.get(0);
+        foodType.remove(0);
+
+
+        return getFoodOne;
+    }
+
+    public ArrayList<FoodModel.FoodType> getTypeAFoods(){
+        ArrayList<FoodModel.FoodType> typeAFood = new ArrayList();
         typeAFood.add(FoodModel.FoodType.pizza);
         typeAFood.add(FoodModel.FoodType.steak);
         typeAFood.add(FoodModel.FoodType.cheese_burger_meal);
@@ -55,6 +121,10 @@ public class CaloriesToImagesConverter {
         typeAFood.add(FoodModel.FoodType.meat_ball);
         typeAFood.add(FoodModel.FoodType.honey_toast);
 
+        return typeAFood;
+    }
+
+    private ArrayList<FoodModel.FoodType> getTypeBFoods(){
         ArrayList<FoodModel.FoodType> typeBFood= new ArrayList();
         typeBFood.add(FoodModel.FoodType.milkshake);
         typeBFood.add(FoodModel.FoodType.oreo_cookies);
@@ -63,7 +133,10 @@ public class CaloriesToImagesConverter {
         typeBFood.add(FoodModel.FoodType.pablo_cheese);
         typeBFood.add(FoodModel.FoodType.coca_cola);
         typeBFood.add(FoodModel.FoodType.cupcake);
+        return typeBFood;
+    }
 
+    private ArrayList<FoodModel.FoodType> getTypeCFoods(){
         ArrayList<FoodModel.FoodType> typeCFood= new ArrayList();
         typeCFood.add(FoodModel.FoodType.banana);
         typeCFood.add(FoodModel.FoodType.pineapple);
@@ -74,65 +147,15 @@ public class CaloriesToImagesConverter {
         typeCFood.add(FoodModel.FoodType.spinach);
         typeCFood.add(FoodModel.FoodType.carrot);
         typeCFood.add(FoodModel.FoodType.broccolli);
+        return typeCFood;
+    }
 
+    private ArrayList<FoodModel.FoodType> getTypeDFoods(){
         ArrayList<FoodModel.FoodType> typeDFood= new ArrayList();
         typeDFood.add(FoodModel.FoodType.tea);
         typeDFood.add(FoodModel.FoodType.water);
         typeDFood.add(FoodModel.FoodType.green_tea);
-
-
-        FoodModel.FoodType foodOne;
-
-
-
-
-        if(calories > 300){
-            String usedFood = PreferenceUtils.getString(context, PreferenceType.UsedFoodResult);
-            if(!Strings.isEmpty(usedFood)){
-                for(String item : usedFood.split(",")){
-                    typeAFood.remove(FoodModel.FoodType.convertStringToFoodType(item));
-                }
-            }
-
-            foodOne = getRandomFood(typeAFood);
-
-            ArrayList<String> usedFoodArray= new ArrayList();
-            usedFoodArray.add(foodOne.name());
-            usedFoodArray.add(usedFood);
-
-            PreferenceUtils.putString(context, PreferenceType.UsedFoodResult, Strings.joinArr(usedFoodArray, ","));
-        }
-        else if(calories > 200){
-            foodOne = getRandomFood(typeBFood);
-        }
-        else if(calories > 5){
-            foodOne = getRandomFood(typeCFood);
-        }
-        else{
-            foodOne = getRandomFood(typeDFood);
-        }
-
-
-        FoodModel foodModelOne=new FoodModel(foodOne);
-
-
-        result.add(foodModelOne);
-
-
-
-        return result;
-
+        return typeDFood;
     }
-    private FoodModel.FoodType getRandomFood(ArrayList<FoodModel.FoodType> foodType){
-        //get type a food, shuffle, add food, remove the food from list,
-        Collections.shuffle(foodType);
-        FoodModel.FoodType getFoodOne =  foodType.get(0);
-        foodType.remove(0);
-
-
-        return getFoodOne;
-
-    }
-
 
 }

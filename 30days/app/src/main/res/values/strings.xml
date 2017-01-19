@@ -55,6 +55,11 @@
 
     <string name="avty_main_customized_plan_title">Slimming Plan For</string>
 
+    <string name="avty_main_btn_rerun">RUN AGAIN</string>
+    <string name="avty_main_rerun_msg_title">Run Day %s Plan Again?</string>
+    <string name="avty_main_rerun_msg_content">You had completed this run before, are you sure you want to run again?</string>
+
+
     <string name="avty_meal_title">Day %s Meal Plan</string>
 
     <string name="avty_meal_tip_of_the_day">TIP OF THE DAY</string>

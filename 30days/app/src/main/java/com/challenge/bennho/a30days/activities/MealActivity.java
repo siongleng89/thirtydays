@@ -17,7 +17,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
+import com.challenge.bennho.a30days.enums.AnalyticEvent;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
+import com.challenge.bennho.a30days.helpers.Analytics;
 import com.challenge.bennho.a30days.helpers.MealsInputter;
 import com.challenge.bennho.a30days.models.DishModel;
 import com.challenge.bennho.a30days.models.IngredientModel;
@@ -53,6 +55,7 @@ public class MealActivity extends MyActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         setListeners();
+
     }
 
     @Override
@@ -98,6 +101,8 @@ public class MealActivity extends MyActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         // layoutManager.setAutoMeasureEnabled(false);
         recycleViewItems.setLayoutManager(layoutManager);
+
+        Analytics.logEvent(AnalyticEvent.ViewMeal, "MealDay" + dayPlan);
     }
 
     private void update(String todayTip){

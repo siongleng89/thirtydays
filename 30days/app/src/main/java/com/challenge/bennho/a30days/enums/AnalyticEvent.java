@@ -10,6 +10,10 @@ public enum AnalyticEvent {
     ExerciseComplete,
     ExerciseFail,
     StartExercise,
+    ViewMeal,
+    MealLocked,
+    ExerciseLocked
+
 
 
 }

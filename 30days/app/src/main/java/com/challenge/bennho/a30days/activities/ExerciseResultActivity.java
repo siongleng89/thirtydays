@@ -80,6 +80,20 @@ public class ExerciseResultActivity extends MyActivity {
         processResults();
     }
 
+    private ServiceConnection exerciseServiceConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName className,
+                                       IBinder service) {
+            ExerciseService.LocalBinder binder = (ExerciseService.LocalBinder) service;
+            exerciseService = binder.getServiceInstance(); //Get instance of your service!
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName arg0) {
+        }
+    };
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -99,20 +113,6 @@ public class ExerciseResultActivity extends MyActivity {
     public void onBackPressed() {
         finishExercise();
     }
-
-    private ServiceConnection exerciseServiceConnection = new ServiceConnection() {
-
-        @Override
-        public void onServiceConnected(ComponentName className,
-                                       IBinder service) {
-            ExerciseService.LocalBinder binder = (ExerciseService.LocalBinder) service;
-            exerciseService = binder.getServiceInstance(); //Get instance of your service!
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName arg0) {
-        }
-    };
 
     private void processResults(){
         if(getIntent() != null){
@@ -138,7 +138,7 @@ public class ExerciseResultActivity extends MyActivity {
             txtCalories.setText(String.valueOf(calories));
 
             CaloriesToImagesConverter converter = new CaloriesToImagesConverter(calories);
-            ArrayList<FoodModel> foodModels = converter.getFoods();
+            ArrayList<FoodModel> foodModels = converter.getFoods(this);
 
             //save history record
             String saved = PreferenceUtils.getString(this, PreferenceType.ExerciseRecordSaved);
