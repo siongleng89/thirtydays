@@ -41,7 +41,7 @@ import static org.mockito.Matchers.anyString;
 public class ExampleUnitTest {
 
     @Test
-    public void testAllFoodImageLoadable() throws Exception {
+    public void testGetFood() throws Exception {
 
         CaloriesToImagesConverter caloriesToImagesConverter = new CaloriesToImagesConverter(400);
         MockContext mockContext = new MockContext();
@@ -62,6 +62,16 @@ public class ExampleUnitTest {
         ArrayList<FoodModel> foodModels = caloriesToImagesConverter.getFoods(mockContext);
 
         Assert.assertEquals(1, foodModels.size());
+    }
+
+    @Test
+    public void testAllFoodImageLoadable() throws Exception {
+
+        MockContext mockContext = new MockContext();
+        for(FoodModel.FoodType foodType : FoodModel.FoodType.values()){
+            FoodModel foodModel = new FoodModel(foodType);
+            Assert.assertEquals(false, foodModel.getDrawable(mockContext) == null);
+        }
     }
 
 }
