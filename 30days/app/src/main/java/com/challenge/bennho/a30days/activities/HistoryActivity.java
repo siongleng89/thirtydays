@@ -76,6 +76,7 @@ public class HistoryActivity extends MyActivity {
         if (id == R.id.graph) {
             Intent intent = new Intent(this, GraphActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);

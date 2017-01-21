@@ -154,6 +154,11 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
         intent.putExtra("dayPlan", dayPlan);
         startActivity(intent);
 
+        //dispose exercise service at here if giving up, else dispose at result page
+        if(!isCompleted){
+            if(exerciseService != null) exerciseService.disposeExercise();
+        }
+
         AndroidUtils.setFullscreen(this, false);
         finish();
     }

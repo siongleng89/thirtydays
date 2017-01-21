@@ -25,8 +25,8 @@ public class AllReminderHelper {
         user.reload();
         if(user.getCurrentDay() < 31){
             boolean enabledRunningNotification = PreferenceUtils.getBoolean(context, PreferenceType.EnableNotification);
+            String days = PreferenceUtils.getString(context, PreferenceType.ReminderDay);
             if(enabledRunningNotification){
-                String days = PreferenceUtils.getString(context, PreferenceType.ReminderDay);
                 if(!Strings.isEmpty(days)){
                     String reminderTime = PreferenceUtils.getString(context, PreferenceType.ReminderTime);
                     if(!Strings.isNumeric(reminderTime)){
@@ -43,10 +43,11 @@ public class AllReminderHelper {
             if(enabledMealNotification){
                 int reminderTime = 9;       //remind meal at 9am always
 
-                for(int i = 1; i < 7; i++){
-                    setReminderForMealDay(i, reminderTime, context);
+                if(!Strings.isEmpty(days)){
+                    for(String day : days.split(",")){
+                        setReminderForMealDay(Integer.valueOf(day), reminderTime, context);
+                    }
                 }
-
             }
 
         }

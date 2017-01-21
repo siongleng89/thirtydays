@@ -29,22 +29,12 @@ public class MealReminderReceiver extends BroadcastReceiver {
             return;
         }
 
-        ProVersionHelpers proVersionHelpers = ProVersionHelpers.getInstance(context);
+        MealsInputter mealsInputter = new MealsInputter(context);
+        MealDayModel mealDayModel = mealsInputter.getMealByDayNumber(user.getCurrentDay());
+        DishModel dishWithTip = mealsInputter.getDishWithTipByDayNumber(user.getCurrentDay());
+        if(dishWithTip == null) return;
 
-        proVersionHelpers.isProPurchased(new RunnableArgs<Boolean>() {
-            @Override
-            public void run() {
-                if(currentDay < 8 || this.getFirstArg()){
-                    MealsInputter mealsInputter = new MealsInputter(context);
-                    MealDayModel mealDayModel = mealsInputter.getMealByDayNumber(user.getCurrentDay());
-                    DishModel dishWithTip = mealsInputter.getDishWithTipByDayNumber(user.getCurrentDay());
-                    if(dishWithTip == null) return;
-
-                    NotificationShower.showMealReminder(context, user.getCurrentDay(), dishWithTip);
-                }
-            }
-        });
-
+        NotificationShower.showMealReminder(context, user.getCurrentDay(), dishWithTip);
 
     }
 }

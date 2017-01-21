@@ -15,6 +15,7 @@ import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.Strings;
 import com.challenge.bennho.a30days.models.DishModel;
 import com.challenge.bennho.a30days.models.FoodModel;
+import com.challenge.bennho.a30days.models.MealDayModel;
 import com.challenge.bennho.a30days.models.User;
 
 import junit.framework.Assert;
@@ -45,8 +46,6 @@ public class LaunchActivity extends MyActivity {
         this.overridePendingTransition(0, 0);
         AllReminderHelper.updateReminders(this);
         finish();
-
-
 
     }
 

@@ -77,6 +77,7 @@ public class GraphActivity extends MyActivity {
             Intent intent = new Intent(this, HistoryActivity.class);
             startActivity(intent);
             this.overridePendingTransition(0, 0);
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
