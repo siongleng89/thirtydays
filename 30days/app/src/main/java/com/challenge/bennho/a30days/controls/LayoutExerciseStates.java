@@ -120,20 +120,25 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
             onExercisePartChanged(currentExercisePartModel);
         }
 
-        final RelativeLayout animatingCircle = circlesArr.get(currentExercisePartModel.getIndex());
+        final RelativeLayout animatingCircle = safeGetCircle(currentExercisePartModel.getIndex());
         final float elapsedAngle = anglePerSec * (currentExerciseElapsedMs / 1000f);
 
         Threadings.postRunnable(new Runnable() {
             @Override
             public void run() {
                 for(int i = currentExercisePartModel.getIndex() - 1; i >= 0; i--){
-                    final RelativeLayout animatingCircle = circlesArr.get(i);
-                    ((SemiCircleDrawable) animatingCircle.getBackground()).setCompleteElapsed();
-                    animatingCircle.setVisibility(INVISIBLE);
+                    final RelativeLayout animatingCircle = safeGetCircle(i);
+                    if(animatingCircle != null){
+                        ((SemiCircleDrawable) animatingCircle.getBackground()).setCompleteElapsed();
+                        animatingCircle.setVisibility(INVISIBLE);
+                    }
                 }
 
-                ((SemiCircleDrawable) animatingCircle.getBackground())
-                        .setElapsedAngle(elapsedAngle);
+                if(animatingCircle != null){
+                    ((SemiCircleDrawable) animatingCircle.getBackground())
+                            .setElapsedAngle(elapsedAngle);
+                }
+
 
                 txtStateTime.setText(CalculationHelper.prettifySeconds(
                         currentExercisePartModel.getRemainingDurationSecs(currentExerciseElapsedMs / 1000)));
@@ -164,9 +169,11 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
 
                     if(!demoMode){
                         for(int i = newExercisePartModel.getIndex() - 1; i >= 0; i--){
-                            final RelativeLayout animatingCircle = circlesArr.get(i);
-                            ((SemiCircleDrawable) animatingCircle.getBackground()).setCompleteElapsed();
-                            animatingCircle.setVisibility(INVISIBLE);
+                            final RelativeLayout animatingCircle = safeGetCircle(i);
+                            if(animatingCircle != null){
+                                ((SemiCircleDrawable) animatingCircle.getBackground()).setCompleteElapsed();
+                                animatingCircle.setVisibility(INVISIBLE);
+                            }
                         }
                     }
 
@@ -244,6 +251,18 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
 
     private void initAnglePerSec(){
         anglePerSec = 360 / exerciseModel.getTotalDurationSecs();
+    }
+
+    private RelativeLayout safeGetCircle(int index){
+        if(circlesArr == null || index < 0) return null;
+        else{
+            if(circlesArr.size() > index){
+                return circlesArr.get(index);
+            }
+            else{
+                return null;
+            }
+        }
     }
 
     private void setListeners(){

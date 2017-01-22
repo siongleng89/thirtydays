@@ -122,7 +122,7 @@ public class ExercisePartModel {
 
     /**
      * restHeartRate = BMI
-     * 0-24.9=70, 25-29.9=80, 30-39.9=90, >40=100
+     * 0-24.9=70, 25-29.9=80, 30-34.9=90, >35=100
      *
      * maxHeartRate = 210 - (0.8 * Age)
      *
@@ -135,33 +135,52 @@ public class ExercisePartModel {
      * @param forIntervalMs
      * @return
      */
+
+    public double WARM_UP_INTENSITY = 0.60;
+    public double WALK_INTENSITY = 0.65;
+    public double FAST_WALK_INTENSITY = 0.80;
+    public double RUN_INTENSITY = 0.90;
+    public double SPRINT_INTENSITY = 3.00;
+    public double WEIGHT_FACTOR = 0.85;
     public float getCaloriesBurnt(float forIntervalMs, double bmiValue, double weightInKg,
                                   int age, GenderEnum genderEnum){
 
+        double weightFactor = WEIGHT_FACTOR;
+
+        if(bmiValue > 30){
+            weightFactor = 0.7;
+        }
+        else if(bmiValue >= 25){
+            weightFactor = 0.75;
+        }
+
+
         double restHeartRate = 70;
-        if(bmiValue >= 25){
-            restHeartRate = 80;
+
+        if(bmiValue >= 35){
+            restHeartRate = 100;
         }
         else if(bmiValue >= 30){
             restHeartRate = 90;
         }
-        else if(bmiValue >= 40){
-            restHeartRate = 100;
+        else if(bmiValue >= 25){
+            restHeartRate = 80;
         }
 
-        double intensity = 0.50;
+
+        double intensity = WARM_UP_INTENSITY;
         if(exerciseState == ExerciseState.Walk
                 || exerciseState == ExerciseState.CoolDown){
-            intensity = 0.60;
+            intensity = WALK_INTENSITY / weightFactor;
         }
         else if(exerciseState == ExerciseState.FastWalk){
-            intensity = 0.80;
+            intensity = FAST_WALK_INTENSITY / weightFactor;
         }
         else if(exerciseState == ExerciseState.Run){
-            intensity = 0.90;
+            intensity = RUN_INTENSITY / weightFactor;
         }
         else if(exerciseState == ExerciseState.Sprint){
-            intensity = 1.00;
+            intensity = SPRINT_INTENSITY / weightFactor;
         }
 
         double maxHeartRate;
@@ -172,11 +191,11 @@ public class ExercisePartModel {
 
         double caloriesBurntPerMinute = 0;
         if(genderEnum == GenderEnum.male){
-            caloriesBurntPerMinute = (((double) age * 0.2017) - (CalculationHelper.kgToPounds(weightInKg) * 0.09036)
+            caloriesBurntPerMinute = (((double) age * 0.2017) - (CalculationHelper.kgToPounds(weightInKg) * 0.09036 * weightFactor)
                     + (exerciseHeartRate * 0.6309) - 55.0969) * (1 / 4.184);
         }
         else if(genderEnum == GenderEnum.female){
-            caloriesBurntPerMinute = (((double) age * 0.074) - (CalculationHelper.kgToPounds(weightInKg) * 0.05741)
+            caloriesBurntPerMinute = (((double) age * 0.074) - (CalculationHelper.kgToPounds(weightInKg) * 0.05741 * weightFactor)
                     + (exerciseHeartRate * 0.4472) - 20.4022) * (1 / 4.184);
         }
 

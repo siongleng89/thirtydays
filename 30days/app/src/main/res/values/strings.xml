@@ -32,7 +32,7 @@
 
     <string name="avty_details_height_cm_hint">Your height in cm</string>
 
-    <string name="avty_details_height_foot_hint">Height in foot</string>
+    <string name="avty_details_height_foot_hint">Height in feet</string>
 
     <string name="avty_details_height_inch_hint">Height in inch</string>
 
@@ -54,6 +54,11 @@
     <string name="avty_main_calories_counter_title">Calories Counter</string>
 
     <string name="avty_main_customized_plan_title">Slimming Plan For</string>
+
+    <string name="avty_main_btn_rerun">RUN AGAIN</string>
+    <string name="avty_main_rerun_msg_title">Run Day %s Plan Again?</string>
+    <string name="avty_main_rerun_msg_content">You had completed this run before, are you sure you want to run again?</string>
+
 
     <string name="avty_meal_title">Day %s Meal Plan</string>
 
@@ -144,6 +149,14 @@
     <string name="summary_total_exercise_duration">Total Run Duration</string>
 
     <string name="avty_settings_title">Settings</string>
+    <string name="avty_settings_remind_meal_content">Remind me what to eat!</string>
+    <string name="avty_settings_remind_meal_title">Enable Meal Plan Notifications</string>
+    <string name="avty_settings_remind_run_content">Remind me to run!</string>
+    <string name="avty_settings_remind_run_title">Enable Running Notifications</string>
+    <string name="avty_settings_remind_time_title">Running Time</string>
+    <string name="avty_settings_remind_day_title">Days</string>
+    <string name="avty_settings_parameter_title">Your Parameter</string>
+    <string name="avty_settings_parameter_content">Tap to edit</string>
 
     <string name="drawer_title_day_x_plan">Day %s Plan</string>
 
@@ -1102,8 +1115,6 @@
     <string name="itype_protein">Protein</string>
     <string name="itype_carbo">Carbohydrate</string>
     <string name="itype_others">Others</string>
-
-
 
 
 

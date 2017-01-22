@@ -80,6 +80,20 @@ public class ExerciseResultActivity extends MyActivity {
         processResults();
     }
 
+    private ServiceConnection exerciseServiceConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName className,
+                                       IBinder service) {
+            ExerciseService.LocalBinder binder = (ExerciseService.LocalBinder) service;
+            exerciseService = binder.getServiceInstance(); //Get instance of your service!
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName arg0) {
+        }
+    };
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -100,20 +114,6 @@ public class ExerciseResultActivity extends MyActivity {
         finishExercise();
     }
 
-    private ServiceConnection exerciseServiceConnection = new ServiceConnection() {
-
-        @Override
-        public void onServiceConnected(ComponentName className,
-                                       IBinder service) {
-            ExerciseService.LocalBinder binder = (ExerciseService.LocalBinder) service;
-            exerciseService = binder.getServiceInstance(); //Get instance of your service!
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName arg0) {
-        }
-    };
-
     private void processResults(){
         if(getIntent() != null){
             float totalElapsedMs = getIntent().getFloatExtra("totalElapsedMs", 0);
@@ -121,12 +121,7 @@ public class ExerciseResultActivity extends MyActivity {
             boolean isCompleted = getIntent().getBooleanExtra("isCompleted", true);
             int dayPlan = getIntent().getIntExtra("dayPlan", 1);
 
-            if(isCompleted){
-                Analytics.logEvent(AnalyticEvent.ExerciseComplete, String.valueOf(dayPlan));
-            }
-            else{
-                Analytics.logEvent(AnalyticEvent.ExerciseFail, dayPlan + ": " +String.valueOf(totalElapsedMs/1000));
-            }
+            logAnalytics(isCompleted, dayPlan, totalElapsedMs);
 
             setTitle(String.format(getString(R.string.avty_result_title), String.valueOf(dayPlan)));
             txtTitle.setText(String.format(getString(R.string.avty_result_day_x), String.valueOf(dayPlan)));
@@ -138,7 +133,7 @@ public class ExerciseResultActivity extends MyActivity {
             txtCalories.setText(String.valueOf(calories));
 
             CaloriesToImagesConverter converter = new CaloriesToImagesConverter(calories);
-            ArrayList<FoodModel> foodModels = converter.getFoods();
+            ArrayList<FoodModel> foodModels = converter.getFoods(this);
 
             //save history record
             String saved = PreferenceUtils.getString(this, PreferenceType.ExerciseRecordSaved);
@@ -284,6 +279,30 @@ public class ExerciseResultActivity extends MyActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void logAnalytics(boolean completed, int dayPlan, float totalElapsedMs){
+        ArrayList<String> arr = new ArrayList();
+        if(completed){
+            arr.add("SuccessRun");
+        }
+        else{
+            arr.add("FailedRun");
+        }
+
+        arr.add("d: " + String.valueOf(dayPlan));
+        arr.add("t: " + String.valueOf(totalElapsedMs/1000));
+        arr.add("w: " + user.getWeightKg());
+        arr.add("h: " + user.getHeightInCm());
+        arr.add("a: " + user.getAge());
+        arr.add("g: " + user.getGenderIndex());
+
+        if(completed){
+            Analytics.logEvent(AnalyticEvent.ExerciseComplete, Strings.joinArr(arr, ", "));
+        }
+        else{
+            Analytics.logEvent(AnalyticEvent.ExerciseFail, Strings.joinArr(arr, ", "));
+        }
     }
 
     private void setListeners(){

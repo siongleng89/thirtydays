@@ -202,7 +202,8 @@ public class DrawerHelper implements ListView.OnItemClickListener {
             OverlayBuilder.build(activity)
                     .setOverlayType(OverlayBuilder.OverlayType.OkOnly)
                     .setTitle(activity.getString(R.string.app_name))
-                    .setContent(String.format(activity.getString(R.string.version_x), version))
+                    .setContent(String.format(activity.getString(R.string.version_x), version)
+                            + "\n" + activity.getString(R.string.avty_landing_intro_content))
                     .show();
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.LayoutDayCounter;
+import com.challenge.bennho.a30days.enums.AnalyticEvent;
+import com.challenge.bennho.a30days.helpers.Analytics;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.CalculationHelper;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
@@ -29,8 +31,9 @@ public class MainActivity extends MyActivity {
     private int userMaxDay;
     private int currentSelectedDay;
     private RelativeLayout layoutExercise, layoutMeal;
-    private TextView txtDayNumber1, txtDayNumber2, txtWeight, txtHeight, txtCalories;
-    private RelativeLayout layoutLockExercise, layoutLockMeal;
+    private TextView txtDayNumber1, txtDayNumber2, txtDayNumber3,
+                            txtWeight, txtHeight, txtCalories;
+    private RelativeLayout layoutLockExercise, layoutLockMeal, layoutRetryExercise;
     private boolean lockedExercise, lockedMeal;
 
 
@@ -41,6 +44,7 @@ public class MainActivity extends MyActivity {
         onLayoutSet();
 
         layoutExercise = (RelativeLayout) findViewById(R.id.layoutExercise);
+        layoutRetryExercise = (RelativeLayout) findViewById(R.id.layoutRetryExercise);
         layoutMeal = (RelativeLayout) findViewById(R.id.layoutMeal);
         layoutLockExercise = (RelativeLayout) findViewById(R.id.layoutLockExercise);
         layoutLockMeal = (RelativeLayout) findViewById(R.id.layoutLockMeal);
@@ -49,6 +53,7 @@ public class MainActivity extends MyActivity {
         imgViewPrevious = (ImageView) findViewById(R.id.imgViewPrevious);
         txtDayNumber1 = (TextView) findViewById(R.id.txtDayNumber1);
         txtDayNumber2 = (TextView) findViewById(R.id.txtDayNumber2);
+        txtDayNumber3 = (TextView) findViewById(R.id.txtDayNumber3);
         txtWeight = (TextView) findViewById(R.id.txtWeight);
         txtHeight = (TextView) findViewById(R.id.txtHeight);
         txtCalories = (TextView) findViewById(R.id.txtCalories);
@@ -68,7 +73,9 @@ public class MainActivity extends MyActivity {
         stopService(serviceIntent);
 
         refreshUserProgress();
-        checkProVersionLockedMeal();
+        if(currentSelectedDay > 0){
+            updateDay(currentSelectedDay);
+        }
     }
 
     @Override
@@ -123,10 +130,12 @@ public class MainActivity extends MyActivity {
         dayCounterControl.updateDayNumber(day);
         txtDayNumber1.setText(String.format(getString(R.string.day_X), String.valueOf(day)));
         txtDayNumber2.setText(String.format(getString(R.string.day_X), String.valueOf(day)));
+        txtDayNumber3.setText(String.format(getString(R.string.day_X), String.valueOf(day)));
 
         setEnablePrevDayButton(day > 1);
         setEnableNextDayButton(day < 30);
         checkProVersionLockedMeal();
+        setShowRerunExercise(userMaxDay > currentSelectedDay);
         setLockExercise(currentSelectedDay > userMaxDay);
         //setLockExercise(false);
     }
@@ -139,6 +148,7 @@ public class MainActivity extends MyActivity {
                     .setContent(getString(R.string.running_locked_content))
                     .setOverlayType(OverlayBuilder.OverlayType.OkOnly)
                     .show();
+            Analytics.logEvent(AnalyticEvent.ExerciseLocked, "RunLockDay" + currentSelectedDay);
         }
         else{
             Intent intent = new Intent(this, ReadyActivity.class);
@@ -150,6 +160,8 @@ public class MainActivity extends MyActivity {
     private void showMeal(){
         if(lockedMeal){
             purchasePro();
+            Analytics.logEvent(AnalyticEvent.MealLocked, "MealLockDay" + currentSelectedDay);
+
         }
         else{
             Intent intent = new Intent(this, MealActivity.class);
@@ -179,6 +191,24 @@ public class MainActivity extends MyActivity {
             @Override
             public void onClick(View v) {
                 startExercise();
+            }
+        });
+
+        layoutRetryExercise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OverlayBuilder.build(MainActivity.this)
+                        .setTitle(String.format(getString(R.string.avty_main_rerun_msg_title),
+                                        String.valueOf(currentSelectedDay)))
+                        .setContent(getString(R.string.avty_main_rerun_msg_content))
+                        .setOverlayType(OverlayBuilder.OverlayType.OkCancel)
+                        .setRunnables(new Runnable() {
+                            @Override
+                            public void run() {
+                                startExercise();
+                            }
+                        })
+                        .show();
             }
         });
 
@@ -240,6 +270,17 @@ public class MainActivity extends MyActivity {
         }
         else{
             layoutLockMeal.setVisibility(View.GONE);
+        }
+    }
+
+    private void setShowRerunExercise(boolean showRerun){
+        if(showRerun){
+            layoutRetryExercise.setVisibility(View.VISIBLE);
+            layoutExercise.setVisibility(View.GONE);
+        }
+        else{
+            layoutRetryExercise.setVisibility(View.GONE);
+            layoutExercise.setVisibility(View.VISIBLE);
         }
     }
 

@@ -17,8 +17,12 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
+import com.challenge.bennho.a30days.enums.AnalyticEvent;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
+import com.challenge.bennho.a30days.helpers.Analytics;
 import com.challenge.bennho.a30days.helpers.MealsInputter;
+import com.challenge.bennho.a30days.helpers.ProVersionHelpers;
+import com.challenge.bennho.a30days.helpers.RunnableArgs;
 import com.challenge.bennho.a30days.models.DishModel;
 import com.challenge.bennho.a30days.models.IngredientModel;
 import com.challenge.bennho.a30days.models.MealDayModel;
@@ -41,8 +45,6 @@ public class MealActivity extends MyActivity {
         setContentView(R.layout.activity_meal);
         onLayoutSet();
 
-        AdsMediation.showInterstitial(this);
-
         scrollView = (NestedScrollView) findViewById(R.id.scrollView);
         txtTip = (TextView) findViewById(R.id.txtTip);
         txtViewShoppingPeriod = (TextView) findViewById(R.id.txtViewShoppingPeriod);
@@ -53,6 +55,7 @@ public class MealActivity extends MyActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         setListeners();
+
     }
 
     @Override
@@ -65,6 +68,41 @@ public class MealActivity extends MyActivity {
         }
 
         setTitle(String.format(getString(R.string.avty_meal_title), String.valueOf(dayPlan)));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(dayPlan > 0){
+            checkCanViewMealPlan();
+        }
+    }
+
+    private void checkCanViewMealPlan(){
+
+        if(dayPlan < 8){
+            showMealPlan();
+        }
+        else{
+            getProVersionHelpers().isProPurchased(new RunnableArgs<Boolean>() {
+                @Override
+                public void run() {
+                    if(this.getFirstArg()){
+                        showMealPlan();
+                    }
+                    else{
+                        purchasePro();
+                        txtTip.setText(getString(R.string.locked));
+                        txtViewShoppingPeriod.setText(getString(R.string.locked));
+                    }
+                }
+            });
+        }
+    }
+
+    private void showMealPlan(){
+        AdsMediation.showInterstitial(this);
 
         int startDay, endDay;
         if(dayPlan <= 7){
@@ -98,6 +136,8 @@ public class MealActivity extends MyActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         // layoutManager.setAutoMeasureEnabled(false);
         recycleViewItems.setLayoutManager(layoutManager);
+
+        Analytics.logEvent(AnalyticEvent.ViewMeal, "MealDay" + dayPlan);
     }
 
     private void update(String todayTip){
