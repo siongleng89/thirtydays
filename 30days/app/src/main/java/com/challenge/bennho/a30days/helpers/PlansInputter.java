@@ -71,15 +71,15 @@ public class PlansInputter {
         runFactor = 1d;
         sprintFactor = 1d;
         if(bmi >= 25){
-            runFactor = 1d / 1.5d;
-            sprintFactor = 1d / 1.5d;
+            runFactor = 1d / 1.2d;
+            sprintFactor = 1d / 1.2d;
         }
         else if(bmi >= 30){
-            runFactor = 1d / 2d;
-            sprintFactor = 1d / 2d;;
+            runFactor = 1d / 1.5d;
+            sprintFactor = 1d / 1.5d;;
         }
         else if(bmi >= 40){
-            runFactor = 1d / 6d;
+            runFactor = 1d / 2d;
             sprintFactor = 0d;
         }
         decreaseIntensity(exerciseModel, runFactor, sprintFactor);
@@ -288,8 +288,6 @@ public class PlansInputter {
         day7.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
         day7.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 60);
         day7.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
-        day7.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 60);
-        day7.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 60);
         day7.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
         exerciseModels.add(day7);
 
@@ -368,15 +366,15 @@ public class PlansInputter {
         ExerciseModel day12 = new ExerciseModel();
         day12.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);
         day12.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 300);
-        day12.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 100);
+        day12.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 150);
         day12.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
-        day12.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 100);
+        day12.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 150);
         day12.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 90);
-        day12.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 100);
+        day12.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 150);
         day12.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
-        day12.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 100);
+        day12.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 150);
         day12.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 90);
-        day12.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 100);
+        day12.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 150);
         day12.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day12.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
         exerciseModels.add(day12);
@@ -384,19 +382,19 @@ public class PlansInputter {
         ExerciseModel day13 = new ExerciseModel();
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 300);
-        day13.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 100);
+        day13.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 150);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 135);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 15);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 90);
-        day13.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 100);
+        day13.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 150);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 135);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 15);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 90);
-        day13.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 100);
+        day13.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 150);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day13.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
         exerciseModels.add(day13);
@@ -404,10 +402,12 @@ public class PlansInputter {
         ExerciseModel day14 = new ExerciseModel();
         day14.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);
         day14.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 300);
-        day14.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 330);
+        day14.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 210);
         day14.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 120);
-        day14.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 330);
+        day14.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 210);
         day14.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 120);
+        day14.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 210);
+        day14.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 120);
         day14.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
         exerciseModels.add(day14);
 
@@ -522,10 +522,10 @@ public class PlansInputter {
         ExerciseModel day21 = new ExerciseModel();
         day21.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);
         day21.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 300);
-        day21.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
+        day21.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 390);
         day21.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 120);
-        day21.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
-        day21.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 120);
+        day21.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 390);
+        day21.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 120);
         day21.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
         exerciseModels.add(day21);
 
@@ -535,15 +535,15 @@ public class PlansInputter {
         day22.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 345);
         day22.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day22.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day22.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        day22.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day22.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 345);
         day22.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day22.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day22.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        day22.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day22.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 345);
         day22.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day22.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day22.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 60);
+        day22.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 90);
         day22.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
         exerciseModels.add(day22);
 
@@ -553,15 +553,15 @@ public class PlansInputter {
         day23.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 375);
         day23.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day23.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day23.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        day23.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day23.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 375);
         day23.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day23.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day23.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        day23.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day23.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 375);
         day23.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day23.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day23.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 60);
+        day23.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 90);
         day23.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
         exerciseModels.add(day23);
 
@@ -571,15 +571,15 @@ public class PlansInputter {
         day24.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 405);
         day24.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day24.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day24.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        day24.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day24.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 405);
         day24.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day24.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day24.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        day24.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day24.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 405);
         day24.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day24.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day24.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 60);
+        day24.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 90);
         day24.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
         exerciseModels.add(day24);
 
@@ -589,15 +589,15 @@ public class PlansInputter {
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 435);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
-        day25.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        day25.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 435);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day25.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        day25.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 435);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day25.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 60);
+        day25.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 90);
         day25.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
         exerciseModels.add(day25);
 
@@ -607,15 +607,15 @@ public class PlansInputter {
         day26.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 465);
         day26.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day26.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day26.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        day26.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day26.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 465);
         day26.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day26.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day26.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        day26.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day26.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 465);
         day26.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day26.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day26.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 60);
+        day26.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 90);
         day26.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
         exerciseModels.add(day26);
 
@@ -625,25 +625,25 @@ public class PlansInputter {
         day27.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 495);
         day27.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day27.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day27.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        day27.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day27.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 495);
         day27.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day27.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day27.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 60);
+        day27.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
         day27.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 495);
         day27.addExercisePartModel(ExercisePartModel.ExerciseState.Sprint, 20);
         day27.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 10);
-        day27.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 60);
+        day27.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 90);
         day27.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
         exerciseModels.add(day27);
 
         ExerciseModel day28 = new ExerciseModel();
         day28.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);
         day28.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 300);
-        day28.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 900);
-        day28.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 120);
-        day28.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 900);
-        day28.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 120);
+        day28.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
+        day28.addExercisePartModel(ExercisePartModel.ExerciseState.Walk, 90);
+        day28.addExercisePartModel(ExercisePartModel.ExerciseState.Run, 600);
+        day28.addExercisePartModel(ExercisePartModel.ExerciseState.FastWalk, 90);
         day28.addExercisePartModel(ExercisePartModel.ExerciseState.CoolDown, 300);
         exerciseModels.add(day28);
 
