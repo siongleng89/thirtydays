@@ -155,7 +155,7 @@
     <string name="avty_settings_remind_run_title">Enable Running Notifications</string>
     <string name="avty_settings_remind_time_title">Running Time</string>
     <string name="avty_settings_remind_day_title">Days</string>
-    <string name="avty_settings_parameter_title">Your Parameter</string>
+    <string name="avty_settings_parameter_title">Personal Details</string>
     <string name="avty_settings_parameter_content">Tap to edit</string>
 
     <string name="drawer_title_day_x_plan">Day %s Plan</string>
