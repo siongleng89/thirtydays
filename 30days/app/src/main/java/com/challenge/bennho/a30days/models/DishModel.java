@@ -10,23 +10,27 @@ public class DishModel {
     private String instruction;
     private String tip;
     private int imageResourceId;
+    private int calories;
 
-    public DishModel(String dishName, int imageResourceId, String instruction, String tip) {
+    public DishModel(String dishName, int imageResourceId, int calories, String instruction, String tip) {
         this.dishName = dishName;
         this.instruction = instruction;
         this.imageResourceId = imageResourceId;
         this.tip = tip;
+        this.calories = calories;
     }
 
-    public DishModel(String dishName, int imageResourceId, String instruction) {
+    public DishModel(String dishName, int imageResourceId, int calories, String instruction) {
         this.dishName = dishName;
         this.instruction = instruction;
         this.imageResourceId = imageResourceId;
+        this.calories = calories;
     }
 
-    public DishModel(String dishName, int imageResourceId) {
+    public DishModel(String dishName, int imageResourceId, int calories) {
         this.dishName = dishName;
         this.imageResourceId = imageResourceId;
+        this.calories = calories;
     }
 
     public String getDishName() {
@@ -43,5 +47,9 @@ public class DishModel {
 
     public int getImageResourceId() {
         return imageResourceId;
+    }
+
+    public int getCalories() {
+        return calories;
     }
 }
