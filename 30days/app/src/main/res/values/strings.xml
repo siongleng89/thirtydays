@@ -1115,7 +1115,9 @@
     <string name="itype_protein">Protein</string>
     <string name="itype_carbo">Carbohydrate</string>
     <string name="itype_others">Others</string>
-
+    <string name="avty_meal_meal_plan_calories">Total Calories For Meal Plan</string>
+    <string name="avty_meal_daily_calories">Total Calories Needed Per Day</string>
+    <string name="avty_meal_loss_calories">Total Calories You Have Loss</string>
 
 
 </resources>

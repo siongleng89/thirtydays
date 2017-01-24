@@ -19,6 +19,10 @@ public class MealDayModel {
         return this;
     }
 
+    public HashMap<MealType, DishModel> getDishesMap(){
+        return dishesMap;
+    }
+
     public DishModel getDishByMealType(MealType mealType){
         return dishesMap.get(mealType);
     }

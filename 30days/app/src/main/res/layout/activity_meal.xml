@@ -77,6 +77,96 @@
             </android.support.v7.widget.RecyclerView>
 
             <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/accent_corner_radius_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="@string/avty_meal_daily_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView16"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorBtnWord"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:text="xxxx Kcal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtDailyCalories"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textColor="@color/colorBtnWord"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="@string/avty_meal_meal_plan_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView21"
+                        android:elevation="1dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorBtnWord"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:text="xxxx Kcal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtMealCalories"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textColor="@color/colorBtnWord"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:text="@string/avty_meal_loss_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView22"
+                        android:elevation="1dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorBtnWord"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:text="xxxx Kcal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtLossCalories"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:textColor="@color/colorBtnWord"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:background="@drawable/accent_corner_radius_bg"
@@ -123,7 +213,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/adLayout">
+        android:id="@+id/adLayout"
+        android:gravity="center_horizontal">
 
     </RelativeLayout>
 

@@ -23,18 +23,21 @@ import com.challenge.bennho.a30days.helpers.Analytics;
 import com.challenge.bennho.a30days.helpers.MealsInputter;
 import com.challenge.bennho.a30days.helpers.ProVersionHelpers;
 import com.challenge.bennho.a30days.helpers.RunnableArgs;
+import com.challenge.bennho.a30days.helpers.Strings;
 import com.challenge.bennho.a30days.models.DishModel;
 import com.challenge.bennho.a30days.models.IngredientModel;
 import com.challenge.bennho.a30days.models.MealDayModel;
+import com.challenge.bennho.a30days.models.User;
 
 
 public class MealActivity extends MyActivity {
 
+    private User user;
     private RecyclerView recycleViewItems;
     private MealAdapter mealAdapter;
     private MealDayModel mealDayModel;
     private MealsInputter mealsInputter;
-    private TextView txtTip, txtViewShoppingPeriod;
+    private TextView txtTip, txtViewShoppingPeriod, txtDailyCalories, txtLossCalories, txtMealCalories;
     private LinearLayout layoutViewIngredients, layoutIngredients;
     private NestedScrollView scrollView;
     private int dayPlan;
@@ -47,6 +50,9 @@ public class MealActivity extends MyActivity {
 
         scrollView = (NestedScrollView) findViewById(R.id.scrollView);
         txtTip = (TextView) findViewById(R.id.txtTip);
+        txtDailyCalories = (TextView) findViewById(R.id.txtDailyCalories);
+        txtMealCalories = (TextView) findViewById(R.id.txtMealCalories);
+        txtLossCalories = (TextView) findViewById(R.id.txtLossCalories) ;
         txtViewShoppingPeriod = (TextView) findViewById(R.id.txtViewShoppingPeriod);
         layoutViewIngredients = (LinearLayout) findViewById(R.id.layoutViewIngredients);
         layoutIngredients = (LinearLayout) findViewById(R.id.layoutIngredients);
@@ -80,6 +86,9 @@ public class MealActivity extends MyActivity {
     }
 
     private void checkCanViewMealPlan(){
+
+        user = new User(this);
+        user.reload();
 
         if(dayPlan < 8){
             showMealPlan();
@@ -142,6 +151,18 @@ public class MealActivity extends MyActivity {
 
     private void update(String todayTip){
         txtTip.setText(todayTip);
+        txtDailyCalories.setText(String.format(getString(R.string.x_kcal),String.valueOf(mealsInputter.caloriesNeeded(user))));
+
+        int totalMealCalories=0;
+        for(DishModel dishModel: mealDayModel.getDishesMap().values()){
+            totalMealCalories += dishModel.getCalories();
+        }
+        txtMealCalories.setText(String.format(getString(R.string.x_kcal),String.valueOf(totalMealCalories)));
+
+        int totalCaloriesLoss = mealsInputter.caloriesNeeded(user) - totalMealCalories;
+
+        txtLossCalories.setText(String.format(getString(R.string.x_kcal),String.valueOf(totalCaloriesLoss)));
+
 
         layoutIngredients.removeAllViews();
 
