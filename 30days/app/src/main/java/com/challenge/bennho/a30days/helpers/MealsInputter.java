@@ -311,6 +311,7 @@ public class MealsInputter {
                 .addDish(MealDayModel.MealType.lunch, new DishModel(context.getString(R.string.meal_29_2_name), R.drawable.meal_rice_chicken_brocolli, 528, context.getString(R.string.meal_29_2_instruction)))
                 .addDish(MealDayModel.MealType.evening_snack, new DishModel(context.getString(R.string.meal_29_3_name), R.drawable.meal_banana, 95))
                 .addDish(MealDayModel.MealType.dinner, new DishModel(context.getString(R.string.meal_29_4_name), R.drawable.meal_egg_white, 102, context.getString(R.string.meal_29_4_instruction), context.getString(R.string.tip_eggs))));
+
     }
 
     private void inputTipOfTheDay(){

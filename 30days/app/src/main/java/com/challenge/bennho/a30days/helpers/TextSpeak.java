@@ -83,7 +83,15 @@ public class TextSpeak{
                         textToSpeech.setOnUtteranceCompletedListener(new TextToSpeech.OnUtteranceCompletedListener() {
                             @Override
                             public void onUtteranceCompleted(String utteranceId) {
-                                audioManager.abandonAudioFocus(null);
+                                focusing = false;
+                                Threadings.delay(3000, new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        if(!focusing){
+                                            audioManager.abandonAudioFocus(null);
+                                        }
+                                    }
+                                });
                             }
                         });
                     }

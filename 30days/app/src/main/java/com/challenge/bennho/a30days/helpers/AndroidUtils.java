@@ -2,10 +2,13 @@ package com.challenge.bennho.a30days.helpers;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
@@ -13,6 +16,12 @@ import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;
@@ -113,6 +122,69 @@ public class AndroidUtils {
 
     public static int getDrawableIdentifier(Context context, String name) {
         return context.getResources().getIdentifier(name, "drawable", context.getPackageName());
+    }
+
+    public static File getPrivateFilePath(Context context, String fileName){
+        ContextWrapper cw = new ContextWrapper(context);
+        File directory = cw.getDir("days30", Context.MODE_PRIVATE);
+        File theFile = new File(directory, fileName);
+        if(!theFile.exists()){
+            try {
+                theFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return theFile;
+    }
+
+    public static void moveFileToPrivateDir(Context context, File fromFile, String saveAsName){
+        ContextWrapper cw = new ContextWrapper(context);
+        File directory = cw.getDir("days30", Context.MODE_PRIVATE);
+        File to=new File(directory, saveAsName);
+
+        try {
+            if(!to.exists()){
+                to.createNewFile();
+            }
+            copy(fromFile, to);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    public static void resizeAndShrinkImageFile(File file, int destWidth, int destHeight){
+        Bitmap b= BitmapFactory.decodeFile(file.getAbsolutePath());
+        Bitmap out = Bitmap.createScaledBitmap(b, destWidth, destHeight, false);
+
+        FileOutputStream fOut;
+        try {
+            fOut = new FileOutputStream(file);
+            out.compress(Bitmap.CompressFormat.JPEG, 90, fOut);
+            fOut.flush();
+            fOut.close();
+            b.recycle();
+            out.recycle();
+        } catch (Exception e) {}
+
+    }
+
+    public static void copy(File src, File dst) throws IOException {
+        dst.delete();
+
+        InputStream in = new FileInputStream(src);
+        OutputStream out = new FileOutputStream(dst);
+
+        // Transfer bytes from in to out
+        byte[] buf = new byte[1024];
+        int len;
+        while ((len = in.read(buf)) > 0) {
+            out.write(buf, 0, len);
+        }
+        in.close();
+        out.close();
     }
 
     public static void setFullscreen(final Activity activity, final boolean fullscreen)

@@ -48,6 +48,8 @@ public class MealActivity extends MyActivity {
         setContentView(R.layout.activity_meal);
         onLayoutSet();
 
+        AdsMediation.showInterstitial(this);
+
         scrollView = (NestedScrollView) findViewById(R.id.scrollView);
         txtTip = (TextView) findViewById(R.id.txtTip);
         txtDailyCalories = (TextView) findViewById(R.id.txtDailyCalories);
@@ -111,8 +113,6 @@ public class MealActivity extends MyActivity {
     }
 
     private void showMealPlan(){
-        AdsMediation.showInterstitial(this);
-
         int startDay, endDay;
         if(dayPlan <= 7){
             startDay = 1;

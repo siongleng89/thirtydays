@@ -4,5 +4,6 @@
 
     <item app:showAsAction="always"
         android:icon="@drawable/graph_icon"
-        android:id="@+id/graph" />
+        android:id="@+id/graph"
+        android:title="" />
 </menu>

@@ -1,11 +1,13 @@
 package com.challenge.bennho.a30days.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.util.Pair;
 import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -22,16 +24,20 @@ import com.challenge.bennho.a30days.helpers.Strings;
 import com.challenge.bennho.a30days.models.User;
 import com.challenge.bennho.a30days.services.ExerciseService;
 
+import java.io.File;
+
 public class MainActivity extends MyActivity {
 
     private DrawerLayout drawerLayout;
     private ListView drawerList;
+    private RelativeLayout layoutCamera;
     private LayoutDayCounter dayCounterControl;
+    private ImageView imgViewDayPhoto;
     private ImageView imgViewPrevious, imgViewNext;
     private int userMaxDay;
     private int currentSelectedDay;
     private RelativeLayout layoutExercise, layoutMeal;
-    private TextView txtDayNumber1, txtDayNumber2, txtDayNumber3,
+    private TextView txtDayShortForm, txtDayNumber1, txtDayNumber2, txtDayNumber3,
                             txtWeight, txtHeight, txtCalories;
     private RelativeLayout layoutLockExercise, layoutLockMeal, layoutRetryExercise;
     private boolean lockedExercise, lockedMeal;
@@ -49,14 +55,17 @@ public class MainActivity extends MyActivity {
         layoutLockExercise = (RelativeLayout) findViewById(R.id.layoutLockExercise);
         layoutLockMeal = (RelativeLayout) findViewById(R.id.layoutLockMeal);
         dayCounterControl = (LayoutDayCounter) findViewById(R.id.dayCounterControl);
+        layoutCamera = (RelativeLayout) findViewById(R.id.layoutCamera);
         imgViewNext = (ImageView) findViewById(R.id.imgViewNext);
         imgViewPrevious = (ImageView) findViewById(R.id.imgViewPrevious);
+        txtDayShortForm = (TextView) findViewById(R.id.txtDayShortForm);
         txtDayNumber1 = (TextView) findViewById(R.id.txtDayNumber1);
         txtDayNumber2 = (TextView) findViewById(R.id.txtDayNumber2);
         txtDayNumber3 = (TextView) findViewById(R.id.txtDayNumber3);
         txtWeight = (TextView) findViewById(R.id.txtWeight);
         txtHeight = (TextView) findViewById(R.id.txtHeight);
         txtCalories = (TextView) findViewById(R.id.txtCalories);
+        imgViewDayPhoto = (ImageView) findViewById(R.id.imgViewDayPhoto);
 
         setListeners();
 
@@ -128,9 +137,15 @@ public class MainActivity extends MyActivity {
         }
 
         dayCounterControl.updateDayNumber(day);
+        txtDayShortForm.setText(String.format(getString(R.string.day_shortform_x), String.valueOf(day)));
         txtDayNumber1.setText(String.format(getString(R.string.day_X), String.valueOf(day)));
         txtDayNumber2.setText(String.format(getString(R.string.day_X), String.valueOf(day)));
         txtDayNumber3.setText(String.format(getString(R.string.day_X), String.valueOf(day)));
+        imgViewDayPhoto.setImageURI(null);
+        File dayPhotoImage = getThisDayImageThumbnailFilePath();
+        if(dayPhotoImage.exists()){
+            imgViewDayPhoto.setImageURI(Uri.fromFile(dayPhotoImage));
+        }
 
         setEnablePrevDayButton(day > 1);
         setEnableNextDayButton(day < 30);
@@ -186,6 +201,12 @@ public class MainActivity extends MyActivity {
         }
     }
 
+    private void onPhotoClicked(){
+        Intent intent = new Intent(this, PhotoActivity.class);
+        intent.putExtra("dayPlan", currentSelectedDay);
+        startActivity(intent);
+    }
+
     private void setListeners(){
         layoutExercise.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -218,6 +239,14 @@ public class MainActivity extends MyActivity {
                 showMeal();
             }
         });
+
+        layoutCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onPhotoClicked();
+            }
+        });
+
     }
 
     private void setEnableNextDayButton(boolean enabled){
@@ -284,7 +313,9 @@ public class MainActivity extends MyActivity {
         }
     }
 
-
+    private File getThisDayImageThumbnailFilePath(){
+        return AndroidUtils.getPrivateFilePath(this, currentSelectedDay + "thumb.jpg");
+    }
 
 
 }

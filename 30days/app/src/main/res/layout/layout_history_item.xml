@@ -49,10 +49,11 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            app:srcCompat="@drawable/delete_icon"
+            app:srcCompat="@drawable/ic_action_delete_icon"
             android:tint="@color/colorWord"
             android:layout_height="20dp"
-            android:id="@+id/imgViewDelete" />
+            android:id="@+id/imgViewDelete"
+            android:layout_marginLeft="5dp" />
 
     </LinearLayout>
 

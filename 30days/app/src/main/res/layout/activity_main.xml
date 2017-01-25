@@ -29,7 +29,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:padding="10dp"
                 android:fillViewport="true">
 
                 <RelativeLayout
@@ -37,109 +36,156 @@
                     android:layout_height="match_parent">
 
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/accent_corner_border"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:paddingLeft="7dp"
-                        android:paddingRight="7dp">
+                        android:background="@color/colorAccent"
+                        android:id="@+id/layoutTop">
 
-                        <TextView
-                            android:text="@string/avty_main_customized_plan_title"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="12sp" />
+                        <RelativeLayout android:layout_height="wrap_content"
+                            android:layout_width="80dp"
+                            android:gravity="center"
+                            android:id="@+id/layoutCamera">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:text="@string/day_shortform_x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#fff"
+                                    android:textSize="12sp"
+                                    android:textStyle="normal|bold"
+                                    android:gravity="center"
+                                    android:id="@+id/txtDayShortForm" />
+
+                                <ImageView
+                                    app:srcCompat="@drawable/ic_action_camera_icon"
+                                    android:id="@+id/imageView17"
+                                    android:layout_weight="1"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                app:srcCompat="@drawable/abslady"
+                                android:id="@+id/imgViewDayPhoto"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerInParent="true"
+                                android:layout_height="40dp" />
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0"
+                            android:background="#fff">
+
+                        </RelativeLayout>
 
                         <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:layout_marginTop="2dp">
+                            android:layout_weight="1"
+                            android:padding="10dp">
 
                             <TextView
-                                android:background="@drawable/circle_accent_bg"
-                                android:layout_width="3dp"
-                                android:layout_height="3dp" />
-
-                            <TextView
-                                android:text="178cm"
-                                android:layout_width="wrap_content"
+                                android:text="@string/avty_main_customized_plan_title"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="0"
-                                android:layout_marginLeft="5dp"
-                                android:textColor="@color/colorAccent"
+                                android:textColor="#fff"
                                 android:textSize="12sp"
-                                android:id="@+id/txtHeight" />
+                                android:textStyle="normal|bold"
+                                android:gravity="center" />
 
-                            <TextView
-                                android:text="70kg"
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="0"
-                                android:layout_marginLeft="5dp"
-                                android:textColor="@color/colorAccent"
-                                android:textSize="12sp"
-                                android:id="@+id/txtWeight" />
+                                android:layout_marginTop="2dp"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:text="178cm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textColor="#fff"
+                                    android:textSize="12sp"
+                                    android:id="@+id/txtHeight" />
+
+                                <TextView
+                                    android:text="70kg"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0"
+                                    android:layout_marginLeft="5dp"
+                                    android:textColor="#fff"
+                                    android:textSize="12sp"
+                                    android:id="@+id/txtWeight" />
+
+                            </LinearLayout>
 
                         </LinearLayout>
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/accent_corner_border"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp"
-                        android:paddingLeft="7dp"
-                        android:paddingRight="7dp"
-                        android:layout_alignParentRight="true">
-
-                        <TextView
-                            android:text="@string/avty_main_calories_counter_title"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/textView13"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="12sp" />
-
                         <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:layout_marginTop="2dp">
+                            android:layout_alignParentRight="false"
+                            android:visibility="visible"
+                            android:layout_weight="1"
+                            android:padding="10dp">
 
                             <TextView
-                                android:id="@+id/textView14"
-                                android:background="@drawable/circle_accent_bg"
-                                android:layout_width="3dp"
-                                android:layout_height="3dp" />
-
-                            <TextView
-                                android:text="213 k/cal"
-                                android:layout_width="wrap_content"
+                                android:text="@string/avty_main_calories_counter_title"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="0"
-                                android:layout_marginLeft="5dp"
-                                android:textColor="@color/colorAccent"
+                                android:id="@+id/textView13"
+                                android:textColor="#fff"
                                 android:textSize="12sp"
-                                android:id="@+id/txtCalories" />
+                                android:textStyle="normal|bold"
+                                android:gravity="center" />
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:text="213 k/cal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0"
+                                    android:textColor="#fff"
+                                    android:textSize="12sp"
+                                    android:id="@+id/txtCalories" />
+
+                            </LinearLayout>
 
                         </LinearLayout>
 
+
                     </LinearLayout>
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:layout_below="@+id/layoutTop">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -151,8 +197,8 @@
 
                         <com.challenge.bennho.a30days.controls.LayoutDayCounter
                             android:id="@+id/dayCounterControl"
-                            android:layout_width="250dp"
-                            android:layout_height="250dp">
+                            android:layout_height="220dp"
+                            android:layout_width="220dp">
 
                         </com.challenge.bennho.a30days.controls.LayoutDayCounter>
 
@@ -178,7 +224,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:id="@+id/layoutButtons"
-                android:layout_height="150dp">
+                android:layout_height="100dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
