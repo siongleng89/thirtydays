@@ -28,6 +28,7 @@ import com.challenge.bennho.a30days.helpers.AnimateBuilder;
 import com.challenge.bennho.a30days.helpers.CaloriesToImagesConverter;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.RealmHelper;
+import com.challenge.bennho.a30days.helpers.ShareHelper;
 import com.challenge.bennho.a30days.helpers.Strings;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.FoodModel;
@@ -95,7 +96,8 @@ public class ExerciseResultActivity extends MyActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.share) {
-            shareApps();
+            ShareHelper.shareResult(calories, minutes, this);
+
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -327,14 +329,7 @@ public class ExerciseResultActivity extends MyActivity {
         }
     }
 
-    private void shareApps(){
-        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-        sharingIntent.setType("text/plain");
-        String shareBody = String.format(getString(R.string.share_result_msg),String.valueOf(minutes),String.valueOf(calories));
-        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.app_name));
-        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-        startActivityForResult(Intent.createChooser(sharingIntent, getString(R.string.share)), 123);
-    }
+
 
     private void setListeners(){
         btnEnd.setOnClickListener(new View.OnClickListener() {

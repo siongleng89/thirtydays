@@ -55,6 +55,15 @@
             android:id="@+id/imgViewDelete"
             android:layout_marginLeft="5dp" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_action_share"
+            android:id="@+id/imgViewShare"
+            android:layout_weight="0"
+            android:tint="@android:color/black"
+            android:layout_marginLeft="10dp" />
+
     </LinearLayout>
 
     <TextView

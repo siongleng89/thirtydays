@@ -20,12 +20,15 @@ import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.DateTimeUtils;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.RealmHelper;
+import com.challenge.bennho.a30days.helpers.ShareHelper;
 import com.challenge.bennho.a30days.models.FoodModel;
 import com.challenge.bennho.a30days.models.HistoryRecord;
 import com.challenge.bennho.a30days.models.User;
 
 import io.realm.RealmChangeListener;
 import io.realm.RealmResults;
+
+import static com.challenge.bennho.a30days.R.id.imageView;
 
 public class HistoryActivity extends MyActivity {
 
@@ -35,6 +38,7 @@ public class HistoryActivity extends MyActivity {
     private User user;
     private RealmHelper realmHelper;
     private RealmResults<HistoryRecord> historyRecords;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,13 +153,14 @@ public class HistoryActivity extends MyActivity {
 
             private TextView txtDayPlan, txtDate, txtDuration, txtCalories, txtIndex;
             private ImageView imgViewComplete, imgViewIncomplete;
-            private ImageView imgViewDelete;
+            private ImageView imgViewDelete, imgViewShare;
             private ImageCircularFood imageViewFood1, imageViewFood2, imageViewFood3;
             private TextView txtItemSeparatorThick, txtItemSeparatorThin;
             private TextView txtDateTitle, txtPlanTitle, txtCompletedTitle,
                         txtDurationTitle, txtCaloriesTitle, txtKcalTitle, txtEqual,
                         txtNoRecords;
             private HistoryRecord historyRecord;
+            private int calories, minutes;
 
 
             public HistoryItemViewHolder(final Context context, View itemView) {
@@ -172,6 +177,7 @@ public class HistoryActivity extends MyActivity {
                 imageViewFood2 = (ImageCircularFood) itemView.findViewById(R.id.imgViewFood2);
                 imageViewFood3 = (ImageCircularFood) itemView.findViewById(R.id.imgViewFood3);
                 imgViewDelete = (ImageView) itemView.findViewById(R.id.imgViewDelete);
+                imgViewShare = (ImageView) itemView.findViewById(R.id.imgViewShare);
                 txtItemSeparatorThin = (TextView) itemView.findViewById(R.id.txtItemSeparatorThin);
                 txtItemSeparatorThick = (TextView) itemView.findViewById(R.id.txtItemSeparatorThick);
 
@@ -212,6 +218,13 @@ public class HistoryActivity extends MyActivity {
                     }
                 });
 
+                imgViewShare.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ShareHelper.shareResult(calories, minutes, HistoryActivity.this);
+                    }
+                });
+
             }
 
             public void updateDesign(HistoryRecord historyRecord, int position){
@@ -248,10 +261,11 @@ public class HistoryActivity extends MyActivity {
                 txtDayPlan.setText(String.format(getString(R.string.day_X),
                                         String.valueOf(historyRecord.getDayNumber())));
 
-                int minutes = (int) Math.ceil(historyRecord.getExerciseTimeMs() / 1000 / 60);
+                minutes = (int) Math.ceil(historyRecord.getExerciseTimeMs() / 1000 / 60);
+                calories = (int) Math.ceil(historyRecord.getCaloriesBurnt());
 
                 txtDuration.setText(minutes + " " + getString(R.string.min_s));
-                txtCalories.setText(String.valueOf((int) Math.ceil(historyRecord.getCaloriesBurnt())));
+                txtCalories.setText(String.valueOf(calories));
                 if(historyRecord.isCompletedExercise()){
                     imgViewComplete.setVisibility(View.VISIBLE);
                     imgViewIncomplete.setVisibility(View.GONE);
