@@ -7,6 +7,8 @@ import android.content.ServiceConnection;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -45,6 +47,8 @@ public class ExerciseResultActivity extends MyActivity {
     private User user;
     private RealmHelper realmHelper;
     private ExerciseService exerciseService;
+    private int calories;
+    private int minutes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +83,24 @@ public class ExerciseResultActivity extends MyActivity {
 
         processResults();
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.share_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.share) {
+            shareApps();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     private ServiceConnection exerciseServiceConnection = new ServiceConnection() {
 
@@ -126,8 +148,8 @@ public class ExerciseResultActivity extends MyActivity {
             setTitle(String.format(getString(R.string.avty_result_title), String.valueOf(dayPlan)));
             txtTitle.setText(String.format(getString(R.string.avty_result_day_x), String.valueOf(dayPlan)));
 
-            int minutes = (int) Math.ceil((totalElapsedMs / 1000) / 60);
-            int calories = (int) Math.ceil(caloriesBurnt);
+            minutes = (int) Math.ceil((totalElapsedMs / 1000) / 60);
+            calories = (int) Math.ceil(caloriesBurnt);
 
             txtTime.setText(String.valueOf(minutes));
             txtCalories.setText(String.valueOf(calories));
@@ -303,6 +325,15 @@ public class ExerciseResultActivity extends MyActivity {
         else{
             Analytics.logEvent(AnalyticEvent.ExerciseFail, Strings.joinArr(arr, ", "));
         }
+    }
+
+    private void shareApps(){
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        String shareBody = String.format(getString(R.string.share_result_msg),String.valueOf(minutes),String.valueOf(calories));
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        startActivityForResult(Intent.createChooser(sharingIntent, getString(R.string.share)), 123);
     }
 
     private void setListeners(){

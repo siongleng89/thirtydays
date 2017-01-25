@@ -83,6 +83,7 @@ public class GraphActivity extends MyActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
     protected void onStop() {
         super.onStop();

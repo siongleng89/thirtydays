@@ -1122,6 +1122,7 @@
     <string name="avty_meal_meal_plan_calories">Meal plan calories </string>
     <string name="avty_meal_daily_calories">Calories you need/day</string>
     <string name="avty_meal_loss_calories">You have lost</string>
+    <string name="share_result_msg">I have finished a %1$s minutes run and burned %2$s calories today! Join me together and shape your body in 30 days! https://play.google.com/store/apps/details?id=com.challenge.bennho.a30days</string>
 
     <string name="delete">Delete</string>
 
