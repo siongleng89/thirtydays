@@ -326,15 +326,15 @@
 
     <string name="end">End</string>
 
-    <string name="x_kg">%sKg</string>
+    <string name="x_kg">%s Kg</string>
 
-    <string name="x_cm">%sCm</string>
+    <string name="x_cm">%s Cm</string>
 
-    <string name="x_pounds">%sLbs</string>
+    <string name="x_pounds">%s Lbs</string>
 
     <string name="x_foot_x_inch">%1$s\'%2$s\'\'</string>
 
-    <string name="x_kcal">%sK/cal</string>
+    <string name="x_kcal">%s K/cal</string>
 
     <string name="metric_units">Kg/Cm</string>
 
@@ -1115,9 +1115,9 @@
     <string name="itype_protein">Protein</string>
     <string name="itype_carbo">Carbohydrate</string>
     <string name="itype_others">Others</string>
-    <string name="avty_meal_meal_plan_calories">Total Calories For Meal Plan</string>
-    <string name="avty_meal_daily_calories">Total Calories Needed Per Day</string>
-    <string name="avty_meal_loss_calories">Total Calories You Have Loss</string>
+    <string name="avty_meal_meal_plan_calories">Meal plan calories </string>
+    <string name="avty_meal_daily_calories">Calories you need/day</string>
+    <string name="avty_meal_loss_calories">You have lost</string>
 
 
 </resources>

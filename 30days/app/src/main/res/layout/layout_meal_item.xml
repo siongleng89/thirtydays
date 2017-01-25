@@ -18,15 +18,34 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp">
 
-        <TextView
-            android:text="Breakfast"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtMealType"
-            android:textColor="@color/colorWord"
-            android:textSize="18sp"
-            android:textStyle="normal|bold"
-            android:fontFamily="sans-serif-condensed" />
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Breakfast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtMealType"
+                android:textColor="@color/colorWord"
+                android:textSize="18sp"
+                android:textStyle="normal|bold"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="1000 K/cal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtItemCalories"
+                android:layout_weight="0"
+                android:gravity="right"
+                android:textStyle="normal|italic"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp" />
+
+        </LinearLayout>
 
         <TextView
             android:text="Two really lame eggs"

@@ -151,17 +151,17 @@ public class MealActivity extends MyActivity {
 
     private void update(String todayTip){
         txtTip.setText(todayTip);
-        txtDailyCalories.setText(String.format(getString(R.string.x_kcal),String.valueOf(mealsInputter.caloriesNeeded(user))));
+        txtDailyCalories.setText(String.valueOf(mealsInputter.caloriesNeeded(user)));
 
         int totalMealCalories=0;
         for(DishModel dishModel: mealDayModel.getDishesMap().values()){
             totalMealCalories += dishModel.getCalories();
         }
-        txtMealCalories.setText(String.format(getString(R.string.x_kcal),String.valueOf(totalMealCalories)));
+        txtMealCalories.setText(String.valueOf(totalMealCalories));
 
         int totalCaloriesLoss = mealsInputter.caloriesNeeded(user) - totalMealCalories;
 
-        txtLossCalories.setText(String.format(getString(R.string.x_kcal),String.valueOf(totalCaloriesLoss)));
+        txtLossCalories.setText(String.valueOf(totalCaloriesLoss));
 
 
         layoutIngredients.removeAllViews();
@@ -249,7 +249,7 @@ public class MealActivity extends MyActivity {
         public class DishItemViewHolder extends RecyclerView.ViewHolder{
 
             private ImageView imgViewDish;
-            private TextView txtMealType, txtMealName, txtMealInstruction;
+            private TextView txtMealType, txtMealName, txtMealInstruction, txtItemCalories;
 
             public DishItemViewHolder(final Context context, View itemView) {
                 super(itemView);
@@ -259,6 +259,7 @@ public class MealActivity extends MyActivity {
                 txtMealType = (TextView) itemView.findViewById(R.id.txtMealType);
                 txtMealName = (TextView) itemView.findViewById(R.id.txtMealName);
                 txtMealInstruction = (TextView) itemView.findViewById(R.id.txtMealInstruction);
+                txtItemCalories = (TextView) itemView.findViewById(R.id.txtItemCalories);
 
             }
 
@@ -286,6 +287,7 @@ public class MealActivity extends MyActivity {
                 imgViewDish.setImageResource(dishModel.getImageResourceId());
                 txtMealName.setText(dishModel.getDishName());
                 txtMealInstruction.setText(dishModel.getInstruction());
+                txtItemCalories.setText(String.format(getString(R.string.x_kcal),String.valueOf(dishModel.getCalories())));
             }
         }
 

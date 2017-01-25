@@ -72,7 +72,8 @@
                 android:layout_width="match_parent"
                 android:id="@+id/recycleViewItems"
                 android:scrollbars="none"
-                android:layout_marginRight="10dp">
+                android:layout_marginRight="10dp"
+                android:visibility="visible">
 
             </android.support.v7.widget.RecyclerView>
 
@@ -81,8 +82,10 @@
                 android:background="@drawable/accent_corner_radius_bg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:padding="15dp">
+                android:padding="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -91,22 +94,23 @@
 
                     <TextView
                         android:text="@string/avty_meal_daily_calories"
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView16"
                         android:layout_weight="1"
                         android:textColor="@color/colorBtnWord"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:layout_width="130dp" />
 
                     <TextView
-                        android:text="xxxx Kcal"
+                        android:text="2700"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtDailyCalories"
                         android:layout_weight="1"
-                        android:gravity="right"
                         android:textColor="@color/colorBtnWord"
-                        android:textSize="14sp" />
+                        android:textSize="18sp"
+                        android:gravity="right"
+                        android:layout_marginRight="10dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -116,25 +120,34 @@
 
                     <TextView
                         android:text="@string/avty_meal_meal_plan_calories"
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView21"
                         android:elevation="1dp"
                         android:layout_weight="1"
                         android:textColor="@color/colorBtnWord"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:layout_width="130dp" />
 
                     <TextView
-                        android:text="xxxx Kcal"
+                        android:text="1604"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtMealCalories"
                         android:layout_weight="1"
-                        android:gravity="right"
                         android:textColor="@color/colorBtnWord"
-                        android:textSize="14sp" />
+                        android:textSize="18sp"
+                        android:gravity="right"
+                        android:layout_marginRight="10dp" />
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorBackground"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"></LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -145,24 +158,47 @@
 
                     <TextView
                         android:text="@string/avty_meal_loss_calories"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:id="@+id/textView22"
                         android:elevation="1dp"
                         android:layout_weight="1"
                         android:textColor="@color/colorBtnWord"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:layout_width="130dp"
+                        android:gravity="center_vertical" />
 
                     <TextView
-                        android:text="xxxx Kcal"
+                        android:text="1096"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/txtLossCalories"
                         android:layout_weight="1"
-                        android:gravity="right"
                         android:textColor="@color/colorBtnWord"
-                        android:textSize="14sp" />
+                        android:textSize="24sp"
+                        android:gravity="right"
+                        android:textStyle="normal|bold"
+                        android:paddingRight="11dp" />
+
+                    <TextView
+                        android:text="@string/kcal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView29"
+                        android:layout_weight="0"
+                        android:textColor="@color/colorBtnWord"
+                        android:layout_marginRight="5dp" />
+
                 </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorBackground"
+                    android:layout_marginTop="5dp">
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
