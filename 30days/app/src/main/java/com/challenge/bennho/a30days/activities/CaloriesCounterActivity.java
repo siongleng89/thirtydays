@@ -82,7 +82,7 @@ public class CaloriesCounterActivity extends AppCompatActivity {
 
 
         PlansInputter plansInputter = new PlansInputter(this);
-        ExerciseModel exerciseModel = plansInputter.getExerciseModelByDay(dayNumber, age, bmi);
+        ExerciseModel exerciseModel = plansInputter.getExerciseModelByDay(dayNumber, age, bmi, 1);
         double caloriesBurnt = 0;
 
         for(ExercisePartModel exercisePartModel : exerciseModel.getExercisePartModels()){

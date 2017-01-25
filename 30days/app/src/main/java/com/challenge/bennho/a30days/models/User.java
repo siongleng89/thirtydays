@@ -2,6 +2,7 @@ package com.challenge.bennho.a30days.models;
 
 import android.content.Context;
 
+import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.enums.GenderEnum;
 import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
@@ -21,6 +22,7 @@ public class User {
     private int genderIndex;        //0: male 1:female
     private int totalCaloriesBurnt;
     private int totalRunningSecs;
+    private int runDifficultLevel;
     private Context context;
 
 
@@ -35,6 +37,8 @@ public class User {
         PreferenceUtils.putString(context, PreferenceType.ReminderTime, "17");
         PreferenceUtils.putString(context, PreferenceType.ReminderDay, "1,2,3,4,5,6,7");
         PreferenceUtils.putString(context, PreferenceType.CurrentExerciseDay, "1");
+        PreferenceUtils.putString(context, PreferenceType.RunDifficulty, "1");
+
     }
 
     public void reload(){
@@ -46,6 +50,7 @@ public class User {
         this.currentDay = PreferenceUtils.getDouble(context, PreferenceType.CurrentExerciseDay).intValue();
         this.totalCaloriesBurnt = PreferenceUtils.getDouble(context, PreferenceType.TotalCaloriesBurnt).intValue();
         this.totalRunningSecs = PreferenceUtils.getDouble(context, PreferenceType.TotalRunningSecs).intValue();
+        this.runDifficultLevel = PreferenceUtils.getDouble(context, PreferenceType.RunDifficulty).intValue();
     }
 
     public void delete(){
@@ -169,4 +174,25 @@ public class User {
         PreferenceUtils.putString(context, PreferenceType.TotalRunningSecs, String.valueOf(totalRunningSecs));
     }
 
+    public int getRunDifficultLevel() {
+        return runDifficultLevel;
+    }
+
+    public String getRunDifficultText() {
+        if(runDifficultLevel == 5){
+            return context.getString(R.string.difficulty_5);
+        }
+        else if(runDifficultLevel == 4){
+            return context.getString(R.string.difficulty_4);
+        }
+        else if(runDifficultLevel == 3){
+            return context.getString(R.string.difficulty_3);
+        }
+        else if(runDifficultLevel == 2){
+            return context.getString(R.string.difficulty_2);
+        }
+        else{
+            return context.getString(R.string.difficulty_1);
+        }
+    }
 }

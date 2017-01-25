@@ -48,7 +48,7 @@ public class PlansInputter {
      * @param bmi
      * @return
      */
-    public ExerciseModel getExerciseModelByDay(int day, int age, double bmi){
+    public ExerciseModel getExerciseModelByDay(int day, int age, double bmi, int difficulty){
 
         ExerciseModel exerciseModel = exerciseModels.get(day - 1);
         double runFactor = 1d;
@@ -89,7 +89,7 @@ public class PlansInputter {
 
 
         decreaseIntensity(exerciseModel, runFactor, sprintFactor);
-
+        processDifficulties(exerciseModel, difficulty);
         removedZeroDurationExercisePart(exerciseModel);
 
         return exerciseModel;
@@ -97,7 +97,6 @@ public class PlansInputter {
 
     private void decreaseIntensity(ExerciseModel exerciseModel, double runFactor,
                                                 double sprintFactor) {
-
         //processing run factor
         for (int i = 0; i < exerciseModel.getExercisePartModels().size(); i++) {
             if (exerciseModel.getExercisePartModels().get(i).getExerciseState()
@@ -142,6 +141,37 @@ public class PlansInputter {
                     }
                 }
             }
+        }
+    }
+
+    private void processDifficulties(ExerciseModel exerciseModel, int difficulty){
+        if(difficulty <= 1) return;
+
+        boolean isSprintBefore;
+        for (int i = 0; i < exerciseModel.getExercisePartModels().size(); i++) {
+            if(exerciseModel.getExercisePartModels().get(i).getExerciseState()
+                                        == ExercisePartModel.ExerciseState.Sprint){
+                isSprintBefore = true;
+            }
+            else{
+                isSprintBefore = false;
+            }
+
+            if(exerciseModel.getExercisePartModels().get(i).getExerciseState()
+                    == ExercisePartModel.ExerciseState.Run){
+                if(!isSprintBefore){
+                    ExercisePartModel toAddModel = exerciseModel.getExercisePartModels().get(i);
+                    int toAddSecs = (difficulty - 1) * 30;
+                    toAddModel.setDurationSecs(toAddModel.getDurationSecs() + toAddSecs);
+                }
+            }
+            else if(exerciseModel.getExercisePartModels().get(i).getExerciseState()
+                    == ExercisePartModel.ExerciseState.Walk){
+                ExercisePartModel toMinusModel = exerciseModel.getExercisePartModels().get(i);
+                int toMinusSecs = (difficulty - 1) * 5;
+                toMinusModel.setDurationSecs(toMinusModel.getDurationSecs() - toMinusSecs);
+            }
+
         }
     }
 

@@ -184,8 +184,9 @@ public class PhotoActivity extends MyActivity {
     private void deleteImage(){
         OverlayBuilder.build(this)
                 .setOverlayType(OverlayBuilder.OverlayType.OkCancel)
-                .setTitle("Delete photo?")
-                .setContent(String.format("Confirm delete day %s photo of you?", String.valueOf(dayPlan)))
+                .setTitle(getString(R.string.avty_photo_confirm_delete_title))
+                .setContent(String.format(getString(R.string.avty_photo_confirm_delete_content),
+                        String.valueOf(dayPlan)))
                 .setRunnables(new Runnable() {
                     @Override
                     public void run() {

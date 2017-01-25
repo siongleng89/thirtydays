@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
+import com.challenge.bennho.a30days.controls.DialogChangeDifficulty;
 import com.challenge.bennho.a30days.controls.ImageCircularFood;
 import com.challenge.bennho.a30days.drawables.CustomAnimationDrawable;
 import com.challenge.bennho.a30days.enums.AnalyticEvent;
@@ -26,6 +27,7 @@ import com.challenge.bennho.a30days.helpers.AllReminderHelper;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.AnimateBuilder;
 import com.challenge.bennho.a30days.helpers.CaloriesToImagesConverter;
+import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.RealmHelper;
 import com.challenge.bennho.a30days.helpers.ShareHelper;
@@ -50,6 +52,7 @@ public class ExerciseResultActivity extends MyActivity {
     private ExerciseService exerciseService;
     private int calories;
     private int minutes;
+    private boolean isRunningCompleted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,10 +145,10 @@ public class ExerciseResultActivity extends MyActivity {
         if(getIntent() != null){
             float totalElapsedMs = getIntent().getFloatExtra("totalElapsedMs", 0);
             float caloriesBurnt = getIntent().getFloatExtra("caloriesBurnt", 0);
-            boolean isCompleted = getIntent().getBooleanExtra("isCompleted", true);
+            isRunningCompleted = getIntent().getBooleanExtra("isCompleted", true);
             int dayPlan = getIntent().getIntExtra("dayPlan", 1);
 
-            logAnalytics(isCompleted, dayPlan, totalElapsedMs);
+            logAnalytics(isRunningCompleted, dayPlan, totalElapsedMs);
 
             setTitle(String.format(getString(R.string.avty_result_title), String.valueOf(dayPlan)));
             txtTitle.setText(String.format(getString(R.string.avty_result_day_x), String.valueOf(dayPlan)));
@@ -165,7 +168,7 @@ public class ExerciseResultActivity extends MyActivity {
                 HistoryRecord historyRecord = new HistoryRecord();
                 historyRecord.setDayNumber(dayPlan);
                 historyRecord.setFoodModels(foodModels);
-                historyRecord.setCompletedExercise(isCompleted);
+                historyRecord.setCompletedExercise(isRunningCompleted);
                 historyRecord.setRecordUnixTime(System.currentTimeMillis());
                 historyRecord.setExerciseTimeMs(totalElapsedMs);
                 historyRecord.setCaloriesBurnt(caloriesBurnt);
@@ -175,7 +178,7 @@ public class ExerciseResultActivity extends MyActivity {
                 user.addRunningSecs(totalElapsedMs / 1000);
 
 
-                if(isCompleted && dayPlan >= user.getCurrentDay()){
+                if(isRunningCompleted && dayPlan >= user.getCurrentDay()){
                     user.addCurrentDay();
 
                     AllReminderHelper.updateReminders(this);
@@ -203,7 +206,7 @@ public class ExerciseResultActivity extends MyActivity {
                 imageCircularFood.setFood(foodModels.get(i));
             }
 
-            animatePartOne(isCompleted);
+            animatePartOne(isRunningCompleted);
         }
     }
 
@@ -300,9 +303,24 @@ public class ExerciseResultActivity extends MyActivity {
             exerciseService.disposeExercise();
         }
 
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
+        Runnable nextScreenRunnable = new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(ExerciseResultActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        };
+
+        if(isRunningCompleted){
+            DialogChangeDifficulty dialogChangeDifficulty = new DialogChangeDifficulty(this);
+            //next screen runnable will be called immediately if no need to change difficulty
+            dialogChangeDifficulty.showIfNeeded(nextScreenRunnable);
+        }
+        else{
+            nextScreenRunnable.run();
+        }
+
     }
 
     private void logAnalytics(boolean completed, int dayPlan, float totalElapsedMs){

@@ -1125,6 +1125,23 @@
     <string name="share_result_msg">I have finished a %1$s minutes run and burned %2$s calories today! Join me together and shape your body in 30 days! https://play.google.com/store/apps/details?id=com.challenge.bennho.a30days</string>
 
     <string name="delete">Delete</string>
+    <string name="avty_settings_details_category_title">Personal Details</string>
+    <string name="avty_settings_notification_category_title">Notifications Settings</string>
+    <string name="avty_settings_difficulties_category_title">Difficulty</string>
 
+    <string name="difficulty_1">Normal</string>
+    <string name="difficulty_2">Hard</string>
+    <string name="difficulty_3">Very Hard</string>
+    <string name="difficulty_4">Hardcore</string>
+    <string name="difficulty_5">Extreme</string>
+    <string name="avty_settings_run_difficulty_title">Run Difficulty Level</string>
+    <string name="dialog_increase_difficulty_content">
+        Is today running plan too easy for you? Do you want to increase the difficulty of the following running plan? \n(You may also adjust the difficulty later in Settings page)</string>
+    <string name="dialog_increase_difficulty_title">Increase running difficulty?</string>
+    <string name="dont_ask_me_again">Don\'t ask me again</string>
+    <string name="dialog_increase_difficulty_no_btn">No, current running plan is fine.</string>
+    <string name="dialog_increase_difficulty_yes_btn">Yes, please increase the difficulty!</string>
+    <string name="avty_photo_confirm_delete_title">Delete photo?</string>
+    <string name="avty_photo_confirm_delete_content">Confirm delete day %s photo of you?</string>
 
 </resources>

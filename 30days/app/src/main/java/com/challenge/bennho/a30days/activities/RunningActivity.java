@@ -84,7 +84,8 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
 
         layoutExerciseStates.start(exerciseModel, this);
 
-        txtDayView.setText(String.format(getString(R.string.day_X), String.valueOf(dayPlan)));
+        txtDayView.setText(String.format(getString(R.string.day_X),
+                            String.valueOf(dayPlan)) + "\n" + user.getRunDifficultText());
 
         setListeners();
     }
@@ -409,7 +410,7 @@ public class RunningActivity extends MyActivity implements ExerciseService.Exerc
 
         PlansInputter plansInputter = new PlansInputter(this);
         exerciseModel = plansInputter.getExerciseModelByDay(dayPlan,
-                    user.getAge(), user.getBMIValue());
+                    user.getAge(), user.getBMIValue(), user.getRunDifficultLevel());
 
 //        exerciseModel = new ExerciseModel();
 //        exerciseModel.addExercisePartModel(ExercisePartModel.ExerciseState.WarmUp, 300);
