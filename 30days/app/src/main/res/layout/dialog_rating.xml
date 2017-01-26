@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="10dp">
+
+    <TextView
+        android:text="Rate This App"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/textView26"
+        android:autoText="false"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:text="If you enjoy using this app, would you mind taking a moment to rate this app? It won't take longer than a minute. Thank you for your support!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView27"
+        android:layout_margin="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView33"
+        android:background="@color/colorLightGray"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/google_icon"
+            android:id="@+id/imageView21"
+            android:layout_width="30dp"
+            android:layout_weight="0" />
+
+        <TextView
+            android:text="+1 At Google Plus"
+            android:layout_width="match_parent"
+            android:id="@+id/textView31"
+            android:layout_weight="0"
+            android:textColor="@color/colorWord"
+            android:layout_height="match_parent"
+            android:textStyle="normal|bold"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="0"
+        android:background="@android:color/darker_gray"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"></LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_margin="10dp">
+
+        <ImageView
+            app:srcCompat="@drawable/play_store_icon"
+            android:id="@+id/imageView22"
+            android:layout_height="30dp"
+            android:layout_width="30dp"
+            android:layout_weight="0" />
+
+        <TextView
+            android:text="Rate Us In Play Store"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView30"
+            android:textColor="@color/colorWord"
+            android:layout_weight="0"
+            android:textStyle="normal|bold"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="0"
+        android:background="@color/colorLightGray"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"></LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <ImageView
+            app:srcCompat="@drawable/stop_icon"
+            android:id="@+id/imageView23"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="0" />
+
+        <TextView
+            android:text="No, Thanks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView28"
+            android:textColor="@color/colorDrawer"
+            android:layout_weight="0"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

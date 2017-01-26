@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.controls.DialogChangeDifficulty;
+import com.challenge.bennho.a30days.controls.DialogRating;
 import com.challenge.bennho.a30days.controls.LayoutDayCounter;
 import com.challenge.bennho.a30days.enums.AnalyticEvent;
 import com.challenge.bennho.a30days.helpers.Analytics;
@@ -72,6 +73,11 @@ public class MainActivity extends MyActivity {
 
         refreshUserProgress();
         updateDay(userMaxDay);
+
+
+       DialogRating dialogRating = new DialogRating (this);
+        dialogRating.showIfNeeded();
+
     }
 
     @Override
