@@ -20,15 +20,13 @@ import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.DateTimeUtils;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.RealmHelper;
-import com.challenge.bennho.a30days.helpers.ShareHelper;
+import com.challenge.bennho.a30days.helpers.ShareRateHelper;
 import com.challenge.bennho.a30days.models.FoodModel;
 import com.challenge.bennho.a30days.models.HistoryRecord;
 import com.challenge.bennho.a30days.models.User;
 
 import io.realm.RealmChangeListener;
 import io.realm.RealmResults;
-
-import static com.challenge.bennho.a30days.R.id.imageView;
 
 public class HistoryActivity extends MyActivity {
 
@@ -221,7 +219,7 @@ public class HistoryActivity extends MyActivity {
                 imgViewShare.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ShareHelper.shareResult(calories, minutes, HistoryActivity.this);
+                        ShareRateHelper.shareResult(calories, minutes, HistoryActivity.this);
                     }
                 });
 
@@ -251,10 +249,7 @@ public class HistoryActivity extends MyActivity {
                 txtKcalTitle.setVisibility(View.VISIBLE);
                 txtEqual.setVisibility(View.VISIBLE);
                 txtNoRecords.setVisibility(View.GONE);
-
-
-
-
+                
                 txtIndex.setText("#" + (historyRecords.size() - position));
                 txtDate.setText(DateTimeUtils.convertUnixMsToDateTimeString(HistoryActivity.this,
                         historyRecord.getRecordUnixTime()));

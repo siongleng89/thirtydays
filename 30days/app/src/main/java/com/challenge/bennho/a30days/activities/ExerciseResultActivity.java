@@ -10,7 +10,6 @@ import android.os.IBinder;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -27,10 +26,9 @@ import com.challenge.bennho.a30days.helpers.AllReminderHelper;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.AnimateBuilder;
 import com.challenge.bennho.a30days.helpers.CaloriesToImagesConverter;
-import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.PreferenceUtils;
 import com.challenge.bennho.a30days.helpers.RealmHelper;
-import com.challenge.bennho.a30days.helpers.ShareHelper;
+import com.challenge.bennho.a30days.helpers.ShareRateHelper;
 import com.challenge.bennho.a30days.helpers.Strings;
 import com.challenge.bennho.a30days.helpers.Threadings;
 import com.challenge.bennho.a30days.models.FoodModel;
@@ -46,7 +44,7 @@ public class ExerciseResultActivity extends MyActivity {
     private LinearLayout layoutIncompleteCircle, layoutCompletedCircle, linearDuration, linearCalories;
     private ImageView imgViewStickman;
     private ImageCircularFood imageFood1, imageFood2, imageFood3;
-    private TextView txtCalories, txtTime, txtTitle;
+    private TextView txtCalories, txtTime, txtTitle, txtSuggestDecreaseDifficulty;
     private User user;
     private RealmHelper realmHelper;
     private ExerciseService exerciseService;
@@ -72,6 +70,7 @@ public class ExerciseResultActivity extends MyActivity {
         txtTime = (TextView) findViewById(R.id.txtTime);
         txtCalories = (TextView) findViewById(R.id.txtCalories);
         txtTitle = (TextView) findViewById(R.id.txtTitle);
+        txtSuggestDecreaseDifficulty = (TextView) findViewById(R.id.txtSuggestDecreaseDifficulty);
 
         layoutIncompleteCircle.setVisibility(View.GONE);
         layoutCompletedCircle.setVisibility(View.GONE);
@@ -99,7 +98,7 @@ public class ExerciseResultActivity extends MyActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.share) {
-            ShareHelper.shareResult(calories, minutes, this);
+            ShareRateHelper.shareResult(calories, minutes, this);
 
             return true;
         }
@@ -182,12 +181,14 @@ public class ExerciseResultActivity extends MyActivity {
                     user.addCurrentDay();
 
                     AllReminderHelper.updateReminders(this);
-
                 }
 
                 PreferenceUtils.putString(this, PreferenceType.ExerciseRecordSaved, "1");
             }
 
+            if(!isRunningCompleted && user.getRunDifficultLevel() > 1){
+                txtSuggestDecreaseDifficulty.setVisibility(View.VISIBLE);
+            }
 
             //start animations
             for(int i = 0; i < foodModels.size(); i++){

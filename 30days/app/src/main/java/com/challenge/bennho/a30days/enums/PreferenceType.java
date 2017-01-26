@@ -10,7 +10,7 @@ public enum PreferenceType {
     RunDifficulty, DontAskRunDifficultyAgain,
     Gender, Unit, Weight, Height, Age, CurrentExerciseDay,
     TotalCaloriesBurnt, TotalRunningSecs, ExerciseRecordSaved, ExerciseRunning,
-    SeenTutorial, ProPurchased, UsedFoodResult
+    SeenTutorial, ProPurchased, UsedFoodResult, SeenRateApps
 
 }
 

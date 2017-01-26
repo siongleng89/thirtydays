@@ -23,8 +23,10 @@ import com.challenge.bennho.a30days.helpers.CalculationHelper;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.RunnableArgs;
 import com.challenge.bennho.a30days.helpers.Strings;
+import com.challenge.bennho.a30days.helpers.UserPhotoHelpers;
 import com.challenge.bennho.a30days.models.User;
 import com.challenge.bennho.a30days.services.ExerciseService;
+import com.google.android.gms.plus.PlusOneButton;
 
 import java.io.File;
 
@@ -43,6 +45,7 @@ public class MainActivity extends MyActivity {
                             txtWeight, txtHeight, txtCalories;
     private RelativeLayout layoutLockExercise, layoutLockMeal, layoutRetryExercise;
     private boolean lockedExercise, lockedMeal;
+    private DialogRating dialogRating;
 
 
     @Override
@@ -68,16 +71,12 @@ public class MainActivity extends MyActivity {
         txtHeight = (TextView) findViewById(R.id.txtHeight);
         txtCalories = (TextView) findViewById(R.id.txtCalories);
         imgViewDayPhoto = (ImageView) findViewById(R.id.imgViewDayPhoto);
+        dialogRating = new DialogRating(this);
 
         setListeners();
 
         refreshUserProgress();
         updateDay(userMaxDay);
-
-
-       DialogRating dialogRating = new DialogRating (this);
-        dialogRating.showIfNeeded();
-
     }
 
     @Override
@@ -92,6 +91,8 @@ public class MainActivity extends MyActivity {
         if(currentSelectedDay > 0){
             updateDay(currentSelectedDay);
         }
+
+        dialogRating.showIfNeeded(false);
     }
 
     @Override
@@ -149,7 +150,7 @@ public class MainActivity extends MyActivity {
         txtDayNumber2.setText(String.format(getString(R.string.day_X), String.valueOf(day)));
         txtDayNumber3.setText(String.format(getString(R.string.day_X), String.valueOf(day)));
         imgViewDayPhoto.setImageURI(null);
-        File dayPhotoImage = getThisDayImageThumbnailFilePath();
+        File dayPhotoImage = UserPhotoHelpers.getDayPhotoThumbnailFilePath(this, currentSelectedDay);
         if(dayPhotoImage.exists()){
             imgViewDayPhoto.setImageURI(Uri.fromFile(dayPhotoImage));
         }
@@ -320,9 +321,6 @@ public class MainActivity extends MyActivity {
         }
     }
 
-    private File getThisDayImageThumbnailFilePath(){
-        return AndroidUtils.getPrivateFilePath(this, currentSelectedDay + "thumb.jpg");
-    }
 
 
 }

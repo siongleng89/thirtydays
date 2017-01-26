@@ -12,6 +12,10 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,8 +23,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.challenge.bennho.a30days.R;
+import com.challenge.bennho.a30days.fragments.FragmentPhotoItem;
+import com.challenge.bennho.a30days.fragments.FragmentTutorialItem;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
+import com.challenge.bennho.a30days.helpers.UserPhotoHelpers;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -33,9 +40,9 @@ public class PhotoActivity extends MyActivity {
 
     private final int PICK_PHOTO_CODE = 2345;
     private final int TAKE_PHOTO_CODE = 2346;
-    private ImageView imgViewPhoto;
-    private LinearLayout layoutTakePhoto;
     private int dayPlan;
+    private ViewPager pagerPhoto;
+    private PhotoAdapter photoAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +57,15 @@ public class PhotoActivity extends MyActivity {
             dayPlan = getIntent().getIntExtra("dayPlan", 1);
         }
 
-        setTitle(String.format(getString(R.string.avty_photo_title), String.valueOf(dayPlan)));
+        pagerPhoto = (ViewPager) findViewById(R.id.pagerPhoto);
+        photoAdapter = new PhotoAdapter(getSupportFragmentManager());
+        pagerPhoto.setAdapter(photoAdapter);
 
-        imgViewPhoto = (ImageView) findViewById(R.id.imgViewPhoto);
-        layoutTakePhoto = (LinearLayout) findViewById(R.id.layoutTakePhoto);
+        onDayChanged(dayPlan);
         refreshPhoto();
 
+
+        pagerPhoto.setCurrentItem(dayPlan - 1);
         setListeners();
     }
 
@@ -137,8 +147,8 @@ public class PhotoActivity extends MyActivity {
     }
 
     private void photoSelected(File photoFile){
-        File newfile = getThisDayImageFilePath();
-        File thumbFile = getThisDayImageThumbnailFilePath();
+        File newfile = UserPhotoHelpers.getDayPhotoImageFilePath(this, dayPlan);
+        File thumbFile = UserPhotoHelpers.getDayPhotoThumbnailFilePath(this, dayPlan);
 
         AndroidUtils.moveFileToPrivateDir(this, photoFile, newfile.getName());
         AndroidUtils.moveFileToPrivateDir(this, photoFile, thumbFile.getName());
@@ -161,20 +171,10 @@ public class PhotoActivity extends MyActivity {
     }
 
     public void refreshPhoto(){
-        File file = getThisDayImageFilePath();
-        imgViewPhoto.setImageURI(null);
-        if(file.exists()){
-            imgViewPhoto.setImageURI(Uri.fromFile(file));
-        }
+        photoAdapter.notifyDataSetChanged();
     }
 
-    private File getThisDayImageFilePath(){
-        return AndroidUtils.getPrivateFilePath(this, dayPlan + ".jpg");
-    }
 
-    private File getThisDayImageThumbnailFilePath(){
-        return AndroidUtils.getPrivateFilePath(this, dayPlan + "thumb.jpg");
-    }
 
     private File getOutput(){
         File dir= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
@@ -190,21 +190,65 @@ public class PhotoActivity extends MyActivity {
                 .setRunnables(new Runnable() {
                     @Override
                     public void run() {
-                        getThisDayImageFilePath().delete();
-                        getThisDayImageThumbnailFilePath().delete();
+                        UserPhotoHelpers.getDayPhotoImageFilePath(PhotoActivity.this, dayPlan).delete();
+                        UserPhotoHelpers.getDayPhotoThumbnailFilePath(PhotoActivity.this, dayPlan).delete();
                         refreshPhoto();
                     }
                 })
                 .show();
     }
 
+    private void onDayChanged(int day){
+        dayPlan = day;
+        setTitle(String.format(getString(R.string.avty_photo_title), String.valueOf(dayPlan)));
+    }
+
     private void setListeners(){
-        layoutTakePhoto.setOnClickListener(new View.OnClickListener() {
+        pagerPhoto.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onClick(View v) {
-                takePhoto();
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                onDayChanged(position + 1);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
             }
         });
+    }
+
+
+    public class PhotoAdapter extends FragmentPagerAdapter {
+        public PhotoAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int i) {
+            FragmentPhotoItem fragment = new FragmentPhotoItem();
+            Bundle args = new Bundle();
+
+            args.putInt("dayPlan", i + 1);
+
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @Override
+        public int getCount() {
+            return 30;
+        }
+
+        @Override
+        public int getItemPosition(Object object){
+            return POSITION_NONE;
+        }
+
     }
 
 

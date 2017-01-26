@@ -186,7 +186,7 @@
                         android:orientation="horizontal"
                         android:gravity="center"
                         android:layout_below="@+id/layoutTop">
-
+                        
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -224,7 +224,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:id="@+id/layoutButtons"
-                android:layout_height="100dp">
+                android:layout_height="130dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"

@@ -142,7 +142,18 @@
                     android:paddingRight="15dp"
                     android:paddingLeft="15dp">
 
-                        <TextView
+                    <TextView
+                        android:text="@string/avty_exercise_result_suggest_decrease_difficulty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtSuggestDecreaseDifficulty"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorSprint"
+                        android:textStyle="normal|bold|italic"
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone" />
+
+                    <TextView
                             android:text="@string/avty_result_exercise_duration_title"
                             android:layout_width="match_parent"
                             android:id="@+id/txtTotal"

@@ -8,18 +8,17 @@
     android:padding="10dp">
 
     <TextView
-        android:text="Rate This App"
+        android:text="@string/dialog_rating_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/textView26"
-        android:autoText="false"
         android:textStyle="normal|bold"
         android:textSize="18sp"
         android:gravity="center"
         android:layout_margin="10dp" />
 
     <TextView
-        android:text="If you enjoy using this app, would you mind taking a moment to rate this app? It won't take longer than a minute. Thank you for your support!"
+        android:text="@string/dialog_rating_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView27"
@@ -38,7 +37,8 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        android:gravity="center_vertical">
 
         <ImageView
             android:layout_height="30dp"
@@ -47,16 +47,14 @@
             android:layout_width="30dp"
             android:layout_weight="0" />
 
-        <TextView
-            android:text="+1 At Google Plus"
-            android:layout_width="match_parent"
-            android:id="@+id/textView31"
-            android:layout_weight="0"
-            android:textColor="@color/colorWord"
-            android:layout_height="match_parent"
-            android:textStyle="normal|bold"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="20dp" />
+        <com.google.android.gms.plus.PlusOneButton
+            xmlns:plus="http://schemas.android.com/apk/lib/com.google.android.gms.plus"
+            android:id="@+id/btnPlusOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            plus:size="standard"
+            plus:annotation="inline"
+            android:layout_marginLeft="20dp"/>
 
     </LinearLayout>
 
@@ -74,7 +72,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:layout_margin="10dp">
+        android:padding="10dp"
+        android:id="@+id/layoutRatePlayStore">
 
         <ImageView
             app:srcCompat="@drawable/play_store_icon"
@@ -84,7 +83,7 @@
             android:layout_weight="0" />
 
         <TextView
-            android:text="Rate Us In Play Store"
+            android:text="@string/dialog_rating_rate_play_store_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/textView30"
@@ -109,7 +108,8 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:padding="10dp"
+        android:id="@+id/layoutQuit">
 
         <ImageView
             app:srcCompat="@drawable/stop_icon"
@@ -119,7 +119,7 @@
             android:layout_weight="0" />
 
         <TextView
-            android:text="No, Thanks"
+            android:text="@string/dialog_rating_cancel_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/textView28"

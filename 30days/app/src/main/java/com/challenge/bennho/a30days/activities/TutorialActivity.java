@@ -183,9 +183,6 @@ public class TutorialActivity extends MyActivity{
             return 7;
         }
 
-
-
-
     }
 
 

@@ -5,6 +5,7 @@
         <item name="main">@string/drawer_title_day_x_plan</item>
         <item name="-">-</item>
         <item name="history_title">@string/drawer_title_history</item>
+        <item name="gallery">@string/drawer_item_gallery</item>
         <item name="history_list">@string/drawer_item_history_list</item>
         <item name="history_graph">@string/drawer_item_history_graph</item>
         <item name="-">-</item>

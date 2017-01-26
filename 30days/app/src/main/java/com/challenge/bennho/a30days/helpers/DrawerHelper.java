@@ -21,12 +21,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.challenge.bennho.a30days.R;
+import com.challenge.bennho.a30days.activities.GalleryActivity;
 import com.challenge.bennho.a30days.activities.GraphActivity;
 import com.challenge.bennho.a30days.activities.HistoryActivity;
 import com.challenge.bennho.a30days.activities.MainActivity;
 import com.challenge.bennho.a30days.activities.MyActivity;
 import com.challenge.bennho.a30days.activities.SettingsActivity;
 import com.challenge.bennho.a30days.activities.TutorialActivity;
+import com.challenge.bennho.a30days.controls.DialogRating;
 import com.challenge.bennho.a30days.models.User;
 
 import java.util.Arrays;
@@ -117,6 +119,9 @@ public class DrawerHelper implements ListView.OnItemClickListener {
             String item = drawItemList.get(position);
 
             if(!isMenuTitle){
+                if(item.equals(activity.getString(R.string.drawer_item_gallery))){
+                    intent = new Intent(activity, GalleryActivity.class);
+                }
                 if(item.equals(activity.getString(R.string.drawer_item_history_list))){
                     intent = new Intent(activity, HistoryActivity.class);
                 }
@@ -163,21 +168,12 @@ public class DrawerHelper implements ListView.OnItemClickListener {
     }
 
     private void shareApps(){
-        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-        sharingIntent.setType("text/plain");
-        String shareBody = activity.getString(R.string.share_apps_msg);
-        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, activity.getString(R.string.app_name));
-        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-        activity.startActivityForResult(Intent.createChooser(sharingIntent, activity.getString(R.string.share)), 123);
+       ShareRateHelper.shareApps(activity);
     }
 
     private void rateApps(){
-        final String appPackageName = activity.getPackageName(); // getPackageName() from Context or Activity object
-        try {
-            activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
-        } catch (android.content.ActivityNotFoundException anfe) {
-            activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
-        }
+        DialogRating dialogRating = new DialogRating(activity);
+        dialogRating.showIfNeeded(true);
     }
 
     private void contactUs(){
@@ -319,7 +315,10 @@ public class DrawerHelper implements ListView.OnItemClickListener {
                 drawerHolder.txtItemContent.setText(drawerItem);
 
                 int drawableRes = 0;
-                if(drawerItem.equals(activity.getString(R.string.drawer_item_history_list))){
+                if(drawerItem.equals(activity.getString(R.string.drawer_item_gallery))){
+                    drawableRes = R.drawable.ic_action_camera_icon;
+                }
+                else if(drawerItem.equals(activity.getString(R.string.drawer_item_history_list))){
                     drawableRes = R.drawable.history_icon;
                 }
                 else if(drawerItem.equals(activity.getString(R.string.drawer_item_history_graph))){
