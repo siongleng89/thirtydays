@@ -74,6 +74,13 @@ public class DialogRating {
         }
     }
 
+    public void onResume(){
+        if(btnPlusOne != null){
+            btnPlusOne.initialize("https://play.google.com/store/apps/details?id=com.challenge.bennho.a30days",
+                    PLUS_ONE_REQUEST_CODE);
+        }
+    }
+
 
     private void setListeners(){
         layoutQuit.setOnClickListener(new View.OnClickListener() {

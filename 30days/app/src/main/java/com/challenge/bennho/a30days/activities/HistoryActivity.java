@@ -240,6 +240,7 @@ public class HistoryActivity extends MyActivity {
                 imageViewFood2.setVisibility(View.GONE);
                 imageViewFood3.setVisibility(View.GONE);
                 imgViewDelete.setVisibility(View.VISIBLE);
+                imgViewShare.setVisibility(View.VISIBLE);
 
                 txtDateTitle.setVisibility(View.VISIBLE);
                 txtPlanTitle.setVisibility(View.VISIBLE);
@@ -309,6 +310,7 @@ public class HistoryActivity extends MyActivity {
                 imageViewFood2.setVisibility(View.INVISIBLE);
                 imageViewFood3.setVisibility(View.INVISIBLE);
                 imgViewDelete.setVisibility(View.INVISIBLE);
+                imgViewShare.setVisibility(View.INVISIBLE);
 
                 txtDateTitle.setVisibility(View.INVISIBLE);
                 txtPlanTitle.setVisibility(View.INVISIBLE);

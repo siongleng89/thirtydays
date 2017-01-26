@@ -47,6 +47,12 @@ public class GalleryActivity extends MyActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        galleryAdapter.notifyDataSetChanged();
+    }
 
     private class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 

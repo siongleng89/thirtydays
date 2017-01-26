@@ -236,6 +236,12 @@ public class PhotoActivity extends MyActivity {
             args.putInt("dayPlan", i + 1);
 
             fragment.setArguments(args);
+            fragment.setPhotoItemListener(new FragmentPhotoItem.PhotoItemListener() {
+                @Override
+                public void requestTakePhoto() {
+                    takePhoto();
+                }
+            });
             return fragment;
         }
 

@@ -47,6 +47,7 @@ public class DrawerHelper implements ListView.OnItemClickListener {
     private CustomDrawerAdapter drawerAdapter;
     private List<String> drawItemList;
     private User user;
+    private DialogRating dialogRating;
 
     public DrawerHelper(MyActivity activity) {
         this.activity = activity;
@@ -87,6 +88,10 @@ public class DrawerHelper implements ListView.OnItemClickListener {
 
     public void onResume(){
         refreshItems();
+
+        if(dialogRating != null){
+            dialogRating.onResume();
+        }
     }
 
     public void refreshItems(){
@@ -172,7 +177,7 @@ public class DrawerHelper implements ListView.OnItemClickListener {
     }
 
     private void rateApps(){
-        DialogRating dialogRating = new DialogRating(activity);
+        dialogRating = new DialogRating(activity);
         dialogRating.showIfNeeded(true);
     }
 

@@ -93,6 +93,7 @@ public class MainActivity extends MyActivity {
         }
 
         dialogRating.showIfNeeded(false);
+        dialogRating.onResume();
     }
 
     @Override

@@ -25,6 +25,8 @@ public class FragmentPhotoItem extends Fragment {
 
     private LinearLayout layoutTakePhoto;
     private ImageView imgViewPhoto;
+    private PhotoItemListener photoItemListener;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -50,8 +52,26 @@ public class FragmentPhotoItem extends Fragment {
             layoutTakePhoto.setVisibility(View.VISIBLE);
         }
 
+        setListeners();
 
         return rootView;
+    }
+
+    private void setListeners(){
+        layoutTakePhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(photoItemListener != null) photoItemListener.requestTakePhoto();
+            }
+        });
+    }
+
+    public void setPhotoItemListener(PhotoItemListener photoItemListener) {
+        this.photoItemListener = photoItemListener;
+    }
+
+    public interface PhotoItemListener{
+        void requestTakePhoto();
     }
 
 
