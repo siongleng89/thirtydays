@@ -55,7 +55,7 @@ public class DialogRating {
                         .setOnDismissRunnable(new Runnable() {
                             @Override
                             public void run() {
-
+                                PreferenceUtils.putBoolean(activity, PreferenceType.SeenRateApps, true);
                             }
                         })
                         .show();
