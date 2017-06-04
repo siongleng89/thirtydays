@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Gravity;
@@ -167,7 +168,7 @@ public class DrawerHelper implements ListView.OnItemClickListener {
         Threadings.delay(500, new Runnable() {
             @Override
             public void run() {
-                layoutDrawer.closeDrawer(Gravity.LEFT);
+                layoutDrawer.closeDrawer(GravityCompat.START);
             }
         });
     }

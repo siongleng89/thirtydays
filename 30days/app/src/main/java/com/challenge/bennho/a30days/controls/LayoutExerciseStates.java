@@ -116,6 +116,9 @@ public class LayoutExerciseStates extends RelativeLayout implements ExerciseServ
     public void onTimeChanged(float totalElapsedMs, final float currentExerciseElapsedMs,
                               float caloriesBurnt, final ExercisePartModel currentExercisePartModel) {
 
+        if(currentExercisePartModel == null) return;
+
+
         if(currentCircleIndex != currentExercisePartModel.getIndex()){
             onExercisePartChanged(currentExercisePartModel);
         }

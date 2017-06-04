@@ -105,7 +105,6 @@ public class ExerciseResultActivity extends MyActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     private ServiceConnection exerciseServiceConnection = new ServiceConnection() {
 
         @Override

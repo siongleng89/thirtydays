@@ -208,6 +208,10 @@ public class OverlayBuilder {
 
         if(contentView != null){
 
+            if(contentView.getParent() != null && contentView.getParent() instanceof ViewGroup){
+                ((ViewGroup) contentView.getParent()).removeView(contentView);
+            }
+
             ScrollView scrollView = new ScrollView(context);
             scrollView.addView(contentView);
             builder.setView(scrollView);
