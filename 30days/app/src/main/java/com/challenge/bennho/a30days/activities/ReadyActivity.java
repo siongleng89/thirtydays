@@ -1,6 +1,7 @@
 package com.challenge.bennho.a30days.activities;
 
 import android.content.Intent;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -54,10 +55,9 @@ public class ReadyActivity extends MyActivity {
         fabPlusSecs.setImageBitmap(AndroidUtils.textAsBitmap("+10", 70,
                 ContextCompat.getColor(this, R.color.colorBtnWord)));
 
-        if(getIntent() != null){
+        if (getIntent() != null) {
             dayPlan = getIntent().getIntExtra("dayPlan", 1);
-        }
-        else{
+        } else {
             dayPlan = 1;
         }
 
@@ -82,20 +82,19 @@ public class ReadyActivity extends MyActivity {
         countDown();
     }
 
-    private void showTutorialIfNeededOrShowAds(){
+    private void showTutorialIfNeededOrShowAds() {
         String seenTutorial = PreferenceUtils.getString(this, PreferenceType.SeenTutorial);
-        if(Strings.isEmpty(seenTutorial) || !seenTutorial.equals("1")){
+        if (Strings.isEmpty(seenTutorial) || !seenTutorial.equals("1")) {
             Intent intent = new Intent(this, TutorialActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
             startActivity(intent);
-        }
-        else{
+        } else {
             AdsMediation.showInterstitial(this);
         }
     }
 
-    private void countDown(){
-        if(countDownSecs <= 0){
+    private void countDown() {
+        if (countDownSecs <= 0) {
             countDownComplete();
             return;
         }
@@ -104,13 +103,13 @@ public class ReadyActivity extends MyActivity {
             @Override
             public void run() {
                 Threadings.sleep(1000);
-                if(pauseCountDown) return;
-                else{
+                if (pauseCountDown) return;
+                else {
                     countDownSecs--;
                     Threadings.postRunnable(new Runnable() {
                         @Override
                         public void run() {
-                            if(countDownSecs <= 3 && countDownSecs > 0){
+                            if (countDownSecs <= 3 && countDownSecs > 0) {
                                 textSpeak.speak(String.valueOf(countDownSecs));
                             }
                             txtCountdown.setText(String.valueOf(countDownSecs));
@@ -122,7 +121,7 @@ public class ReadyActivity extends MyActivity {
         });
     }
 
-    private void countDownComplete(){
+    private void countDownComplete() {
         //Stop previously running exercise service if available
         Intent serviceIntent = new Intent(this, ExerciseService.class);
         stopService(serviceIntent);
@@ -137,21 +136,33 @@ public class ReadyActivity extends MyActivity {
         Analytics.logEvent(AnalyticEvent.StartExercise);
     }
 
-    private void openMusic(){
-        Intent intent = new Intent("android.intent.action.MUSIC_PLAYER");
-        startActivity(intent);
+    private void openMusic() {
+        try{
+            if (android.os.Build.VERSION.SDK_INT >= 15) {
+                Intent intent = Intent.makeMainSelectorActivity(Intent.ACTION_MAIN,
+                        Intent.CATEGORY_APP_MUSIC);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);//Min SDK 15
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent("android.intent.action.MUSIC_PLAYER");//Min SDK 8
+                startActivity(intent);
+            }
+        }
+        catch (Exception ex){
+
+        }
     }
 
-    private void addExtraTimeToCountDown(){
+    private void addExtraTimeToCountDown() {
         setCountDownSecs(countDownSecs + 10);
     }
 
-    private void setCountDownSecs(int secs){
+    private void setCountDownSecs(int secs) {
         countDownSecs = secs;
         txtCountdown.setText(String.valueOf(countDownSecs));
     }
 
-    private void setListeners(){
+    private void setListeners() {
         fabPlusSecs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

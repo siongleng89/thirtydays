@@ -8,9 +8,9 @@ android {
     defaultConfig {
         applicationId "com.challenge.bennho.a30days"
         minSdkVersion 11
-        targetSdkVersion 25
-        versionCode 9
-        versionName "2.04"
+        targetSdkVersion 23
+        versionCode 10
+        versionName "2.05"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }

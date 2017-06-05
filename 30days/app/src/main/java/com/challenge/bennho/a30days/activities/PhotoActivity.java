@@ -1,37 +1,35 @@
 package com.challenge.bennho.a30days.activities;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.fragments.FragmentPhotoItem;
-import com.challenge.bennho.a30days.fragments.FragmentTutorialItem;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.UserPhotoHelpers;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,6 +38,7 @@ public class PhotoActivity extends MyActivity {
 
     private final int PICK_PHOTO_CODE = 2345;
     private final int TAKE_PHOTO_CODE = 2346;
+    private final int TAKE_PHOTO_PERMISSION_CODE = 2347;
     private int dayPlan;
     private ViewPager pagerPhoto;
     private PhotoAdapter photoAdapter;
@@ -53,7 +52,7 @@ public class PhotoActivity extends MyActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         dayPlan = 1;
-        if(getIntent() != null){
+        if (getIntent() != null) {
             dayPlan = getIntent().getIntExtra("dayPlan", 1);
         }
 
@@ -67,6 +66,8 @@ public class PhotoActivity extends MyActivity {
 
         pagerPhoto.setCurrentItem(dayPlan - 1);
         setListeners();
+
+        checkPermission();
     }
 
     @Override
@@ -84,16 +85,27 @@ public class PhotoActivity extends MyActivity {
         if (id == R.id.camera) {
             takePhoto();
             return true;
-        }
-        else if(id == R.id.gallery){
+        } else if (id == R.id.gallery) {
             pickImageFromGallery();
             return true;
-        }
-        else if(id == R.id.delete){
+        } else if (id == R.id.delete) {
             deleteImage();
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == TAKE_PHOTO_PERMISSION_CODE) {
+            for(int result: grantResults){
+                if (result != PackageManager.PERMISSION_GRANTED) {
+                    finish();
+                }
+            }
+        }
     }
 
     @Override
@@ -102,12 +114,11 @@ public class PhotoActivity extends MyActivity {
 
         if (requestCode == TAKE_PHOTO_CODE && resultCode == RESULT_OK) {
             photoSuccessTaken();
-        }
-        else if(requestCode == PICK_PHOTO_CODE){
+        } else if (requestCode == PICK_PHOTO_CODE) {
             if (resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
-                try{
+                try {
                     Uri selectedImage = data.getData();
-                    String[] filePathColumn = {MediaStore.Images.Media.DATA };
+                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
                     Cursor cursor = getContentResolver().query(selectedImage,
                             filePathColumn, null, null, null);
                     cursor.moveToFirst();
@@ -116,43 +127,46 @@ public class PhotoActivity extends MyActivity {
                     cursor.close();
                     imageSuccessPickedFromGallery(picturePath);
 
-                }
-                catch(Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }
     }
 
-    public void pickImageFromGallery(){
+    public void pickImageFromGallery() {
         Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(i, PICK_PHOTO_CODE);
     }
 
-    public void imageSuccessPickedFromGallery(String path){
+    public void imageSuccessPickedFromGallery(String path) {
         photoSelected(new File(path));
     }
 
 
-    public void takePhoto(){
-        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        File dir= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
-        File output = getOutput();
-        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(output));
-        startActivityForResult(cameraIntent, TAKE_PHOTO_CODE);
+    public void takePhoto() {
+
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, getOutputUri());
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        if (intent.resolveActivity(getApplicationContext().getPackageManager()) != null) {
+            startActivityForResult(intent, TAKE_PHOTO_CODE);
+        }
     }
 
-    public void photoSuccessTaken(){
-        photoSelected(getOutput());
+    public void photoSuccessTaken() {
+        photoSelected(new File(getOutputUri().getPath()));
     }
 
-    private void photoSelected(File photoFile){
+    private void photoSelected(File photoFile) {
         File newfile = UserPhotoHelpers.getDayPhotoImageFilePath(this, dayPlan);
         File thumbFile = UserPhotoHelpers.getDayPhotoThumbnailFilePath(this, dayPlan);
 
-        AndroidUtils.moveFileToPrivateDir(this, photoFile, newfile.getName());
-        AndroidUtils.moveFileToPrivateDir(this, photoFile, thumbFile.getName());
         try {
+            AndroidUtils.moveFileToPrivateDir(this, photoFile, newfile.getName());
+            AndroidUtils.moveFileToPrivateDir(this, photoFile, thumbFile.getName());
+
             Bitmap image = handleSamplingAndRotationBitmap(this, Uri.fromFile(newfile), 1024, 1024);
             FileOutputStream out = null;
             out = new FileOutputStream(newfile.getAbsoluteFile());
@@ -170,18 +184,18 @@ public class PhotoActivity extends MyActivity {
         refreshPhoto();
     }
 
-    public void refreshPhoto(){
+    public void refreshPhoto() {
         photoAdapter.notifyDataSetChanged();
     }
 
 
-
-    private File getOutput(){
-        File dir= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
-        return new File(dir, "days30photo.jpg");
+    private Uri getOutputUri() {
+        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
+        File output = new File(dir, "days30photo.jpg");
+        return Uri.fromFile(output);
     }
 
-    private void deleteImage(){
+    private void deleteImage() {
         OverlayBuilder.build(this)
                 .setOverlayType(OverlayBuilder.OverlayType.OkCancel)
                 .setTitle(getString(R.string.avty_photo_confirm_delete_title))
@@ -198,12 +212,12 @@ public class PhotoActivity extends MyActivity {
                 .show();
     }
 
-    private void onDayChanged(int day){
+    private void onDayChanged(int day) {
         dayPlan = day;
         setTitle(String.format(getString(R.string.avty_photo_title), String.valueOf(dayPlan)));
     }
 
-    private void setListeners(){
+    private void setListeners() {
         pagerPhoto.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -251,7 +265,7 @@ public class PhotoActivity extends MyActivity {
         }
 
         @Override
-        public int getItemPosition(Object object){
+        public int getItemPosition(Object object) {
             return POSITION_NONE;
         }
 
@@ -268,7 +282,7 @@ public class PhotoActivity extends MyActivity {
      * @throws IOException
      */
     public static Bitmap handleSamplingAndRotationBitmap(Context context, Uri selectedImage, int MAX_HEIGHT,
-                                                            int MAX_WIDTH)
+                                                         int MAX_WIDTH)
             throws IOException {
 
         // First decode with inJustDecodeBounds=true to check dimensions
@@ -371,6 +385,19 @@ public class PhotoActivity extends MyActivity {
         return rotatedImg;
     }
 
+
+    private void checkPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.CAMERA)
+                    != PackageManager.PERMISSION_GRANTED ||
+                    checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                            != PackageManager.PERMISSION_GRANTED) {
+
+                requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        TAKE_PHOTO_PERMISSION_CODE);
+            }
+        }
+    }
 
 
 }

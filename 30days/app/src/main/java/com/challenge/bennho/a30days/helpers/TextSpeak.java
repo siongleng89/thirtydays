@@ -1,5 +1,6 @@
 package com.challenge.bennho.a30days.helpers;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.media.AudioManager;
 import android.os.Build;
@@ -34,7 +35,7 @@ public class TextSpeak{
         return staticTextSpeak;
     }
 
-    public TextSpeak(Context context){
+    public TextSpeak(final Context context){
         unspeakStrings = new ArrayList();
         audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 
@@ -42,7 +43,7 @@ public class TextSpeak{
             @Override
             public void onInit(int status) {
                 if(status != TextToSpeech.ERROR) {
-                    textToSpeech.setLanguage(Locale.UK);
+                    textToSpeech.setLanguage(getCurrentLocale(context));
                     textToSpeech.setSpeechRate(0.85f);
                     if (android.os.Build.VERSION.SDK_INT >= 15){
                         textToSpeech.setOnUtteranceProgressListener(new UtteranceProgressListener() {
@@ -144,6 +145,16 @@ public class TextSpeak{
         textToSpeech.shutdown();
         unspeakStrings.clear();
 
+    }
+
+    @TargetApi(Build.VERSION_CODES.N)
+    public Locale getCurrentLocale(Context context){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+            return context.getResources().getConfiguration().getLocales().get(0);
+        } else{
+            //noinspection deprecation
+            return context.getResources().getConfiguration().locale;
+        }
     }
 
 }

@@ -65,25 +65,25 @@ public class AndroidUtils {
     }
 
 
-    public static float getScreenDpHeight(Activity activity){
+    public static float getScreenDpHeight(Activity activity) {
         Display display = activity.getWindowManager().getDefaultDisplay();
-        DisplayMetrics outMetrics = new DisplayMetrics ();
+        DisplayMetrics outMetrics = new DisplayMetrics();
         display.getMetrics(outMetrics);
 
-        float density  = activity.getResources().getDisplayMetrics().density;
+        float density = activity.getResources().getDisplayMetrics().density;
         float dpHeight = outMetrics.heightPixels / density;
-        float dpWidth  = outMetrics.widthPixels / density;
+        float dpWidth = outMetrics.widthPixels / density;
         return dpHeight;
     }
 
-    public static float getScreenDpWidth(Activity activity){
+    public static float getScreenDpWidth(Activity activity) {
         Display display = activity.getWindowManager().getDefaultDisplay();
-        DisplayMetrics outMetrics = new DisplayMetrics ();
+        DisplayMetrics outMetrics = new DisplayMetrics();
         display.getMetrics(outMetrics);
 
-        float density  = activity.getResources().getDisplayMetrics().density;
+        float density = activity.getResources().getDisplayMetrics().density;
         float dpHeight = outMetrics.heightPixels / density;
-        float dpWidth  = outMetrics.widthPixels / density;
+        float dpWidth = outMetrics.widthPixels / density;
         return dpWidth;
     }
 
@@ -104,7 +104,7 @@ public class AndroidUtils {
     }
 
 
-    public static ArrayList<Drawable> getAnimationDrawables(Context context, String name, int totalFrames){
+    public static ArrayList<Drawable> getAnimationDrawables(Context context, String name, int totalFrames) {
         ArrayList<Drawable> arr = new ArrayList();
         for (int i = 0; i < totalFrames; i++) {
             String id = name + String.format("%02d", i);
@@ -124,11 +124,11 @@ public class AndroidUtils {
         return context.getResources().getIdentifier(name, "drawable", context.getPackageName());
     }
 
-    public static File getPrivateFilePath(Context context, String fileName){
+    public static File getPrivateFilePath(Context context, String fileName) {
         ContextWrapper cw = new ContextWrapper(context);
         File directory = cw.getDir("days30", Context.MODE_PRIVATE);
         File theFile = new File(directory, fileName);
-        if(!theFile.exists()){
+        if (!theFile.exists()) {
             try {
                 theFile.createNewFile();
             } catch (IOException e) {
@@ -138,25 +138,20 @@ public class AndroidUtils {
         return theFile;
     }
 
-    public static void moveFileToPrivateDir(Context context, File fromFile, String saveAsName){
+    public static void moveFileToPrivateDir(Context context, File fromFile, String saveAsName) throws IOException {
         ContextWrapper cw = new ContextWrapper(context);
         File directory = cw.getDir("days30", Context.MODE_PRIVATE);
-        File to=new File(directory, saveAsName);
+        File to = new File(directory, saveAsName);
 
-        try {
-            if(!to.exists()){
-                to.createNewFile();
-            }
-            copy(fromFile, to);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (!to.exists()) {
+            to.createNewFile();
         }
+        copy(fromFile, to);
     }
 
 
-
-    public static void resizeAndShrinkImageFile(File file, int destWidth, int destHeight){
-        Bitmap b= BitmapFactory.decodeFile(file.getAbsolutePath());
+    public static void resizeAndShrinkImageFile(File file, int destWidth, int destHeight) {
+        Bitmap b = BitmapFactory.decodeFile(file.getAbsolutePath());
         Bitmap out = Bitmap.createScaledBitmap(b, destWidth, destHeight, false);
 
         FileOutputStream fOut;
@@ -167,7 +162,8 @@ public class AndroidUtils {
             fOut.close();
             b.recycle();
             out.recycle();
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
 
     }
 
@@ -187,15 +183,14 @@ public class AndroidUtils {
         out.close();
     }
 
-    public static void setFullscreen(final Activity activity, final boolean fullscreen)
-    {
+    public static void setFullscreen(final Activity activity, final boolean fullscreen) {
         Threadings.postRunnable(new Runnable() {
             @Override
             public void run() {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                     final View decorView = activity.getWindow().getDecorView();
-                    if(fullscreen){
-                        decorView.setOnSystemUiVisibilityChangeListener (new View.OnSystemUiVisibilityChangeListener() {
+                    if (fullscreen) {
+                        decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
                             @Override
                             public void onSystemUiVisibilityChange(int visibility) {
                                 if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
@@ -217,20 +212,15 @@ public class AndroidUtils {
                                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-                    }
-                    else{
+                    } else {
                         decorView.setOnSystemUiVisibilityChangeListener(null);
                         activity.getWindow().getDecorView().setSystemUiVisibility(0);
                     }
-                }
-                else{
+                } else {
                     WindowManager.LayoutParams attrs = activity.getWindow().getAttributes();
-                    if (fullscreen)
-                    {
+                    if (fullscreen) {
                         attrs.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
-                    }
-                    else
-                    {
+                    } else {
                         attrs.flags &= ~WindowManager.LayoutParams.FLAG_FULLSCREEN;
                     }
                     activity.getWindow().setAttributes(attrs);
