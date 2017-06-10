@@ -11,31 +11,36 @@
     android:paddingBottom="15dp"
     android:id="@+id/layoutItem">
 
-    <LinearLayout
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:text="@string/avty_tutorial_introduction_title"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:orientation="vertical" android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtTitle"
-            android:textColor="@color/colorBtnWord"
-            android:textStyle="normal|bold"
-            android:textSize="18sp"
-            android:fontFamily="sans-serif-condensed" />
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="15dp">
 
-        <TextView
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tortor suscipit, eleifend libero id, aliquam dolor. Nullam mollis tortor eget massa fringilla pellentesque. Aliquam congue congue nunc quis condimentum. Nunc erat dui, pulvinar et libero a, ullamcorper dignissim leo. In ac fermentum ex"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtContent"
-            android:textColor="@color/colorBtnWord"
-            android:layout_marginTop="15dp" />
-    </LinearLayout>
+            <TextView
+                android:text="@string/avty_tutorial_introduction_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtTitle"
+                android:textColor="@color/colorBtnWord"
+                android:textStyle="normal|bold"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-condensed" />
 
+            <TextView
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tortor suscipit, eleifend libero id, aliquam dolor. Nullam mollis tortor eget massa fringilla pellentesque. Aliquam congue congue nunc quis condimentum. Nunc erat dui, pulvinar et libero a, ullamcorper dignissim leo. In ac fermentum ex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtContent"
+                android:textColor="@color/colorBtnWord"
+                android:layout_marginTop="15dp" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>
