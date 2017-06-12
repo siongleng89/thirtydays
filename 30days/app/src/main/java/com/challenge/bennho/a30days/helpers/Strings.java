@@ -3,6 +3,7 @@ package com.challenge.bennho.a30days.helpers;
 import java.security.SecureRandom;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by SiongLeng on 27/1/2016.
@@ -67,11 +68,7 @@ public class Strings {
     }
 
     public static String formatToTwoDec(float f){
-        return String.format("%.2f", f);
-    }
-
-    public static String formatToTwoDec(double f){
-        return String.format("%.2f", f);
+        return String.format(Locale.ENGLISH, "%.2f", f);
     }
 
     public static String byteToMb(long b){

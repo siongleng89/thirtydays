@@ -86,14 +86,14 @@ public class DialogRating {
         layoutQuit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
+                if(dialog != null) dialog.dismiss();
             }
         });
 
         layoutRatePlayStore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
+                if(dialog != null) dialog.dismiss();
                 ShareRateHelper.goToPlayStore(activity);
             }
         });

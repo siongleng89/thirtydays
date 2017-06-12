@@ -9,8 +9,8 @@ android {
         applicationId "com.challenge.bennho.a30days"
         minSdkVersion 11
         targetSdkVersion 23
-        versionCode 10
-        versionName "2.05"
+        versionCode 12
+        versionName "2.07"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }

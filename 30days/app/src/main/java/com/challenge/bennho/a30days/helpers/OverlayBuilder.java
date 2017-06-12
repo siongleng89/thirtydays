@@ -9,6 +9,7 @@ import android.support.v7.widget.AppCompatCheckBox;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -237,7 +238,14 @@ public class OverlayBuilder {
         });
 
         final AlertDialog dialog = builder.create();
-        dialog.show();
+
+        try{
+            dialog.show();
+        }
+        catch (WindowManager.BadTokenException ex){
+            return null;
+        }
+
         //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
         if(overlayType == OverlayType.Loading){

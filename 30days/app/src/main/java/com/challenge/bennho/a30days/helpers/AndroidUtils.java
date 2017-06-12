@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 
@@ -107,7 +108,7 @@ public class AndroidUtils {
     public static ArrayList<Drawable> getAnimationDrawables(Context context, String name, int totalFrames) {
         ArrayList<Drawable> arr = new ArrayList();
         for (int i = 0; i < totalFrames; i++) {
-            String id = name + String.format("%02d", i);
+            String id = name + String.format(Locale.ENGLISH, "%02d", i);
             int resID = context.getResources().getIdentifier(id, "drawable", context.getPackageName());
             arr.add(ContextCompat.getDrawable(context, resID));
         }

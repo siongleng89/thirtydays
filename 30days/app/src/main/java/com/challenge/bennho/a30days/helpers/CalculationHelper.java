@@ -2,6 +2,8 @@ package com.challenge.bennho.a30days.helpers;
 
 import android.support.v4.util.Pair;
 
+import java.util.Locale;
+
 /**
  * Created by sionglengho on 23/12/16.
  */
@@ -59,8 +61,8 @@ public class CalculationHelper {
         double remainingSecs = Math.abs(60 * minutes - seconds);
 
         //format to add leading zero
-        String formattedMins = String.format("%02d", (int) minutes);
-        String formattedSecs = String.format("%02d", (int) remainingSecs);
+        String formattedMins = String.format(Locale.ENGLISH, "%02d", (int) minutes);
+        String formattedSecs = String.format(Locale.ENGLISH, "%02d", (int) remainingSecs);
 
         return formattedMins + ":" + formattedSecs;
     }

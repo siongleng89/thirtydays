@@ -43,7 +43,13 @@ public class TextSpeak{
             @Override
             public void onInit(int status) {
                 if(status != TextToSpeech.ERROR) {
-                    textToSpeech.setLanguage(getCurrentLocale(context));
+                    try{
+                        textToSpeech.setLanguage(getCurrentLocale(context));
+                    }
+                    catch (IllegalArgumentException ex){
+
+                    }
+
                     textToSpeech.setSpeechRate(0.85f);
                     if (android.os.Build.VERSION.SDK_INT >= 15){
                         textToSpeech.setOnUtteranceProgressListener(new UtteranceProgressListener() {
