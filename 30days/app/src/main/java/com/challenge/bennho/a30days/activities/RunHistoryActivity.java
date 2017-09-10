@@ -8,11 +8,9 @@ import android.os.Bundle;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.enums.PreferenceType;
-import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.AllReminderHelper;
 
-public class SettingsActivity extends MyActivity {
-
+public class RunHistoryActivity extends MyActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +20,8 @@ public class SettingsActivity extends MyActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        AdsMediation.showInterstitial(this);
-
         getFragmentManager().beginTransaction()
-                .replace(R.id.layout_settings, new SettingsFragment())
+                .replace(R.id.layout_run_settings, new RunSettingsFragment())
                 .commit();
 
     }
@@ -33,11 +29,10 @@ public class SettingsActivity extends MyActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        overridePendingTransition(0, 0);
         AllReminderHelper.updateReminders(this);
     }
 
-    public static class SettingsFragment extends PreferenceFragment {
+    public static class RunSettingsFragment extends PreferenceFragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -59,12 +54,12 @@ public class SettingsActivity extends MyActivity {
         public void setListeners(){
             findPreference(PreferenceType.EnableNotification).setOnPreferenceChangeListener(
                     new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    enableNotificationChanged((boolean) newValue);
-                    return true;
-                }
-            });
+                        @Override
+                        public boolean onPreferenceChange(Preference preference, Object newValue) {
+                            enableNotificationChanged((boolean) newValue);
+                            return true;
+                        }
+                    });
 
 
 
@@ -104,15 +99,5 @@ public class SettingsActivity extends MyActivity {
 
 
     }
-
-
-
-
-
-
-
-
-
-
 
 }

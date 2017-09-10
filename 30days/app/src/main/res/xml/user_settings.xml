@@ -64,6 +64,18 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/avty_settings_run_history_section_title" >
+
+        <Preference
+            android:key="RunHistory"
+            android:title="@string/avty_settings_run_history_title"
+            android:summary="@string/avty_settings_run_history_content">
+
+        </Preference>
+
+    </PreferenceCategory>
+
+
 </PreferenceScreen>
 
 

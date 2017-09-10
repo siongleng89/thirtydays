@@ -8,8 +8,14 @@ public enum PreferenceType {
 
     EnableMealPlanNotification, EnableNotification, ReminderTime, ReminderDay,
     RunDifficulty, DontAskRunDifficultyAgain,
-    Gender, Unit, Weight, Height, Age, CurrentExerciseDay,
-    TotalCaloriesBurnt, TotalRunningSecs, ExerciseRecordSaved, ExerciseRunning,
+    Gender, Unit, Weight, Height, Age,
+
+    CurrentExerciseDay,
+    TotalCaloriesBurnt,
+    TotalRunningSecs,
+
+    ExerciseRecordSaved,
+    ExerciseRunning,
     SeenTutorial, ProPurchased, UsedFoodResult, SeenRateApps
 
 }

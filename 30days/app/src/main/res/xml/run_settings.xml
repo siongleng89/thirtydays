@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        android:key="AddNewRun"
+        android:title="@string/avty_run_history_add_new_run_title"
+        android:summary="@string/avty_run_history_add_new_run_content">
+
+    </Preference>
+
+
+</PreferenceScreen>
+
