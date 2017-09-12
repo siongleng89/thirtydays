@@ -40,6 +40,7 @@ public class MainActivity extends MyActivity {
     private ImageView imgViewPrevious, imgViewNext;
     private int userMaxDay;
     private int currentSelectedDay;
+    private int currentIteration;
     private RelativeLayout layoutExercise, layoutMeal;
     private TextView txtDayShortForm, txtDayNumber1, txtDayNumber2, txtDayNumber3,
                             txtWeight, txtHeight, txtCalories;
@@ -101,15 +102,20 @@ public class MainActivity extends MyActivity {
         super.onSaveInstanceState(outState);
 
         outState.putInt("dayPlan", currentSelectedDay);
+        outState.putInt("currentIteration", currentIteration);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
+        if(savedInstanceState != null && savedInstanceState.containsKey("currentIteration")){
+            currentIteration = savedInstanceState.getInt("dayPlan");
+        }
         if(savedInstanceState != null && savedInstanceState.containsKey("dayPlan")){
             updateDay(savedInstanceState.getInt("dayPlan"));
         }
+
     }
 
 
@@ -117,6 +123,7 @@ public class MainActivity extends MyActivity {
         User user = new User(this);
         user.reload();
         userMaxDay = user.getCurrentDay();
+        currentIteration = user.getCurrentIteration();
 
         dayCounterControl.setMaxDayNumber(userMaxDay);
         dayCounterControl.updateDayNumber(currentSelectedDay);
@@ -151,7 +158,7 @@ public class MainActivity extends MyActivity {
         txtDayNumber2.setText(String.format(getString(R.string.day_X), String.valueOf(day)));
         txtDayNumber3.setText(String.format(getString(R.string.day_X), String.valueOf(day)));
         imgViewDayPhoto.setImageURI(null);
-        File dayPhotoImage = UserPhotoHelpers.getDayPhotoThumbnailFilePath(this, currentSelectedDay);
+        File dayPhotoImage = UserPhotoHelpers.getDayPhotoThumbnailFilePath(this, currentSelectedDay, currentIteration);
         if(dayPhotoImage.exists()){
             imgViewDayPhoto.setImageURI(Uri.fromFile(dayPhotoImage));
         }

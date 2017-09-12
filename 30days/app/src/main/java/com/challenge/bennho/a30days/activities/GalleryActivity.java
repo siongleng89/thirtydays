@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.helpers.AdsMediation;
 import com.challenge.bennho.a30days.helpers.UserPhotoHelpers;
+import com.challenge.bennho.a30days.models.User;
 
 import java.io.File;
 
@@ -25,6 +26,7 @@ public class GalleryActivity extends MyActivity {
 
     private RecyclerView recycleViewItems;
     private GalleryAdapter galleryAdapter;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,9 @@ public class GalleryActivity extends MyActivity {
         setTitle(getString(R.string.avty_gallery_title));
 
         AdsMediation.showInterstitial(this);
+
+        user = new User(this);
+        user.reload();
 
         recycleViewItems = (RecyclerView) findViewById(R.id.recycleViewItems);
         recycleViewItems.setNestedScrollingEnabled(false);
@@ -98,7 +103,7 @@ public class GalleryActivity extends MyActivity {
 
                 txtDayNumber.setText(String.format(context.getString(R.string.avty_photo_title), String.valueOf(day)));
 
-                File photoFile = UserPhotoHelpers.getDayPhotoThumbnailFilePath(context, day);
+                File photoFile = UserPhotoHelpers.getDayPhotoThumbnailFilePath(context, day, user.getCurrentIteration());
                 imgViewPhoto.setImageURI(null);
                 if(photoFile.exists() && photoFile.length() > 0){
                     layoutNoPhoto.setVisibility(View.GONE);

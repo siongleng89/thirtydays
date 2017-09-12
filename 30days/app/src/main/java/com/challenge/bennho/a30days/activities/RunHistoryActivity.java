@@ -3,12 +3,18 @@ package com.challenge.bennho.a30days.activities;
 import android.content.Intent;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.os.Bundle;
+import android.preference.PreferenceScreen;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.enums.PreferenceType;
 import com.challenge.bennho.a30days.helpers.AllReminderHelper;
+import com.challenge.bennho.a30days.models.RunHistoryModel;
+import com.challenge.bennho.a30days.models.User;
+
+import java.util.Locale;
 
 public class RunHistoryActivity extends MyActivity {
 
@@ -33,68 +39,65 @@ public class RunHistoryActivity extends MyActivity {
     }
 
     public static class RunSettingsFragment extends PreferenceFragment {
+
+        private User user;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
             // Load the preferences from an XML resource
-            addPreferencesFromResource(R.xml.user_settings);
+            addPreferencesFromResource(R.xml.run_settings);
 
-
-            setListeners();
+            user = new User(this.getActivity());
+            user.reload();
 
             init();
         }
 
         public void init(){
-            enableNotificationChanged(((CheckBoxPreference)
-                    findPreference(PreferenceType.EnableNotification)).isChecked());
-        }
+            PreferenceScreen screen = this.getPreferenceScreen();
 
-        public void setListeners(){
-            findPreference(PreferenceType.EnableNotification).setOnPreferenceChangeListener(
-                    new Preference.OnPreferenceChangeListener() {
-                        @Override
-                        public boolean onPreferenceChange(Preference preference, Object newValue) {
-                            enableNotificationChanged((boolean) newValue);
+            PreferenceCategory category = new PreferenceCategory(screen.getContext());
+            category.setTitle("Pick your run save slot");
+            screen.addPreference(category);
+
+            int i = 0;
+            for(RunHistoryModel runHistoryModel : user.getRunHistoriesModel().getRunHistoryModels()) {
+                CheckBoxPreference preference = new CheckBoxPreference(getActivity());
+                preference.setKey(String.valueOf(0));
+                preference.setTitle("Run " + (i + 1));
+                preference.setSummary(String.format(Locale.ENGLISH, "Day %s, Total Calories Burnt %s, Total Running Time %s",
+                        runHistoryModel.getCurrentExerciseDay(), runHistoryModel.getTotalCaloriesBurnt(),
+                        runHistoryModel.getTotalRunningSecs()));
+                preference.setChecked(i == user.getCurrentIteration());
+                category.addPreference(preference);
+                i += 1;
+
+                preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
+                        if(((CheckBoxPreference) preference).isChecked()) {
                             return true;
                         }
-                    });
+                        else {
+                            int q = 0;
+                            for(RunHistoryModel runHistoryModel : user.getRunHistoriesModel().getRunHistoryModels()) {
+                                if(q != Integer.valueOf(preference.getKey())){
+                                    ((CheckBoxPreference) findPreference(String.valueOf(q))).setChecked(false);
+                                }
+                                q += 1;
+                            }
 
+                            user.setCurrentIteration(Integer.valueOf(preference.getKey()));
 
+                        }
 
+                        return true;
+                    }
+                });
 
-            findPreference("Parameter").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    Intent intent = new Intent(getActivity(), PersonalDetailActivity.class);
-                    intent.putExtra("initial", "0");
-                    startActivity(intent);
-                    return true;
-                }
-            });
-
-            findPreference("RunHistory").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-                public boolean onPreferenceClick(Preference preference) {
-                    Intent intent = new Intent(getActivity(), RunHistoryActivity.class);
-                    startActivity(intent);
-                    return true;
-                }
-            });
-
-
-        }
-
-
-        private void enableNotificationChanged(boolean isEnabled){
-            findPreference(PreferenceType.ReminderDay).setEnabled(isEnabled);
-            findPreference(PreferenceType.ReminderTime).setEnabled(isEnabled);
-        }
-
-
-        public Preference findPreference(PreferenceType type) {
-            return findPreference(type.name());
+            }
         }
 
 

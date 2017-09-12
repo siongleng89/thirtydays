@@ -41,8 +41,9 @@ public class FragmentPhotoItem extends Fragment {
         imgViewPhoto = (ImageView) rootView.findViewById(R.id.imgViewPhoto);
 
         int dayPlan = args.getInt("dayPlan", 1);
+        int currentIteration = args.getInt("currentIteration", 0);
 
-        File file = UserPhotoHelpers.getDayPhotoImageFilePath(getContext(), dayPlan);
+        File file = UserPhotoHelpers.getDayPhotoImageFilePath(getContext(), dayPlan, currentIteration);
         imgViewPhoto.setImageURI(null);
         if(file.exists() && file.length() > 0){
             imgViewPhoto.setImageURI(Uri.fromFile(file));

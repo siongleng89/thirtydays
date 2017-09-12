@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import io.realm.Realm;
 import io.realm.RealmAsyncTask;
 import io.realm.RealmChangeListener;
+import io.realm.RealmQuery;
 import io.realm.RealmResults;
 import io.realm.Sort;
 
@@ -40,7 +41,8 @@ public class RealmHelper {
         }
     }
 
-    public void insertHistoryRecord(final HistoryRecord historyRecord){
+    public void insertHistoryRecord(int iteration, final HistoryRecord historyRecord){
+        historyRecord.setIteration(iteration);
         RealmAsyncTask transaction = realm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm bgRealm) {
@@ -49,9 +51,17 @@ public class RealmHelper {
         }, null, null);
     }
 
-    public void getAllHistoryRecordsByDateDesc(RealmChangeListener realmChangeListener){
-        RealmResults<HistoryRecord> result = realm.where(HistoryRecord.class)
-                .findAllSortedAsync("recordUnixTime", Sort.DESCENDING);
+    public void getAllHistoryRecordsByDateDesc(int iteration, RealmChangeListener realmChangeListener){
+
+        RealmQuery<HistoryRecord> query = realm.where(HistoryRecord.class);
+
+        if(iteration == 0) {
+            query.isEmpty("iteration").or();
+        }
+
+        query.equalTo("iteration", iteration);
+
+        RealmResults<HistoryRecord> result = query.findAllSortedAsync("recordUnixTime", Sort.DESCENDING);
         realmResultsArr.add(result);
         result.addChangeListener(realmChangeListener);
     }

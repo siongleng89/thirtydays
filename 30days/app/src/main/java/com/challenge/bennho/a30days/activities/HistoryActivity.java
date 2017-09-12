@@ -104,7 +104,7 @@ public class HistoryActivity extends MyActivity {
     }
 
     private void getHistoryRecords(){
-        realmHelper.getAllHistoryRecordsByDateDesc(new RealmChangeListener<RealmResults<HistoryRecord>>() {
+        realmHelper.getAllHistoryRecordsByDateDesc(user.getCurrentIteration(), new RealmChangeListener<RealmResults<HistoryRecord>>() {
             @Override
             public void onChange(RealmResults<HistoryRecord> element) {
                 historyRecords = element;

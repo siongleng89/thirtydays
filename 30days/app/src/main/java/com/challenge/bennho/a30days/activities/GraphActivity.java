@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.helpers.RealmHelper;
 import com.challenge.bennho.a30days.models.HistoryRecord;
+import com.challenge.bennho.a30days.models.User;
 import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.ValueDependentColor;
@@ -25,6 +26,7 @@ public class GraphActivity extends MyActivity {
 
     private GraphView graphView;
     private RealmHelper realmHelper;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,9 @@ public class GraphActivity extends MyActivity {
         onLayoutSet();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        user = new User(this);
+        user.reload();
 
         realmHelper = new RealmHelper(this);
 
@@ -92,7 +97,7 @@ public class GraphActivity extends MyActivity {
 
 
     private void getHistoryRecords(){
-        realmHelper.getAllHistoryRecordsByDateDesc(new RealmChangeListener<RealmResults<HistoryRecord>>() {
+        realmHelper.getAllHistoryRecordsByDateDesc(user.getCurrentIteration(), new RealmChangeListener<RealmResults<HistoryRecord>>() {
             @Override
             public void onChange(RealmResults<HistoryRecord> element) {
                 HashMap<Integer, Integer> dailyBurntMap = new HashMap<Integer, Integer>();

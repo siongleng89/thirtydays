@@ -23,11 +23,13 @@ public class User {
     private int totalCaloriesBurnt;
     private int totalRunningSecs;
     private int runDifficultLevel;
+    private int currentIteration;
     private Context context;
-
+    private RunHistoriesModel runHistoriesModel;
 
     public User(Context context) {
         this.context = context;
+        runHistoriesModel = new RunHistoriesModel();
     }
 
     //reset all user preferences to default
@@ -38,6 +40,7 @@ public class User {
         PreferenceUtils.putString(context, PreferenceType.ReminderDay, "1,2,3,4,5,6,7");
         PreferenceUtils.putString(context, PreferenceType.CurrentExerciseDay, "1");
         PreferenceUtils.putString(context, PreferenceType.RunDifficulty, "1");
+        PreferenceUtils.putString(context, PreferenceType.CurrentIteration, "0");
 
     }
 
@@ -51,12 +54,23 @@ public class User {
         this.totalCaloriesBurnt = PreferenceUtils.getDouble(context, PreferenceType.TotalCaloriesBurnt).intValue();
         this.totalRunningSecs = PreferenceUtils.getDouble(context, PreferenceType.TotalRunningSecs).intValue();
         this.runDifficultLevel = PreferenceUtils.getDouble(context, PreferenceType.RunDifficulty).intValue();
+        this.currentIteration = PreferenceUtils.getDouble(context, PreferenceType.CurrentIteration).intValue();
+        this.runHistoriesModel.load(context);
     }
 
     public void delete(){
         PreferenceUtils.delete(context, PreferenceType.Unit);
         PreferenceUtils.delete(context, PreferenceType.Gender);
         PreferenceUtils.delete(context, PreferenceType.CurrentExerciseDay);
+    }
+
+    public int getCurrentIteration() {
+        return currentIteration;
+    }
+
+    public void setCurrentIteration(int currentIteration) {
+        this.currentIteration = currentIteration;
+        PreferenceUtils.putString(context, PreferenceType.CurrentIteration, String.valueOf(currentIteration));
     }
 
     public int getCurrentDay() {
@@ -66,6 +80,7 @@ public class User {
     public void setCurrentDay(int currentDay) {
         this.currentDay = currentDay;
         PreferenceUtils.putString(context, PreferenceType.CurrentExerciseDay, String.valueOf(currentDay));
+        updateRunHistories();
     }
 
     public void addCurrentDay(){
@@ -140,6 +155,7 @@ public class User {
     public void addCaloriesBurnt(float calories){
         totalCaloriesBurnt += calories;
         PreferenceUtils.putString(context, PreferenceType.TotalCaloriesBurnt, String.valueOf(totalCaloriesBurnt));
+        updateRunHistories();
     }
 
     public void minusCaloriesBurnt(float calories){
@@ -148,6 +164,7 @@ public class User {
             totalCaloriesBurnt = 0;
         }
         PreferenceUtils.putString(context, PreferenceType.TotalCaloriesBurnt, String.valueOf(totalCaloriesBurnt));
+        updateRunHistories();
     }
 
     public int getTotalRunningSecs() {
@@ -161,6 +178,7 @@ public class User {
         totalRunningSecs = (int) Math.ceil(currentRunningSecs);
 
         PreferenceUtils.putString(context, PreferenceType.TotalRunningSecs, String.valueOf(totalRunningSecs));
+        updateRunHistories();
     }
 
     public void minusRunningSecs(float secs){
@@ -172,6 +190,7 @@ public class User {
         totalRunningSecs = (int) Math.ceil(currentRunningSecs);
 
         PreferenceUtils.putString(context, PreferenceType.TotalRunningSecs, String.valueOf(totalRunningSecs));
+        updateRunHistories();
     }
 
     public int getRunDifficultLevel() {
@@ -194,5 +213,15 @@ public class User {
         else{
             return context.getString(R.string.difficulty_1);
         }
+    }
+
+    private void updateRunHistories() {
+        this.runHistoriesModel.update(currentIteration, String.valueOf(currentDay),
+                String.valueOf(totalCaloriesBurnt), String.valueOf(totalRunningSecs));
+        this.runHistoriesModel.save(context);
+    }
+
+    public RunHistoriesModel getRunHistoriesModel() {
+        return runHistoriesModel;
     }
 }

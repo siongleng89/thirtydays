@@ -14,6 +14,8 @@ public enum PreferenceType {
     TotalCaloriesBurnt,
     TotalRunningSecs,
 
+    RunHistories,
+    CurrentIteration,
     ExerciseRecordSaved,
     ExerciseRunning,
     SeenTutorial, ProPurchased, UsedFoodResult, SeenRateApps

@@ -170,7 +170,7 @@ public class ExerciseResultActivity extends MyActivity {
                 historyRecord.setRecordUnixTime(System.currentTimeMillis());
                 historyRecord.setExerciseTimeMs(totalElapsedMs);
                 historyRecord.setCaloriesBurnt(caloriesBurnt);
-                realmHelper.insertHistoryRecord(historyRecord);
+                realmHelper.insertHistoryRecord(user.getCurrentIteration(), historyRecord);
 
                 user.addCaloriesBurnt(calories);
                 user.addRunningSecs(totalElapsedMs / 1000);

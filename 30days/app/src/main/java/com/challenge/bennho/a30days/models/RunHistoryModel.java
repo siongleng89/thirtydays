@@ -13,6 +13,12 @@ public class RunHistoryModel {
     public RunHistoryModel() {
     }
 
+    public RunHistoryModel(String currentExerciseDay, String totalCaloriesBurnt, String totalRunningSecs) {
+        this.currentExerciseDay = currentExerciseDay;
+        this.totalCaloriesBurnt = totalCaloriesBurnt;
+        this.totalRunningSecs = totalRunningSecs;
+    }
+
     public String getCurrentExerciseDay() {
         return currentExerciseDay;
     }

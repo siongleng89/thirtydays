@@ -28,6 +28,7 @@ import com.challenge.bennho.a30days.fragments.FragmentPhotoItem;
 import com.challenge.bennho.a30days.helpers.AndroidUtils;
 import com.challenge.bennho.a30days.helpers.OverlayBuilder;
 import com.challenge.bennho.a30days.helpers.UserPhotoHelpers;
+import com.challenge.bennho.a30days.models.User;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -39,6 +40,7 @@ public class PhotoActivity extends MyActivity {
     private final int PICK_PHOTO_CODE = 2345;
     private final int TAKE_PHOTO_CODE = 2346;
     private final int TAKE_PHOTO_PERMISSION_CODE = 2347;
+    private User user;
     private int dayPlan;
     private ViewPager pagerPhoto;
     private PhotoAdapter photoAdapter;
@@ -50,6 +52,9 @@ public class PhotoActivity extends MyActivity {
         onLayoutSet();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        user = new User(this);
+        user.reload();
 
         dayPlan = 1;
         if (getIntent() != null) {
@@ -160,8 +165,8 @@ public class PhotoActivity extends MyActivity {
     }
 
     private void photoSelected(File photoFile) {
-        File newfile = UserPhotoHelpers.getDayPhotoImageFilePath(this, dayPlan);
-        File thumbFile = UserPhotoHelpers.getDayPhotoThumbnailFilePath(this, dayPlan);
+        File newfile = UserPhotoHelpers.getDayPhotoImageFilePath(this, dayPlan, user.getCurrentIteration());
+        File thumbFile = UserPhotoHelpers.getDayPhotoThumbnailFilePath(this, dayPlan, user.getCurrentIteration());
 
         try {
             AndroidUtils.moveFileToPrivateDir(this, photoFile, newfile.getName());
@@ -204,8 +209,8 @@ public class PhotoActivity extends MyActivity {
                 .setRunnables(new Runnable() {
                     @Override
                     public void run() {
-                        UserPhotoHelpers.getDayPhotoImageFilePath(PhotoActivity.this, dayPlan).delete();
-                        UserPhotoHelpers.getDayPhotoThumbnailFilePath(PhotoActivity.this, dayPlan).delete();
+                        UserPhotoHelpers.getDayPhotoImageFilePath(PhotoActivity.this, dayPlan, user.getCurrentIteration()).delete();
+                        UserPhotoHelpers.getDayPhotoThumbnailFilePath(PhotoActivity.this, dayPlan, user.getCurrentIteration()).delete();
                         refreshPhoto();
                     }
                 })
@@ -248,6 +253,7 @@ public class PhotoActivity extends MyActivity {
             Bundle args = new Bundle();
 
             args.putInt("dayPlan", i + 1);
+            args.putInt("currentIteration", user.getCurrentIteration());
 
             fragment.setArguments(args);
             fragment.setPhotoItemListener(new FragmentPhotoItem.PhotoItemListener() {
