@@ -56,7 +56,7 @@ public class User {
         this.totalRunningSecs = PreferenceUtils.getDouble(context, PreferenceType.TotalRunningSecs).intValue();
         this.runDifficultLevel = PreferenceUtils.getDouble(context, PreferenceType.RunDifficulty).intValue();
         this.currentIteration = PreferenceUtils.getDouble(context, PreferenceType.CurrentIteration).intValue();
-        this.runHistoriesModel.load(context);
+        this.runHistoriesModel.load(context, currentDay, totalCaloriesBurnt, totalRunningSecs);
     }
 
     public void delete(){

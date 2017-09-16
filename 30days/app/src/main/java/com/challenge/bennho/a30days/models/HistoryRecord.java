@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import io.realm.RealmObject;
 import io.realm.annotations.Ignore;
+import io.realm.annotations.Required;
 
 /**
  * Created by sionglengho on 30/12/16.
@@ -19,6 +20,7 @@ public class HistoryRecord extends RealmObject {
     private float caloriesBurnt;
     private boolean completedExercise;
     private String foodIds;
+    @Required
     private String iteration;
 
     @Ignore

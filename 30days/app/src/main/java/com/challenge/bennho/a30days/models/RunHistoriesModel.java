@@ -24,7 +24,7 @@ public class RunHistoriesModel {
         this.runHistoryModels = new ArrayList<>();
     }
 
-    public void load(Context context) {
+    public void load(Context context, int currentDay, int totalCaloriesBurnt, int totalRunningSecs) {
         String json = PreferenceUtils.getString(context, PreferenceType.RunHistories);
         if (json != null && !json.isEmpty()) {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -40,6 +40,12 @@ public class RunHistoriesModel {
                 runHistoryModels.add(new RunHistoryModel("1", "0", "0"));
             }
         }
+
+        if (json == null || json.isEmpty()) {
+            update(0, String.valueOf(currentDay), String.valueOf(totalCaloriesBurnt), String.valueOf(totalRunningSecs));
+            save(context);
+        }
+
     }
 
     public void update(int iteration, String currentExerciseDay, String totalCaloriesBurnt, String totalRunningSecs) {

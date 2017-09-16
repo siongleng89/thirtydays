@@ -3,12 +3,14 @@ package com.challenge.bennho.a30days.helpers;
 import android.content.Context;
 
 import com.challenge.bennho.a30days.models.HistoryRecord;
+import com.challenge.bennho.a30days.models.Migration;
 
 import java.util.ArrayList;
 
 import io.realm.Realm;
 import io.realm.RealmAsyncTask;
 import io.realm.RealmChangeListener;
+import io.realm.RealmConfiguration;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
 import io.realm.Sort;
@@ -35,7 +37,14 @@ public class RealmHelper {
             Realm.init(context);
 
             // Get a Realm instance for this thread
-            realm = Realm.getDefaultInstance();
+            RealmConfiguration config1 = new RealmConfiguration.Builder()
+                    .name("default.realm")
+                    .schemaVersion(1)
+                    .migration(new Migration())
+                    .build();
+
+            realm = Realm.getInstance(config1);
+//            realm = Realm.getDefaultInstance();
 
             realmResultsArr = new ArrayList();
         }
