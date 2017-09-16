@@ -19,7 +19,7 @@ public class HistoryRecord extends RealmObject {
     private float caloriesBurnt;
     private boolean completedExercise;
     private String foodIds;
-    private int iteration;
+    private String iteration;
 
     @Ignore
     private ArrayList<FoodModel> foodModels;
@@ -65,11 +65,11 @@ public class HistoryRecord extends RealmObject {
         this.caloriesBurnt = caloriesBurnt;
     }
 
-    public int getIteration() {
+    public String getIteration() {
         return iteration;
     }
 
-    public void setIteration(int iteration) {
+    public void setIteration(String iteration) {
         this.iteration = iteration;
     }
 

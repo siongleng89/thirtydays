@@ -42,7 +42,7 @@ public class RealmHelper {
     }
 
     public void insertHistoryRecord(int iteration, final HistoryRecord historyRecord){
-        historyRecord.setIteration(iteration);
+        historyRecord.setIteration(String.valueOf(iteration));
         RealmAsyncTask transaction = realm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm bgRealm) {
@@ -59,7 +59,7 @@ public class RealmHelper {
             query.isEmpty("iteration").or();
         }
 
-        query.equalTo("iteration", iteration);
+        query.equalTo("iteration", String.valueOf(iteration));
 
         RealmResults<HistoryRecord> result = query.findAllSortedAsync("recordUnixTime", Sort.DESCENDING);
         realmResultsArr.add(result);

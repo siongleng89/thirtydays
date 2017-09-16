@@ -1,6 +1,7 @@
 package com.challenge.bennho.a30days.models;
 
 import android.content.Context;
+import android.content.Intent;
 
 import com.challenge.bennho.a30days.R;
 import com.challenge.bennho.a30days.enums.GenderEnum;
@@ -71,6 +72,16 @@ public class User {
     public void setCurrentIteration(int currentIteration) {
         this.currentIteration = currentIteration;
         PreferenceUtils.putString(context, PreferenceType.CurrentIteration, String.valueOf(currentIteration));
+
+        RunHistoryModel runHistoryModel = this.runHistoriesModel.getRunHistoryModels().get(currentIteration);
+
+        this.totalRunningSecs = Integer.valueOf(runHistoryModel.getTotalRunningSecs());
+        PreferenceUtils.putString(context, PreferenceType.TotalRunningSecs, String.valueOf(totalRunningSecs));
+        this.currentDay = Integer.valueOf(runHistoryModel.getCurrentExerciseDay());
+        PreferenceUtils.putString(context, PreferenceType.CurrentExerciseDay, String.valueOf(currentDay));
+        this.totalCaloriesBurnt = Integer.valueOf(runHistoryModel.getTotalCaloriesBurnt());
+        PreferenceUtils.putString(context, PreferenceType.TotalCaloriesBurnt, String.valueOf(totalCaloriesBurnt));
+
     }
 
     public int getCurrentDay() {

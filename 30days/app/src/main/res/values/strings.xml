@@ -174,13 +174,12 @@
     <string name="avty_settings_notification_category_title">Notification Settings</string>
     <string name="avty_settings_difficulties_category_title">Difficulty</string>
     <string name="avty_settings_run_difficulty_title">Run Difficulty Level</string>
-    <string name="avty_settings_run_history_section_title">Histories</string>
-    <string name="avty_settings_run_history_title">Run Histories</string>
-    <string name="avty_settings_run_history_content">Manage/Reset Run</string>
+    <string name="avty_settings_run_history_section_title">Saves</string>
+    <string name="avty_settings_run_history_title">Run Save Slots</string>
+    <string name="avty_settings_run_history_content">Want to retry the 30 days challenge without losing your previous run record? Tap here to use another save slot</string>
 
-    <string name="avty_run_history_title">Run Histories</string>
-    <string name="avty_run_history_add_new_run_title">Add New Run</string>
-    <string name="avty_run_history_add_new_run_content">Start afresh from day 1 again!</string>
+    <string name="avty_run_history_title">Run Save Slots</string>
+    <string name="avty_run_history_slot">Slot</string>
 
     <string name="difficulty_1">Normal</string>
     <string name="difficulty_2">Hard</string>
