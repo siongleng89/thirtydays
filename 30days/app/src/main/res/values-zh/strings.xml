@@ -1,0 +1,1174 @@
+<?xml version="1.0"?>
+
+<resources>
+
+    <string name="app_name">30天激瘦训练+饮食</string>
+
+    <string name="avty_landing_btn_begin">开始瘦身</string>
+
+    <string name="avty_landing_intro_title">我们如何帮助你减肥？</string>
+
+    <string name="avty_landing_intro_content">
+        "这是一个组合了高强度间歇训练(HIIT) 与营养饮食的瘦身法。我们会每天你如何进行每天的运动，并提供你减脂菜单来达到最有效的减脂效果！
+
+            HIIT是一种高强度间歇训练，它可加速你的新陈代谢达24小时，让你在吃饭，休息，睡觉的时候也在不停的燃烧你的身体里的顽固脂肪！
+
+            我们的减脂菜单包含了许多高纤维，高营养，高蛋白的食物。让你越吃越瘦！
+
+            不需要再挨饿减肥，也没有重复吃一堆淡而无味的食物！让你吃的开心，瘦的开心。"
+    </string>
+
+    <string name="avty_details_title">个人资料</string>
+
+    <string name="avty_details_instruction">输入你的个人资料以获得个人的训练菜单</string>
+
+    <string name="avty_details_weight_title">体重</string>
+
+    <string name="avty_details_height_title">身高</string>
+
+    <string name="avty_details_weight_kg_hint">公斤</string>
+
+    <string name="avty_details_weight_pounds_hint">磅</string>
+
+    <string name="avty_details_height_cm_hint">厘米</string>
+
+    <string name="avty_details_height_foot_hint">尺</string>
+
+    <string name="avty_details_height_inch_hint">寸</string>
+
+    <string name="avty_details_age_hint">你的年龄</string>
+
+    <string name="avty_details_age_title">年龄</string>
+
+    <string name="avty_details_gender_title">性别</string>
+
+    <string name="avty_details_empty_error">请确保填写每个栏位</string>
+
+    <string name="avty_details_invalid_error">填写的资料不正确，请检查后更正</string>
+
+    <string name="avty_main_btn_meal_plan">菜单</string>
+
+    <string name="avty_main_btn_running_plan1">开始</string>
+    <string name="avty_main_btn_running_plan2">跑步</string>
+
+    <string name="avty_main_calories_counter_title">卡路里计算</string>
+
+    <string name="avty_main_customized_plan_title">激瘦计划</string>
+
+    <string name="avty_main_btn_rerun">重新再跑</string>
+    <string name="avty_main_rerun_msg_title">重跑第 %s 天？</string>
+    <string name="avty_main_rerun_msg_content">你已经完成了这个运动，确定要再次运行吗？</string>
+
+
+    <string name="avty_meal_title">第 %s 天菜单</string>
+
+    <string name="avty_meal_tip_of_the_day">每日贴士</string>
+
+    <string name="avty_meal_shopping_list_day_x_to_day_x">第 %1$s 至 %2$s 天的购物清单</string>
+
+    <string name="avty_meal_breakfast">早餐</string>
+
+    <string name="avty_meal_morning_snack">早餐点心</string>
+
+    <string name="avty_meal_lunch">午餐</string>
+
+    <string name="avty_meal_evening_snack">下午茶</string>
+
+    <string name="avty_meal_dinner">晚餐</string>
+
+    <string name="avty_meal_ingredients">材料</string>
+
+    <string name="avty_meal_quantity">数量</string>
+
+    <string name="avty_meal_meal_plan_calories">菜单卡路里 </string>
+    <string name="avty_meal_daily_calories">每日所需卡路里/day</string>
+    <string name="avty_meal_loss_calories">你已经消耗</string>
+
+    <string name="avty_ready_title">第 %s 天的跑步即将开始</string>
+
+    <string name="avty_tutorial_title">跑步教学</string>
+
+    <string name="avty_tutorial_end_text">开始跑步</string>
+
+    <string name="avty_tutorial_introduction_title">快速教学</string>
+
+    <string name="avty_tutorial_introduction_content">欢迎来到30天激瘦训练饮食！我们会为你所输入的个人资讯量身打造一个跑步瘦身系统。你将会采用高间歇训练来达到最有效的燃烧脂肪效果，每次跑步都会用不同的颜色来显示的不同的阶段。 </string>
+
+    <string name="avty_tutorial_warm_up_explain">浅橘色代表热身阶段。在这个阶段做一些拉伸有助于防止非受伤。</string>
+
+    <string name="avty_tutorial_walk_explain">浅绿色代表步行阶段，请以正常的速度行走。</string>
+
+    <string name="avty_tutorial_fast_walk_explain">深绿色代表快步走阶段，在这个阶段你应该尝试以最快的速度行走。</string>
+
+    <string name="avty_tutorial_run_explain">浅红色代表跑步阶段，在这个阶段以正常速度奔跑.</string>
+
+    <string name="avty_tutorial_sprint_explain">深红色代表冲刺阶段， 在这个阶段请全力冲刺。</string>
+
+    <string name="avty_tutorial_cool_down_explain">蓝色代表暖身阶段，在这最后的阶段请逐渐降低跑步或行走的速度。</string>
+
+    <string name="avty_running_mins_remain">倒数分钟</string>
+
+    <string name="avty_running_calories_burnt">卡路里消耗(Kcal)</string>
+
+    <string name="avty_running_hold_to_unlock">(长按解锁)</string>
+
+    <string name="avty_running_unlock_first">请先解锁</string>
+
+    <string name="avty_running_give_up_title">放弃？</string>
+
+    <string name="avty_running_give_up_content">你确定要放弃吗？</string>
+
+    <string name="avty_result_title">第 %s 天成绩</string>
+
+    <string name="avty_result_day_x">第 %s 天运动</string>
+
+    <string name="avty_result_calories_burn_title">总消耗卡路里</string>
+
+    <string name="avty_result_exercise_duration_title">运动时间</string>
+
+    <string name="avty_exercise_result_suggest_decrease_difficulty">假如这运动对你来说难度太高了，你随时可以在设置里更改运动难度。</string>
+
+    <string name="avty_graph_title">图表记录</string>
+
+    <string name="avty_graph_subtitle">每日消耗卡路里</string>
+
+    <string name="avty_history_title">运动记录</string>
+
+    <string name="avty_history_delete_title">删除过去记录</string>
+
+    <string name="avty_history_delete_content">"你确定要删除这个记录吗？ 总运动时间和总卡路里消耗记录将会更改。"</string>
+
+    <string name="avty_photo_title">第 %s 天的你</string>
+
+    <string name="layout_history_no_records_msg">无记录显示</string>
+
+    <string name="layout_history_date_title">日期</string>
+
+    <string name="layout_history_plan_title">计划</string>
+
+    <string name="layout_history_is_completed_title">完成度</string>
+
+    <string name="layout_history_duration_title">时间</string>
+
+    <string name="layout_history_calories_title">卡路里</string>
+
+    <string name="summary_total_calories_burnt">总消耗卡路里</string>
+
+    <string name="summary_total_exercise_duration">总运动时间</string>
+
+    <string name="avty_photo_confirm_delete_title">删除照片？</string>
+    <string name="avty_photo_confirm_delete_content">确定删除第 %s 天的照片吗？</string>
+
+    <string name="avty_gallery_title">图库</string>
+
+    <string name="avty_settings_title">设定</string>
+    <string name="avty_settings_remind_meal_content">提醒我该吃什么！</string>
+    <string name="avty_settings_remind_meal_title">开启菜单通知</string>
+    <string name="avty_settings_remind_run_content">提醒我去运动！</string>
+    <string name="avty_settings_remind_run_title">开启跑步通知</string>
+    <string name="avty_settings_remind_time_title">跑步时间</string>
+    <string name="avty_settings_remind_day_title">天</string>
+    <string name="avty_settings_parameter_title">个人资料</string>
+    <string name="avty_settings_parameter_content">点击更改</string>
+    <string name="avty_settings_details_category_title">个人资料</string>
+    <string name="avty_settings_notification_category_title">通知设定</string>
+    <string name="avty_settings_difficulties_category_title">难易度</string>
+    <string name="avty_settings_run_difficulty_title">难度级别</string>
+    <string name="difficulty_1">普通</string>
+    <string name="difficulty_2">困难</string>
+    <string name="difficulty_3">非常困难</string>
+    <string name="difficulty_4">超级困难</string>
+    <string name="difficulty_5">地狱级</string>
+
+    <string name="dialog_increase_difficulty_content">
+            今天的运动对你来说会太简单吗？你想不想增加接下来的运动困难度？ \n(你也可以随时在设置里调整困难度)</string>
+    <string name="dialog_increase_difficulty_title">增加运动困难度？</string>
+    <string name="dialog_increase_difficulty_no_btn">不要，目前难度刚刚好。</string>
+    <string name="dialog_increase_difficulty_yes_btn">要, 请帮我增加难度！</string>
+
+    <string name="dialog_rating_rate_play_store_btn">帮我们评分吗？</string>
+    <string name="dialog_rating_cancel_btn">不要</string>
+    <string name="dialog_rating_title">评分</string>
+    <string name="dialog_rating_content">假如你觉得这个应用有对你有帮助可以花点时间帮我们评分吗？谢谢你的支持！</string>
+
+
+    <string name="drawer_title_day_x_plan">第 %s 天计划</string>
+
+    <string name="drawer_title_history">记录</string>
+
+    <string name="drawer_item_gallery">图库</string>
+    <string name="drawer_item_history_list">记录表</string>
+
+    <string name="drawer_item_history_graph">图表记录</string>
+
+    <string name="drawer_title_tutorial">教学</string>
+
+    <string name="drawer_item_exercise_tutorial">跑步教学</string>
+
+    <string name="drawer_title_more">更多</string>
+
+    <string name="drawer_item_settings">设置</string>
+
+    <string name="drawer_item_pro_version">Pro版本 + 移除广告</string>
+
+    <string name="drawer_title_miscellaneous">其他</string>
+
+    <string name="drawer_item_share">分享</string>
+
+    <string name="drawer_item_rate">评分</string>
+
+    <string name="drawer_item_contact">联络我们</string>
+
+    <string name="drawer_item_about">关于我们</string>
+
+    <string name="tip_olive_oil">希腊人平均每年摄取超过20公升的橄榄油。难怪斯巴达人肤色那么深！ 今天的你的菜单里也有橄榄油，快来查看吧。</string>
+
+    <string name="tip_coffee">咖啡可以让肥胖的人增加燃脂率多达10%，可是喝太多可是会失眠的啊。来跟着我们的菜单让你燃脂同时也能睡个好觉吧！</string>
+
+    <string name="tip_almonds">把杏仁当作点心可以减少一整天的饥饿感，所以你不需要去碰那些撒了一堆糖粉的巧克力了。你今天的菜单也有杏仁哦～</string>
+
+    <string name="tip_brown_rice">糙米是很好的膳食纤维来源，因为它让你更有饱足感并且与减少食物摄取，让你维持健康的体重。来看看今天菜单里糙米配着什么一起吃吧。</string>
+
+    <string name="tip_chicken_breast">去皮的鸡胸肉不止可以让你摄取更少的卡路里，还能燃烧多余的卡路里来帮助减肥。把自己变成鸡胸杀手是雕塑完美身材的第一步哦！来查看你今天的鸡胸食谱吧。</string>
+
+    <string name="tip_brocolli">花椰菜不止高纤维，帮助消化，还预防便秘和低血糖。知道为什么妈妈总是逼你吃花椰菜了吗～来看看你今天的花椰菜菜单吧。</string>
+
+    <string name="tip_apple"> 这苹果虽然不是你想要的苹果(苹果X)，可是它是你身体需要的。 快来查看今天的饮食计划吧！</string>
+
+    <string name="tip_eggs">鸡蛋是世上最营养的食物，它有着我们人体所需的几乎所有营养。快来查看你今天的鸡蛋美食吧！</string>
+
+    <string name="tip_mushrooms">蘑菇是唯一有维生素D的纤维来源。他的升糖指数也很低，这表示他会让你长时间都充满饱足感。他也是马里欧的最爱哦～来查看今天的蘑菇料理吧。</string>
+
+    <string name="tip_spinach">菠菜可以帮助你减肥因为它的热量低却富含营养。虽然Popeye水手让你觉得它会使你变成大块头，可实际上它是你保持苗条的关键。还等什么？快来看看今天的菠菜美食啊。</string>
+
+    <string name="tip_tomato_juice">根据研究，每日一杯番茄汁可以帮助瘦下你的腰围。今天把它包括在你的餐饮计划中，享受番茄盛宴吧。</string>
+
+    <string name="tip_banana">香蕉能有效遏制你的胃口，控制体内的血糖升高。可是吃的时候得小心身边的猴子啊～来查看今天的香蕉点心吧。</string>
+
+    <string name="tip_potato">一份马铃薯只有110卡，0脂肪0胆固醇。因此，吃马铃薯实际上变得越来越不像马铃薯。进来查看今天的马铃薯食谱吧。</string>
+
+    <string name="tip_salmon_oil">鲑鱼油可以帮助降低血液中的甘油三酯和减少体内的脂肪。还不喜欢吃鲑鱼吗？来查看今天的鲑鱼料理吧。</string>
+
+    <string name="tip_papaya">木瓜以其低脂肪和无胆固醇的含量而闻名。它也有助于增强您的消化系统和缓解便秘。让你在同事还没察觉的情况下上完厕所。来看看今天跟木瓜菜单吧。</string>
+
+    <string name="tip_oatmeal">燕麦粥会被身体慢慢消化，有助于保持稳定的血糖水平，提升能量和减少饥饿感。来看看怎样准备一道好吃的燕麦粥吧。</string>
+
+    <string name="tip_strawberry">草莓含有刺激新陈代谢的花青素并抑制你的胃口。来品尝今天的草莓美食吧。</string>
+
+    <string name="tip_walnuts">在饮食中加入核桃不止可以帮助减肥，核桃也富含不饱和脂肪，有助于维持心脏健康和降低胆固醇。所以经过超市时记得买些核桃哦。 来查看今天的核桃减肥食谱吧。</string>
+
+    <string name="tip_green_tea">绿茶包含儿茶素，可以帮助减肥和促进新陈代谢。赶快喝一杯把那些该死的脂肪统统杀死吧！杀！！！咳，来看看今天绿茶配什么点心吧。</string>
+
+    <string name="tip_carrots">胡萝卜里都是帮你保湿和果腹的水和纤维，还有很多的维生素A和K。学学兔子们多吃点萝卜吧～来查看今天的萝卜美食呀。</string>
+
+    <string name="tip_asparagus">作为天然的利尿剂，芦笋有助于清除堆积在身体里的多余水分并对抗凸起的腹部。每天都吃它会让你最后变得像芦笋一样苗条哦。进来看看今天的芦笋菜单吧。</string>
+
+    <string name="tip_bell_pepper">辣椒里含有一种称为辣椒素的分子可以增加你的脂肪燃烧速率，让体重减轻。是时候在来看看今天加入了辣椒的菜单啦。</string>
+
+    <string name="tip_avocados">鳄梨的纤维含量约占总重量的7％，与其他大多数食品相比更加高。纤维可以对减肥和代谢有着各种益处。来看看今天的鳄梨食谱吧。</string>
+
+    <string name="tip_green_bean">在饮食里加入豆子不止可以获得营养还不会增加太多的卡路里。而且豆子先生也很好笑(什么跟什么=_=)。进来看看今天的豆子食谱吧。</string>
+
+    <string name="tip_lettuce">一杯生菜只有12卡，0脂肪。所以它根本就是减肥圣品啊！来查看配着生菜一起吃的美食吧。</string>
+
+    <string name="tip_orange">自由基会让你的身体衰老。在柳橙里的高水平抗氧化剂有助于减少自由基引起的皮肤损伤。富含橘子的饮食可以减少皱纹和拥有更健康的皮肤。你想减肥也想让自己看起来更年轻？赶快来查看今天的菜单然后吃些柳橙吧！</string>
+
+    <string name="tip_greek_yogurt">希腊酸奶可以让你摄取必需的营养还能帮助你减肥。它比普通酸奶更浓稠更少的碳水化合物和糖，却有更多的蛋白质。但是它不止在希腊贩售哦～来查看最佳的吃酸奶时间吧。</string>
+
+    <string name="tip_celery">芹菜的热量非常低，它可以帮助您减肥也能够提供重要的营养，并帮助调节脂肪代谢。来看看今天的食谱的什么搭配能让芹菜更好吃吧。</string>
+
+    <string name="tip_prawn">虾子没有胆，没有脊椎，头部充满了屎，但卡路里可是所有肉类中最低的哦。来看看今天的虾子食谱吧。</string>
+
+    <string name="tip_garlic">大蒜是强大的解毒剂。它不止增加你的代谢率还把细胞里的脂肪杀死，可是吃了跟另一半接吻会被杀掉哦。来看看今天的大蒜美食啊。</string>
+
+    <string name="exercise_quote1">不做出改变就无法跨越目前的障碍达到新的目标。</string>
+
+    <string name="exercise_quote2">那些认为自己没时间运动的人很快就要抽出许多时间来治病了。</string>
+
+    <string name="exercise_quote3">每天都去做一件会让明天变得更好的事情。</string>
+
+    <string name="exercise_quote4">你必须改变你的生活作息才能改变你的一生。</string>
+
+    <string name="exercise_quote5">一个坚强正面的态度能做到许多看起来无法做到的事。</string>
+
+    <string name="exercise_quote6">连自己都无法控制自己的意志力的人，无法改变任何事物。</string>
+
+    <string name="exercise_quote7">当别人怀疑你的时候，相信自己。</string>
+
+    <string name="exercise_quote8">失败不是致命的，不能振作起来才是。</string>
+
+    <string name="exercise_quote9">掉进水里不会淹死，在水里不想自救才会。</string>
+
+    <string name="exercise_quote10">现在就是你决定如何雕塑你的未来的时刻。</string>
+
+    <string name="exercise_quote11">大多数人的失败不是因为不渴望，而是付出的不够。</string>
+
+    <string name="exercise_quote12">通往成功的路上总是有很多充满诱惑的的事情挡着你。</string>
+
+    <string name="exercise_quote13">大家会怀疑你说的话，只有行动才会让他们深信不疑。</string>
+
+    <string name="exercise_quote14">运动是改变一个人的身体，情感和精神状态的良药。</string>
+
+    <string name="exercise_quote15">意志力也需要锻炼，就像身上的肌肉那样。</string>
+
+    <string name="exercise_quote16">相信自己，然后付出一切。</string>
+
+    <string name="exercise_quote17">一个没有计划的目标只是在做白日梦。</string>
+
+    <string name="exercise_quote18">当你想要在你的生命里完成某些事，你不能只是坐着等它发生，而是去创造。</string>
+
+    <string name="exercise_quote19">动力让你开始，把努力养成习惯才让你持续走下去。</string>
+
+    <string name="exercise_quote20">值得的东西得来不易。努力, 不停的努力才是唯一能达成目标的方法。</string>
+
+    <string name="exercise_quote21">唯一坐着就能成功的生物，是母鸡不是你。</string>
+
+    <string name="exercise_quote22">要嘛就不做，要做就要付出全力做到最好！</string>
+
+    <string name="exercise_quote23">当我们失去健康时，它才显得如此珍贵。</string>
+
+    <string name="exercise_quote24">你不开始努力，就什么也不会改变。</string>
+
+    <string name="exercise_quote25">不管你是谁，不管你做什么，你绝对有能力改变你自己！</string>
+
+    <string name="exercise_quote26">不想付出一切的话就滚吧，别碍着正在努力的人。</string>
+
+    <string name="exercise_quote27">把所有的借口放一边然后告诉自己：我可以。</string>
+
+    <string name="exercise_quote28">每当你决定做一件事情，就把它当作做给那些看不起你的人看。</string>
+
+    <string name="exercise_quote29">你绝对比你想象的更勇敢，比你看起来的更强悍！</string>
+
+    <string name="exercise_quote30">美好的未来都是从今天的努力开始的。</string>
+
+    <string name="drawer_day_counter_numeric">%s/30</string>
+
+    <string name="drawer_day_counter_text">移动至第 %s 天计划</string>
+
+    <string name="version_x">版本：%s</string>
+
+    <string name="share">分享</string>
+
+    <string name="share_apps_msg">快下载30天激瘦训练+饮食来锻练成你心里的完美身材吧！ https://play.google.com/store/apps/details?id=com.challenge.bennho.a30days</string>
+
+    <string name="support">帮助邮箱</string>
+
+    <string name="main_email_address">benjandho@gmail.com</string>
+
+    <string name="pro">PRO</string>
+
+    <string name="day_X">第%s天</string>
+    <string name="day_shortform_x">D%s</string>
+
+    <string name="end">结束</string>
+
+    <string name="x_kg">%s 公斤</string>
+
+    <string name="x_cm">%s 厘米</string>
+
+    <string name="x_pounds">%s 磅</string>
+
+    <string name="x_foot_x_inch">%1$s\'%2$s\'\'</string>
+
+    <string name="x_kcal">%s 千卡</string>
+
+    <string name="metric_units">公斤/厘米</string>
+
+    <string name="american_units">磅/寸</string>
+
+    <string name="gender_male">男人</string>
+
+    <string name="gender_female">女人</string>
+
+    <string name="completed">完成</string>
+
+    <string name="incomplete">未完成</string>
+
+    <string name="done">结束</string>
+
+    <string name="min_s">分钟(s)</string>
+
+    <string name="kcal">千卡</string>
+
+    <string name="locked">上锁</string>
+
+    <string name="meal_0_0_name">火腿三明治</string>
+
+    <string name="meal_0_1_name">坚果 + 茶</string>
+
+    <string name="meal_0_2_name">糙米饭配煎鸡胸肉和花椰菜</string>
+
+    <string name="meal_0_3_name">苹果</string>
+
+    <string name="meal_0_4_name">蘑菇蒸蛋白</string>
+
+    <string name="meal_1_0_name">全麦吐司配炒蛋 + 咖啡</string>
+
+    <string name="meal_1_1_name">香蕉</string>
+
+    <string name="meal_1_2_name">马铃薯番茄烤三文鱼</string>
+
+    <string name="meal_1_3_name">木瓜</string>
+
+    <string name="meal_1_4_name">水煮蛋白沙拉</string>
+
+    <string name="meal_2_0_name">莓子燕麦</string>
+
+    <string name="meal_2_1_name">坚果 + 茶</string>
+
+    <string name="meal_2_2_name">糙米饭配菠菜炒猪瘦肉</string>
+
+    <string name="meal_2_3_name">苹果</string>
+
+    <string name="meal_2_4_name">花椰菜蒸鸡肉</string>
+
+    <string name="meal_3_0_name">蛋白三明治 + 咖啡</string>
+
+    <string name="meal_3_1_name">柳橙</string>
+
+    <string name="meal_3_2_name">马铃薯灯笼椒煎鸡胸肉</string>
+
+    <string name="meal_3_3_name">香蕉</string>
+
+    <string name="meal_3_4_name">青豆蒸多利鱼</string>
+
+    <string name="meal_4_0_name">生菜火腿卷</string>
+
+    <string name="meal_4_1_name">莓子希腊酸奶 + 绿茶</string>
+
+    <string name="meal_4_2_name">番茄鸡肉酱意大利面</string>
+
+    <string name="meal_4_3_name">木瓜</string>
+
+    <string name="meal_4_4_name">水煮鸡蛋白和菠菜</string>
+
+    <string name="meal_5_0_name">燕麦粥配炒鸡蛋白</string>
+
+    <string name="meal_5_1_name">坚果 + 茶</string>
+
+    <string name="meal_5_2_name">糙米饭配芹菜炒鸡肉</string>
+
+    <string name="meal_5_3_name">苹果</string>
+
+    <string name="meal_5_4_name">蒜蓉蒸虾子</string>
+
+    <string name="meal_6_0_name">水煮蛋吐司 + 咖啡</string>
+
+    <string name="meal_6_1_name">香蕉</string>
+
+    <string name="meal_6_2_name">马铃薯芦笋煎牛排</string>
+
+    <string name="meal_6_3_name">番茄汁</string>
+
+    <string name="meal_6_4_name">田园沙拉</string>
+
+    <string name="meal_7_0_name">隔夜莓子燕麦粥</string>
+
+    <string name="meal_7_1_name">"坚果 + 茶"</string>
+
+    <string name="meal_7_2_name">煎鲔鱼配马铃薯泥花椰菜</string>
+
+    <string name="meal_7_3_name">番石榴</string>
+
+    <string name="meal_7_4_name">水煮蛋和芹菜萝卜</string>
+
+    <string name="meal_8_0_name">鸡肉三明治 + 咖啡</string>
+
+    <string name="meal_8_1_name">木瓜</string>
+
+    <string name="meal_8_2_name">糙米饭配烤鸭和芹菜</string>
+
+    <string name="meal_8_3_name">苹果汁</string>
+
+    <string name="meal_8_4_name">青葱蒸罗非鱼</string>
+
+    <string name="meal_9_0_name">蓝莓谷粮佐希腊酸奶</string>
+
+    <string name="meal_9_1_name">柳橙 + 茶</string>
+
+    <string name="meal_9_2_name">萝卜菠菜蒸猪瘦肉</string>
+
+    <string name="meal_9_3_name">香蕉</string>
+
+    <string name="meal_9_4_name">蘑菇肉碎蒸豆腐</string>
+
+    <string name="meal_10_0_name">花生酱吐司</string>
+
+    <string name="meal_10_1_name">苹果 + 绿茶</string>
+
+    <string name="meal_10_2_name">糙米饭配黄瓜蒸鸡胸肉</string>
+
+    <string name="meal_10_3_name">番石榴</string>
+
+    <string name="meal_10_4_name">青豆蒸多利鱼</string>
+
+    <string name="meal_11_0_name">燕麦粥配鸡蛋白</string>
+
+    <string name="meal_11_1_name">柳橙 + 茶</string>
+
+    <string name="meal_11_2_name">马铃薯灯笼椒烤三文鱼</string>
+
+    <string name="meal_11_3_name">莓子</string>
+
+    <string name="meal_11_4_name">田园沙拉</string>
+
+    <string name="meal_12_0_name">煎蛋全麦吐司 + 咖啡</string>
+
+    <string name="meal_12_1_name">香蕉希腊酸奶</string>
+
+    <string name="meal_12_2_name">番茄牛肉酱意大利面</string>
+
+    <string name="meal_12_3_name">西瓜</string>
+
+    <string name="meal_12_4_name">水煮蛋和番茄萝卜</string>
+
+    <string name="meal_13_0_name">蓝莓薄松饼</string>
+
+    <string name="meal_13_1_name">坚果 + 茶</string>
+
+    <string name="meal_13_2_name">糙米饭配菠菜炒虾子</string>
+
+    <string name="meal_13_3_name">苹果</string>
+
+    <string name="meal_13_4_name">鸡胸肉沙拉</string>
+
+    <string name="meal_14_0_name">水煮蛋吐司 + 咖啡</string>
+
+    <string name="meal_14_1_name">番石榴</string>
+
+    <string name="meal_14_2_name">马铃薯青豆烤羊排</string>
+
+    <string name="meal_14_3_name">柳橙汁</string>
+
+    <string name="meal_14_4_name">青柠蒸墨鱼</string>
+
+    <string name="meal_15_0_name">水煮蛋白沙拉</string>
+
+    <string name="meal_15_1_name">莓子 + 茶</string>
+
+    <string name="meal_15_2_name">马铃薯青豆蒸多利鱼</string>
+
+    <string name="meal_15_3_name">香蕉</string>
+
+    <string name="meal_15_4_name">水煮蛋和芦笋</string>
+
+    <string name="meal_16_0_name">三文鱼黄瓜吐司</string>
+
+    <string name="meal_16_1_name">坚果 + 茶</string>
+
+    <string name="meal_16_2_name">糙米饭配青葱炒鸡</string>
+
+    <string name="meal_16_3_name">莓子</string>
+
+    <string name="meal_16_4_name">蘑菇蒸蛋</string>
+
+    <string name="meal_17_0_name">火腿炒蛋</string>
+
+    <string name="meal_17_1_name">香蕉 + 茶</string>
+
+    <string name="meal_17_2_name">菠菜玉蜀黍烤三文鱼</string>
+
+    <string name="meal_17_3_name">苹果</string>
+
+    <string name="meal_17_4_name">蒜蓉蒸虾子</string>
+
+    <string name="meal_18_0_name">燕麦粥配炒蛋</string>
+
+    <string name="meal_18_1_name">坚果 + 茶</string>
+
+    <string name="meal_18_2_name">鸡肉三文治</string>
+
+    <string name="meal_18_3_name">番石榴</string>
+
+    <string name="meal_18_4_name">田园沙拉</string>
+
+    <string name="meal_19_0_name">鳄梨鸡肉卷</string>
+
+    <string name="meal_19_1_name">柳橙 + 茶</string>
+
+    <string name="meal_19_2_name">芦笋虾子意大利面</string>
+
+    <string name="meal_19_3_name">香蕉</string>
+
+    <string name="meal_19_4_name">肉碎蘑菇蒸豆腐</string>
+
+    <string name="meal_20_0_name">花生酱煎饼</string>
+
+    <string name="meal_20_1_name">苹果</string>
+
+    <string name="meal_20_2_name">萝卜花椰菜炒牛肉</string>
+
+    <string name="meal_20_3_name">木瓜</string>
+
+    <string name="meal_20_4_name">水煮蛋白沙拉</string>
+
+    <string name="meal_21_0_name">香蕉坚果燕麦粥</string>
+
+    <string name="meal_21_1_name">苹果 + 茶</string>
+
+    <string name="meal_21_2_name">花椰菜萝卜烤羊排</string>
+
+    <string name="meal_21_3_name">木瓜</string>
+
+    <string name="meal_21_4_name">水煮蛋白和芦笋</string>
+
+    <string name="meal_22_0_name">三文鱼鸡蛋吐司</string>
+
+    <string name="meal_22_1_name">坚果 + 茶</string>
+
+    <string name="meal_22_2_name">糙米饭配灯笼椒煎鲔鱼</string>
+
+    <string name="meal_22_3_name">香蕉</string>
+
+    <string name="meal_22_4_name">鸡胸肉沙拉</string>
+
+    <string name="meal_23_0_name">火腿炒蛋</string>
+
+    <string name="meal_23_1_name">番石榴 + 茶</string>
+
+    <string name="meal_23_2_name">烤三文鱼配马铃薯泥和芦笋</string>
+
+    <string name="meal_23_3_name">莓子</string>
+
+    <string name="meal_23_4_name">蘑菇蒸蛋</string>
+
+    <string name="meal_24_0_name">隔夜香蕉奇异果燕麦粥</string>
+
+    <string name="meal_24_1_name">坚果 + 茶</string>
+
+    <string name="meal_24_2_name">萝卜马铃薯烤鸡</string>
+
+    <string name="meal_24_3_name">香蕉</string>
+
+    <string name="meal_24_4_name">田园沙拉</string>
+
+    <string name="meal_25_0_name">鳄梨鸡蛋吐司 + 咖啡</string>
+
+    <string name="meal_25_1_name">柳橙</string>
+
+    <string name="meal_25_2_name">糙米饭配花椰菜蒸多利鱼</string>
+
+    <string name="meal_25_3_name">苹果</string>
+
+    <string name="meal_25_4_name">水煮蛋白和菠菜</string>
+
+    <string name="meal_26_0_name">炒蛋吐司 + 咖啡</string>
+
+    <string name="meal_26_1_name">西瓜</string>
+
+    <string name="meal_26_2_name">糙米饭配芦笋炒虾子和墨鱼</string>
+
+    <string name="meal_26_3_name">香蕉</string>
+
+    <string name="meal_26_4_name">肉碎蘑菇蒸豆腐</string>
+
+    <string name="meal_27_0_name">香蕉薄松饼</string>
+
+    <string name="meal_27_1_name">莓子 + 茶</string>
+
+    <string name="meal_27_2_name">灯笼椒煎牛排</string>
+
+    <string name="meal_27_3_name">萝卜汁</string>
+
+    <string name="meal_27_4_name">虾子沙拉</string>
+
+    <string name="meal_28_0_name">隔夜莓子燕麦粥</string>
+
+    <string name="meal_28_1_name">番石榴</string>
+
+    <string name="meal_28_2_name">糙米饭配菠菜烤三文鱼</string>
+
+    <string name="meal_28_3_name">番茄汁</string>
+
+    <string name="meal_28_4_name">蛋白田园沙拉</string>
+
+    <string name="meal_29_0_name">燕麦粥配炒蛋白</string>
+
+    <string name="meal_29_1_name">苹果</string>
+
+    <string name="meal_29_2_name">糙米饭配花椰菜烤鸡</string>
+
+    <string name="meal_29_3_name">香蕉</string>
+
+    <string name="meal_29_4_name">水煮蛋白</string>
+
+    <string name="meal_0_1_instruction">一小把任意坚果和无糖茶</string>
+
+    <string name="meal_0_2_instruction">去除鸡皮和脂肪然后用少许橄榄油煎</string>
+
+    <string name="meal_0_4_instruction">4颗蛋白1颗蛋黄</string>
+
+    <string name="meal_1_4_instruction">不要放酱料</string>
+
+    <string name="meal_2_1_instruction">一小把任意坚果和无糖茶</string>
+
+    <string name="meal_3_2_instruction">去除鸡皮和脂肪然后用少许橄榄油煎</string>
+
+    <string name="meal_5_1_instruction">一小把任意坚果和无糖茶</string>
+
+    <string name="meal_5_2_instruction">用少许橄榄油炒</string>
+
+    <string name="meal_6_2_instruction">去除脂肪然后用少许橄榄油煎</string>
+
+    <string name="meal_6_4_instruction">不要放酱料</string>
+
+    <string name="meal_7_1_instruction">一小把任意坚果和无糖茶</string>
+
+    <string name="meal_7_2_instruction">用少许橄榄油煎</string>
+
+    <string name="meal_8_2_instruction">去除鸭皮</string>
+
+    <string name="meal_8_4_instruction">可以用其他鱼代替多利鱼</string>
+
+    <string name="meal_10_0_instruction">2茶匙花生酱</string>
+
+    <string name="meal_11_4_instruction">不要放酱料</string>
+
+    <string name="meal_12_0_instruction">4颗蛋白1颗蛋黄</string>
+
+    <string name="meal_13_1_instruction">一小把任意坚果和无糖茶</string>
+
+    <string name="meal_13_2_instruction">用少许橄榄油炒</string>
+
+    <string name="meal_13_4_instruction">不要放酱料</string>
+
+    <string name="meal_15_0_instruction">配无糖希腊酸奶</string>
+
+    <string name="meal_16_1_instruction">一小把任意坚果和无糖茶</string>
+
+    <string name="meal_16_2_instruction">用少许橄榄油炒</string>
+
+    <string name="meal_16_4_instruction">4颗蛋白1颗蛋黄</string>
+
+    <string name="meal_18_1_instruction">一小把任意坚果和无糖茶</string>
+
+    <string name="meal_18_2_instruction">不要放酱料</string>
+
+    <string name="meal_20_0_instruction">2茶匙花生酱</string>
+
+    <string name="meal_20_2_instruction">用少许橄榄油炒</string>
+
+    <string name="meal_20_4_instruction">不要放酱料</string>
+
+    <string name="meal_22_2_instruction">用少许橄榄油煎</string>
+
+    <string name="meal_22_4_instruction">去皮，不要放沙拉酱</string>
+
+    <string name="meal_23_4_instruction">4颗蛋白1颗蛋黄</string>
+
+    <string name="meal_24_2_instruction">去除鸡皮和脂肪</string>
+
+    <string name="meal_24_4_instruction">不要放酱料</string>
+
+    <string name="meal_26_2_instruction">用少许橄榄油炒</string>
+
+    <string name="meal_27_0_instruction">不要放酱料</string>
+
+    <string name="meal_27_2_instruction">用少许橄榄油煎</string>
+
+    <string name="meal_27_4_instruction">用少许青柠调味</string>
+
+    <string name="meal_28_4_instruction">不要放酱料</string>
+
+    <string name="meal_29_2_instruction">去除鸡皮和脂肪</string>
+
+    <string name="meal_29_4_instruction">6颗蛋白</string>
+
+    <string name="tip_day_0">30天里请不要在咖啡和茶里加糖！</string>
+
+    <string name="tip_day_1">别忘了鸡肉要去皮和脂肪</string>
+
+    <string name="tip_day_2">吃早餐前喝一茶匙的初榨橄榄油有助减肥。</string>
+
+    <string name="tip_day_3">煎食物只用少许橄榄油。</string>
+
+    <string name="tip_day_4">糖是体重增加的元凶！</string>
+
+    <string name="tip_day_5">摄取过多的盐会让你的身体水肿！</string>
+
+    <string name="tip_day_6">喝多于2公升的水可以增加新陈代谢有助减肥。</string>
+
+    <string name="tip_day_7">茶和咖啡里的咖啡因可以增加代谢率，每天喝一至两杯可以增加瘦身的速度。</string>
+
+    <string name="tip_day_8">吃什么像什么，所以好好选择放进自己嘴里的食物。</string>
+
+    <string name="tip_day_9">睡得好，体重才会少。</string>
+
+    <string name="tip_day_10">压力会增加体内的压力荷尔蒙水平，这将会导致饥饿和增加体重。</string>
+
+    <string name="tip_day_11">快食族会增加更多的体重。慢慢吃会让你更有饱足感。</string>
+
+    <string name="tip_day_12">吃辣的食物可以帮助你提高新陈代谢和减少卡路里。</string>
+
+    <string name="tip_day_13">无糖产品通常有更多不健康又增肥的化学添加物。</string>
+
+    <string name="tip_day_14">自己准备食物，那你才知道究竟把什么放进嘴里。</string>
+
+    <string name="tip_day_15">一小把的坚果可以帮助你减少饥饿感和提高新陈代谢率。</string>
+
+    <string name="tip_day_16">要吃碳水化合物就吃全麦的。</string>
+
+    <string name="tip_day_17">一茶匙的沙拉酱会让那碗沙拉增加75到100卡路里。</string>
+
+    <string name="tip_day_18">不吃早餐的人比吃早餐的人体重更重。</string>
+
+    <string name="tip_day_19">想要套餐加薯条的时候看看自己的腰围吧！</string>
+
+    <string name="tip_day_20">不要养成坐着或休息就想吃东西的坏习惯。</string>
+
+    <string name="tip_day_21">如果你把饮料取代白开水，你的体重会在一年内轻易增加超过15公斤！</string>
+
+    <string name="tip_day_22">吃多点菜，他们不止高营养高纤维还帮助瘦身！</string>
+
+    <string name="tip_day_23">啤酒里含有快速消化的碳水化合物会阻断你的燃脂效果。</string>
+
+    <string name="tip_day_24">想瘦就别再吃薯片！爆米花！饼干！糖果！冰淇淋！</string>
+
+    <string name="tip_day_25">别吃快餐，他们不止不健康还有很高的卡路里。</string>
+
+    <string name="tip_day_26">减肥靠运动！而不是吃药！</string>
+
+    <string name="tip_day_27">假如你回到肥胖时期的生活方式, 体重反弹的时候不要觉得吃惊。</string>
+
+    <string name="tip_day_28">只有改掉坏习惯才能永远瘦下去！</string>
+
+    <string name="tip_day_29">一直提醒自己付出了多少努力才坚持到今天！</string>
+
+    <string name="ingredient_0_0">苹果</string>
+
+    <string name="ingredient_0_1">芦笋</string>
+
+    <string name="ingredient_0_2">香蕉</string>
+
+    <string name="ingredient_0_3">灯笼椒</string>
+
+    <string name="ingredient_0_4">莓子</string>
+
+    <string name="ingredient_0_5">番茄肉酱</string>
+
+    <string name="ingredient_0_6">花椰菜</string>
+
+    <string name="ingredient_0_7">糙米饭</string>
+
+    <string name="ingredient_0_8">芹菜</string>
+
+    <string name="ingredient_0_9">鸡胸肉</string>
+
+    <string name="ingredient_0_10">咖啡</string>
+
+    <string name="ingredient_0_11">多利鱼</string>
+
+    <string name="ingredient_0_12">鸡蛋</string>
+
+    <string name="ingredient_0_13">蒜头</string>
+
+    <string name="ingredient_0_14">青豆</string>
+
+    <string name="ingredient_0_15">火腿</string>
+
+    <string name="ingredient_0_16">生菜</string>
+
+    <string name="ingredient_0_17">蘑菇</string>
+
+    <string name="ingredient_0_18">无糖希腊酸奶</string>
+
+    <string name="ingredient_0_19">坚果</string>
+
+    <string name="ingredient_0_20">燕麦</string>
+
+    <string name="ingredient_0_21">橄榄油</string>
+
+    <string name="ingredient_0_22">柳橙</string>
+
+    <string name="ingredient_0_23">木瓜</string>
+
+    <string name="ingredient_0_24">猪瘦肉</string>
+
+    <string name="ingredient_0_25">马铃薯</string>
+
+    <string name="ingredient_0_26">虾子</string>
+
+    <string name="ingredient_0_27">沙拉</string>
+
+    <string name="ingredient_0_28">三文鱼</string>
+
+    <string name="ingredient_0_29">菠菜</string>
+
+    <string name="ingredient_0_30">牛排</string>
+
+    <string name="ingredient_0_31">茶</string>
+
+    <string name="ingredient_0_32">番茄</string>
+
+    <string name="ingredient_0_33">全麦面包</string>
+
+    <string name="ingredient_0_34">全麦意大利面</string>
+
+    <string name="ingredient_0_35">全麦饼皮</string>
+
+    <string name="ingredient_1_0">苹果</string>
+
+    <string name="ingredient_1_1">香蕉</string>
+
+    <string name="ingredient_1_2">灯笼椒</string>
+
+    <string name="ingredient_1_3">莓子</string>
+
+    <string name="ingredient_1_4">花椰菜</string>
+
+    <string name="ingredient_1_5">糙米饭</string>
+
+    <string name="ingredient_1_6">萝卜</string>
+
+    <string name="ingredient_1_7">芹菜</string>
+
+    <string name="ingredient_1_8">谷粮</string>
+
+    <string name="ingredient_1_9">鸡胸肉</string>
+
+    <string name="ingredient_1_10">咖啡</string>
+
+    <string name="ingredient_1_11">黄瓜</string>
+
+    <string name="ingredient_1_12">多利鱼</string>
+
+    <string name="ingredient_1_13">鸭肉</string>
+
+    <string name="ingredient_1_14">鸡蛋</string>
+
+    <string name="ingredient_1_15">青豆</string>
+
+    <string name="ingredient_1_16">番石榴</string>
+
+    <string name="ingredient_1_17">生菜</string>
+
+    <string name="ingredient_1_18">鸡肉碎</string>
+
+    <string name="ingredient_1_19">蘑菇</string>
+
+    <string name="ingredient_1_20">无糖希腊酸奶</string>
+
+    <string name="ingredient_1_21">坚果</string>
+
+    <string name="ingredient_1_22">燕麦</string>
+
+    <string name="ingredient_1_23">柳橙</string>
+
+    <string name="ingredient_1_24">薄松饼</string>
+
+    <string name="ingredient_1_25">木瓜</string>
+
+    <string name="ingredient_1_26">花生酱</string>
+
+    <string name="ingredient_1_27">猪瘦肉</string>
+
+    <string name="ingredient_1_28">马铃薯</string>
+
+    <string name="ingredient_1_29">虾子</string>
+
+    <string name="i_apple">苹果</string>
+
+    <string name="i_asparagus">芦笋</string>
+
+    <string name="i_banana">香蕉</string>
+
+    <string name="i_avocado">鳄梨</string>
+
+    <string name="i_bell_pepper">灯笼椒</string>
+
+    <string name="i_berries">莓子</string>
+
+    <string name="i_bolognese_sauce">番茄肉酱</string>
+
+    <string name="i_brocolli">花椰菜</string>
+
+    <string name="i_brown_rice">糙米饭</string>
+
+    <string name="i_celery">芹菜</string>
+
+    <string name="i_chicken_breast">鸡胸肉</string>
+
+    <string name="i_coffee">咖啡</string>
+
+    <string name="i_dory_fish">多利鱼</string>
+
+    <string name="i_egg">鸡蛋</string>
+
+    <string name="i_garlic">蒜头</string>
+
+    <string name="i_green_beans">青豆</string>
+
+    <string name="i_lean_ham">火腿</string>
+
+    <string name="i_lettuce">生菜</string>
+
+    <string name="i_mushroom">蘑菇</string>
+
+    <string name="i_nuts">坚果</string>
+
+    <string name="i_oatmeal">燕麦</string>
+
+    <string name="i_olive_oil">橄榄油</string>
+
+    <string name="i_orange">柳橙</string>
+
+    <string name="i_papaya">木瓜</string>
+
+    <string name="i_lean_pork_meat">猪瘦肉</string>
+
+    <string name="i_potato">马铃薯</string>
+
+    <string name="i_prawn">虾子</string>
+
+    <string name="i_salad">沙拉</string>
+
+    <string name="i_natural_greek_yogurt">无糖希腊酸奶</string>
+
+    <string name="i_salmon">三文鱼</string>
+
+    <string name="i_spinach">菠菜</string>
+
+    <string name="i_steak">牛排</string>
+
+    <string name="i_tea">茶</string>
+
+    <string name="i_tomato">番茄</string>
+
+    <string name="i_whole_wheat_bread">全麦面包</string>
+
+    <string name="i_whole_wheat_spaghetti">全麦意大利面</string>
+
+    <string name="i_whole_wheat_wrap">全麦饼皮</string>
+
+    <string name="i_carrot">胡萝卜</string>
+
+    <string name="i_cereal">谷粮</string>
+
+    <string name="i_cucumber">黄瓜</string>
+
+    <string name="i_duck_meat">鸭肉</string>
+
+    <string name="i_guava">番石榴</string>
+
+    <string name="i_minced_chicken">鸡肉碎</string>
+
+    <string name="i_pancake">薄松饼</string>
+
+    <string name="i_peanut_butter">花生酱</string>
+
+    <string name="i_spring_onion">青葱</string>
+
+    <string name="i_tilapia">罗非鱼</string>
+
+    <string name="i_tofu">豆腐</string>
+
+    <string name="i_tuna">鲔鱼</string>
+
+    <string name="i_watermelon">西瓜</string>
+
+    <string name="i_waffle">松饼</string>
+
+    <string name="i_squid">墨鱼</string>
+
+    <string name="i_corn">玉蜀黍</string>
+
+    <string name="i_lamb">羊肉</string>
+
+    <string name="i_lime">青柠</string>
+
+    <string name="i_kiwi">奇异果</string>
+
+    <string name="x_serving">%s 份</string>
+
+    <string name="x_pack">%s 包</string>
+
+    <string name="x_unit">%s 颗</string>
+
+    <string name="x_bottle">%s 瓶</string>
+
+    <string name="prev">昨天</string>
+
+    <string name="next">明天</string>
+
+    <string name="skip">跳过</string>
+
+    <string name="open">开启</string>
+
+    <string name="close">关闭</string>
+
+    <string name="warm_up_state">热身</string>
+
+    <string name="fast_walk_state">快步走</string>
+
+    <string name="run_state">跑步</string>
+
+    <string name="sprint_state">冲刺</string>
+
+    <string name="walk_state">步行</string>
+
+    <string name="cool_down_state">暖身</string>
+
+    <string name="speech_warm_up">开始热身</string>
+
+    <string name="speech_fast_walk">开始快步走</string>
+
+    <string name="speech_run">开始跑步</string>
+
+    <string name="speech_sprint">开始冲刺</string>
+
+    <string name="speech_walk">开始步行</string>
+
+    <string name="speech_cool_down">开始暖身</string>
+
+    <string name="speech_running_finished">运动完成</string>
+
+    <string name="notf_running_finished_title">干的好!</string>
+
+    <string name="notf_running_finished_content">完成跑步, 点击看成绩。</string>
+
+    <string name="notf_run_reminder_title">记得运动！(第%s天)</string>
+
+    <string name="notf_run_reminder_action_run">开始跑步</string>
+
+    <string name="notf_run_reminder_action_settings">设置</string>
+
+    <string name="notf_meal_reminder_title">第%1$s - %2$s天的饮食计划</string>
+
+    <string name="notf_meal_reminder_action_view">观看计划</string>
+
+    <string name="notf_meal_reminder_action_settings">设置</string>
+
+    <string name="pro_version_title">Pro版本</string>
+
+    <string name="pro_version_content">升级Pro版本以移除广告和获得所有饮食计划。</string>
+
+    <string name="running_locked_title">运动计划上锁</string>
+
+    <string name="running_locked_content">请先完成之前的运动！</string>
+
+    <string name="itype_fruits">水果</string>
+    <string name="itype_vege">蔬菜</string>
+    <string name="itype_protein">蛋白质</string>
+    <string name="itype_carbo">碳水化合物</string>
+    <string name="itype_others">其他</string>
+
+    <string name="share_result_msg">我今天完成了 %1$s 分钟的跑步，燃烧了 %2$s 的卡路里！ 来跟我一起开始30天的减肥计划吧！ https://play.google.com/store/apps/details?id=com.challenge.bennho.a30days</string>
+    <string name="delete">删除</string>
+    <string name="dont_ask_me_again">别再显示</string>
+    <string name="avty_run_history_slot">存档</string>
+    <string name="avty_settings_run_history_section_title">存档</string>
+    <string name="avty_settings_run_history_title">存档</string>
+    <string name="avty_settings_run_history_content">想重新尝试30天挑战又不想失去之前的跑步记录吗？点击这里以更换存档</string>
+    <string name="avty_run_history_title">运动存档记录</string>
+    <string name="kg">公斤</string>
+    <string name="pounds">磅</string>
+    <string name="monday">星期一</string>
+    <string name="saturday">星期六</string>
+    <string name="sunday">星期天</string>
+    <string name="thursday">星期四</string>
+    <string name="tuesday">星期二</string>
+    <string name="wednesday">星期三</string>
+    <string name="friday">星期五</string>
+    <string name="everyday">每一天</string>
+
+</resources>

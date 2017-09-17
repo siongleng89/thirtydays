@@ -81,13 +81,13 @@
     </string-array>
 
     <string-array name="reminderDay">
-        <item name="1">Sunday</item>
-        <item name="2">Monday</item>
-        <item name="3">Tuesday</item>
-        <item name="4">Wednesday</item>
-        <item name="5">Thursday</item>
-        <item name="6">Friday</item>
-        <item name="7">Saturday</item>
+        <item name="1">@string/sunday</item>
+        <item name="2">@string/monday</item>
+        <item name="3">@string/tuesday</item>
+        <item name="4">@string/wednesday</item>
+        <item name="5">@string/thursday</item>
+        <item name="6">@string/friday</item>
+        <item name="7">@string/saturday</item>
     </string-array>
 
     <string-array name="reminderDayValues">
@@ -102,11 +102,11 @@
 
 
     <string-array name="runDifficulty">
-        <item name="1">Normal</item>
-        <item name="2">Hard</item>
-        <item name="3">Very Hard</item>
-        <item name="4">Hardcore</item>
-        <item name="5">Extreme</item>
+        <item name="1">@string/difficulty_1</item>
+        <item name="2">@string/difficulty_2</item>
+        <item name="3">@string/difficulty_3</item>
+        <item name="4">@string/difficulty_4</item>
+        <item name="5">@string/difficulty_5</item>
     </string-array>
 
     <string-array name="runDifficultyValues">
@@ -118,8 +118,8 @@
     </string-array>
 
     <string-array name="unit">
-        <item name="kg">kg</item>
-        <item name="pounds">pounds</item>
+        <item name="kg">@string/kg</item>
+        <item name="pounds">@string/pounds</item>
     </string-array>
 
     <string-array name="unitValues">
@@ -128,8 +128,8 @@
     </string-array>
 
     <string-array name="gender">
-        <item name="male">Male</item>
-        <item name="female">Female</item>
+        <item name="male">@string/gender_male</item>
+        <item name="female">@string/gender_female</item>
     </string-array>
 
     <string-array name="genderValues">

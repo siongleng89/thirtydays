@@ -373,6 +373,10 @@
 
     <string name="x_cm">%s Cm</string>
 
+    <string name="kg">kg</string>
+
+    <string name="pounds">pounds</string>
+
     <string name="x_pounds">%s Lbs</string>
 
     <string name="x_foot_x_inch">%1$s\'%2$s\'\'</string>
@@ -1162,5 +1166,14 @@
     <string name="share_result_msg">I have finished a %1$s minutes run and burned %2$s calories today! Join me and lose weight in 30 days! https://play.google.com/store/apps/details?id=com.challenge.bennho.a30days</string>
     <string name="delete">Delete</string>
     <string name="dont_ask_me_again">Don\'t ask me again</string>
+
+    <string name="everyday">Everyday</string>
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
 
 </resources>

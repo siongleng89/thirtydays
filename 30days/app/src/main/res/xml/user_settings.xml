@@ -25,7 +25,7 @@
             android:entries="@array/reminderDay"
             android:entryValues="@array/reminderDayValues"
             app:emptySelectedText="None"
-            app:allSelectedText="Everyday">
+            app:allSelectedText="@string/everyday">
         </com.challenge.bennho.a30days.controls.MultipleCheckboxPreference>
 
         <ListPreference
